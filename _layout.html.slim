@@ -5,9 +5,9 @@ html lang="zh-TW"
     = render "/layout_siteinfo"
     = render "/layout_og"
   body
-    = render "/partial/header"
     .page
       .page-inner
+        = render "/partial/header"
         = yield
         .page-bottom-illustrator
       = render "/partial/site-info"

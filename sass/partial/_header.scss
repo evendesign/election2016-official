@@ -1,0 +1,42 @@
+.header {
+  position: relative;
+  background-color: white;
+
+  .logo {
+    float: left;
+    padding: 8px 0;
+    a {
+      display: block;
+      @include replace-text-with-svg(logo);
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 0 24px;
+    z-index: 200;
+  }
+
+  .menu-btn {
+    border: 1px solid #999;
+    background-color: transparent;
+  }
+
+  .primary-nav {
+    @include reset-list-style;
+  }
+
+  .social-nav {
+    @include reset-list-style;
+  }
+
+  .menu-btn {
+    float: right;
+  }
+
+
+}

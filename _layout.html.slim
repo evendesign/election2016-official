@@ -1,0 +1,17 @@
+doctype 5
+html lang="zh-TW"
+  head
+    = render "/layout_head"
+    = render "/layout_siteinfo"
+    = render "/layout_og"
+  body
+    = render "/partial/header"
+    .page
+      .page-inner
+        = yield
+        .page-bottom-illustrator
+      = render "/partial/site-info"
+    = render "/partial/footer"
+
+    = render "/layout_foot"
+    = render "/layout_livereload"

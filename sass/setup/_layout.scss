@@ -1,0 +1,54 @@
+// ---- susy setting ----
+// basic for susy
+$total-columns  : 6;
+$column-width   : 72px;
+$gutter-width   : 24px;
+$grid-padding   : $gutter-width;
+
+// add media
+$phone          : $total-columns;
+$pad            : 640px 8;
+$desktop        : 1025px 12;
+$wide-desktop        : 16;
+
+// page-container
+$page-container: ".container";
+
+// debug layout
+// @import "layout-debug";
+
+// ---- container setting ----
+
+body {
+  background-color: #183840;
+  position: relative;
+}
+
+.page {
+  overflow-x: hidden;
+}
+
+.page-inner {
+  background-color: white;
+}
+
+#{$page-container} {
+
+  $container-style: fluid;
+  @include container;
+
+  @include at-breakpoint($pad) {
+    $grid-padding   : $gutter-width * 2;
+    @include container;
+  }
+
+  @include at-breakpoint($desktop) {
+    $container-style: magic;
+    @include set-container-width;
+  }
+
+  @include at-breakpoint($wide-desktop) {
+    @include set-container-width;
+  }
+
+}

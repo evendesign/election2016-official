@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
+  border-bottom: 1px solid #ddd;
 
   .header-inner {
     max-width: 1512px;
@@ -178,7 +179,7 @@
     }
     a {
       display: block;
-      color: white;
+      color: #ccc;
       &:hover {
         text-decoration: none;
       }
@@ -234,6 +235,7 @@
       width: 196px;
     }
     .social-nav {
+      font-size: 22px;
       padding: 24px 0;
       li {
         display: inline-block;
@@ -243,13 +245,25 @@
   }
 
   @include at-breakpoint($desktop) {
-    position: relative;
+    position: static;
+
+    .header-inner {
+      position: relative;
+    }
     .menu-btn {
       display: none;
+    }
+    .logo {
+      position: relative;
+      z-index: 300;
     }
     .menu {
       display: block;
       position: absolute;
+      left: 0px;
+      right: 0px;
+      padding: 0 24px;
+      overflow: visible;
       bottom: auto;
       visibility: visible;
       @include opacity(1);
@@ -278,13 +292,62 @@
       }
       a {
         @include adjust-font-size-to(16px);
-        color: #444;
+        color: black;
         margin: 0 12px;
+        &:hover {
+          color: #50B584;
+        }
       }
     }
-  }
-  .menu-bottom {
-    display: none;
+    .menu-bottom {
+      border-top: none;
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      @include pie-clearfix;
+    }
+    .media-collection {
+      margin: 0;
+      float: left;
+      color: #999;
+      &:hover {
+        color: #444;
+      }
+    }
+    .search {
+      @include adjust-font-size-to(16px);
+      float: left;
+      margin: 0 24px;
+    }
+    .search-icon {
+      cursor: pointer;
+      display: inline-block;
+      color: #999;
+      &:hover {
+        color: #444;
+      }
+    }
+    .search-input {
+      display: none;
+    }
+    .social-nav {
+      border-top: none;
+      float: left;
+      font-size: 16px;
+      padding: 0;
+      li {
+        margin: 0 3px;
+        float: left;
+      }
+      a {
+        color: #999;
+        font-size: 16px;
+        line-height: 1.5;
+        &:hover {
+          color: #444;
+        }
+      }
+    }
   }
 
 }

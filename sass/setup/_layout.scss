@@ -25,11 +25,11 @@ body {
 }
 
 .page {
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 .page-inner {
-  background-color: white;
+  background-color: #f1f1f1;
 }
 
 #{$page-container} {
@@ -38,7 +38,6 @@ body {
   @include container;
 
   @include at-breakpoint($pad) {
-    $grid-padding   : $gutter-width * 2;
     @include container;
   }
 
@@ -51,4 +50,8 @@ body {
     @include set-container-width;
   }
 
+}
+
+.content {
+  min-height: 600px;
 }

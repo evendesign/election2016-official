@@ -382,7 +382,7 @@ body { background-color: #183840; position: relative; }
 .block_black-bg .block-subtitle { color: #999; }
 .block_black-bg .block-text { color: #ddd; }
 
-.header { background-color: white; position: absolute; top: 0; left: 0; right: 0; }
+.header { background-color: white; position: absolute; top: 0; left: 0; right: 0; border-bottom: 1px solid #ddd; }
 .header:after { content: ""; display: table; clear: both; }
 .header .header-inner { max-width: 1512px; margin: 0 auto; padding: 0 24px; }
 .header .logo { float: left; padding: 6px 0 6px; }
@@ -419,7 +419,7 @@ body { background-color: #183840; position: relative; }
 .header .search-input:focus { outline: none; }
 .header .social-nav { margin: 0; padding: 0; border: 0; list-style: none; padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.2); }
 .header .social-nav li { display: inline-block; margin: 0 12px; }
-.header .social-nav a { display: block; color: white; }
+.header .social-nav a { display: block; color: #ccc; }
 .header .social-nav a:hover { text-decoration: none; }
 @media (min-width: 640px) { .header .menu { font-size: 18px; line-height: 24px; }
   .header .menu-inner { max-width: 400px; margin: 0 auto; padding-top: 72px; }
@@ -431,19 +431,33 @@ body { background-color: #183840; position: relative; }
   .header .media-collection { display: block; margin: 36px 0 24px; font-size: 15px; line-height: 24px; }
   .header .search { margin-bottom: 36px; }
   .header .search-input { border: none; background-color: rgba(255, 255, 255, 0.25); -webkit-border-radius: 24px; -moz-border-radius: 24px; -ms-border-radius: 24px; -o-border-radius: 24px; border-radius: 24px; padding: 6px 12px; font-size: 15px; line-height: 24px; width: 196px; }
-  .header .social-nav { padding: 24px 0; }
+  .header .social-nav { font-size: 22px; padding: 24px 0; }
   .header .social-nav li { display: inline-block; margin: 0 24px; } }
-@media (min-width: 1025px) { .header { position: relative; }
+@media (min-width: 1025px) { .header { position: static; }
+  .header .header-inner { position: relative; }
   .header .menu-btn { display: none; }
-  .header .menu { display: block; position: absolute; bottom: auto; visibility: visible; opacity: 1; background-color: transparent; -webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; }
+  .header .logo { position: relative; z-index: 300; }
+  .header .menu { display: block; position: absolute; left: 0px; right: 0px; padding: 0 24px; overflow: visible; bottom: auto; visibility: visible; opacity: 1; background-color: transparent; -webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; }
   .header .menu-inner { height: auto; overflow: visible; max-width: none; padding: 0; }
   .header .menu-logo { display: none; }
   .header .primary-nav { display: inline-block; margin-bottom: 0px; padding-top: 18px; }
   .header .primary-nav:after { content: ""; display: table; clear: both; }
   .header .primary-nav li { float: left; }
   .header .primary-nav li:before { display: none; }
-  .header .primary-nav a { font-size: 16px; line-height: 24px; color: #444; margin: 0 12px; } }
-.header .menu-bottom { display: none; }
+  .header .primary-nav a { font-size: 16px; line-height: 24px; color: black; margin: 0 12px; }
+  .header .primary-nav a:hover { color: #50B584; }
+  .header .menu-bottom { border-top: none; position: absolute; top: 18px; right: 24px; }
+  .header .menu-bottom:after { content: ""; display: table; clear: both; }
+  .header .media-collection { margin: 0; float: left; color: #999; }
+  .header .media-collection:hover { color: #444; }
+  .header .search { font-size: 16px; line-height: 24px; float: left; margin: 0 24px; }
+  .header .search-icon { cursor: pointer; display: inline-block; color: #999; }
+  .header .search-icon:hover { color: #444; }
+  .header .search-input { display: none; }
+  .header .social-nav { border-top: none; float: left; font-size: 16px; padding: 0; }
+  .header .social-nav li { margin: 0 3px; float: left; }
+  .header .social-nav a { color: #999; font-size: 16px; line-height: 1.5; }
+  .header .social-nav a:hover { color: #444; } }
 
 .is-open-menu { height: 100%; }
 .is-open-menu body, .is-open-menu .page-outer { height: 100%; }

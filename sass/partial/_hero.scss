@@ -1,0 +1,184 @@
+.hero {
+  @include pie-clearfix;
+  margin: 0 auto;
+  .hero-block-wrap { padding-bottom: 6px; }
+  .hero-wrap-right {
+    .hero-block-wrap {
+      @include box-sizing(border-box);
+      width: 100%;
+    }
+  }
+  .hero-wrap-inner {
+    @include pie-clearfix;
+    .hero-block-wrap {
+      @include box-sizing(border-box);
+      float: left;
+      width: 50%;
+      padding-bottom: 6px;
+    }
+    .hero-block-wrap + .hero-block-wrap { padding-left: 6px; }
+  }
+  .hero-block {
+    overflow: hidden;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      @include background(linear-gradient(135deg, rgba(#50B584, .7) 0%, rgba(#A7CD6B, .7) 100%));
+    }
+  }
+  .hero-block.large {
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-color: $color-gray-light;
+  }
+  .hero-block.small {
+    display: block;
+    width: 100%;
+    height: 200px;
+    background-color: $color-gray-light;
+  }
+  .hero-block.medium {
+    display: block;
+    width: 100%;
+    height: 200px;
+    background-color: $color-gray-light;
+  }
+
+  .hero-block-title {
+    @include box-sizing(border-box);
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    color: white;
+    .title {
+      position: relative;
+      @include adjust-font-size-to(24px, 1.35);
+      font-weight: bold;
+    }
+    .description {
+      position: relative;
+      display: none;
+    }
+  }
+
+  @include at-breakpoint($pad) {
+    height: 560px;
+    .hero-block-wrap {
+      height: 100%;
+      padding-bottom: 0;
+    }
+    .hero-wrap-left {
+      @include box-sizing(border-box);
+      float: left;
+      width: 40%;
+      height: 100%;
+    }
+    .hero-wrap-right {
+      @include box-sizing(border-box);
+      float: right;
+      width: 60%;
+      height: 100%;
+      .hero-block-wrap, .hero-block-wrap + .hero-block-wrap { padding-left: 12px; }
+    }
+    .hero-wrap-inner {
+      height: 50%;
+      .hero-block-wrap { padding-bottom: 12px; }
+    }
+    .hero-block {
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        right: -160px;
+        width: 290px;
+        height: 290px;
+        background: url("/images/blur-ball-small.png") no-repeat;
+        opacity: .9;
+      }
+      &:after { display: none; }
+    }
+    .hero-block.small { height: 100%; }
+    .hero-block.medium { height: 50%; }
+    .hero-block.large { height: 100%; }
+    .hero-block-title {
+      max-width: 300px;
+      padding: 18px;
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: -250px;
+        left: -250px;
+        width: 520px;
+        height: 520px;
+        background: url("/images/blur-ball-large.png") no-repeat;
+        opacity: .9;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        bottom: -200px;
+        left: 30px;
+        width: 370px;
+        height: 370px;
+        background: url("/images/blur-ball-medium.png") no-repeat;
+        opacity: .9;
+      }
+      .title {
+        z-index: 10;
+        @include trailer(.25);
+        @include adjust-font-size-to(24px, 1.35);
+      }
+      .description {
+        z-index: 10;
+        display: block;
+        @include adjust-font-size-to(15px);
+        font-weight: bold;
+      }
+    }
+  }
+  @include at-breakpoint($desktop) {
+    max-width: 1512px;
+    max-height: 900px;
+    min-height: 760px;
+    height: calc( 100vh - 60px );
+    .hero-block-title {
+      padding: 24px;
+      &:before {
+        bottom: -175px;
+        left: -200px;
+      }
+      &:after {
+        bottom: -160px;
+        left: 70px;
+      }
+      .title { @include adjust-font-size-to(28px, 1.5); }
+      .description {
+        max-height: 0;
+        opacity: 0;
+        @include transition(opacity .5s .25s, max-height .75s);
+      }
+    }
+    .hero-block:hover {
+      .hero-block-title {
+        .description {
+          max-height: 120px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

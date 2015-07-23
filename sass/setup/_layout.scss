@@ -9,7 +9,7 @@ $grid-padding   : $gutter-width;
 $phone          : $total-columns;
 $pad            : 640px 8;
 $desktop        : 1025px 12;
-$wide-desktop        : 16;
+$wide-desktop   : 16;
 
 // page-container
 $page-container: ".container";
@@ -38,7 +38,7 @@ body {
   @include container;
 
   @include at-breakpoint($pad) {
-    $grid-padding   : $gutter-width * 2;
+    // $grid-padding   : $gutter-width * 2;
     @include container;
   }
 
@@ -50,5 +50,7 @@ body {
   @include at-breakpoint($wide-desktop) {
     @include set-container-width;
   }
+
+  &.thin { max-width: 1024px; }
 
 }

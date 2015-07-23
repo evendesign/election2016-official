@@ -1,0 +1,128 @@
+.post-list {
+  @include padding-leader(3);
+  @include padding-trailer(3);
+  background-color: #F7F7F7;
+}
+
+.post-item {
+  display: block;
+  @include pie-clearfix;
+  .post-image {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -24px;
+    padding-top: 75%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+  }
+  .post-content {
+    position: relative;
+    margin: -24px -12px 24px;
+    padding: 18px;
+    @include adjust-font-size-to(15px);
+    color: $color-black;
+    background-color: rgba(white, .9);
+  }
+  .post-title {
+    @include adjust-font-size-to(18px);
+    font-weight: bold;
+  }
+  .post-meta {
+    @include trailer(.5);
+    @include adjust-font-size-to(13px);
+    font-weight: bold;
+    .tag {
+      display: inline-block;
+      color: #55B36C;
+    }
+    .date {
+      display: inline-block;
+      &:before {
+        content: "/";
+      }
+    }
+  }
+  .post-readmore {
+    display: block;
+    @include leader(.5);
+    text-align: right;
+    font-weight: bold;
+    color: $link-color;
+    letter-spacing: 2px;
+  }
+  &:hover {
+    text-decoration: none;
+    .post-readmore { color: $link-color-hover }
+  }
+
+  @include at-breakpoint($pad) {
+    @include trailer(2);
+    .post-content { padding: 24px; }
+    .post-title { @include adjust-font-size-to(21px); }
+    .post-meta { @include adjust-font-size-to(15px); }
+    .post-readmore { @include leader(); }
+    &.left-content {
+      .post-image {
+        float: right;
+        width: 60%;
+        margin: 0;
+        padding-top: 40%
+      }
+      .post-content {
+        float: left;
+        width: 50%;
+        margin: -35% 0 0;
+      }
+    }
+    &.right-content {
+      .post-image {
+        float: left;
+        width: 60%;
+        margin: 0;
+        padding-top: 40%
+      }
+      .post-content {
+        float: right;
+        width: 50%;
+        margin: -35% 0 0;
+      }
+    }
+    &.center-content {
+      .post-image {
+        width: 100%;
+        margin: 0;
+        padding-top: 35%;
+      }
+      .post-content {
+        width: 80%;
+        margin: -10% auto 0;
+      }
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+    @include trailer(2);
+    .post-title { @include adjust-font-size-to(24px); }
+    &.left-content {
+      .post-image {
+        width: 60%;
+        padding-top: 30%
+      }
+      .post-content {
+        width: 45%;
+        margin: -22.5% 0 0;
+      }
+    }
+    &.right-content {
+      .post-image {
+        width: 60%;
+        padding-top: 30%
+      }
+      .post-content {
+        width: 45%;
+        margin: -22.5% 0 0;
+      }
+    }
+  }
+}

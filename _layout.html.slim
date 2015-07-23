@@ -5,13 +5,14 @@ html lang="zh-TW"
     = render "/layout_siteinfo"
     = render "/layout_og"
   body
-    .page
-      .page-inner
-        = render "/partial/header"
-        = yield
-        .page-bottom-illustrator
-      = render "/partial/site-info"
-    = render "/partial/footer"
+    .page-outer
+      .page
+        .page-inner
+          = render "/partial/header"
+          = yield
+          .page-bottom-illustrator
+        = render "/partial/site-info"
+      = render "/partial/footer"
 
     = render "/layout_foot"
     = render "/layout_livereload"

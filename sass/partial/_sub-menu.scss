@@ -1,0 +1,30 @@
+.sub-menu {
+  @include reset-box-model;
+  overflow: auto;
+  list-style: none;
+  text-align: center;
+  @include nowrap;
+  @include adjust-font-size-to(13px);
+  background-color: white;
+  li {
+    position: relative;
+    display: inline-block;
+    &.active:after {
+      content: "";
+      position: absolute;
+      bottom: 9px;
+      left: 50%;
+      margin-left: -1px;
+      border: 2px solid #50B584;
+      @include border-radius(50%);
+    }
+  }
+  a {
+    display: block;
+    padding: rhythm(.5);
+    color: $color-black;
+    text-decoration: none;
+    &:hover { color: $link-color-hover; }
+  }
+}
+

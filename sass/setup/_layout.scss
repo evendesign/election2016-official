@@ -24,6 +24,11 @@ body {
   position: relative;
 }
 
+.page-outer {
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
 .page {
   // overflow-x: hidden;
 }

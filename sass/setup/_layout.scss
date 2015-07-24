@@ -25,8 +25,13 @@ body {
 }
 
 .page-outer {
-  max-width: 1512px;
   margin: 0 auto;
+  max-width: 1512px;
+  @include transition(padding 0.5s);
+  @include at-breakpoint($wide-desktop) {
+    padding: 0 72px;
+  }
+
 }
 
 .page {

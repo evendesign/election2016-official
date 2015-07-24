@@ -8,6 +8,7 @@
   display: block;
   @include pie-clearfix;
   .post-image {
+    @include box-sizing(border-box);
     position: relative;
     overflow: hidden;
     margin: 0 -24px;
@@ -17,6 +18,7 @@
     @include background-size(cover);
   }
   .post-content {
+    @include box-sizing(border-box);
     position: relative;
     margin: -48px -12px 24px;
     padding: 18px;
@@ -56,7 +58,7 @@
     .post-readmore { color: $link-color-hover }
   }
 
-  @include at-breakpoint($pad) {
+  @include at-breakpoint(700px 8) {
     @include trailer(2);
     .post-content { padding: 24px; }
     .post-title { @include adjust-font-size-to(21px); }
@@ -95,7 +97,7 @@
         padding-top: 35%;
       }
       .post-content {
-        width: 80%;
+        width: 85%;
         margin: -10% auto 0;
       }
     }
@@ -103,6 +105,7 @@
 
   @include at-breakpoint($desktop) {
     @include trailer(2);
+    .post-content { padding: 36px; }
     .post-title { @include adjust-font-size-to(24px); }
     &.left-content {
       .post-image {
@@ -110,7 +113,6 @@
         padding-top: 30%
       }
       .post-content {
-        width: 45%;
         margin: -22.5% 0 0;
       }
     }
@@ -120,7 +122,6 @@
         padding-top: 30%
       }
       .post-content {
-        width: 45%;
         margin: -22.5% 0 0;
       }
     }

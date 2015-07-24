@@ -75,7 +75,7 @@
     }
   }
 
-  @include at-breakpoint($pad) {
+  @include at-breakpoint(700px 8) {
     height: 560px;
     .hero-block-wrap {
       height: 100%;
@@ -92,12 +92,9 @@
       float: right;
       width: 60%;
       height: 100%;
-      .hero-block-wrap, .hero-block-wrap + .hero-block-wrap { padding-left: 12px; }
+      .hero-block-wrap, .hero-block-wrap + .hero-block-wrap { padding-left: 6px; }
     }
-    .hero-wrap-inner {
-      height: 50%;
-      .hero-block-wrap { padding-bottom: 12px; }
-    }
+    .hero-wrap-inner { height: 50%; }
     .hero-block {
       &:before {
         content: "";
@@ -107,7 +104,8 @@
         width: 290px;
         height: 290px;
         background: url("/images/blur-ball-small.png") no-repeat;
-        opacity: .9;
+        opacity: .5;
+        @include transition(opacity .25s);
       }
       &:after { display: none; }
     }
@@ -126,7 +124,8 @@
         width: 520px;
         height: 520px;
         background: url("/images/blur-ball-large.png") no-repeat;
-        opacity: .9;
+        opacity: .8;
+        @include transition(opacity .25s);
       }
       &:after {
         content: "";
@@ -137,7 +136,8 @@
         width: 370px;
         height: 370px;
         background: url("/images/blur-ball-medium.png") no-repeat;
-        opacity: .9;
+        opacity: .8;
+        @include transition(opacity .25s);
       }
       .title {
         z-index: 10;
@@ -170,13 +170,17 @@
       }
       .title { @include adjust-font-size-to(28px, 1.5); }
       .description {
+        overflow: hidden;
         max-height: 0;
         opacity: 0;
         @include transition(opacity .5s .25s, max-height .75s);
       }
     }
     .hero-block:hover {
+      &:before { opacity: .95; }
       .hero-block-title {
+        &:before { opacity: .95; }
+        &:after { opacity: .95; }
         .description {
           max-height: 120px;
           opacity: 1;

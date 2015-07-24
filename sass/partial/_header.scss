@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #50B584;
+  border-bottom: 1px solid #ddd;
 
   .header-inner {
     max-width: 1512px;
@@ -88,7 +88,6 @@
     visibility:hidden;
     opacity:0;
     @include transition(visibility 0s 0.5s, opacity 0.5s);
-    overflow: auto;
     text-align: center;
     background-color: #225253;
     @include adjust-font-size-to(15px);
@@ -139,6 +138,8 @@
 
   .menu-bottom {
     border-top: 1px solid rgba(white, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   .media-collection {
@@ -151,9 +152,16 @@
   }
   .search {
     @include trailer(1);
+    position: relative;
+    display: inline-block;
   }
   .search-icon {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 12px;
+    @include adjust-font-size-to(16px);
+    color: white;
   }
   .search-input {
     border: none;
@@ -192,8 +200,6 @@
 
     }
     .menu-inner {
-      max-width: 400px;
-      margin: 0 auto;
       @include padding-leader(3);
     }
     .menu-logo {
@@ -226,20 +232,24 @@
     .search {
       @include trailer(1.5);
     }
+    .search-icon {
+      @include adjust-font-size-to(20px);
+      top: 6px;
+    }
     .search-input {
       border: none;
-      background-color: rgba(white, 0.25);
       @include border-radius(24px);
       padding: 6px 12px;
       @include adjust-font-size-to(15px);
       width: 196px;
     }
     .social-nav {
-      font-size: 22px;
       padding: 24px 0;
       li {
-        display: inline-block;
         margin: 0 24px;
+      }
+      a {
+        @include adjust-font-size-to(22px);
       }
     }
   }
@@ -315,20 +325,42 @@
       }
     }
     .search {
-      @include adjust-font-size-to(16px);
       float: left;
       margin: 0 24px;
+      display: block;
     }
     .search-icon {
+      position: relative;
+      top: 0;
+      left: 0;
       cursor: pointer;
-      display: inline-block;
+      display: block;
       color: #999;
+      z-index: 110;
+      @include adjust-font-size-to(16px);
       &:hover {
         color: #444;
       }
     }
     .search-input {
-      display: none;
+      position: absolute;
+      top: -3px;
+      right: -14px;
+      z-index: 100;
+      background-color: #ddd;
+      padding: 3px 24px;
+      text-align: left;
+      width: 0px;
+      color: #444;
+      @include input-placeholder-color(#444);
+      opacity:0;
+      @include transition(opacity 0.3s, width 0.5s);
+    }
+    .search:hover {
+      .search-input {
+        width: 144px;
+        opacity:1;
+      }
     }
     .social-nav {
       border-top: none;
@@ -341,8 +373,7 @@
       }
       a {
         color: #999;
-        font-size: 16px;
-        line-height: 1.5;
+        @include adjust-font-size-to(16px);
         &:hover {
           color: #444;
         }

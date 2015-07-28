@@ -58,7 +58,7 @@
   .hero-block-title {
     @include box-sizing(border-box);
     position: absolute;
-    z-index: 10;
+    z-index: 15;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -105,9 +105,20 @@
         height: 290px;
         background: url("/images/blur-ball-small.png") no-repeat;
         opacity: .5;
-        @include transition(opacity .25s);
+        @include transition(opacity 1s);
       }
-      &:after { display: none; }
+      &:after {
+        z-index: 10;
+        top: auto;
+        left: 50px;
+        right: auto;
+        bottom: -135px;
+        width: 270px;
+        height: 270px;
+        opacity: 1;
+        background: url("/images/blur-ball-hover.png") no-repeat;
+        @include transition(opacity 1s .5s, transform 1s);
+      }
     }
     .hero-block.small { height: 100%; }
     .hero-block.medium { height: 50%; }
@@ -124,20 +135,18 @@
         width: 520px;
         height: 520px;
         background: url("/images/blur-ball-large.png") no-repeat;
-        opacity: .8;
-        @include transition(opacity .25s);
+        opacity: .7;
       }
       &:after {
         content: "";
         position: absolute;
         z-index: 2;
         bottom: -200px;
-        left: 30px;
+        left: 50px;
         width: 370px;
         height: 370px;
         background: url("/images/blur-ball-medium.png") no-repeat;
-        opacity: .8;
-        @include transition(opacity .25s);
+        opacity: .7;
       }
       .title {
         z-index: 10;
@@ -161,26 +170,39 @@
     .hero-block-title {
       padding: 24px;
       &:before {
-        bottom: -175px;
-        left: -200px;
+        bottom: -300px;
+        left: -220px;
+        @include transition(opacity 1s, transform 5s);
       }
       &:after {
-        bottom: -160px;
+        bottom: -230px;
         left: 70px;
+        @include transition(opacity 1s, transform 1s);
       }
       .title { @include adjust-font-size-to(28px, 1.5); }
       .description {
-        overflow: hidden;
         max-height: 0;
         opacity: 0;
-        @include transition(opacity .5s .25s, max-height .75s);
+        @include transition(opacity 1s, max-height 1s ease-out);
       }
     }
     .hero-block:hover {
       &:before { opacity: .95; }
+      &:after {
+        opacity: 0;
+        @include scale(5.0);
+      }
       .hero-block-title {
-        &:before { opacity: .95; }
-        &:after { opacity: .95; }
+        &:before {
+          opacity: .95;
+          @include scale(1.6);
+        }
+        &:after {
+          // bottom: -170px;
+          // left: 100px;
+          opacity: .95;
+          @include scale(1.6);
+        }
         .description {
           max-height: 120px;
           opacity: 1;

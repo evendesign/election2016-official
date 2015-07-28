@@ -66,6 +66,21 @@ $('.menu-btn').on('click', function () {
   $('.menu-btn').toggleClass('is-open-menu');
 });
 
+if ( $('.homepage').length != 0 ) {
+  function sticky_active(targetClass, offsetAmount) {
+    var target_class = $('.'+targetClass);
+    var waypoints = new Waypoint.Sticky({
+      element: target_class,
+      stuckClass: 'sticky',
+      offset: offsetAmount,
+      wrapper:'<div class="'+targetClass+'-sticky-wrapper" />'
+    })
+  }
+
+  sticky_active('header','0');
+  sticky_active('sub-menu','62px');
+}
+
 // hack destop resize to mobile menu fade-in animation
 $(window).resize(function() {
   var viewport_width = $(window).width();
@@ -75,3 +90,7 @@ $(window).resize(function() {
     });
   }
 });
+
+
+
+

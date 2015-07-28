@@ -1,0 +1,43 @@
+.homepage {
+
+  .header-sticky-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  @include at-breakpoint($desktop) {
+    .header-sticky-wrapper {
+      position: static;
+    }
+    .header {
+      position: static;
+    }
+    .sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      max-width: 1512px;
+      width: 100%;
+      margin: 0 auto;
+      @include transition(width .5s);
+    }
+    .sub-menu.sticky {
+      margin-top: 61px;
+      background-color: rgba(white, .9);
+    }
+  }
+
+  @include at-breakpoint($wide-desktop) {
+    .header-inner {
+      width: 100%;
+    }
+    .sticky {
+      width: 90%;
+    }
+  }
+
+}

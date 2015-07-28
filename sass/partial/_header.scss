@@ -1,16 +1,15 @@
 .header {
-  @include pie-clearfix;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  border-bottom: 1px solid #ddd;
+  // @include pie-clearfix;
+  // background-color: white;
+  // border-bottom: 1px solid #ddd;
 
   .header-inner {
+    @include pie-clearfix;
     max-width: 1512px;
     margin: 0 auto;
     padding: 0 24px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
   }
 
   .logo {
@@ -255,10 +254,18 @@
   }
 
   @include at-breakpoint($desktop) {
-    position: static;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 300;
+    margin: 0 auto;
 
     .header-inner {
+      @include box-sizing(border-box);
       position: relative;
+      width: 100%;
+      @include transition(width .5s);
     }
     .menu-btn {
       display: none;
@@ -378,6 +385,12 @@
           color: #444;
         }
       }
+    }
+  }
+
+  @include at-breakpoint($wide-desktop) {
+    .header-inner {
+      width: 90%;
     }
   }
 

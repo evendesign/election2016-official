@@ -1,0 +1,19 @@
+.article {
+
+  img {
+    width: 100%;
+    @include trailer(1);
+  }
+
+
+  @include at-breakpoint($pad) {
+    img {
+      @include trailer(1.25);
+    }
+    p {
+      @include adjust-font-size-to(18px, 1.25);
+      @include trailer(1.25);
+    }
+  }
+
+}

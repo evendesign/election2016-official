@@ -1,0 +1,110 @@
+.post {
+
+  @include pie-clearfix;
+
+  .post-header {
+    padding: rhythm(1) 0 rhythm(1);
+  }
+
+  .post-title {
+    @include trailer(0.35);
+    @include adjust-font-size-to(24px, 1.25);
+    color: black;
+  }
+
+  .post-meta {
+    @include pie-clearfix;
+    @include adjust-font-size-to(13px, 3/4);
+  }
+
+  .post-date {
+    float: left;
+    margin-right: 12px;
+    color: #999;
+  }
+
+  .post-tag-title {
+    float: left;
+    color: #999;
+  }
+
+  .post-tag {
+    float: left;
+    margin-right: 6px;
+    color: #999;
+    &:hover {
+      color: #444;
+      text-decoration: none;
+    }
+    &:after {
+      content: ',';
+      color: #999;
+    }
+    &:last-child:after {
+      display: none;
+    }
+  }
+
+  .post-footer {
+    @include leader(1.5);
+    @include padding-trailer(1.5);
+  }
+
+  .post-share {
+    text-align: center;
+    @include trailer(1.5);
+  }
+
+  .post-share-title {
+    display: inline-block;
+    @include adjust-font-size-to(15px);
+    margin-right: 6px;
+  }
+  .post-share-btn {
+    @include adjust-font-size-to(18px);
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 6px;
+    color: #999;
+    &.icon-line {
+      margin-left: 3px;
+    }
+    &:hover {
+      color: #444;
+      text-decoration: none;
+    }
+  }
+  .post-fb-like {
+    display: block;
+    margin: 0 auto;
+    @include leader(0.5);
+  }
+
+  @include at-breakpoint($pad) {
+    .post-header {
+      padding: rhythm(2) 0 rhythm(2);
+    }
+    .post-title {
+      margin: rhythm(0.25) 0 rhythm(0.75);
+      @include adjust-font-size-to(28px, 1.25);
+    }
+    .post-meta {
+      @include adjust-font-size-to(16px);
+    }
+    .post-date {
+      margin-right: 24px;
+    }
+    .post-footer {
+      @include leader(2);
+      @include padding-trailer(2);
+    }
+    .post-share {
+      @include trailer(2);
+    }
+    .post-share-title {
+      @include adjust-font-size-to(16px);
+    }
+
+  }
+
+}

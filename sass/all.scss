@@ -12,6 +12,8 @@
 @import "component/slick";
 @import "component/card";
 @import "component/member";
+@import "component/breadcrumb";
+@import "component/pager";
 // @import "component/grid"; // guideline 專用
 @import "component/page-header";
 @import "component/block";
@@ -27,6 +29,10 @@
 @import "partial/scale-content";
 // @import "partial/demo-block"; // guideline 專用
 @import "partial/page-bottom-illustrator";
+@import "partial/post";
+@import "partial/article";
+@import "partial/comments";
+@import "partial/related-posts";
 
 // ==== page ====
 

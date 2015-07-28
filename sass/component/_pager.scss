@@ -1,0 +1,82 @@
+.pager {
+  @include pie-clearfix;
+  text-align: center;
+  position: relative;
+
+  .pager-item {
+    display: inline-block;
+    vertical-align: top;
+    @include adjust-font-size-to(15px);
+    @include transition(color .25s);
+    color: #666;
+    &:hover {
+      color: black;
+      text-decoration: none;
+    }
+    &.is-disabled {
+      color: $color-gray;
+      border-bottom: none;
+    }
+  }
+  .prev:before {
+    content: '';
+    display: block;
+    float: left;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12px 12px 0;
+    border-color: transparent #ddd transparent transparent;
+  }
+  .pager-item_return {
+    line-height: rhythm(1) - 2px;
+    border-bottom: 2px solid #ddd;
+    margin: 0 12px;
+  }
+  .next:before {
+    content: '';
+    display: block;
+    float: right;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0px 12px 12px;
+    border-color: transparent transparent transparent #ddd;
+  }
+
+  .pager-title {
+    display: block;
+    background-color: #ddd;
+  }
+
+  .prev .pager-title {
+    float: left;
+    padding: rhythm(0) rhythm(0.5) 0 rhythm(0.25);
+  }
+
+  .next .pager-title {
+    float: right;
+    padding: rhythm(0) rhythm(0.25) 0 rhythm(0.5);
+  }
+
+  @include at-breakpoint($pad) {
+    .pager-item {
+      @include adjust-font-size-to(16px, 1.25);
+    }
+    .prev:before {
+      border-width: 15px 12px 15px 0;
+    }
+    .pager-item_return {
+      line-height: rhythm(1.25) - 2px;
+    }
+    .next:before {
+      border-width: 15px 0px 15px 12px;
+    }
+    .prev .pager-title {
+      padding: rhythm(0) rhythm(0.75) 0 rhythm(0.5);
+    }
+    .next .pager-title {
+      padding: rhythm(0) rhythm(0.5) 0 rhythm(0.75);
+    }
+  }
+}

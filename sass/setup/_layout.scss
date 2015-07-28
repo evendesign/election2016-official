@@ -48,7 +48,6 @@ body {
   @include container;
 
   @include at-breakpoint($pad) {
-    // $grid-padding   : $gutter-width * 2;
     @include container;
   }
 
@@ -62,9 +61,16 @@ body {
   }
 
   &.thin { max-width: 1024px; }
+  &.single-article { max-width: 768px; }
+  @include at-breakpoint($pad) {
+    &.single-article { padding: 0 48px; }
+  }
 
 }
 
 .content {
-  min-height: 600px;
+  padding-top: 60px;
+  @include at-breakpoint($desktop) {
+    padding-top: 0;
+  }
 }

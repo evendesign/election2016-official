@@ -1,0 +1,38 @@
+.breadcrumb {
+  @include reset-list-style;
+
+  li {
+    display: inline-block;
+    &:after {
+      content: '>';
+      position: relative;
+      top: -1px;
+      display: inline-block;
+      @include adjust-font-size-to(13px, 3/4);
+      margin: 0 3px;
+      color: #999;
+    }
+  }
+
+  a {
+    display: inline-block;
+    @include adjust-font-size-to(13px, 3/4);
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @include at-breakpoint($pad) {
+    li {
+      &:after {
+        @include adjust-font-size-to(16px, 1);
+      }
+    }
+
+    a {
+      @include adjust-font-size-to(16px, 1);
+    }
+  }
+
+
+}

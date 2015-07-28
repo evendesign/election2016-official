@@ -1,0 +1,30 @@
+.comments {
+  @include trailer(1);
+
+  .comments-title {
+    @include trailer(0.5);
+    @include padding-trailer(0.35);
+    @include adjust-font-size-to(18px);
+    color: black;
+    border-bottom: 2px solid $color-primary;
+  }
+
+
+  // hack fb commets responsive full width
+  .fb_iframe_widget,
+  .fb_iframe_widget span,
+  .fb_iframe_widget span iframe[style] {
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+
+  @include at-breakpoint($pad) {
+    @include trailer(2);
+    .comments-title {
+      @include adjust-font-size-to(22px, 1);
+    }
+  }
+
+
+
+}

@@ -79,6 +79,20 @@ if ( $('.homepage').length != 0 ) {
 
   sticky_active('header','0');
   sticky_active('sub-menu','62px');
+
+  // hack sticky resize problem
+  $(window).resize(function() {
+    var viewport_width = $(window).width();
+    if ( viewport_width > desktop_breakpoint ) {
+      var headerOffset = $('.header').offset().top;
+      var windowScrolltop = $(window).scrollTop();
+      if ( windowScrolltop < headerOffset || headerOffset == 0 ) {
+        $('.sticky').removeClass('sticky');
+      } else if ( windowScrolltop > headerOffset) {
+        $('.header').addClass('sticky');
+      }
+    }
+  });
 }
 
 // hack destop resize to mobile menu fade-in animation

@@ -108,23 +108,24 @@
     background-image: none, url('/images/menu-logo.svg');
     background-position: center center;
     @include background-size(contain);
-    @include opacity(0.3);
+    @include opacity(0.5);
     margin: 0 auto rhythm(1);
   }
 
   .primary-nav {
     @include reset-list-style;
-    @include trailer(2);
+    @include trailer(1);
     li {
+      @include leader(1);
       position: relative;
-      &:before {
-        content: '';
-        display: block;
-        width: 24px;
-        height: 1px;
-        background-color: rgba(white, 0.25);
-        margin: 12px auto;
-      }
+      // &:before {
+      //   content: '';
+      //   display: block;
+      //   width: 24px;
+      //   height: 1px;
+      //   background-color: rgba(white, 0.25);
+      //   margin: 12px auto;
+      // }
     }
     a {
       display: block;
@@ -136,21 +137,20 @@
   }
 
   .menu-bottom {
-    border-top: 1px solid rgba(white, 0.2);
     max-width: 400px;
     margin: 0 auto;
   }
 
   .media-collection {
     display: block;
-    margin: rhythm(1) 0 rhythm(0.75);
+    margin: rhythm(0) 0 rhythm(1);
     color: #ccc;
     &:hover {
       text-decoration: none;
     }
   }
   .search {
-    @include trailer(1);
+    @include trailer(2);
     position: relative;
     display: inline-block;
   }
@@ -160,7 +160,7 @@
     top: 3px;
     left: 12px;
     @include adjust-font-size-to(16px);
-    color: white;
+    color: rgba(white, 0.6);
   }
   .search-input {
     border: none;
@@ -178,17 +178,20 @@
 
   .social-nav {
     @include reset-list-style;
-    padding: 12px 0;
+    padding: 24px 0;
     border-top: 1px solid rgba(white, 0.2);
     li {
       display: inline-block;
-      margin: 0 12px;
     }
     a {
+      margin: 0 12px;
       display: block;
       color: #ccc;
       &:hover {
         text-decoration: none;
+      }
+      &.icon-line {
+        margin-left: 6px;
       }
     }
   }
@@ -196,28 +199,20 @@
   @include at-breakpoint($pad) {
     .menu {
       @include adjust-font-size-to(18px);
-
     }
     .menu-inner {
       @include padding-leader(3);
     }
     .menu-logo {
-      @include trailer(3);
+      @include trailer(2);
       width: 132px;
       height: 132px;
     }
     .primary-nav {
-      @include trailer(3);
+      @include trailer(1.5);
       li {
+        @include leader(1.5);
         position: relative;
-        &:before {
-          content: '';
-          display: block;
-          width: 24px;
-          height: 1px;
-          background-color: rgba(white, 0.25);
-          margin: 24px auto;
-        }
       }
       a {
         display: block;
@@ -225,11 +220,11 @@
     }
     .media-collection {
       display: block;
-      margin: rhythm(1.5) 0 rhythm(1);
+      margin: rhythm(1.5) 0 rhythm(1.5);
       @include adjust-font-size-to(15px);
     }
     .search {
-      @include trailer(1.5);
+      @include trailer(2);
     }
     .search-icon {
       @include adjust-font-size-to(20px);
@@ -244,11 +239,12 @@
     }
     .social-nav {
       padding: 24px 0;
-      li {
-        margin: 0 24px;
-      }
       a {
         @include adjust-font-size-to(22px);
+        margin: 0 24px;
+        &.icon-line {
+          margin-left: 18px;
+        }
       }
     }
   }
@@ -302,6 +298,7 @@
       @include trailer(0);
       padding-top: 18px;
       li {
+        margin-top: 0;
         float: left;
         &:before {
           display: none;
@@ -333,7 +330,7 @@
     }
     .search {
       float: left;
-      margin: 0 24px;
+      margin: 0 18px;
       display: block;
     }
     .search-icon {
@@ -354,7 +351,7 @@
       top: -3px;
       right: -14px;
       z-index: 100;
-      background-color: #ddd;
+      background-color: #eee;
       padding: 3px 24px;
       text-align: left;
       width: 0px;
@@ -375,14 +372,17 @@
       font-size: 16px;
       padding: 0;
       li {
-        margin: 0 3px;
         float: left;
       }
       a {
+        margin: 0 6px;
         color: #999;
         @include adjust-font-size-to(16px);
         &:hover {
           color: #444;
+        }
+        &.icon-line {
+          margin-left: 3px;
         }
       }
     }

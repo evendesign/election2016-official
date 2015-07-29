@@ -1,20 +1,22 @@
 = render '/partial/header'
 .content
   .post
-    .container.single-article
-      .post-header
-        ul.breadcrumb
-          li.breadcrumb-item: a href="#" 最新消息
-          li.breadcrumb-item: a href="#" 故事
-        h2.post-title= zh_lorem_sentence
-        .post-meta
-          span.post-date 2015.7.23
-          span.post-tag-title 標籤：
-          - (rand(5) + 1).times do |i|
-            a.post-tag href="#"= zh_lorem_words(rand(5) + 1)
+    .post-header style="background-image: url('/images/post-header-image.png')"
+      ul.breadcrumb
+        li.breadcrumb-item: a href="#" 最新消息
+        li.breadcrumb-item: a href="#" 故事
+      h2.post-title 開創一個真正屬於人民的時代
+    .container.container_single-article
+      .post-meta
+        span.post-date 發布時間：2015/7/23
+        span.post-tag-title 標籤：
+        - (rand(5) + 1).times do |i|
+          a.post-tag href="#"= zh_lorem_words(rand(5) + 1)
       .post-content.article
+        - 3.times do |i|
+          p= zh_lorem_paragraphs(2)
         img src="http://placehold.it/900x600"
-        - 5.times do |i|
+        - 3.times do |i|
           p= zh_lorem_paragraphs(2)
       .post-footer
         .post-share
@@ -30,12 +32,12 @@
           a.pager-item.next href="#": .pager-title 下一篇
 
   .comments
-    .container.single-article
+    .container.container_single-article
       h3.comments-title 留言
       .fb-comments data-href="http://iing.tw/" data-width="100%" data-numposts="5"
 
   .related-posts
-    .container.single-article
+    .container.container_single-article
       h3.related-posts-title 相關文章
       .related-post-list
         a.related-post href="#"

@@ -1,20 +1,42 @@
 .post {
-
   @include pie-clearfix;
 
   .post-header {
-    padding: rhythm(1) 0 rhythm(1);
+    position: relative;
+    @include trailer(1);
+    padding: 35% 24px 12px;
+    text-align: center;
+    background-color: $color-gray;
+    background-position: center center;
+    @include background-size(cover);
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("/images/blur-ball-post-header.png");
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      @include background-size(cover);
+      opacity: .8;
+    }
   }
 
   .post-title {
+    position: relative;
+    z-index: 10;
     @include trailer(0.35);
     @include adjust-font-size-to(24px, 1.25);
-    color: black;
+    font-weight: bold;
+    color: white;
   }
 
   .post-meta {
     @include pie-clearfix;
-    @include adjust-font-size-to(13px, 3/4);
+    @include trailer(0.5);
+    @include adjust-font-size-to(15px, 5/6);
   }
 
   .post-date {
@@ -82,11 +104,13 @@
 
   @include at-breakpoint($pad) {
     .post-header {
-      padding: rhythm(2) 0 rhythm(2);
+      padding: 35% 24px 24px;
+      @include trailer(2);
+      &:before { opacity: .5; }
     }
     .post-title {
       margin: rhythm(0.25) 0 rhythm(0.75);
-      @include adjust-font-size-to(28px, 1.25);
+      @include adjust-font-size-to(32px, 1.5);
     }
     .post-meta {
       @include adjust-font-size-to(16px);
@@ -104,7 +128,12 @@
     .post-share-title {
       @include adjust-font-size-to(16px);
     }
+  }
 
+  @include at-breakpoint($desktop) {
+    .post-header {
+      @include trailer(3);
+    }
   }
 
 }

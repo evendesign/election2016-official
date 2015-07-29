@@ -62,9 +62,9 @@ body {
   }
 
   &.thin { max-width: 1024px; }
-  &.single-article { max-width: 768px; }
+  &.container_single-article { max-width: 768px; }
   @include at-breakpoint($pad) {
-    &.single-article { padding: 0 48px; }
+    &.container_single-article { padding: 0 48px; }
   }
 
 }

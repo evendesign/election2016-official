@@ -2,7 +2,7 @@
   @include pie-clearfix;
   padding-top: 60px;
   margin: 0 auto;
-  .hero-block-wrap { padding-bottom: 6px; }
+  .hero-block-wrap { padding-bottom: 2px; }
   .hero-wrap-right {
     .hero-block-wrap {
       @include box-sizing(border-box);
@@ -16,9 +16,9 @@
       @include box-sizing(border-box);
       float: left;
       width: 50%;
-      padding-bottom: 6px;
+      padding-bottom: 2px;
     }
-    .hero-block-wrap + .hero-block-wrap { padding-left: 6px; }
+    .hero-block-wrap + .hero-block-wrap { padding-left: 2px; }
   }
   .hero-block {
     overflow: hidden;
@@ -92,7 +92,7 @@
       float: right;
       width: 60%;
       height: 100%;
-      .hero-block-wrap, .hero-block-wrap + .hero-block-wrap { padding-left: 6px; }
+      .hero-block-wrap, .hero-block-wrap + .hero-block-wrap { padding-left: 2px; }
     }
     .hero-wrap-inner { height: 50%; }
     .hero-block {

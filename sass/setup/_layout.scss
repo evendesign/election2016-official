@@ -72,5 +72,8 @@ body {
 .content {
   @include at-breakpoint($desktop) {
     padding-top: 61px;
+    &.has-sub-menu {
+      padding-top: 110px;
+    }
   }
 }

@@ -24,6 +24,7 @@
 @import "partial/sub-menu";
 @import "partial/hero";
 @import "partial/post-list";
+@import "partial/content";
 @import "partial/site-info";
 @import "partial/footer";
 @import "partial/scale-content";
@@ -36,5 +37,6 @@
 
 // ==== page ====
 @import "page/homepage";
+@import "page/article-page";
 
 // ==== inbox ====

@@ -13,11 +13,7 @@
         - (rand(5) + 1).times do |i|
           a.post-tag href="#"= zh_lorem_words(rand(5) + 1)
       .post-content.article
-        - 3.times do |i|
-          p= zh_lorem_paragraphs(2)
-        img src="http://placehold.it/900x600"
-        - 3.times do |i|
-          p= zh_lorem_paragraphs(2)
+        = render "/partial/demo-article"
       .post-footer
         .post-share
           span.post-share-title 分享：

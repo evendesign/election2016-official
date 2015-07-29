@@ -1,18 +1,54 @@
 .article {
 
+  .lead {
+    @include leader(0);
+  }
+
+  h3 {
+    @include trailer(1);
+    @include adjust-font-size-to(21px, 1);
+    color: black;
+  }
+
+  h4 {
+    @include trailer(1);
+    @include adjust-font-size-to(16px);
+    color: black;
+    font-weight: bold;
+  }
+
+  b {
+    color: black;
+    font-weight: bold;
+  }
+
   img {
+    display: block;
     width: 100%;
     @include trailer(1);
   }
 
+  ul, ol {
+    @include leader(0);
+    @include adjust-font-size-to(18px, 1.25);
+  }
+
 
   @include at-breakpoint($pad) {
-    img {
-      @include trailer(1.25);
+
+    @include adjust-font-size-to(18px, 1.25);
+
+    h3 {
+      @include adjust-font-size-to(24px, 1.2);
+    }
+    h4 {
+      @include adjust-font-size-to(18px, 1.25);
     }
     p {
       @include adjust-font-size-to(18px, 1.25);
-      @include trailer(1.25);
+    }
+    ul, ol {
+      @include adjust-font-size-to(18px, 1.25);
     }
   }
 

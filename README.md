@@ -11,3 +11,4 @@
 - master - 主要產品線
 - deveolop - 主要開發線
 - feauture/xxx - 新功能/特色開發線
+- gh-pages - preview 專案用

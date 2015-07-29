@@ -1,7 +1,10 @@
 .post-list {
-  @include padding-leader(2);
-  @include padding-trailer(2);
+  @include padding-leader(1);
   background-color: #F7F7F7;
+  @include at-breakpoint($pad) {
+    @include padding-leader(2);
+    @include padding-trailer(2);
+  }
 }
 
 .post-item {

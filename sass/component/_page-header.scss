@@ -1,5 +1,6 @@
 .page-header {
-  padding: rhythm(4) 0;
+  position: relative;
+  padding: rhythm(3) 0;
   text-align: center;
   @include background-size(cover);
   background-position: center;
@@ -8,7 +9,7 @@
 }
 
 .page-header-title {
-  @include adjust-font-size-to(48px, 2);
+  @include adjust-font-size-to(28px, 1.25);
 }
 
 .page-header-text {
@@ -30,6 +31,44 @@
   }
 }
 
+.page-header_image_bg {
+  background-color: #444;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url('/images/mian-img-mask.png');
+    background-repeat: no-repeat;
+    @include background-size(cover);
+    background-position: center;
+  }
+  .page-header-title {
+    position: relative;
+    z-index: 100;
+    color: white;
+    font-weight: bold;
+  }
+  .page-header-text {
+    position: relative;
+    z-index: 100;
+    color: #ddd;
+  }
+}
+
 .page-header_large {
   padding: rhythm(8) 0;
+}
+
+
+@include at-breakpoint($pad) {
+  .page-header {
+    padding: rhythm(6) 0;
+  }
+  .page-header-title {
+    @include adjust-font-size-to(42px, 2);
+  }
+
 }

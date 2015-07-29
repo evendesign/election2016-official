@@ -1,0 +1,12 @@
+.article-page {
+  .page-header {
+    @include trailer(1);
+  }
+
+  @include at-breakpoint($pad) {
+    .page-header {
+      @include trailer(2);
+    }
+  }
+
+}

@@ -199,9 +199,6 @@ body { background-color: #183840; position: relative; }
 .container.single-article { max-width: 768px; }
 @media (min-width: 640px) { .container.single-article { padding: 0 48px; } }
 
-@media (min-width: 1025px) { .content { padding-top: 61px; }
-  .content.has-sub-menu { padding-top: 110px; } }
-
 [class^="icon-map-"], [class*=" icon-map-"] { display: block; text-indent: 110%; white-space: nowrap; overflow: hidden; background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; background-repeat: no-repeat; width: 128px; height: 128px; }
 
 .icon-map-changhua { background-image: url('/images/map/changhua.png?1438112289'); background-image: none, url('/images/map/changhua.svg?1438112289'); }
@@ -387,9 +384,9 @@ body { background-color: #183840; position: relative; }
   .pager .prev .pager-title { padding: 0px 18px 0 12px; }
   .pager .next .pager-title { padding: 0px 12px 0 18px; } }
 
-.page-header { padding: 96px 0; text-align: center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #f3f3f3; }
+.page-header { position: relative; padding: 72px 0; text-align: center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #f3f3f3; }
 
-.page-header-title { font-size: 48px; line-height: 48px; }
+.page-header-title { font-size: 28px; line-height: 30px; }
 
 .page-header-text { margin-top: 48px; font-size: 20px; line-height: 24px; max-width: 768px; margin-left: auto; margin-right: auto; color: #777; }
 
@@ -397,8 +394,15 @@ body { background-color: #183840; position: relative; }
 .page-header_black-bg .page-header-title { color: white; }
 .page-header_black-bg .page-header-text { color: #ddd; }
 
+.page-header_image_bg { background-color: #444; }
+.page-header_image_bg:after { content: ''; position: absolute; top: 0; right: 0; left: 0; bottom: 0; background-image: url("/images/mian-img-mask.png"); background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center; }
+.page-header_image_bg .page-header-title { position: relative; z-index: 100; color: white; font-weight: bold; }
+.page-header_image_bg .page-header-text { position: relative; z-index: 100; color: #ddd; }
+
 .page-header_large { padding: 192px 0; }
 
+@media (min-width: 640px) { .page-header { padding: 144px 0; }
+  .page-header-title { font-size: 42px; line-height: 48px; } }
 .block { padding: 96px 0; text-align: center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #f3f3f3; }
 
 .block-title { font-size: 36px; line-height: 36px; margin-bottom: 3px; }
@@ -594,6 +598,9 @@ body { background-color: #183840; position: relative; }
   .post-item.right-content .post-image { width: 60%; padding-top: 30%; }
   .post-item.right-content .post-content { margin: -22.5% 0 0; } }
 
+@media (min-width: 1025px) { .content { padding-top: 61px; }
+  .content.has-sub-menu { padding-top: 110px; } }
+
 .site-info { display: none; }
 @media (min-width: 1025px) { .site-info { padding: 24px 0; text-align: center; }
   .site-info .site-name { font-size: 15px; line-height: 16px; color: white; font-weight: bold; }
@@ -723,3 +730,6 @@ body { background-color: #183840; position: relative; }
   .homepage .sub-menu.sticky { margin-top: 61px; background-color: rgba(255, 255, 255, 0.9); } }
 @media (min-width: 1512px) { .homepage .header-inner, .homepage .sub-menu-inner { width: 100%; }
   .homepage .sticky { width: 90%; } }
+
+.article-page .page-header { margin-bottom: 24px; }
+@media (min-width: 640px) { .article-page .page-header { margin-bottom: 48px; } }

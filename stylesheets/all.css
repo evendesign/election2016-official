@@ -418,7 +418,7 @@ body { background-color: #183840; position: relative; }
 .block_black-bg .block-subtitle { color: #999; }
 .block_black-bg .block-text { color: #ddd; }
 
-.header .header-inner { max-width: 1512px; margin: 0 auto; padding: 0 24px; background-color: white; border-bottom: 1px solid #ddd; }
+.header .header-inner { max-width: 1512px; width: 100%; margin: 0 auto; padding: 0 24px; background-color: white; border-bottom: 1px solid #ddd; }
 .header .header-inner:after { content: ""; display: table; clear: both; }
 .header .logo { float: left; padding: 6px 0 6px; }
 .header .logo a { display: block; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo.png?1438112289'); background-repeat: no-repeat; background-position: 50% 50%; width: 162px; height: 48px; background-image: none, url('/images/logo.svg?1438112289'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
@@ -470,7 +470,7 @@ body { background-color: #183840; position: relative; }
   .header .social-nav a { font-size: 22px; line-height: 48px; margin: 0 24px; }
   .header .social-nav a.icon-line { margin-left: 18px; } }
 @media (min-width: 1025px) { .header { position: fixed; left: 0; top: 0; right: 0; z-index: 300; margin: 0 auto; }
-  .header .header-inner { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; width: 100%; -webkit-transition: width 0.5s; -moz-transition: width 0.5s; -o-transition: width 0.5s; transition: width 0.5s; }
+  .header .header-inner { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; -webkit-transition: width 0.5s; -moz-transition: width 0.5s; -o-transition: width 0.5s; transition: width 0.5s; }
   .header .menu-btn { display: none; }
   .header .logo { position: relative; z-index: 300; }
   .header .menu { display: block; position: absolute; left: 0px; right: 0px; padding: 0 24px; overflow: visible; bottom: auto; visibility: visible; opacity: 1; background-color: transparent; -webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none; }
@@ -510,7 +510,7 @@ body { background-color: #183840; position: relative; }
   .is-open-menu body, .is-open-menu .page-outer { height: auto; }
   .is-open-menu .page-outer { overflow: visible; } }
 
-.sub-menu .sub-menu-inner { background-color: white; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; max-width: 1512px; margin: 0 auto; }
+.sub-menu .sub-menu-inner { background-color: white; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; max-width: 1512px; margin: 0 auto; width: 100%; }
 .sub-menu .sub-menu-inner:after { content: ""; display: table; clear: both; }
 .sub-menu .sub-menu-list { margin: 0; padding: 0; border: 0; list-style: none; overflow: auto; list-style: none; text-align: center; white-space: nowrap; font-size: 13px; line-height: 24px; }
 .sub-menu li { position: relative; display: inline-block; }
@@ -518,7 +518,7 @@ body { background-color: #183840; position: relative; }
 .sub-menu a { display: block; padding: 12px; color: #444444; text-decoration: none; }
 .sub-menu a:hover { color: #3e946a; }
 @media (min-width: 1025px) { .sub-menu { position: fixed; top: 61px; left: 0; right: 0; z-index: 300; margin: 0 auto; }
-  .sub-menu .sub-menu-inner { -webkit-transition: width 0.5s; -moz-transition: width 0.5s; -o-transition: width 0.5s; transition: width 0.5s; width: 100%; } }
+  .sub-menu .sub-menu-inner { -webkit-transition: width 0.5s; -moz-transition: width 0.5s; -o-transition: width 0.5s; transition: width 0.5s; } }
 @media (min-width: 1512px) { .sub-menu .sub-menu-inner { width: 90%; } }
 
 .hero { padding-top: 60px; margin: 0 auto; }
@@ -723,6 +723,7 @@ body { background-color: #183840; position: relative; }
   .related-posts .related-post-category { font-size: 16px; line-height: 24px; } }
 
 .homepage .header-sticky-wrapper { position: absolute; top: 0; left: 0; right: 0; }
+.homepage .header-inner, .homepage .sub-menu-inner { width: 100%; }
 @media (min-width: 1025px) { .homepage .header-sticky-wrapper { position: static; }
   .homepage .header { position: static; }
   .homepage .sub-menu { position: static; }

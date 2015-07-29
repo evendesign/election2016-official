@@ -6,6 +6,9 @@
     left: 0;
     right: 0;
   }
+  .header-inner, .sub-menu-inner {
+    width: 100%;
+  }
 
   @include at-breakpoint($desktop) {
     .header-sticky-wrapper {
@@ -17,6 +20,7 @@
     .sub-menu {
       position: static;
     }
+
     .sticky {
       position: fixed;
       top: 0;

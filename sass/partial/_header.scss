@@ -6,6 +6,7 @@
   .header-inner {
     @include pie-clearfix;
     max-width: 1512px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 24px;
     background-color: white;
@@ -260,7 +261,6 @@
     .header-inner {
       @include box-sizing(border-box);
       position: relative;
-      width: 100%;
       @include transition(width .5s);
     }
     .menu-btn {

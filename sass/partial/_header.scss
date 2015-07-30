@@ -4,6 +4,7 @@
   // border-bottom: 1px solid #ddd;
 
   .header-inner {
+    @include box-sizing(border-box);
     @include pie-clearfix;
     max-width: 1512px;
     width: 100%;
@@ -258,7 +259,6 @@
     margin: 0 auto;
 
     .header-inner {
-      @include box-sizing(border-box);
       position: relative;
       @include transition(width .5s);
     }

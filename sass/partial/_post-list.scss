@@ -38,7 +38,7 @@
     @include trailer(.5);
     @include adjust-font-size-to(13px);
     font-weight: bold;
-    .tag {
+    .category {
       display: inline-block;
       color: #55B36C;
     }
@@ -68,7 +68,7 @@
     .post-title { @include adjust-font-size-to(21px); }
     .post-meta { @include adjust-font-size-to(15px); }
     .post-readmore { @include leader(); }
-    &.left-content {
+    &:nth-child(3n+1) {
       .post-image {
         float: right;
         width: 60%;
@@ -81,7 +81,7 @@
         margin: -35% 0 0;
       }
     }
-    &.right-content {
+    &:nth-child(3n+2) {
       .post-image {
         float: left;
         width: 60%;
@@ -94,7 +94,7 @@
         margin: -35% 0 0;
       }
     }
-    &.center-content {
+    &:nth-child(3n+3) {
       .post-image {
         width: 100%;
         margin: 0;
@@ -111,7 +111,7 @@
     @include trailer(2);
     .post-content { padding: 36px; }
     .post-title { @include adjust-font-size-to(24px); }
-    &.left-content {
+    &:nth-child(3n+1) {
       .post-image {
         width: 60%;
         padding-top: 30%
@@ -120,7 +120,7 @@
         margin: -22.5% 0 0;
       }
     }
-    &.right-content {
+    &:nth-child(3n+2) {
       .post-image {
         width: 60%;
         padding-top: 30%

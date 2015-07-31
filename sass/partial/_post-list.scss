@@ -46,6 +46,7 @@
       display: inline-block;
       &:before {
         content: "/";
+        margin: 0 6px;
       }
     }
   }
@@ -114,7 +115,7 @@
     @include trailer(2);
     .post-content { padding: 36px; }
     .post-title {
-      @include adjust-font-size-to(24px, 1.2);
+      @include adjust-font-size-to(24px, 1.25);
     }
     &:nth-child(3n+1) {
       .post-image {

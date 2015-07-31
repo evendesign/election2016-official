@@ -65,7 +65,10 @@
   @include at-breakpoint(700px 8) {
     @include trailer(2);
     .post-content { padding: 24px; }
-    .post-title { @include adjust-font-size-to(21px); }
+    .post-title {
+      @include adjust-font-size-to(21px, 1);
+      @include trailer(0.5);
+    }
     .post-meta { @include adjust-font-size-to(15px); }
     .post-readmore { @include leader(); }
     &:nth-child(3n+1) {
@@ -110,7 +113,9 @@
   @include at-breakpoint($desktop) {
     @include trailer(2);
     .post-content { padding: 36px; }
-    .post-title { @include adjust-font-size-to(24px); }
+    .post-title {
+      @include adjust-font-size-to(24px, 1.2);
+    }
     &:nth-child(3n+1) {
       .post-image {
         width: 60%;

@@ -1,7 +1,7 @@
 .sub-menu {
 
   .sub-menu-inner {
-    background-color: white;
+    background-color: rgba(white, 0.7);
     @include pie-clearfix;
     @include box-sizing(border-box);
     max-width: 1512px;

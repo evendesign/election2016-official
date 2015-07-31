@@ -512,7 +512,7 @@ body { background-color: #183840; position: relative; }
   .is-open-menu body, .is-open-menu .page-outer { height: auto; }
   .is-open-menu .page-outer { overflow: visible; } }
 
-.sub-menu .sub-menu-inner { background-color: white; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; max-width: 1512px; margin: 0 auto; width: 100%; }
+.sub-menu .sub-menu-inner { background-color: rgba(255, 255, 255, 0.7); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; max-width: 1512px; margin: 0 auto; width: 100%; }
 .sub-menu .sub-menu-inner:after { content: ""; display: table; clear: both; }
 .sub-menu .sub-menu-list { margin: 0; padding: 0; border: 0; list-style: none; overflow: auto; list-style: none; text-align: center; white-space: nowrap; font-size: 13px; line-height: 24px; }
 .sub-menu li { position: relative; display: inline-block; }

@@ -8,7 +8,7 @@
   }
 
   .header, .sub-menu {
-    width: 100%;
+    // width: 100%;
   }
 
   .header-inner, .sub-menu-inner {
@@ -35,7 +35,7 @@
       max-width: 1512px;
       width: 100%;
       margin: 0 auto;
-      @include transition(width .5s);
+      // @include transition(width .5s);
     }
     .sub-menu.sticky {
       margin-top: 61px;

@@ -2,14 +2,13 @@
 
 .content
   .post-list
-    .container.thin
+    .container.container_post-list
       - 6.times do |i|
-        a.post-item href="/post/single-post-page.html"
-          .post-image style="background-image: url('/images/post-1.jpg')"
-          .post-content
-            .post-title 集結正面力量，打造進步台灣
-            .post-meta
-              .category 政策
-              .date 2015.7.22
-            .post-summary 現在是個關鍵時刻，我們應該把社會的力量、改變的意志集中起來，帶領我們國家向前走，我們也希望，對於想要改變國家未來的人，有能力的人，有意志的人聚集起來，組織一個改變台灣的進步聯盟。
-            .post-readmore 閱讀更多
+        .post-item
+          a.post-image href="/post/single-post-page.html" style="background-image: url('http://placehold.it/300x200')"
+          .post-meta
+            a.category href="#" 政策
+            span.date 2015.7.22
+          a.post-content href="/post/single-post-page.html"
+            h3.post-title= zh_lorem_sentence
+            p.post-summary 民主進步黨主席暨總統參選人蔡英文今(25)日下午至桃園連跑兩場行程，除前往祥儀機器人夢工廠及桃園市婦女館參訪，傍晚則是出席在地希望生活節，與民...

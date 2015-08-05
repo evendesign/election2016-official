@@ -1,29 +1,121 @@
 .post-list {
-  @include padding-leader(1);
-  background-color: #F7F7F7;
-  @include at-breakpoint($pad) {
-    @include padding-leader(2);
-    @include padding-trailer(2);
-  }
-}
+  @include leader(1);
 
-.post-item {
-  display: block;
-  @include pie-clearfix;
+  .post-item {
+    display: block;
+    @include pie-clearfix;
+    @include trailer(1);
+  }
   .post-image {
-    @include box-sizing(border-box);
+    display: block;
+    float: left;
     position: relative;
     overflow: hidden;
-    margin: 0 -24px;
-    padding-top: 67%;
+    @include box-sizing(border-box);
     background-position: center center;
     background-repeat: no-repeat;
     @include background-size(cover);
+    width: 60px;
+    height: 0;
+    padding-top: 60px;
+    margin-right: 12px;
+  }
+  .post-meta {
+    display: block;
+    overflow: hidden;
+    @include adjust-font-size-to(13px, 5/6);
+    .category {
+      display: inline-block;
+      color: $color-primary;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .date {
+      display: inline-block;
+      color: #aaa;
+      &:before {
+        content: "|";
+        margin: 0 6px;
+      }
+    }
   }
   .post-content {
+    display: block;
+    overflow: hidden;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .post-title {
+    color: black;
+    font-weight: bold;
+    @include trailer(0);
+    @include adjust-font-size-to(15px, 5/6);
+  }
+  .post-summary {
+    display: none;
+    color: #444;
+    @include trailer(0);
+  }
+
+  @include at-breakpoint($pad) {
+    @include leader(1);
+    .post-image {
+      width: 225px;
+      padding-top: 150px;
+    }
+    .post-meta {
+      @include adjust-font-size-to(15px, 3/4);
+      @include trailer(0.125);
+    }
+    .post-title {
+      @include adjust-font-size-to(21px, 1);
+      @include trailer(0.5);
+    }
+    .post-summary {
+      color: #444;
+      display: block;
+      @include adjust-font-size-to(15px);
+    }
+  }
+
+  @include at-breakpoint(800px 8) {
+    @include leader(2);
+    .post-item {
+      @include trailer(2);
+    }
+    .post-image {
+      width: 270px;
+      padding-top: 180px;
+      margin-right: 24px;
+    }
+    .post-meta {
+      // @include adjust-font-size-to(16px, 3/4);
+      @include trailer(0.125);
+    }
+    .post-title {
+      @include adjust-font-size-to(24px, 1.25);
+      @include trailer(0.75);
+    }
+    .post-summary {
+      // @include adjust-font-size-to(16px);
+    }
+  }
+}
+
+.post-list.post-list_primary {
+  @include leader(0);
+  .post-image {
+    float: none;
+    margin: 0 -24px;
+    width: auto;
+    padding-top: 67%;
+  }
+  .post-content-wrap {
     @include box-sizing(border-box);
     position: relative;
-    margin: -48px -12px 24px;
+    margin: -48px -12px 0;
     padding: 18px;
     @include adjust-font-size-to(15px);
     color: $color-black;
@@ -33,22 +125,11 @@
   .post-title {
     @include adjust-font-size-to(18px);
     font-weight: bold;
+    @include trailer(0.5);
   }
-  .post-meta {
-    @include trailer(.5);
-    @include adjust-font-size-to(13px);
-    font-weight: bold;
-    .category {
-      display: inline-block;
-      color: #55B36C;
-    }
-    .date {
-      display: inline-block;
-      &:before {
-        content: "/";
-        margin: 0 6px;
-      }
-    }
+  .post-summary {
+    display: block;
+    @include adjust-font-size-to(15px);
   }
   .post-readmore {
     display: block;
@@ -63,77 +144,97 @@
     .post-readmore { color: $link-color-hover }
   }
 
-  @include at-breakpoint(700px 8) {
-    @include trailer(2);
-    .post-content { padding: 24px; }
-    .post-title {
-      @include adjust-font-size-to(21px, 1);
-      @include trailer(0.5);
-    }
-    .post-meta { @include adjust-font-size-to(15px); }
-    .post-readmore { @include leader(); }
-    &:nth-child(3n+1) {
+  @include at-breakpoint($pad) {
+
+    @include leader(1);
+
+    .post-content-wrap { padding: 24px; }
+    .post-item:nth-child(3n+1) {
       .post-image {
         float: right;
         width: 60%;
         margin: 0;
         padding-top: 40%
       }
-      .post-content {
+      .post-content-wrap {
         float: left;
         width: 50%;
         margin: -35% 0 0;
       }
     }
-    &:nth-child(3n+2) {
+    .post-item:nth-child(3n+2) {
       .post-image {
         float: left;
         width: 60%;
         margin: 0;
         padding-top: 40%
       }
-      .post-content {
+      .post-content-wrap {
         float: right;
         width: 50%;
         margin: -35% 0 0;
       }
     }
-    &:nth-child(3n+3) {
+    .post-item:nth-child(3n+3) {
       .post-image {
         width: 100%;
         margin: 0;
         padding-top: 50%;
       }
-      .post-content {
+      .post-content-wrap {
         width: 85%;
         margin: -10% auto 0;
       }
     }
   }
 
+  @include at-breakpoint(800px 8) {
+    .post-item {
+      @include trailer(1);
+    }
+    .post-title {
+      @include adjust-font-size-to(21px, 1.2);
+      @include trailer(0.5);
+    }
+    .post-readmore { @include leader(); }
+  }
+
   @include at-breakpoint($desktop) {
-    @include trailer(2);
-    .post-content { padding: 36px; }
+    @include leader(2);
+    .post-item {
+      @include trailer(2);
+    }
+    .post-content-wrap { padding: 36px; }
+    .post-meta {
+      // @include adjust-font-size-to(16px, 3/4);
+      @include trailer(0.125);
+    }
     .post-title {
       @include adjust-font-size-to(24px, 1.25);
     }
-    &:nth-child(3n+1) {
+    .post-summary {
+      // @include adjust-font-size-to(16px);
+    }
+    .post-item:nth-child(3n+1) {
       .post-image {
         width: 60%;
         padding-top: 30%
       }
-      .post-content {
+      .post-content-wrap {
         margin: -22.5% 0 0;
       }
     }
-    &:nth-child(3n+2) {
+    .post-item:nth-child(3n+2) {
       .post-image {
         width: 60%;
         padding-top: 30%
       }
-      .post-content {
+      .post-content-wrap {
         margin: -22.5% 0 0;
       }
     }
   }
+
+
 }
+

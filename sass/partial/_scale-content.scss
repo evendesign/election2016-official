@@ -24,6 +24,11 @@
       @include transition(opacity .3s);
     }
 
+    .header, .sub-menu {
+      @include opacity(1);
+      @include transition(opacity 0.75s 0.5s);
+    }
+
     .footer {
       padding: 0;
       position: absolute;
@@ -85,6 +90,9 @@
       .site-info {
         @include opacity(1);
         @include transition(opacity 1s 1s);
+      }
+      .header, .sub-menu {
+        @include opacity(0);
       }
       .footer {
         .site {

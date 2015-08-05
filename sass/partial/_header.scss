@@ -143,7 +143,7 @@
     margin: 0 auto;
   }
 
-  .media-collection {
+  .press-release {
     display: block;
     margin: rhythm(0) 0 rhythm(1);
     color: #ccc;
@@ -220,7 +220,7 @@
         display: block;
       }
     }
-    .media-collection {
+    .press-release {
       display: block;
       margin: rhythm(1.5) 0 rhythm(1.5);
     }
@@ -322,7 +322,7 @@
       right: 24px;
       @include pie-clearfix;
     }
-    .media-collection {
+    .press-release {
       @include adjust-font-size-to(15px);
       margin: 0;
       float: left;

@@ -1,29 +1,30 @@
 .post-list {
-  @include leader(1);
 
-  .post-item {
-    display: block;
-    @include pie-clearfix;
-    @include trailer(1);
+  .post-list-title {
+    margin: rhythm(1) 0;
+    @include adjust-font-size-to(24px, 1.25);
+    color: black;
   }
+
   .post-image {
     display: block;
-    float: left;
-    position: relative;
-    overflow: hidden;
     @include box-sizing(border-box);
     background-position: center center;
     background-repeat: no-repeat;
     @include background-size(cover);
-    width: 60px;
-    height: 0;
-    padding-top: 60px;
-    margin-right: 12px;
+    margin: 0 -24px 12px;
+    width: auto;
+    padding-top: 67%;
+
   }
+
+  .post-item {
+    @include pie-clearfix;
+  }
+
   .post-meta {
     display: block;
-    overflow: hidden;
-    @include adjust-font-size-to(13px, 5/6);
+    @include adjust-font-size-to(15px, 1);
     .category {
       display: inline-block;
       color: $color-primary;
@@ -40,78 +41,112 @@
       }
     }
   }
+
   .post-content {
     display: block;
-    overflow: hidden;
     &:hover {
       text-decoration: none;
     }
   }
+
   .post-title {
     color: black;
     font-weight: bold;
-    @include trailer(0);
-    @include adjust-font-size-to(15px, 5/6);
+    @include trailer(0.5);
+    @include adjust-font-size-to(18px, 1);
   }
   .post-summary {
-    display: none;
+    @include adjust-font-size-to(15px);
     color: #444;
     @include trailer(0);
   }
 
-  @include at-breakpoint($pad) {
+}
+
+.post-list_list-style {
+  .post-item {
     @include leader(1);
-    .post-image {
-      width: 225px;
-      padding-top: 150px;
+    display: block;
+    @include trailer(2);
+  }
+
+  @include at-breakpoint(480px) {
+
+    .container {
+      max-width: 768px;
     }
-    .post-meta {
-      @include adjust-font-size-to(15px, 3/4);
-      @include trailer(0.125);
+
+    .post-list-title {
+      &:after {
+        content: '';
+        display: block;
+        margin: 6px auto;
+        width: 100%;
+        height: 2px;
+        background-color: $color-primary;
+        background-image: linear-gradient(25deg, #50B5AB 0%, #E7E879 100%);
+      }
+    }
+
+    .post-item + .post-item {
+      border-top: 1px solid #e7e7e7;
+      @include padding-leader(1);
+    }
+    .post-image {
+      float: left;
+      margin: 0 12px 0 0;
+      width: 176px;
+      padding-top: 132px;
+    }
+    .post-content {
+      overflow: hidden;
     }
     .post-title {
-      @include adjust-font-size-to(21px, 1);
       @include trailer(0.5);
     }
     .post-summary {
       color: #444;
       display: block;
-      @include adjust-font-size-to(15px);
     }
   }
 
-  @include at-breakpoint(800px 8) {
-    @include leader(2);
+  @include at-breakpoint(768px 8) {
+    .post-list-title {
+      @include leader(2);
+      @include adjust-font-size-to(28px, 1.5);
+      font-weight: bold;
+    }
     .post-item {
-      @include trailer(2);
     }
     .post-image {
-      width: 270px;
-      padding-top: 180px;
+      width: 240px;
+      padding-top: 160px;
       margin-right: 24px;
     }
     .post-meta {
-      // @include adjust-font-size-to(16px, 3/4);
+      @include adjust-font-size-to(16px, 3/4);
       @include trailer(0.125);
     }
     .post-title {
-      @include adjust-font-size-to(24px, 1.25);
-      @include trailer(0.75);
+      @include adjust-font-size-to(22px, 1.2);
     }
     .post-summary {
-      // @include adjust-font-size-to(16px);
+      @include adjust-font-size-to(16px);
     }
   }
 }
 
-.post-list.post-list_primary {
-  @include leader(0);
-  .post-image {
-    float: none;
-    margin: 0 -24px;
-    width: auto;
-    padding-top: 67%;
+
+.post-list_block-style {
+
+  .container {
+    max-width: 1024px;
   }
+
+  .post-item {
+    @include trailer(1);
+  }
+
   .post-content-wrap {
     @include box-sizing(border-box);
     position: relative;
@@ -122,15 +157,6 @@
     background: white;
     @include background(linear-gradient(to bottom, rgba(white, .9) 0%, rgba(white, 1) 60%));
   }
-  .post-title {
-    @include adjust-font-size-to(18px);
-    font-weight: bold;
-    @include trailer(0.5);
-  }
-  .post-summary {
-    display: block;
-    @include adjust-font-size-to(15px);
-  }
   .post-readmore {
     display: block;
     @include leader(.5);
@@ -139,30 +165,26 @@
     color: $link-color;
     letter-spacing: 2px;
   }
-  &:hover {
-    text-decoration: none;
-    .post-readmore { color: $link-color-hover }
-  }
 
   @include at-breakpoint($pad) {
 
-    @include leader(1);
+    .post-list-title {
+      &:after {
+        content: '';
+        display: block;
+        margin: 6px auto;
+        width: 100%;
+        height: 2px;
+        background-image: linear-gradient(25deg, #50B5AB 0%, #E7E879 100%);
+      }
+    }
+
+    .post-item {
+      @include leader(1);
+    }
 
     .post-content-wrap { padding: 24px; }
-    .post-item:nth-child(3n+1) {
-      .post-image {
-        float: right;
-        width: 60%;
-        margin: 0;
-        padding-top: 40%
-      }
-      .post-content-wrap {
-        float: left;
-        width: 50%;
-        margin: -35% 0 0;
-      }
-    }
-    .post-item:nth-child(3n+2) {
+    .post-item:nth-child(odd) {
       .post-image {
         float: left;
         width: 60%;
@@ -175,7 +197,21 @@
         margin: -35% 0 0;
       }
     }
-    .post-item:nth-child(3n+3) {
+    .post-item:nth-child(even) {
+      .post-image {
+        float: right;
+        width: 60%;
+        margin: 0;
+        padding-top: 40%
+      }
+      .post-content-wrap {
+        float: left;
+        width: 50%;
+        margin: -35% 0 0;
+      }
+
+    }
+    .post-item.post-item_banner {
       .post-image {
         width: 100%;
         margin: 0;
@@ -188,34 +224,29 @@
     }
   }
 
-  @include at-breakpoint(800px 8) {
-    .post-item {
-      @include trailer(1);
+  @include at-breakpoint(840px 8) {
+    .post-list-title {
+      @include leader(2);
+      @include adjust-font-size-to(28px, 1.5);
+      font-weight: bold;
     }
-    .post-title {
-      @include adjust-font-size-to(21px, 1.2);
-      @include trailer(0.5);
-    }
-    .post-readmore { @include leader(); }
-  }
-
-  @include at-breakpoint($desktop) {
-    @include leader(2);
     .post-item {
+      @include leader(2);
       @include trailer(2);
     }
+
     .post-content-wrap { padding: 36px; }
     .post-meta {
-      // @include adjust-font-size-to(16px, 3/4);
-      @include trailer(0.125);
+      @include adjust-font-size-to(16px);
+      @include trailer(0.25);
     }
     .post-title {
       @include adjust-font-size-to(24px, 1.25);
     }
     .post-summary {
-      // @include adjust-font-size-to(16px);
+      @include adjust-font-size-to(16px, 1.15);
     }
-    .post-item:nth-child(3n+1) {
+    .post-item:nth-child(odd) {
       .post-image {
         width: 60%;
         padding-top: 30%
@@ -224,7 +255,7 @@
         margin: -22.5% 0 0;
       }
     }
-    .post-item:nth-child(3n+2) {
+    .post-item:nth-child(even) {
       .post-image {
         width: 60%;
         padding-top: 30%
@@ -232,6 +263,7 @@
       .post-content-wrap {
         margin: -22.5% 0 0;
       }
+
     }
   }
 

@@ -61,8 +61,6 @@ body {
     @include set-container-width;
   }
 
-  &.container_thin { max-width: 1024px; }
-  &.container_post-list { max-width: 768px; }
   &.container_single-article { max-width: 768px; }
   @include at-breakpoint($pad) {
     &.container_single-article { padding: 0 48px; }

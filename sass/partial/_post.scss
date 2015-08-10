@@ -4,9 +4,9 @@
   .post-header {
     position: relative;
     @include trailer(1);
-    padding: 35% 24px 12px;
+    padding: 35% 24px 24px;
     text-align: center;
-    background-color: $color-gray;
+    background-color: #eaeaea;
     background-position: center center;
     @include background-size(cover);
     &:before {
@@ -24,17 +24,44 @@
     }
   }
 
-  .post-title {
+  .post-header-inner {
     position: relative;
     z-index: 10;
-    @include trailer(0.35);
+  }
+
+  .post-category {
+    @include reset-list-style;
+    li {
+      display: inline-block;
+      margin: 0 3px;
+    }
+    a {
+      display: block;
+      @include adjust-font-size-to(15px, 3/4);
+      font-weight: bold;
+      color: #FEFF86;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .post-title {
+    @include trailer(0.25);
     @include adjust-font-size-to(24px, 1.25);
     font-weight: bold;
     color: white;
   }
 
+  .post-subtitle {
+    color: white;
+    @include adjust-font-size-to(13px, 3/4);
+    @include trailer(0);
+  }
+
   .post-meta {
     @include pie-clearfix;
+    @include leader(1);
     @include trailer(0.5);
     @include adjust-font-size-to(15px, 5/6);
   }
@@ -74,8 +101,15 @@
 
   .post-share {
     text-align: center;
-    @include trailer(1.5);
+    a.icon-facebook { color: #4863B3; }
+    a.icon-twitter { color: #4099FF; }
+    a.icon-plurk { color: #E14701; }
+    a.icon-line { color: #02B002; }
+    a:hover {
+      @include opacity(0.75);
+    }
   }
+
 
   .post-share-title {
     display: inline-block;
@@ -104,15 +138,24 @@
 
   @include at-breakpoint($pad) {
     .post-header {
-      padding: 35% 24px 24px;
+      padding: 35% 10% 24px;
       @include trailer(2);
-      &:before { opacity: .5; }
+    }
+    .post-category {
+      a {
+        display: block;
+        @include adjust-font-size-to(18px);
+      }
     }
     .post-title {
-      margin: rhythm(0.25) 0 rhythm(0.75);
+      margin: rhythm(0.25) 0 rhythm(0.5);
       @include adjust-font-size-to(32px, 1.5);
     }
+    .post-subtitle {
+      @include adjust-font-size-to(18px);
+    }
     .post-meta {
+      @include leader(2);
       @include adjust-font-size-to(16px);
     }
     .post-date {
@@ -122,17 +165,8 @@
       @include leader(2);
       @include padding-trailer(2);
     }
-    .post-share {
-      @include trailer(2);
-    }
     .post-share-title {
       @include adjust-font-size-to(16px);
-    }
-  }
-
-  @include at-breakpoint($desktop) {
-    .post-header {
-      @include trailer(3);
     }
   }
 

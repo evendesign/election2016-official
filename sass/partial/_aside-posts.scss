@@ -1,14 +1,16 @@
-.related-posts {
+.aside-posts {
+  @include trailer(1);
 
-  .related-posts-title {
+  .aside-posts-title {
     @include trailer(1);
     @include padding-trailer(0.35);
     @include adjust-font-size-to(18px);
     color: black;
     border-bottom: 2px solid $color-primary;
+    font-weight: bold;
   }
 
-  .related-post {
+  .aside-post {
     display: block;
     color: #444;
     @include trailer(1);
@@ -17,43 +19,63 @@
     }
   }
 
-  .related-post-img {
+  .aside-post-img {
     display: block;
     @include trailer(0.25);
     width: 100%;
   }
 
-  .related-post-title {
+  .aside-post-title {
     @include adjust-font-size-to(15px, 5/6);
     @include trailer(0);
+    color: #444;
   }
 
-  .related-post-category {
+  .aside-post-meta {
     display: block;
     @include adjust-font-size-to(15px, 5/6);
-    color: #999;
+    color: #aaa;
+    .post-category {
+      @include reset-list-style;
+      display: inline-block;
+    }
+    .post-category-item {
+      display: inline-block;
+      text-decoration: none;
+      &:after {
+        content: ",";
+        margin-right: 3px;
+      }
+      &:last-child:after {
+        content: "|";
+        margin: 0 6px;
+      }
+    }
+    .date {
+      display: inline-block;
+    }
   }
 
   @include at-breakpoint($pad) {
 
     @include trailer(2);
 
-    .related-posts-title {
+    .aside-posts-title {
       @include adjust-font-size-to(22px, 1);
     }
-    .related-post-list {
+    .aside-post-list {
       margin: 0 -6px;
     }
-    .related-post {
+    .aside-post {
       float: left;
       @include box-sizing(border-box);
       width: 33.3333%;
       padding: 0 6px;
     }
-    .related-post-title {
+    .aside-post-title {
       @include adjust-font-size-to(16px);
     }
-    .related-post-category {
+    .aside-post-category {
       @include adjust-font-size-to(16px);
     }
   }

@@ -1,5 +1,5 @@
 .comments {
-  @include trailer(1);
+  @include trailer(2);
 
   .comments-title {
     @include trailer(0.5);
@@ -7,6 +7,7 @@
     @include adjust-font-size-to(18px);
     color: black;
     border-bottom: 2px solid $color-primary;
+    font-weight: bold;
   }
 
 

@@ -26,14 +26,15 @@
     background-position: center center;
     background-repeat: no-repeat;
     @include background-size(cover);
-    &:after {
+    &:before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      @include background(linear-gradient(135deg, rgba(#50B584, .7) 0%, rgba(#A7CD6B, .7) 100%));
+      bottom: -120px;
+      right: -120px;
+      width: 290px;
+      height: 290px;
+      background: url("/images/blur-ball-small.png") no-repeat;
+      opacity: .9;
     }
   }
   .hero-block.large {
@@ -64,6 +65,32 @@
     width: 100%;
     padding: 12px;
     color: white;
+    .hero-block-title-inner {
+      position: relative;
+      z-index: 100;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      bottom: -330px;
+      left: -200px;
+      width: 520px;
+      height: 520px;
+      background: url("/images/blur-ball-large.png") no-repeat;
+      opacity: .9;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      bottom: -200px;
+      left: 50px;
+      width: 370px;
+      height: 370px;
+      background: url("/images/blur-ball-medium.png") no-repeat;
+      opacity: .9;
+    }
     .title {
       position: relative;
       @include adjust-font-size-to(24px, 1.35);
@@ -97,17 +124,14 @@
     .hero-wrap-inner { height: 50%; }
     .hero-block {
       &:before {
-        content: "";
-        position: absolute;
         bottom: 0px;
         right: -160px;
-        width: 290px;
-        height: 290px;
-        background: url("/images/blur-ball-small.png") no-repeat;
         opacity: .5;
         @include transition(opacity 1s);
       }
       &:after {
+        content: "";
+        position: absolute;
         z-index: 10;
         top: auto;
         left: 50px;
@@ -127,25 +151,15 @@
       max-width: 360px;
       padding: 18px;
       &:before {
-        content: "";
-        position: absolute;
         z-index: 1;
         bottom: -250px;
         left: -250px;
-        width: 520px;
-        height: 520px;
-        background: url("/images/blur-ball-large.png") no-repeat;
         opacity: .7;
       }
       &:after {
-        content: "";
-        position: absolute;
         z-index: 2;
         bottom: -200px;
         left: 50px;
-        width: 370px;
-        height: 370px;
-        background: url("/images/blur-ball-medium.png") no-repeat;
         opacity: .7;
       }
       .title {
@@ -165,7 +179,7 @@
   @include at-breakpoint($desktop) {
     max-width: 1512px;
     max-height: 900px;
-    min-height: 760px;
+    min-height: 680px;
     height: calc( 100vh - 60px );
     padding-top: 0;
     .hero-block-title {

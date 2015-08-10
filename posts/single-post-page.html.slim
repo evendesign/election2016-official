@@ -34,15 +34,18 @@
         /   a.pager-item.pager-item_return href="#" 返回文章列表
         /   a.pager-item.next href="#": .pager-title 下一篇
 
-  .related-posts
+  .aside-posts
     .container.container_single-article
-      h3.related-posts-title 相關文章
-      .related-post-list
+      h3.aside-posts-title 相關文章
+      .aside-post-list
         - 3.times do |i|
-          a.related-post href="#"
-            img.related-post-img src="http://placehold.it/300x200"
-            h4.related-post-title= zh_lorem_sentence
-            span.related-post-category href="#" 故事
+          a.aside-post href="#"
+            img.aside-post-img src="http://placehold.it/300x200"
+            h4.aside-post-title= zh_lorem_sentence
+            .aside-post-meta
+              span.category 議題
+              span.date 2015.7.22
+
 
   .comments
     .container.container_single-article

@@ -18,7 +18,7 @@
         span.post-date 發布時間：2015/7/23
         span.post-tag-title 標籤：
         - (rand(5) + 1).times do |i|
-          a.post-tag href="/tag/"= zh_lorem_words(rand(5) + 1)
+          a.post-tag href="/tags/"= zh_lorem_words(rand(5) + 1)
       .post-content.article
         = render "/partial/demo-article"
       .post-footer

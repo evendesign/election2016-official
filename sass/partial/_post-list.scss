@@ -15,7 +15,7 @@
     margin: 0 -24px 12px;
     width: auto;
     padding-top: 67%;
-
+    background-color: #eee;
   }
 
   .post-item {
@@ -88,10 +88,16 @@
       }
     }
 
+    .post-item {
+      @include leader(1);
+      @include trailer(1);
+    }
+
     .post-item + .post-item {
-      border-top: 1px solid #e7e7e7;
+      border-top: 1px solid #eaeaea;
       @include padding-leader(1);
     }
+
     .post-image {
       float: left;
       margin: 0 12px 0 0;

@@ -104,9 +104,8 @@
 
   @include at-breakpoint($pad) {
     .post-header {
-      padding: 35% 24px 24px;
+      padding: 35% 10% 24px;
       @include trailer(2);
-      &:before { opacity: .5; }
     }
     .post-title {
       margin: rhythm(0.25) 0 rhythm(0.75);

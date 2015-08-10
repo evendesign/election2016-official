@@ -124,7 +124,7 @@
     .hero-block.medium { height: 50%; }
     .hero-block.large { height: 100%; }
     .hero-block-title {
-      max-width: 300px;
+      max-width: 360px;
       padding: 18px;
       &:before {
         content: "";
@@ -156,6 +156,7 @@
       .description {
         z-index: 10;
         display: block;
+        overflow: hidden;
         @include adjust-font-size-to(15px);
         font-weight: bold;
       }
@@ -168,22 +169,34 @@
     height: calc( 100vh - 60px );
     padding-top: 0;
     .hero-block-title {
-      padding: 24px;
+      padding: 0;
+      .hero-block-title-inner {
+        padding: 24px;
+        position: relative;
+        z-index: 100;
+      }
       &:before {
-        bottom: -300px;
+        bottom: -280px;
         left: -220px;
         @include transition(opacity 1s, transform 5s);
       }
       &:after {
-        bottom: -230px;
+        bottom: -200px;
         left: 70px;
         @include transition(opacity 1s, transform 1s);
       }
-      .title { @include adjust-font-size-to(28px, 1.5); }
+      .title {
+        position: relative;
+        bottom: -72px;
+        @include adjust-font-size-to(28px, 1.5);
+        @include transition(bottom .5s);
+      }
       .description {
-        max-height: 0;
+        position: relative;
+        bottom: -72px;
+        height: 72px;
         opacity: 0;
-        @include transition(opacity 1s, max-height 1s ease-out);
+        @include transition(opacity .5s, bottom .5s);
       }
     }
     .hero-block:hover {
@@ -193,6 +206,9 @@
         @include scale(5.0);
       }
       .hero-block-title {
+        .hero-block-title-inner {
+          @include translateY(0);
+        }
         &:before {
           opacity: .95;
           @include scale(1.6);
@@ -201,10 +217,13 @@
           // bottom: -170px;
           // left: 100px;
           opacity: .95;
-          @include scale(1.6);
+          @include scale(1.8);
+        }
+        .title {
+          bottom: 0;
         }
         .description {
-          max-height: 120px;
+          bottom: 0;
           opacity: 1;
         }
       }

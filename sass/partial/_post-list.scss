@@ -25,20 +25,32 @@
   .post-meta {
     display: block;
     @include adjust-font-size-to(15px, 1);
-    .category {
+    .category-list {
+      @include reset-list-style;
       display: inline-block;
+    }
+    .category-item {
       color: $color-primary;
-      &:hover {
-        text-decoration: none;
+      display: inline-block;
+      text-decoration: none;
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &:after {
+        color: #aaa;
+        content: ",";
+        margin-right: 3px;
+      }
+      &:last-child:after {
+        content: "|";
+        margin: 0 6px;
       }
     }
     .date {
       display: inline-block;
       color: #aaa;
-      &:before {
-        content: "|";
-        margin: 0 6px;
-      }
     }
   }
 

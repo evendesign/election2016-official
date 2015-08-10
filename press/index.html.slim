@@ -9,7 +9,11 @@
           .post-item
             a.post-image href="/posts/single-post-page.html" style="background-image: url('http://placehold.it/300x200')"
             .post-meta
-              a.category href="#"= zh_lorem_words(2)
+              ul.category-list
+                li.category-item: a href="/categories/show.html" 政策
+                // 若出現兩者以上議題的架構
+                / li.category-item: a href="/categories/show.html" 活動
+                / li.category-item: a href="/categories/show.html" 故事
               span.date 2015.7.22
             a.post-content href="/posts/single-post-page.html"
               h3.post-title= zh_lorem_sentence

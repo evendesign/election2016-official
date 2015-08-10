@@ -6,7 +6,11 @@
           a.post-image style="background-image: url('/images/post-1.jpg')" href="/posts/single-post-page.html"
           .post-content-wrap
             .post-meta
-              a.category href="#"= zh_lorem_words(2)
+              ul.category-list
+                li.category-item: a href="/categories/show.html" 政策
+                // 若出現兩者以上議題的架構
+                / li.category-item: a href="/categories/show.html" 活動
+                / li.category-item: a href="/categories/show.html" 故事
               .date 2015.7.22
             a.post-content href="/posts/single-post-page.html"
               h3.post-title= zh_lorem_sentence

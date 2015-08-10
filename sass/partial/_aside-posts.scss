@@ -35,15 +35,24 @@
     display: block;
     @include adjust-font-size-to(15px, 5/6);
     color: #aaa;
-    .category {
+    .category-list {
+      @include reset-list-style;
       display: inline-block;
     }
-    .date {
+    .category-item {
       display: inline-block;
-      &:before {
+      text-decoration: none;
+      &:after {
+        content: ",";
+        margin-right: 3px;
+      }
+      &:last-child:after {
         content: "|";
         margin: 0 6px;
       }
+    }
+    .date {
+      display: inline-block;
     }
   }
 

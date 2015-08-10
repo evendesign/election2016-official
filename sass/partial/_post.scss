@@ -4,7 +4,7 @@
   .post-header {
     position: relative;
     @include trailer(1);
-    padding: 35% 24px 12px;
+    padding: 35% 24px 24px;
     text-align: center;
     background-color: #eaeaea;
     background-position: center center;
@@ -27,10 +27,18 @@
   .post-title {
     position: relative;
     z-index: 10;
-    @include trailer(0.35);
+    @include trailer(0.25);
     @include adjust-font-size-to(24px, 1.25);
     font-weight: bold;
     color: white;
+  }
+
+  .post-subtitle {
+    color: white;
+    @include adjust-font-size-to(13px, 3/4);
+    @include trailer(0);
+    position: relative;
+    z-index: 10;
   }
 
   .post-meta {
@@ -117,8 +125,11 @@
       &:before { opacity: .5; }
     }
     .post-title {
-      margin: rhythm(0.25) 0 rhythm(0.75);
+      margin: rhythm(0.25) 0 rhythm(0.5);
       @include adjust-font-size-to(32px, 1.5);
+    }
+    .post-subtitle {
+      @include adjust-font-size-to(18px);
     }
     .post-meta {
       @include leader(2);

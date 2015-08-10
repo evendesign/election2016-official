@@ -557,7 +557,7 @@ body { background-color: #183840; position: relative; }
   .hero .hero-block-title:after { z-index: 2; bottom: -200px; left: 50px; opacity: .7; }
   .hero .hero-block-title .title { z-index: 10; margin-bottom: 6px; font-size: 24px; line-height: 32px; }
   .hero .hero-block-title .description { z-index: 10; display: block; overflow: hidden; font-size: 15px; line-height: 24px; font-weight: bold; } }
-@media (min-width: 1025px) { .hero { max-width: 1512px; max-height: 900px; min-height: 680px; height: calc(100vh - 60px ); padding-top: 0; }
+@media (min-width: 1025px) { .hero { max-width: 1512px; max-height: 900px; min-height: 560px; height: calc(100vh - 60px ); padding-top: 0; }
   .hero .hero-block-title { padding: 0; }
   .hero .hero-block-title .hero-block-title-inner { padding: 24px; position: relative; z-index: 100; }
   .hero .hero-block-title:before { bottom: -280px; left: -220px; -webkit-transition: opacity 1s, -webkit-transform 5s; -moz-transition: opacity 1s, -moz-transform 5s; -o-transition: opacity 1s, -o-transform 5s; transition: opacity 1s, transform 5s; }

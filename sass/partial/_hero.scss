@@ -179,7 +179,7 @@
   @include at-breakpoint($desktop) {
     max-width: 1512px;
     max-height: 900px;
-    min-height: 680px;
+    min-height: 560px;
     height: calc( 100vh - 60px );
     padding-top: 0;
     .hero-block-title {

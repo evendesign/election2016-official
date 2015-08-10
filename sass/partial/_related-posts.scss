@@ -1,4 +1,5 @@
 .related-posts {
+  @include trailer(1);
 
   .related-posts-title {
     @include trailer(1);

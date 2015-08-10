@@ -6,7 +6,7 @@
     @include trailer(1);
     padding: 35% 24px 12px;
     text-align: center;
-    background-color: $color-gray;
+    background-color: #eaeaea;
     background-position: center center;
     @include background-size(cover);
     &:before {
@@ -35,6 +35,7 @@
 
   .post-meta {
     @include pie-clearfix;
+    @include leader(1);
     @include trailer(0.5);
     @include adjust-font-size-to(15px, 5/6);
   }
@@ -74,8 +75,15 @@
 
   .post-share {
     text-align: center;
-    @include trailer(1.5);
+    a.icon-facebook { color: #4863B3; }
+    a.icon-twitter { color: #4099FF; }
+    a.icon-plurk { color: #E14701; }
+    a.icon-line { color: #02B002; }
+    a:hover {
+      @include opacity(0.75);
+    }
   }
+
 
   .post-share-title {
     display: inline-block;
@@ -113,6 +121,7 @@
       @include adjust-font-size-to(32px, 1.5);
     }
     .post-meta {
+      @include leader(2);
       @include adjust-font-size-to(16px);
     }
     .post-date {
@@ -122,17 +131,8 @@
       @include leader(2);
       @include padding-trailer(2);
     }
-    .post-share {
-      @include trailer(2);
-    }
     .post-share-title {
       @include adjust-font-size-to(16px);
-    }
-  }
-
-  @include at-breakpoint($desktop) {
-    .post-header {
-      @include trailer(3);
     }
   }
 

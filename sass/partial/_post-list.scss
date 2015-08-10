@@ -25,11 +25,11 @@
   .post-meta {
     display: block;
     @include adjust-font-size-to(15px, 1);
-    .category-list {
+    .post-category {
       @include reset-list-style;
       display: inline-block;
     }
-    .category-item {
+    .post-category-item {
       color: $color-primary;
       display: inline-block;
       text-decoration: none;

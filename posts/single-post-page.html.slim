@@ -3,11 +3,14 @@
 .content.has-sub-menu
   .post
     .post-header style="background-image: url('/images/post-header-image.png')"
-      ul.breadcrumb
-        / li.breadcrumb-item: a href="#" 最新消息
-        li.breadcrumb-item: a href="#" 故事
-      h2.post-title 開創一個真正屬於人民的時代
-      h3.post-subtitle 本文為蔡英文於華府智庫「戰略與國際研究中心（CSIS）」之演講
+      .post-header-inner
+        ul.post-category
+          li: a href="/categories/show.html" 故事
+          // 若出現兩者以上議題的架構
+          / li: a href="/categories/show.html" 活動
+          / li: a href="/categories/show.html" 政策
+        h2.post-title 開創一個真正屬於人民的時代
+        h3.post-subtitle 本文為蔡英文於華府智庫「戰略與國際研究中心（CSIS）」之演講
     .container.container_single-article
       .post-share
         span.post-share-title 分享：
@@ -44,11 +47,11 @@
             img.aside-post-img src="http://placehold.it/300x200"
             h4.aside-post-title= zh_lorem_sentence
             .aside-post-meta
-              ul.category-list
-                li.category-item: span 政策
+              ul.post-category
+                li.post-category-item: span 政策
                 // 若出現兩者以上議題的架構
-                / li.category-item: span 活動
-                / li.category-item: span 故事
+                / li.post-category-item: span 活動
+                / li.post-category-item: span 故事
               span.date 2015.7.22
 
 

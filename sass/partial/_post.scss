@@ -24,9 +24,29 @@
     }
   }
 
-  .post-title {
+  .post-header-inner {
     position: relative;
     z-index: 10;
+  }
+
+  .post-category {
+    @include reset-list-style;
+    li {
+      display: inline-block;
+      margin: 0 3px;
+    }
+    a {
+      display: block;
+      @include adjust-font-size-to(15px, 3/4);
+      font-weight: bold;
+      color: #FEFF86;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .post-title {
     @include trailer(0.25);
     @include adjust-font-size-to(24px, 1.25);
     font-weight: bold;
@@ -37,8 +57,6 @@
     color: white;
     @include adjust-font-size-to(13px, 3/4);
     @include trailer(0);
-    position: relative;
-    z-index: 10;
   }
 
   .post-meta {
@@ -120,9 +138,14 @@
 
   @include at-breakpoint($pad) {
     .post-header {
-      padding: 35% 24px 24px;
+      padding: 35% 10% 24px;
       @include trailer(2);
-      &:before { opacity: .5; }
+    }
+    .post-category {
+      a {
+        display: block;
+        @include adjust-font-size-to(18px);
+      }
     }
     .post-title {
       margin: rhythm(0.25) 0 rhythm(0.5);

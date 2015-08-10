@@ -35,11 +35,11 @@
     display: block;
     @include adjust-font-size-to(15px, 5/6);
     color: #aaa;
-    .category-list {
+    .post-category {
       @include reset-list-style;
       display: inline-block;
     }
-    .category-item {
+    .post-category-item {
       display: inline-block;
       text-decoration: none;
       &:after {

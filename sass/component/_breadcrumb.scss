@@ -10,7 +10,9 @@
       position: relative;
       display: inline-block;
       @include adjust-font-size-to(13px, 3/4);
-      margin-right: 3px;
+      font-weight: bold;
+      @extend %subpixel;
+      margin: 0 3px;
       color: #FEFF86;
     }
   }
@@ -19,6 +21,7 @@
     display: inline-block;
     @include adjust-font-size-to(13px, 3/4);
     font-weight: bold;
+    @extend %subpixel;
     color: #FEFF86;
     &:hover {
       text-decoration: none;

@@ -1,9 +1,10 @@
 .post-list {
 
   .post-list-title {
-    margin: rhythm(1) 0;
+    margin: rhythm(1.5) 0;
     @include adjust-font-size-to(24px, 1.25);
     color: black;
+    text-align: center;
   }
 
   .post-image {
@@ -30,20 +31,20 @@
       display: inline-block;
     }
     .post-category-item {
-      color: $color-primary;
       display: inline-block;
       text-decoration: none;
       a {
+        color: $color-primary;
         &:hover {
           text-decoration: none;
         }
       }
-      &:after {
-        color: #aaa;
+      &:before {
+        color: #bbb;
         content: ",";
         margin-right: 3px;
       }
-      &:last-child:after {
+      &:first-child:before {
         content: "|";
         margin: 0 6px;
       }
@@ -101,6 +102,8 @@
     }
 
     .post-list-title {
+      margin: rhythm(1) 0;
+      text-align: left;
       &:after {
         content: '';
         display: block;
@@ -199,6 +202,8 @@
   @include at-breakpoint($pad) {
 
     .post-list-title {
+      margin: rhythm(1) 0;
+      text-align: left;
       &:after {
         content: '';
         display: block;
@@ -254,7 +259,29 @@
     }
   }
 
-  @include at-breakpoint(840px 8) {
+
+  @include at-breakpoint(820px) {
+    .post-item:nth-child(odd) {
+      .post-image {
+        width: 60%;
+        padding-top: 30%
+      }
+      .post-content-wrap {
+        margin: -22.5% 0 0;
+      }
+    }
+    .post-item:nth-child(even) {
+      .post-image {
+        width: 60%;
+        padding-top: 30%
+      }
+      .post-content-wrap {
+        margin: -22.5% 0 0;
+      }
+    }
+   }
+
+  @include at-breakpoint(940px) {
     .post-list-title {
       @include leader(2);
       @include adjust-font-size-to(28px, 1.5);
@@ -275,25 +302,6 @@
     }
     .post-summary {
       @include adjust-font-size-to(16px, 1.15);
-    }
-    .post-item:nth-child(odd) {
-      .post-image {
-        width: 60%;
-        padding-top: 30%
-      }
-      .post-content-wrap {
-        margin: -22.5% 0 0;
-      }
-    }
-    .post-item:nth-child(even) {
-      .post-image {
-        width: 60%;
-        padding-top: 30%
-      }
-      .post-content-wrap {
-        margin: -22.5% 0 0;
-      }
-
     }
   }
 

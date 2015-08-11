@@ -69,25 +69,25 @@
   .post-date {
     float: left;
     margin-right: 12px;
-    color: #999;
+    color: #a9a9a9;
   }
 
   .post-tag-title {
     float: left;
-    color: #999;
+    color: #a9a9a9;
   }
 
   .post-tag {
     float: left;
     margin-right: 6px;
-    color: #999;
+    color: #a9a9a9;
     &:hover {
       color: #444;
       text-decoration: none;
     }
     &:after {
       content: ',';
-      color: #999;
+      color: #a9a9a9;
     }
     &:last-child:after {
       display: none;
@@ -155,7 +155,8 @@
       @include adjust-font-size-to(18px);
     }
     .post-meta {
-      @include leader(2);
+      @include leader(1.6);
+      @include trailer(1);
       @include adjust-font-size-to(16px);
     }
     .post-date {

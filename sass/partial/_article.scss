@@ -8,6 +8,7 @@
     @include trailer(1);
     @include adjust-font-size-to(21px, 1);
     color: black;
+    font-weight: bold;
   }
 
   h4 {

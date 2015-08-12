@@ -298,7 +298,6 @@
     .post-content-wrap { padding: 36px; }
     .post-meta {
       @include adjust-font-size-to(16px);
-      @include trailer(0.25);
     }
     .post-title {
       @include adjust-font-size-to(24px, 1.25);

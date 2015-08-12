@@ -580,7 +580,8 @@ body { background-color: #183840; position: relative; }
 .post-list .post-meta .post-category-item { display: inline-block; text-decoration: none; }
 .post-list .post-meta .post-category-item a { color: #50b584; }
 .post-list .post-meta .post-category-item a:hover { text-decoration: none; }
-.post-list .post-meta .post-category-item:before { color: #bbb; content: ","; margin-right: 3px; }
+.post-list .post-meta .post-category-item span { color: #aaa; }
+.post-list .post-meta .post-category-item:before { color: #aaa; content: ","; margin-right: 3px; }
 .post-list .post-meta .post-category-item:first-child:before { content: "|"; margin: 0 6px; }
 .post-list .post-meta .date { display: inline-block; color: #aaa; }
 .post-list .post-content { display: block; }

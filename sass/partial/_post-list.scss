@@ -39,8 +39,11 @@
           text-decoration: none;
         }
       }
+      span {
+        color: #aaa;
+      }
       &:before {
-        color: #bbb;
+        color: #aaa;
         content: ",";
         margin-right: 3px;
       }

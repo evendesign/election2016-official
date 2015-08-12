@@ -628,7 +628,7 @@ body { background-color: #183840; position: relative; }
 @media (min-width: 940px) { .post-list_block-style .post-list-title { margin-top: 48px; font-size: 28px; line-height: 36px; font-weight: bold; }
   .post-list_block-style .post-item { margin-top: 48px; margin-bottom: 48px; }
   .post-list_block-style .post-content-wrap { padding: 36px; }
-  .post-list_block-style .post-meta { font-size: 16px; line-height: 24px; margin-bottom: 6px; }
+  .post-list_block-style .post-meta { font-size: 16px; line-height: 24px; }
   .post-list_block-style .post-title { font-size: 24px; line-height: 30px; }
   .post-list_block-style .post-summary { font-size: 16px; line-height: 27px; } }
 

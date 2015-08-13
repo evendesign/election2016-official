@@ -61,6 +61,20 @@ $( document ).ready(function() {
     return false;
   });
 
+  if ( $('.back-to-top-wrap').length != 0 ) {
+    function back_to_top_active() {
+      var waypoints = $('.page-inner').waypoint({
+        handler: function(direction) {
+          $('.back-to-top-wrap').toggleClass('is-active');
+        },
+        offset: '-70%'
+      })
+    }
+    back_to_top_active();
+  }
+
+
+
 
   // open menu
   $('.menu-btn').on('click', function () {

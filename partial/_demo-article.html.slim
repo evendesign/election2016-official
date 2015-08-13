@@ -4,8 +4,11 @@ h3 這是一段文章標題
   p= zh_lorem_paragraphs(2)
 h4 這是一段文章次標題
 p= zh_lorem_paragraphs(2)
+blockquote 終於，我們一起走到了這裡，一個新時代的起點。2008年時，我接下民進黨主席的責任，帶領一個久未嚐過勝選滋味的政黨，冷嘲熱諷是家常便飯，人情冷暖也習以為常。不過，我們一起挺過來了。我的目標很清楚，我不能讓民進黨倒下去
+p= zh_lorem_paragraphs(2)
 h4 這是一段文章次標題
 p= zh_lorem_paragraphs(2)
+p: a href="#test" 點擊我跳轉到標題四
 img src="http://placehold.it/900x600"
 h3 這是一段文章標題
 ul
@@ -21,7 +24,7 @@ ul
   li= zh_lorem_sentence
 - 2.times do |i|
   p= zh_lorem_paragraphs(2)
-h3 這是一段文章標題
+h3#test.anchor 這是一段文章標題
 ol
   li= zh_lorem_sentence
   li= zh_lorem_sentence

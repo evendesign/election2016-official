@@ -184,7 +184,7 @@ img { max-width: 100%; margin-bottom: 24px; }
 
 body { background-color: #183840; position: relative; }
 
-.page-outer { margin: 0 auto; max-width: 1512px; width: 100%; -webkit-transition: width 0.5s; -moz-transition: width 0.5s; -o-transition: width 0.5s; transition: width 0.5s; }
+.page-outer { margin: 0 auto; max-width: 1512px; width: 100%; -webkit-transition: width 0.25s; -moz-transition: width 0.25s; -o-transition: width 0.25s; transition: width 0.25s; }
 @media (min-width: 1512px) { .page-outer { width: 90%; } }
 
 .page-inner { background-color: #F7F7F7; }
@@ -802,10 +802,11 @@ body { background-color: #183840; position: relative; }
 @media (min-width: 1025px) { .message-block { padding: 15% 0 144px; }
   .message-block .message-action { margin-top: 48px; } }
 
-.back-to-top-wrap { visibility: hidden; display: block; position: fixed; bottom: -48px; width: 100%; max-width: 1512px; margin: 0 auto; opacity: 0; -webkit-transition: visibility 0s, opacity 0.5s, bottom 0.5s; -webkit-transition-delay: 0.5s, 0s, 0s; -moz-transition: visibility 0s 0.5s, opacity 0.5s, bottom 0.5s; -o-transition: visibility 0s 0.5s, opacity 0.5s, bottom 0.5s; transition: visibility 0s 0.5s, opacity 0.5s, bottom 0.5s; }
+.back-to-top-wrap { visibility: hidden; display: block; position: fixed; bottom: -48px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; max-width: 1512px; width: 100%; margin: 0 auto; opacity: 0; -webkit-transition: visibility 0s, opacity 0.5s, bottom 0.5s; -webkit-transition-delay: 0.5s, 0s, 0s; -moz-transition: visibility 0s 0.5s, opacity 0.5s, bottom 0.5s; -o-transition: visibility 0s 0.5s, opacity 0.5s, bottom 0.5s; transition: visibility 0s 0.5s, opacity 0.5s, bottom 0.5s; }
 .back-to-top-wrap.is-active { visibility: visible; opacity: 1; bottom: 24px; -webkit-transition: opacity 0.5s, bottom 0.5s; -moz-transition: opacity 0.5s, bottom 0.5s; -o-transition: opacity 0.5s, bottom 0.5s; transition: opacity 0.5s, bottom 0.5s; }
 .back-to-top-wrap .back-to-top { display: block; width: 48px; height: 48px; margin: 0 0 0 auto; line-height: 48px; text-align: center; color: white; background-color: rgba(85, 179, 108, 0.8); -webkit-border-radius: 3px 0 0 3px; -moz-border-radius: 3px 0 0 3px; -ms-border-radius: 3px 0 0 3px; -o-border-radius: 3px 0 0 3px; border-radius: 3px 0 0 3px; -webkit-transition: background-color 0.5s, opacity 1s; -webkit-transition-delay: 0s, 0.5s; -moz-transition: background-color 0.5s, opacity 1s 0.5s; -o-transition: background-color 0.5s, opacity 1s 0.5s; transition: background-color 0.5s, opacity 1s 0.5s; }
 .back-to-top-wrap .back-to-top:hover { background-color: rgba(85, 179, 108, 0.6); text-decoration: none; }
+@media (min-width: 1512px) { .back-to-top-wrap { width: 90%; } }
 
 .is-scaled .back-to-top-wrap { opacity: 0; }
 .is-scaled .back-to-top-wrap .back-to-top { opacity: 0; }

@@ -1,0 +1,52 @@
+.message-block {
+
+  text-align: center;
+  padding: rhythm(2) 0;
+
+  .message-title {
+    @include adjust-font-size-to(28px, 1.25);
+    @include trailer(0.25);
+  }
+
+  .message-subtitle {
+    @include adjust-font-size-to(18px);
+    @include trailer(0);
+  }
+
+  .message-action {
+    @include leader(1);
+    .btn {
+      margin: 0 3px;
+    }
+  }
+
+  @include at-breakpoint($pad) {
+    padding: rhythm(4) 0;
+    .message-title {
+      @include adjust-font-size-to(32px, 1.5);
+      @include trailer(0.25);
+    }
+
+    .message-subtitle {
+      @include adjust-font-size-to(22px, 1.25);
+      @include trailer(0);
+    }
+
+    .message-action {
+      @include leader(2);
+      .btn {
+        @include adjust-font-size-to(18px, 1);
+        padding: 6px 36px;
+      }
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+    padding: 15% 0 rhythm(6);
+    .message-action {
+      @include leader(2);
+
+    }
+  }
+
+}

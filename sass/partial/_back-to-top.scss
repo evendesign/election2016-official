@@ -14,7 +14,7 @@
     visibility: visible;
     opacity: 1;
     bottom: 24px;
-    @include transition(opacity .5s, bottom .5s);
+    @include transition(opacity .5s, bottom .5s, width .2s);
   }
 
   .back-to-top {

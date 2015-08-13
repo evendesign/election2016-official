@@ -23,6 +23,11 @@
     display: block;
     @include trailer(0.25);
     width: 100%;
+    padding-top: 67%;
+    height: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include background-size(cover);
   }
 
   .aside-post-title {

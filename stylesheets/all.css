@@ -485,17 +485,18 @@ body { background-color: #183840; position: relative; }
   .header .primary-nav .is-active a { color: #50b584; }
   .header .menu-bottom { border-top: none; position: absolute; top: 18px; right: 24px; }
   .header .menu-bottom:after { content: ""; display: table; clear: both; }
-  .header .press-release { font-size: 15px; line-height: 24px; margin: 0; float: left; color: #999; }
+  .header .press-release { font-size: 15px; line-height: 24px; margin: 0 18px 0 0; float: left; color: #999; }
   .header .press-release:hover { color: #444; }
-  .header .search { float: left; margin: 0 18px; display: block; }
+  .header .search { float: left; margin: 0 18px 0 0; display: block; }
   .header .search-icon { position: relative; top: 0; left: 0; cursor: pointer; display: block; color: #999; z-index: 110; font-size: 16px; line-height: 24px; }
   .header .search-icon:hover { color: #444; }
-  .header .search-input { position: absolute; top: -3px; right: -14px; z-index: 100; background-color: #eee; padding: 3px 24px; text-align: left; width: 0px; color: #444; opacity: 0; -webkit-transition: opacity 0.3s, width 0.5s; -moz-transition: opacity 0.3s, width 0.5s; -o-transition: opacity 0.3s, width 0.5s; transition: opacity 0.3s, width 0.5s; }
+  .header .search-input { position: absolute; top: -3px; right: -14px; z-index: 100; background-color: #eee; padding: 3px 24px; text-align: left; width: 0px; color: #444; opacity: 0; -webkit-transition: opacity 0.5s, width 0.5s, visibility 0s; -webkit-transition-delay: 0s, 0s, 0.5s; -moz-transition: opacity 0.5s, width 0.5s, visibility 0s 0.5s; -o-transition: opacity 0.5s, width 0.5s, visibility 0s 0.5s; transition: opacity 0.5s, width 0.5s, visibility 0s 0.5s; visibility: hidden; }
   .header .search-input::-webkit-input-placeholder { /* WebKit browsers */ color: #444444; -webkit-font-smoothing: antialiased; }
   .header .search-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color: #444444; }
   .header .search-input::-moz-placeholder { /* Mozilla Firefox 19+ */ color: #5e5e5e; }
   .header .search-input:-ms-input-placeholder { /* Internet Explorer 10+ */ color: #444444; }
-  .header .search:hover .search-input { width: 144px; opacity: 1; }
+  .header .search-input:focus { width: 144px; opacity: 1; visibility: visible; -webkit-transition: opacity 0.5s, width 0.5s; -moz-transition: opacity 0.5s, width 0.5s; -o-transition: opacity 0.5s, width 0.5s; transition: opacity 0.5s, width 0.5s; }
+  .header .search:hover .search-input { width: 144px; opacity: 1; visibility: visible; -webkit-transition: opacity 0.5s, width 0.5s; -moz-transition: opacity 0.5s, width 0.5s; -o-transition: opacity 0.5s, width 0.5s; transition: opacity 0.5s, width 0.5s; }
   .header .social-nav { border-top: none; float: left; font-size: 16px; padding: 0; }
   .header .social-nav li { float: left; }
   .header .social-nav a { margin: 0 6px; color: #999; font-size: 16px; line-height: 24px; }
@@ -787,6 +788,19 @@ body { background-color: #183840; position: relative; }
   .aside-posts .aside-post { float: left; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 33.3333%; padding: 0 6px; }
   .aside-posts .aside-post-title { font-size: 16px; line-height: 24px; }
   .aside-posts .aside-post-category { font-size: 16px; line-height: 24px; } }
+
+.message-block { text-align: center; padding: 48px 0; }
+.message-block .message-title { font-size: 28px; line-height: 30px; margin-bottom: 6px; }
+.message-block .message-subtitle { font-size: 18px; line-height: 24px; margin-bottom: 0px; }
+.message-block .message-action { margin-top: 24px; }
+.message-block .message-action .btn { margin: 0 3px; }
+@media (min-width: 640px) { .message-block { padding: 96px 0; }
+  .message-block .message-title { font-size: 32px; line-height: 36px; margin-bottom: 6px; }
+  .message-block .message-subtitle { font-size: 22px; line-height: 30px; margin-bottom: 0px; }
+  .message-block .message-action { margin-top: 48px; }
+  .message-block .message-action .btn { font-size: 18px; line-height: 24px; padding: 6px 36px; } }
+@media (min-width: 1025px) { .message-block { padding: 15% 0 144px; }
+  .message-block .message-action { margin-top: 48px; } }
 
 .homepage .header-sticky-wrapper { position: absolute; top: 0; left: 0; right: 0; }
 .homepage .header, .homepage .sub-menu { width: 100%; }

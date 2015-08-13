@@ -3,8 +3,9 @@
   display: block;
   position: fixed;
   bottom: -48px;
-  width: 100%;
+  @include box-sizing(border-box);
   max-width: 1512px;
+  width: 100%;
   margin: 0 auto;
   opacity: 0;
   @include transition(visibility 0s .5s, opacity .5s, bottom .5s);
@@ -32,7 +33,15 @@
       text-decoration: none;
     }
   }
+
+  @include at-breakpoint($wide-desktop) {
+    width: 90%;
+  }
+
+
 }
+
+
 
 .is-scaled .back-to-top-wrap {
   opacity: 0;

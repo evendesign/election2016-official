@@ -93,7 +93,9 @@
       }
       .header, .sub-menu {
         @include opacity(0);
+        @include transition(opacity 0s);
       }
+
       .footer {
         .site {
           @include opacity(1);

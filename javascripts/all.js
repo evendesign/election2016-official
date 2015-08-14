@@ -73,9 +73,6 @@ $( document ).ready(function() {
     back_to_top_active();
   }
 
-
-
-
   // open menu
   $('.menu-btn').on('click', function () {
     $('html').toggleClass('is-open-menu');

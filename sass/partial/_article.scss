@@ -23,7 +23,7 @@
     font-weight: bold;
   }
 
-  img {
+  img, iframe {
     display: block;
     width: 100%;
     @include trailer(1);

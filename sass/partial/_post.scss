@@ -178,4 +178,10 @@
     }
   }
 
+  @media (max-height: 640px) {
+    .post-header {
+      padding-top: 240px;
+    }
+  }
+
 }

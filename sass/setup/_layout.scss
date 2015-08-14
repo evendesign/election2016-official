@@ -28,10 +28,7 @@ body {
   margin: 0 auto;
   max-width: 1512px;
   width: 100%;
-  @include transition(width 0.25s);
-  // @include transition(padding 0.5s);
   @include at-breakpoint($wide-desktop) {
-    // padding: 0 5%;
     width: 90%;
   }
 

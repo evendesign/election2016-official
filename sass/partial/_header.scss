@@ -260,7 +260,6 @@
 
     .header-inner {
       position: relative;
-      @include transition(width .5s);
     }
     .menu-btn {
       display: none;

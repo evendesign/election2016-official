@@ -82,18 +82,27 @@
       .page {
         @include transition(transform .5s);
       }
+
       .page-inner {
         @include transform(scale(.5));
         @include border-radius(0 0 10px 10px);
         @include transition(transform .5s, border-radius .5s);
       }
+
       .site-info {
         @include opacity(1);
         @include transition(opacity 1s 1s);
       }
+
       .header, .sub-menu {
         @include opacity(0);
         @include transition(opacity 0s);
+      }
+
+      .back-to-top-wrap {
+        @include opacity(0);
+        bottom: -48px;
+        @include transition(opacity 0s, bottom 0s);
       }
 
       .footer {

@@ -39,12 +39,4 @@
     width: 90%;
   }
 
-
-}
-
-
-.is-scaled .back-to-top-wrap {
-  @include opacity(0);
-  bottom: -48px;
-  @include transition(opacity 0s, bottom 0s);
 }

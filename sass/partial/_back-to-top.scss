@@ -26,11 +26,11 @@
     line-height: 48px;
     text-align: center;
     color: white;
-    background-color: rgba(#55B36C, .8);
+    background-color: rgba($color-primary, .8);
     @include border-radius(3px 0 0 3px);
     @include transition(background-color 0.5s);
     &:hover {
-      background-color: rgba(#55B36C, .6);
+      background-color: rgba($color-primary, .6);
       text-decoration: none;
     }
   }

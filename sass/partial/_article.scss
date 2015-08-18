@@ -23,7 +23,7 @@
     @include adjust-font-size-to(16px);
     color: $color-secondary;
     border: none;
-    padding: 0 24px;
+    padding: 0 30px;
     text-align: center;
     &:before, &:after {
       position: absolute;
@@ -57,9 +57,18 @@
     width: 100%;
     @include trailer(1);
   }
+  figure {
+    margin: 0 auto rhythm(1);
+    img, video {
+      @include trailer(0.25);
+    }
+    figcaption {
+      @include adjust-font-size-to(13px, 3/4);
+      color: #999;
+    }
+  }
   ul, ol {
     @include leader(0);
-    @include adjust-font-size-to(18px, 1.25);
     ul, ol {
       @include trailer(0);
     }
@@ -81,9 +90,9 @@
     }
     blockquote {
       @include adjust-font-size-to(18px, 1.25);
-      margin: 0 12.5% rhythm(1);
+      margin: 0 12.5% rhythm(1.25);
       // margin: rhythm(0) auto rhythm(1.25);
-      padding: 0 30px;
+      padding: 0 48px;
       &:before {
         content: '“';
         width: 24px;
@@ -97,6 +106,12 @@
         height: 30px;
       }
     }
+    figure {
+      @include trailer(1.25);
+      figcaption {
+        @include adjust-font-size-to(15px);
+      }
+    }
     p {
       @include adjust-font-size-to(18px, 1.25);
     }
@@ -105,4 +120,17 @@
     }
   }
 
+  @include at-breakpoint(1280px) {
+    figure {
+      position: relative;
+      figcaption {
+        position: absolute;
+        right: 100%;
+        width: 200px;
+        top: 0;
+        text-align: right;
+        padding: 0 12px;
+      }
+    }
+  }
 }

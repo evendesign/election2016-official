@@ -758,23 +758,30 @@ body { background-color: #183840; position: relative; }
 .article h3 { margin-bottom: 24px; font-size: 21px; line-height: 24px; color: black; font-weight: bold; }
 .article h4 { margin-bottom: 24px; font-size: 16px; line-height: 24px; color: black; font-weight: bold; }
 .article p { font-size: 16px; line-height: 24px; }
-.article blockquote { position: relative; font-size: 16px; line-height: 24px; color: #3ca59a; border: none; padding: 0 24px; text-align: center; }
+.article blockquote { position: relative; font-size: 16px; line-height: 24px; color: #3ca59a; border: none; padding: 0 30px; text-align: center; }
 .article blockquote:before, .article blockquote:after { position: absolute; display: block; color: #ccc; opacity: 0.125; }
 .article blockquote:before { content: '“'; top: 0; left: 0; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/quote.png?1439466909'); background-repeat: no-repeat; background-position: 50% 50%; width: 26px; height: 18px; background-image: none, url('/images/quote.svg?1439466909'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; width: 18px; height: 24px; }
 .article blockquote:after { content: '”'; bottom: 0; right: 0; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/quote2.png?1439466908'); background-repeat: no-repeat; background-position: 50% 50%; width: 26px; height: 18px; background-image: none, url('/images/quote2.svg?1439466909'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; width: 18px; height: 24px; }
 .article b { color: black; font-weight: bold; }
 .article img, .article iframe { display: block; width: 100%; margin-bottom: 24px; }
-.article ul, .article ol { margin-top: 0px; font-size: 18px; line-height: 30px; }
+.article figure { margin: 0 auto 24px; }
+.article figure img, .article figure video { margin-bottom: 6px; }
+.article figure figcaption { font-size: 13px; line-height: 18px; color: #999; }
+.article ul, .article ol { margin-top: 0px; }
 .article ul ul, .article ul ol, .article ol ul, .article ol ol { margin-bottom: 0px; }
 @media (min-width: 640px) { .article { font-size: 18px; line-height: 30px; }
   .article h3, .article h4, .article p, .article img, .article iframe, .article ul, .article ol { margin-bottom: 30px; }
   .article h3 { font-size: 24px; line-height: 28px; }
   .article h4 { font-size: 18px; line-height: 30px; }
-  .article blockquote { font-size: 18px; line-height: 30px; margin: 0 12.5% 24px; padding: 0 30px; }
+  .article blockquote { font-size: 18px; line-height: 30px; margin: 0 12.5% 30px; padding: 0 48px; }
   .article blockquote:before { content: '“'; width: 24px; height: 30px; }
   .article blockquote:after { content: '”'; bottom: 0; right: 0; width: 24px; height: 30px; }
+  .article figure { margin-bottom: 30px; }
+  .article figure figcaption { font-size: 15px; line-height: 24px; }
   .article p { font-size: 18px; line-height: 30px; }
   .article ul, .article ol { font-size: 18px; line-height: 30px; } }
+@media (min-width: 1280px) { .article figure { position: relative; }
+  .article figure figcaption { position: absolute; right: 100%; width: 200px; top: 0; text-align: right; padding: 0 12px; } }
 
 .comments { margin-bottom: 48px; }
 .comments .comments-title { margin-bottom: 12px; padding-bottom: 8px; font-size: 18px; line-height: 24px; color: black; border-bottom: 2px solid #50b584; font-weight: bold; }

@@ -73,6 +73,15 @@ $( document ).ready(function() {
     back_to_top_active();
   }
 
+  if ( $('.auto-break-text').length != 0 ) {
+    $('.auto-break-text').macho({ 'length':5 });
+  }
+
+  if ( $('.article').length != 0 ) {
+    $('.article h3, .article h4').macho({ 'length':3 });
+    $('.article p, .article blockquote, .article figcaption').macho({ 'length':5 });
+  }
+
   // open menu
   $('.menu-btn').on('click', function () {
     $('html').toggleClass('is-open-menu');

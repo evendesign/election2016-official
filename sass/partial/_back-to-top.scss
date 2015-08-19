@@ -1,0 +1,42 @@
+.back-to-top-wrap {
+  visibility: hidden;
+  display: block;
+  position: fixed;
+  bottom: -48px;
+  @include box-sizing(border-box);
+  max-width: 1512px;
+  width: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  @include transition(visibility 0s 0.5s, opacity 0.5s, bottom 0.5s);
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 24px;
+    @include transition(opacity 0.5s 0.5s, bottom 0.5s 0.5s);
+  }
+
+  .back-to-top {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 0 0 auto;
+    font-size: 15px;
+    line-height: 48px;
+    text-align: center;
+    color: white;
+    background-color: rgba($color-primary, .8);
+    @include border-radius(3px 0 0 3px);
+    @include transition(background-color 0.5s);
+    &:hover {
+      background-color: rgba($color-primary, .6);
+      text-decoration: none;
+    }
+  }
+
+  @include at-breakpoint($wide-desktop) {
+    width: 90%;
+  }
+
+}

@@ -61,6 +61,26 @@ $( document ).ready(function() {
     return false;
   });
 
+  if ( $('.back-to-top-wrap').length != 0 ) {
+    function back_to_top_active() {
+      var waypoints = $('.page-inner').waypoint({
+        handler: function(direction) {
+          $('.back-to-top-wrap').toggleClass('is-active');
+        },
+        offset: '-70%'
+      })
+    }
+    back_to_top_active();
+  }
+
+  if ( $('.auto-break-text').length != 0 ) {
+    $('.auto-break-text').macho({ 'length':5 });
+  }
+
+  if ( $('.article').length != 0 ) {
+    $('.article h3, .article h4').macho({ 'length':3 });
+    $('.article p, .article blockquote, .article figcaption').macho({ 'length':5 });
+  }
 
   // open menu
   $('.menu-btn').on('click', function () {

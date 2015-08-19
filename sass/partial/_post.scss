@@ -47,16 +47,17 @@
   }
 
   .post-title {
-    @include trailer(0.25);
     @include adjust-font-size-to(24px, 1.25);
+    @include trailer(0);
     font-weight: bold;
     color: white;
   }
 
   .post-subtitle {
     color: white;
-    @include adjust-font-size-to(13px, 3/4);
+    @include leader(0.25);
     @include trailer(0);
+    @include adjust-font-size-to(13px, 3/4);
   }
 
   .post-meta {
@@ -156,10 +157,11 @@
       }
     }
     .post-title {
-      margin: rhythm(0.25) 0 rhythm(0.5);
+      margin: rhythm(0.25) 0 0;
       @include adjust-font-size-to(32px, 1.5);
     }
     .post-subtitle {
+      @include leader(0.5);
       @include adjust-font-size-to(18px);
     }
     .post-meta {
@@ -173,6 +175,12 @@
     }
     .post-share-title {
       @include adjust-font-size-to(16px);
+    }
+  }
+
+  @media (max-height: 640px) {
+    .post-header {
+      padding-top: 240px;
     }
   }
 

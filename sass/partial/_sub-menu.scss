@@ -47,9 +47,6 @@
     right: 0;
     z-index: 300;
     margin: 0 auto;
-    .sub-menu-inner {
-      @include transition(width 0.5s);
-    }
   }
 
   @include at-breakpoint($wide-desktop) {

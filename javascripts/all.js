@@ -75,6 +75,9 @@ $( document ).ready(function() {
 
   if ( $('.auto-break-text').length != 0 ) {
     $('.auto-break-text').macho({ 'length':5 });
+    $(document).ajaxComplete(function() {
+      $('.auto-break-text').macho({ 'length':5 });
+    });
   }
 
   if ( $('.article').length != 0 ) {

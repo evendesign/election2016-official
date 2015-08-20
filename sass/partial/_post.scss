@@ -6,9 +6,10 @@
     @include trailer(1);
     padding: 35% 24px 24px;
     text-align: center;
-    background-color: #eaeaea;
+    background-color: #50B584;
     background-position: center center;
     @include background-size(cover);
+
     &:before {
       content: "";
       position: absolute;

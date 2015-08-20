@@ -4,8 +4,10 @@
     margin-top: -24px;
   }
   @include at-breakpoint($pad) {
-    padding-top: 30px;
-    margin-top: -30px;
+    .anchor {
+      padding-top: 30px;
+      margin-top: -30px;
+    }
   }
 
   @include at-breakpoint($desktop) {

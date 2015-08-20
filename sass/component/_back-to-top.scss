@@ -1,0 +1,37 @@
+.back-to-top-wrap {
+  float: right;
+}
+.back-to-top {
+  display: block;
+  visibility: hidden;
+  position: fixed;
+  bottom: -48px;
+  margin-left: -48px;
+  width: 48px;
+  height: 48px;
+  font-size: 15px;
+  line-height: 48px;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  background-color: rgba($color-primary, .8);
+  @include border-radius(3px 0 0 3px);
+  @include transition(background-color 0.5s, visibility 0s 0.5s, opacity 0.5s, bottom 0.5s);
+  &:hover {
+    color: white;
+    background-color: rgba($color-primary, .6);
+    text-decoration: none;
+  }
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 24px;
+    @include transition(background-color 0.5s, opacity 0.5s 0.5s, bottom 0.5s 0.5s);
+  }
+
+  @include at-breakpoint($wide-desktop) {
+    margin-left: auto;
+    @include border-radius(0 3px 3px 0);
+  }
+
+}

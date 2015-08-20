@@ -61,11 +61,11 @@ $( document ).ready(function() {
     return false;
   });
 
-  if ( $('.back-to-top-wrap').length != 0 ) {
+  if ( $('.back-to-top').length != 0 ) {
     function back_to_top_active() {
       var waypoints = $('.page-inner').waypoint({
         handler: function(direction) {
-          $('.back-to-top-wrap').toggleClass('is-active');
+          $('.back-to-top').toggleClass('is-active');
         },
         offset: '-70%'
       })

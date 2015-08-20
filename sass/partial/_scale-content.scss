@@ -99,9 +99,10 @@
         @include transition(opacity 0s);
       }
 
-      .back-to-top-wrap {
+      .back-to-top {
         @include opacity(0);
         bottom: -48px;
+        visibility: hidden;
         @include transition(opacity 0s, bottom 0s);
       }
 

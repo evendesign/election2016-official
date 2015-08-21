@@ -93,9 +93,38 @@
 
 .post-list_list-style {
   .post-item {
-    @include leader(1);
     display: block;
-    @include trailer(2);
+    border-bottom: 1px solid #eaeaea;
+    padding: rhythm(0.5) 0;
+  }
+
+  .post-item:first-child {
+    border-top: 1px solid #eaeaea;
+  }
+
+  .post-image {
+    float: left;
+    margin: 0 12px 0 0;
+    width: 72px;
+    padding-top: 72px;
+  }
+  .post-content {
+    overflow: hidden;
+  }
+  .post-title {
+    @include trailer(0.5);
+    @include adjust-font-size-to(16px);
+    @include transition(color .25s);
+
+  }
+  .post-summary {
+    display: none;
+  }
+
+  .post-item:hover {
+    .post-title {
+      color: $color-primary;
+    }
   }
 
   @include at-breakpoint(480px) {
@@ -119,25 +148,20 @@
     }
 
     .post-item {
-      @include leader(1);
-      @include trailer(1);
+      padding: rhythm(1) 0;
     }
 
-    .post-item + .post-item {
-      border-top: 1px solid #eaeaea;
-      @include padding-leader(1);
+    .post-item:first-child {
+      border-top: none;
+      @include padding-leader(0);
     }
 
     .post-image {
-      float: left;
-      margin: 0 12px 0 0;
       width: 176px;
       padding-top: 132px;
     }
-    .post-content {
-      overflow: hidden;
-    }
     .post-title {
+      @include adjust-font-size-to(18px, 1);
       @include trailer(0.5);
     }
     .post-summary {
@@ -151,8 +175,6 @@
       @include leader(2);
       @include adjust-font-size-to(28px, 1.5);
       font-weight: bold;
-    }
-    .post-item {
     }
     .post-image {
       width: 240px;

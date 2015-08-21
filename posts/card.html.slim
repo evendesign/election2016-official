@@ -6,30 +6,38 @@
 .content.has-sub-menu
   .post
     .post-header
+      / 文章封面
       .post-cover
         img src="/images/wordcard.jpg"
+      / 文章所屬議題
       ul.post-category
         li: a href="/categories/show.html" 字卡
-        // 若出現兩者以上議題的架構
+        / 若出現兩者以上議題的架構
         / li: a href="/categories/show.html" 活動
         / li: a href="/categories/show.html" 政策
+      / 文章標題
       h2.post-title.auto-break-text 開創一個真正屬於人民的時代
+      / 文章副標題（可有可無，若沒有副標題，請移除整個架構）
       h3.post-subtitle.auto-break-text 本文為蔡英文於華府智庫「戰略與國際研究中心（CSIS）」之演講
+      / 文章分享按鈕區塊
       .post-share
         span.post-share-title 分享：
         a.post-share-btn.icon-facebook href="#" target="_blank"
         a.post-share-btn.icon-twitter href="#" target="_blank"
         a.post-share-btn.icon-plurk href="#" target="_blank"
         a.post-share-btn.icon-line href="#" target="_blank"
+      / 文章日期、標籤
       .post-meta
         span.post-date 2015.7.23
         - (rand(5) + 1).times do |i|
           a.post-tag href="/tags/"= zh_lorem_words(rand(5) + 1)
+    / 文章內容區塊
     .post-content.article
       .container.container_single-article
         = render "/partial/demo-article"
     .post-footer
       .container.container_single-article
+        / 文章分享按鈕區塊
         .post-share
           span.post-share-title 分享：
           a.post-share-btn.icon-facebook href="#" target="_blank"
@@ -42,6 +50,7 @@
         /   a.pager-item.pager-item_return href="#" 返回文章列表
         /   a.pager-item.next href="#": .pager-title 下一篇
 
+  / 相關文章列表
   .aside-posts
     .container.container_single-article
       h3.aside-posts-title 相關文章
@@ -57,7 +66,7 @@
                 // 若出現兩者以上議題的架構
                 / li.post-category-item: span 活動
                 / li.post-category-item: span 故事
-
+  / fb 留言
   .comments
     .container.container_single-article
       h3.comments-title 留言

@@ -2,32 +2,17 @@
   @include pie-clearfix;
 
   .post-header {
-    position: relative;
-    @include trailer(1);
-    padding: 35% 24px 24px;
     text-align: center;
-    background-color: #50B584;
-    background-position: center center;
-    @include background-size(cover);
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url("/images/blur-ball-post-header.png");
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      @include background-size(cover);
-      opacity: .8;
-    }
+    @include trailer(1);
   }
 
-  .post-header-inner {
-    position: relative;
-    z-index: 10;
+  .post-cover {
+    display: block;
+    @include trailer(0.5);
+    img {
+      margin: 0 auto;
+      display: block;
+    }
   }
 
   .post-category {
@@ -40,7 +25,6 @@
       display: block;
       @include adjust-font-size-to(15px, 3/4);
       font-weight: bold;
-      color: #FEFF86;
       &:hover {
         text-decoration: none;
       }
@@ -51,19 +35,19 @@
     @include adjust-font-size-to(24px, 1.25);
     @include trailer(0);
     font-weight: bold;
-    color: white;
+    color: black;
   }
 
   .post-subtitle {
-    color: white;
     @include leader(0.25);
     @include trailer(0);
     @include adjust-font-size-to(13px, 3/4);
+    color: #444;
   }
 
   .post-meta {
     @include pie-clearfix;
-    @include leader(0.25);
+    @include leader(0.125);
     @include trailer(0.75);
     @include adjust-font-size-to(13px);
     text-align: center;
@@ -102,12 +86,27 @@
     }
   }
 
+  .post-content {
+    *:last-child {
+      @include trailer(0);
+    }
+  }
+
   .post-footer {
     @include leader(1.5);
     @include padding-trailer(1.5);
   }
 
+  .post-action {
+    text-align: center;
+    @include trailer(1);
+    .btn {
+      padding: 3px 24px;
+    }
+  }
+
   .post-share {
+    @include leader(1);
     text-align: center;
     a.icon-facebook { color: #4863B3; }
     a.icon-twitter { color: #4099FF; }
@@ -117,7 +116,6 @@
       @include opacity(0.75);
     }
   }
-
 
   .post-share-title {
     display: inline-block;
@@ -132,7 +130,6 @@
     margin-right: 9px;
     color: #999;
     &.icon-line {
-      // margin-left: 3px;
       margin-right: 0;
     }
     &:hover {
@@ -148,8 +145,12 @@
 
   @include at-breakpoint($pad) {
     .post-header {
-      padding: 28% 10% 48px;
+      @include padding-leader(2);
       @include trailer(2);
+    }
+    .post-cover {
+      margin: 0 auto rhythm(1);
+      padding: 0 48px;
     }
     .post-category {
       a {
@@ -174,14 +175,79 @@
       @include leader(2);
       @include padding-trailer(2);
     }
+    .post-action {
+      @include trailer(2);
+      .btn {
+        @include adjust-font-size-to(16px, 1);
+        padding: 6px 36px;
+      }
+    }
+    .post-share {
+      @include leader(2);
+    }
     .post-share-title {
       @include adjust-font-size-to(16px);
     }
   }
+}
 
-  @media (max-height: 640px) {
+
+.post_bg-image-style {
+  .post-cover {
+    background-color: #50B584;
+    @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
+  }
+  .post-cover-inner {
+    position: relative;
+    z-index: 0;
+    padding: 40% 24px 24px;
+    background-position: center center;
+    @include background-size(cover);
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('/images/blur-ball-post-header.png');
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      @include background-size(cover);
+    }
+  }
+  .post-category {
+    a {
+      color: #FEFF86;
+    }
+  }
+  .post-title {
+    color: white;
+  }
+
+  .post-subtitle {
+    color: white;
+  }
+
+  @include at-breakpoint($pad) {
     .post-header {
-      padding-top: 240px;
+      @include padding-leader(0);
+    }
+    .post-cover {
+      padding: 0;
+    }
+    .post-cover-inner {
+      padding: 28% 20% 48px;
+    }
+    .post-title {
+      margin: rhythm(0.25) 0 0;
+    }
+    @media (max-height: 640px) {
+      .post-cover-inner {
+        padding-top: 240px;
+      }
     }
   }
 

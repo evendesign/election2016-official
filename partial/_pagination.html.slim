@@ -1,0 +1,7 @@
+ul.pagination
+  li: span.pagination-item.is-disable &laquo;
+  li.is-active: a.pagination-item href="#" 1
+  - (rand(3)+2).times do |i|
+    li: a.pagination-item href="#"= ( i+2 )
+  li.is-disabled: span.pagination-item …
+  li: a.pagination-item href="#" &raquo;

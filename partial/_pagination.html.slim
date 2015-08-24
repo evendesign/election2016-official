@@ -1,5 +1,10 @@
+/ 為文章列表分頁按鈕架構
+/ 按鈕分別有幾個狀態
+/ - .is-disabled 為無法沒有上下頁與 ... 時使用
+/ - .is-active 為目前所在分頁使用
+
 ul.pagination
-  li: span.pagination-item.is-disable &laquo;
+  li.is-disabled: span.pagination-item &laquo;
   li.is-active: a.pagination-item href="#" 1
   - (rand(3)+2).times do |i|
     li: a.pagination-item href="#"= ( i+2 )

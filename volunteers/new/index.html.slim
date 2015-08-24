@@ -1,55 +1,33 @@
 = render '/partial/header'
-.content.volunteer
+.content
   .container.container_single-article
-    .volunteer-header
-      h1.title 志工募集
-      p.description.auto-break-text 我們一起點亮台灣！ 蔡英文競選辦公室正在徵詢有意願擔任志工者。 參與改變、成為我們的夥伴，請寫下面的表單， 我們會在彙整資訊後與您聯絡。
-      .volunteer-image
+    .volunteer
+      .volunteer-header
+        h1.volunteer-title 志工募集
+        p.volunteer-text.auto-break-text 我們一起點亮台灣！ 蔡英文競選辦公室正在徵詢有意願擔任志工者。 參與改變、成為我們的夥伴，請寫下面的表單， 我們會在彙整資訊後與您聯絡。
+        .volunteer-image
 
-    .volunteer-form
-      .form-title 報名表
-      form.form
-        .form-row.is_required
-          label.form-label 姓名
-          .form-content
-            input.form-control type="text"
-        .form-row.is_required
-          label.form-label 所在縣市
-          .form-content
-            input.form-control.small type="text"
-        .form-row
-          label.form-label 年齡
-          .form-content
-            select.form-select
-              option value="item" 10~19
-              option value="item" 20~29
-              option value="item" 30~39
-              option value="item" 40~49
-              option value="item" 50~59
-              option value="item" 60以上
-        .form-row.is_required
-          label.form-label 聯絡電話（市話 or 手機）
-          .form-content
-            input.form-control.small type="tel"
-        .form-row.is_required.error
-          label.form-label MAIL
-          .form-content
-            input.form-control.large type="email"
-            .form-error
-              p 請填寫正確的 mail 格式
-        .form-row
-          label.form-label LINE 帳號
-          .form-content
-            input.form-control type="text"
-        .form-row
-          label.form-label 臉書帳號
-          .form-content
-            input.form-control type="text"
-        .form-row.is_required
-          label.form-label 先前擔任選舉志工經驗（填寫候選人＋選舉）
-          .form-content
-            input.form-control.large type="text" placeholder="例：ＸＸＸ立法委員"
-
-      .volunteer-submit
-        input.btn.btn_primary type="submit" value="確認送出"
+      form.form.volunteer-form
+        h2.volunteer-form-title 報名表
+        .volunteer-form-content
+          .col
+            .form-row.is_required
+              label.form-label 姓名
+              .form-content
+                input.form-control.large type="text"
+            .form-row.is_required
+              label.form-label 所在縣市
+              .form-content
+                input.form-control.large type="text"
+          .col
+            .form-row.is_required
+              label.form-label 聯絡電話（市話 or 手機）
+              .form-content
+                input.form-control.large type="tel"
+            .form-row.is_required
+              label.form-label MAIL
+              .form-content
+                input.form-control.large type="email"
+        .volunteer-action
+          input.btn.btn_primary type="submit" value="確認送出"
 

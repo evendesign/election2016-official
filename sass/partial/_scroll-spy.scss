@@ -6,6 +6,7 @@
     position: fixed;
     top: 50%;
     z-index: 100;
+    margin: 0;
     padding-right: 6px;
     list-style: none;
     @include translate(-100%, -50%);
@@ -30,11 +31,13 @@
       @include border-radius(50%);
       @include transition(border-color .25s, transform .25s);
     }
-    &.is-active, &:hover {
+    &:hover {
       a {
         color: #50B584;
         text-decoration: none;
       }
+    }
+    &:hover, &.is-active {
       &:after {
         border-color: #50B584;
         @include scale(1.5);

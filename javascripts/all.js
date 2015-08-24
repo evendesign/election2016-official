@@ -175,8 +175,8 @@ $( document ).ready(function() {
           element: spyItemElements[i],
           handler: function(direction) {
             var spyMenuElements = $('.scroll-spy-menu-item');
-            var target = spyMenuElements[this.element.getAttribute("data-spy-count") - 1];
-            var previousTarget = spyMenuElements[this.element.getAttribute("data-spy-count") - 2];
+            var target = spyMenuElements[this.element.getAttribute("data-spy-index") - 1];
+            var previousTarget = spyMenuElements[this.element.getAttribute("data-spy-index") - 2];
             if ( direction === 'down' ) {
               spyMenuElements.removeClass('is-active');
               $(target).addClass('is-active');
@@ -199,7 +199,7 @@ $( document ).ready(function() {
     $target = $(target);
 
     $('html, body').stop().animate({
-        'scrollTop': $target.offset().top - 200
+        'scrollTop': $target.offset().top - 150
     }, 1000, 'swing', function () {
         window.location.hash = target;
     });

@@ -17,13 +17,13 @@ $figure-width: 960px
     padding-right: 48px
 
 // text mark tool
-.bold-text
+em, strong
   font-weight: bold
 
-.italic-text
+i
   font-style: italic
 
-.highlight-text
+mark
   background-color: lighten(#FAC339, 10%)
 
 .text-center
@@ -95,12 +95,35 @@ $figure-width: 960px
     +adjust-font-size-to(18px, 1.25)
     font-weight: bold
 
-  .blockquote
+  blockquote
     +policy-container($content-width)
+    padding: 0 30px
     +adjust-font-size-to(16px)
     text-align: center
-    color: #3CA59A
+    color: $color-secondary
+    border: none
 
+    &:before, &:after
+      position: absolute
+      display: block
+      color: #ccc
+      @include opacity(0.125)
+
+    &:before
+      content: '“'
+      top: 0
+      left: 0
+      +replace-text-with-svg('quote')
+      width: 18px
+      height: 24px
+
+    &:after
+      content: '”'
+      bottom: 0
+      right: 0
+      +replace-text-with-svg('quote2')
+      width: 18px
+      height: 24px
 
   .center-content
     text-align: left
@@ -146,10 +169,25 @@ $figure-width: 960px
     +leader(2)
 
   .section-has-background
+    position: relative
+    +padding-leader(3)
+    +padding-trailer(3)
     color: white
     background-repeat: no-repeat
     background-position: center center
     +background-size(cover)
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: rgba(0,0,0,.5)
+
+    *
+      position: relative
 
   .figure-grid
     +pie-clearfix
@@ -184,6 +222,7 @@ $figure-width: 960px
     position: relative
     padding: 24px 24px 0
     list-style: none
+    text-align: left
 
     .section-title, .sub-section-title
       line-height: 48px
@@ -198,10 +237,15 @@ $figure-width: 960px
       font-size: 28px
       font-weight: bold
       line-height: 48px
-      letter-spacing: -3px
+      letter-spacing: -2px
       color: rgba(0,0,0,.2)
 
-  @for $i from 1 through 30
+  @for $i from 1 through 9
+    .order-list:nth-child(#{$i})
+      &:before
+        content: '0#{$i}'
+
+  @for $i from 11 through 20
     .order-list:nth-child(#{$i})
       &:before
         content: '#{$i}'
@@ -246,32 +290,20 @@ $figure-width: 960px
       +translateX(0%)
 
   // animation delay
-  .delay-100ms
-    +transition-delay(.1s)
-
   .delay-200ms
     +transition-delay(.2s)
-
-  .delay-300ms
-    +transition-delay(.3s)
 
   .delay-400ms
     +transition-delay(.4s)
 
-  .delay-500ms
-    +transition-delay(.5s)
-
   .delay-600ms
     +transition-delay(.6s)
-
-  .delay-700ms
-    +transition-delay(.7s)
 
   .delay-800ms
     +transition-delay(.8s)
 
-  .delay-900ms
-    +transition-delay(.9s)
+  .delay-1000ms
+    +transition-delay(1s)
 
 
   +at-breakpoint($pad)
@@ -297,6 +329,26 @@ $figure-width: 960px
     .sub-section-title
       +trailer(.5)
       +adjust-font-size-to(21px, 1.25)
+
+    blockquote
+      +adjust-font-size-to(18px, 1.25)
+      padding: 0 48px
+
+      &:before
+        content: '“'
+        width: 24px
+        height: 30px
+
+      &:after
+        content: '”'
+        bottom: 0
+        right: 0
+        width: 24px
+        height: 30px
+
+    .section-has-background
+      +padding-leader(5)
+      +padding-trailer(5)
 
     .center-content
       text-align: center
@@ -405,12 +457,13 @@ $figure-width: 960px
         .header-title-inner
           position: absolute
           top: 50%
-          width: 100%
+          left: 0
+          right: 0
           +translateY(-50%)
 
-      .blockquote
-        +padding-leader(9)
-        +padding-trailer(9)
+    .section-has-background
+      +padding-leader(7)
+      +padding-trailer(7)
 
     .group-content
 

@@ -4,29 +4,34 @@
   .policy-page
     .policy-header style="background-image: url('/images/page-header-cover.jpg')"
       .header-title
-        h1.main-title 長照十年計畫 2.0 版
-        h2.main-sub-title 有一天我們都會變老，誰會照顧我們？
-
+        .header-title-inner
+          h1.main-title 長照十年計畫 2.0 版
+          h2.main-sub-title 有一天我們都會變老，誰會照顧我們？
+    .scroll-spy-menu
+      ul.scroll-spy-menu-inner
+        li.scroll-spy-menu-item: a href="#section-1" 主張
+        li.scroll-spy-menu-item: a href="#section-2" 原因
+        li.scroll-spy-menu-item: a href="#section-3" 政策
     .section
-      p.blockquote.animation.slide-up 有過照顧經驗人都知道，如果沒有很大的耐心和愛心，即使是最親近的家人，也會感到辛苦。在照顧過程中，不管是照顧者還是被照顧者，常常會處於一種精神上很緊張的狀態......有一段時間我沒有工作，在家裡照顧媽媽，特別感受到這個問題的嚴重性，這是台灣許多家庭正在經歷的事情。作為一個政治人物，我的責任就是提出問題的解決方案。
+      blockquote.animation.fade-in 「有過照顧經驗人都知道，如果沒有很大的耐心和愛心，即使是最親近的家人，也會感到辛苦。在照顧過程中，不管是照顧者還是被照顧者，常常會處於一種精神上很緊張的狀態⋯⋯有一段時間我沒有工作，在家裡照顧媽媽，特別感受到這個問題的嚴重性，這是台灣許多家庭正在經歷的事情。作為一個政治人物，我的責任就是提出問題的解決方案。」
 
-    .section
-      .group-content
-        .text-content.left
+    .section.scroll-spy-section#section-1 data-spy-index="1"
+      .center-content
+        .text-content
           h3.section-title 我們主張
-          ol
-            li
-              h4.sub-section-title 政府的責任
-              p 政府有責任建構完整的長期照顧體系，讓失能老人與身心功能障礙者能夠獲得適切的服務，<span class="bold-text">讓有需要照顧的人，能夠獨立生活。</span>
-            li
-              h4.sub-section-title 在地老化
-              p 實現<span class="bold-text">在地老化，服務種類應多元與連續</span>，從支持家庭、居家、社區到機構式，建構一套普及的照顧服務體系。同時，政府必須建立照顧管理機制，培訓足夠的本國照顧人力，確保服務資源的效率與品質。
-            li
-              h4.sub-section-title 減輕負擔
-              p 政府必須負起責任建立完整的長期照顧體系，努力去建造一個<span class="bold-text">負得起、用得上、溫馨而人性的長照服務體系</span>，照顧每一個有需要的人，減輕家庭照顧負擔。
-        .figure.animation.slide-up style="background-image: url('http://placehold.it/480x480/')"
+        ol.text-content
+          li.order-list
+            h3.sub-section-title 政府的責任
+            p 政府有責任建構完整的長期照顧體系，讓失能老人與身心功能障礙者能夠獲得適切的服務，<strong>讓有需要照顧的人，能夠獨立生活。</strong>
+          li.order-list
+            h3.sub-section-title 在地老化
+            p 實現<strong>在地老化，服務種類應多元與連續</strong>，從支持家庭、居家、社區到機構式，建構一套普及的照顧服務體系。同時，政府必須建立照顧管理機制，培訓足夠的本國照顧人力，確保服務資源的效率與品質。
+          li.order-list
+            h3.sub-section-title 減輕負擔
+            p 政府必須負起責任建立完整的長期照顧體系，努力去建造一個<strong>負得起、用得上、溫馨而人性的長照服務體系</strong>，照顧每一個有需要的人，減輕家庭照顧負擔。
 
-    .section
+
+    .section.scroll-spy-section#section-2 data-spy-index="2"
       .center-content
         .text-content
           h3.section-title 超高齡社會來臨，社會保險即將破產
@@ -42,93 +47,85 @@
           img src="http://placehold.it/960x480/"
 
     .section
-      .group-content
-        .text-content.right
-          h3.section-title = zh_lorem_sentence
-          p = zh_lorem_paragraphs 5
-        .figure.animation.slide-up style="background-image: url('http://placehold.it/480x480/')"
-
-      .group-content
-        .text-content.left
-          h3.section-title = zh_lorem_sentence
-          p = zh_lorem_paragraphs 5
-        .figure.animation.slide-up style="background-image: url('http://placehold.it/480x480/')"
-
-      .group-content
-        .text-content.right
-          h3.section-title = zh_lorem_sentence
-          p = zh_lorem_paragraphs 5
-        .figure.animation.slide-up style="background-image: url('http://placehold.it/480x480/')"
+      blockquote.animation.fade-in 老人本身不是問題，只有當政府無法提出相關的政策時，老人才會變成問題。我願意再一次說明我的立場。當「普遍照顧」成為社會政策的主流時，政府就必須改變過去殘補式的福利主張，要讓每一個人都享有基本的老幼照顧服務。
 
     .section
       .multi-col-content
-        h3.section-title = zh_lorem_sentence
-        .multi-col-content-inner
-          - 4.times do |i|
-            .col-2-content
-              h4.sub-section-title = zh_lorem_sentence
-              p = zh_lorem_paragraphs 3
+        h3.section-title 關於長期照護，我們正在面臨的4大危機
+        ol.multi-col-content-inner
+          li.col-2-content.order-list
+            h4.sub-section-title 照護員人力不足
+            p 八年來政府所培訓的服務人力尚不足以因應所需，且服務人力的勞動條件未明訂，造成本勞受訓後嚴重流失。根據2014年衛福部、勞動部統計，本國照顧服務員在受訓後有80%並未投入照顧職場，總計8萬名勞工。現在僅有7000人投入居家照顧職場、13000人在長照機構服務，長期照顧員人力嚴重不足。
+          li.col-2-content.order-list
+            h4.sub-section-title 社區式照護服務嚴重不足
+            p 2014年4月，我國老年人長期照顧與安養機構（含榮民之家與護理之家）總床位為10萬3,879床，而供給超過需求3萬4237床。機構式照顧老年人占需求長期照顧老年人的19.5%，比率遠低於歐美國家機構式（30%）。大型機構的長照服務供過於求，顯示我國老年人並不偏愛機構式照顧，普及的社區式服務則嚴重不足。
+          li.col-2-content.order-list
+            h4.sub-section-title 政府預算編列不足、家庭負擔沈重
+            p 2015年依需求推估長照經費需110億元，但馬政府只編列48億元，在過去七年，長照經費更總共僅編列245億元，平均每年僅有35億，編列嚴重不足。在經費短缺下服務提供不足、不均，難以真正減輕家庭照顧負擔。
+          li.col-2-content.order-list
+            h4.sub-section-title 城鄉差距嚴重、未能因地制宜
+            p 財政資源短缺的縣市，長期照顧資源嚴重不足。而如原住民族部落因地理偏遠、專業長期照顧資源不足，無法以都市補助標準與專業條件來統一規範，在不影響專業品質下，長照資源因地制宜，採行殊異的專業條件要求與補助標準有其必要。
+      .center-content
+        .figure.animation.slide-up
+          img src="http://placehold.it/960x480/"
+
+    .section-has-background.scroll-spy-section#section-3 data-spy-index="3" style="background-image: url('/images/post-3.jpg')"
+      .center-content
+        h3.section-title 政府負起照顧責任，減輕家庭沈重負擔
+        h4.sub-section-title 長照10年計劃2.0 版──照顧每一個需要的人，我們的3帖處方
+
+    .section
+      .center-content
+        .text-content
+          h3.section-title 普及的社區化長照服務
+        ol.text-content
+          li.order-list
+            p 建立完整的長期照顧體系，從支持家庭照顧者、到宅服務、居家護理、日間照顧、短期臨託、餐食服務、交通接送、團體家屋、機構式照顧等基礎建設完成。
+          li.order-list
+            p 發展以社區為基礎的健康照護團隊，向前銜接預防保健，向後發展在宅臨終安寧照顧，以期壓縮疾病期間，減少長期照顧壓力。
+          li.order-list
+            p 積極發展以社區為基礎的小規模多機能整合型服務中心，提供在地老化的社區整體老人、身心障礙者的綜合照顧服務。
+
+    .seciton
+      .center-content
+        .text-content
+          h3.section-title 付得起的平價長照服務
+        ol.text-content
+          li.order-list
+            p 未來將編列充足的長照服務基金，每年編列316億元，未來因應需求增加，逐年提高財源數額，加速建置長照服務體系。
+          li.order-list
+            p 讓每一個需要的人都受到照顧，依家庭經濟狀況給予適當的長照經費補助，針對偏鄉地區展開長照資源補強專案，擴展長期照顧服務設施，拉進城鄉差距。
+          li.order-list
+            p 長照基金財源從哪裡來？我們將以指定稅收為主要財源，並兼顧租稅制度的公平合理。從遺產及贈與稅加徵10%，每年約246億元；房屋及土地交易所得稅，第一年約40億元；公務預算五年共150億元，每年30億元公務預算。
+
+    .section
+      .center-content
+        .text-content
+          h3.section-title 專業的優質長照服務
+        ol.text-content
+          li.order-list
+            p 優質的長照服務訓練，包括照顧服務員、社會工作、護理、物理治療、職能治療、營養等人員，提供完整照顧，亦能創造就業機會，帶動周邊相關產業。
+          li.order-list
+            p 充足的長照服務人力，大專院校老人服務、長期照護等科系所學生納入長照人力規劃，有效培訓並轉介就業，並將外籍配偶納入長照服務培育計畫，增加潛在人力資源。
+          li.order-list
+            p 建立專業照顧管理制度，將照顧管理專員納入專門職業及技術人員考試，確保照顧服務品質。
+
+    .section
+      .center-content
+        .text-content
+          h3.section-title 全面推動「長照、托育、婦女就業三合一照顧政策」從根源面對高齡化問題
+          p 「老有所終，幼有所托」是政府應該給人民最基本的安心生活。在民進黨上次執政時期，我們就已經看見高齡化將是國家重大的挑戰，我們訂出一套「長照十年」計劃，預計從2007年起，分十年編列817億的預算，為台灣的長照體系創造出服務供給。但是過去八年以來，長照計劃的預算規模只有原先規劃的三分之一，所訓練的居家服務員只有百分之十願意繼續留在職場，計畫延宕。
+          p 「長照十年2.0版」提出務實方案解決長照困境，刻不容緩。未來我們將在中央設置跨部門的「長期照顧推動小組」，整合各部門、各層級政府間的照顧事務，盡快達到便民、效率的目標。從根源面對高齡化問題，我們將進一步推動全面的「長照、托育、婦女就業三合一照顧政策」，來減輕家庭，尤其是家庭之中的女性，所承受的照顧重擔。
 
       .multi-col-content
         .multi-col-content-inner
-          - 3.times do |i|
-            .col-3-content
-              h4.section-title = zh_lorem_words 2 + rand(3)
-              p = zh_lorem_paragraph
+          .col-3-content.animation.slide-up.delay-200ms
+            h3.section-title 長照
+            p 以「長照十年計畫2.0版」，推出<strong>付得起、用得上、溫馨而人性</strong>的長照服務
+          .col-3-content.animation.slide-up.delay-400ms
+            h3.section-title 托育
+            p 推動讓<strong>家長付得起</strong>的<strong>普及公共托育服務</strong>，支持父母兼顧育兒和工作
+          .col-3-content.animation.slide-up.delay-600ms
+            h3.section-title 婦女就業
+            p 以<strong>「女性充分就業」</strong>啟動良性循環
 
-    .section
-      .figure-grid
-        .figure-item-row.animation.slide-up
-          .figure-item-wrap
-            .figure-item.small
-            .figure-item.small.empty
-            .figure-item.small.empty
-            .figure-item.small
-          .figure-item-wrap
-            .figure-item
-          .figure-item-wrap
-            .figure-item
-          .figure-item-wrap
-            .figure-item.small.empty
-            .figure-item.small
-            .figure-item.small
-            .figure-item.small.empty
-        .figure-item-row.animation.slide-up
-          .figure-item-wrap
-            .figure-item.small.empty
-            .figure-item.small.empty
-          .figure-item-wrap
-            .figure-item.small
-            .figure-item.small.empty
-          .figure-item-wrap
-            .figure-item.small.empty
-            .figure-item.small
-          .figure-item-wrap
-            .figure-item.small
-            .figure-item.small.empty
-        .figure-item-row.animation.slide-up
-          .figure-item-wrap
-            .figure-item.small
-            .figure-item.small.empty
-            .figure-item.small.empty
-            .figure-item.small.empty
-          .figure-item-wrap
-            .figure-item.small.empty
-            .figure-item.small
-            .figure-item.small
-            .figure-item.small.empty
-          .figure-item-wrap
-            .figure-item
-          .figure-item-wrap
-            .figure-item.small.empty
-            .figure-item.small
-            .figure-item.small.empty
-            .figure-item.small.empty
-        .figure-item-row.animation.slide-up
-          .figure-item-wrap
-            .figure-item.small.empty
-            .figure-item.small.empty
-            .figure-item.small.empty
-            .figure-item.small.empty
-          .figure-item-wrap
-            .figure-item

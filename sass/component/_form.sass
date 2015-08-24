@@ -1,0 +1,142 @@
+form
+  +trailer(2)
+
+.form-row
+  +adjust-font-size-to(15px)
+
+.form-row + .form-row
+  +leader(.75)
+
+.form-content
+  &.text-center
+    text-align: center
+
+  &.is-important
+    color: #CB5246
+    font-weight: bold
+
+.form-label
+  display: block
+  +trailer(0.125)
+  color: black
+  @extend %subpixel
+
+  .is_required &:after
+    content: '*'
+    display: inline
+    margin-left: 3px
+    font-size: 16px
+    line-height: 1
+    color: #c00
+
+.span-label
+  margin-right: 12px
+  line-height: 36px
+
+.form-control
+  +reset-box-model
+  +box-sizing(border-box)
+  vertical-align: top
+  width: 100%
+  min-height: 36px
+  margin: 0 6px 6px 0
+  padding: 4px 9px
+  border: 2px solid #ddd
+  border-radius: 5px
+  +appearance(none)
+  +transition(border-color .25s)
+
+  &:focus
+    outline: none
+    border-color: #50B584
+
+  &.tiny
+    max-width: 60px
+
+  &.small
+    max-width: 160px
+
+  .error &
+    border-color: #E65E50
+
+.form-select
+  position: relative
+  +box-sizing(border-box)
+  vertical-align: top
+  height: 36px
+  margin: 0 6px 6px 0
+  padding: 0 30px 0 9px
+  line-height: 32px
+  border: 2px solid #ddd
+  border-radius: 5px
+  background-color: white
+  background-image: url("/images/down.png")
+  background-image: none, url("/images/down.svg")
+  background-repeat: no-repeat
+  background-position:  right 11px
+  +transition(border-color .25s)
+  +appearance(none)
+  +filter(saturate(0%))
+
+  &:focus
+    outline: none
+    border-color: #50B584
+    +filter(saturate(100%))
+
+  .error &
+    border-color: #E65E50
+
+.group-radio, .group-checkbox
+  label
+    margin-right: 12px
+
+  input[type="radio"], input[type="checkbox"]
+    margin-right: 3px
+
+.form-tip, .form-warning, .form-error
+  +box-sizing(border-box)
+  position: relative
+  +leader(.5)
+  padding: 6px 9px 6px 36px
+  font-weight: bold
+  +border-radius(5px)
+
+  &:before
+    content: ""
+    position: absolute
+    top: 7px
+    left: 7px
+  p
+    margin: 0
+    +adjust-font-size-to(15px)
+
+.form-tip
+  color: #2C513E
+  background-color: rgba(#A7CD6B, .15)
+
+  &:before
+    +replace-text-with-svg("icon-tip")
+
+.form-warning
+  color: darken(#E1AF31, 5%)
+  background-color: rgba(#FAC339, .15)
+
+  &:before
+    +replace-text-with-svg("icon-warning")
+
+.form-error
+  color: #E65E50
+  background-color: rgba(#E65E50, .15)
+
+  &:before
+    +replace-text-with-svg("icon-error")
+
++at-breakpoint($pad)
+  .form-control
+    max-width: 240px
+
+    &.large
+      max-width: 360px
+
+  ul, ol
+    +adjust-font-size-to(15px, 1)

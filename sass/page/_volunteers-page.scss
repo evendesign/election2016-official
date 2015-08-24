@@ -1,0 +1,122 @@
+.volunteer {
+  .container {
+    max-width: 800px;
+  }
+  .volunteer-header {
+    position: relative;
+    @include leader();
+    padding-bottom: 1px;
+    text-align: center;
+    .title {
+      position: relative;
+      @include trailer(.5);
+      @include padding-trailer(.5);
+      @include adjust-font-size-to(26px);
+      font-weight: bold;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 24px;
+        height: 2px;
+        margin-left: -12px;
+        background-color: rgba(0,0,0,.2);
+      }
+    }
+    .description {
+      @include adjust-font-size-to(15px);
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .volunteer-image {
+      margin: 0 auto;
+      @include replace-text-with-svg('volunteer-img-mobile');
+    }
+  }
+  .volunteer-form {
+    @include box-sizing(border-box);
+    margin: 0 -24px;
+    padding: 24px;
+    background-color: white;
+    @include border-radius(5px);
+
+    .form-title {
+      @include trailer();
+      @include padding-trailer(.5);
+      @include adjust-font-size-to(22px, 1);
+      font-weight: bold;
+      border-bottom: 2px solid #50b584;
+    }
+  }
+  .volunteer-submit {
+    text-align: center;
+    .btn {
+      padding: 9px 64px;
+      @include adjust-font-size-to(18px);
+    }
+  }
+  &.thanks {
+    .volunteer-header {
+      text-align: center;
+      .title {
+        &:after {
+          left: 50%;
+          width: 24px;
+          margin-left: -12px;
+        }
+      }
+      .description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .volunteer-image {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 48px auto 0;
+        max-width: 488px;
+        width: 100%;
+        height: 290px;
+        background-image: url('/images/volunteer-img-thanks.png');
+        background-image: none, url('/images/volunteer-img-thanks.svg');
+        background-position: top center;
+        background-repeat: no-repeat;
+        @include background-size(contain);
+      }
+    }
+  }
+  @include at-breakpoint($pad) {
+    .volunteer-form {
+      margin: 0;
+    }
+  }
+  @include at-breakpoint($desktop) {
+    .volunteer-header {
+      @include leader(4);
+      text-align: left;
+      .title {
+        position: relative;
+        @include trailer();
+        @include padding-trailer();
+        @include adjust-font-size-to(32px);
+        &:after {
+          left: 0;
+          width: 48px;
+          margin-left: 0;
+        }
+      }
+      .description {
+        margin-left: 0;
+        @include adjust-font-size-to(16px);
+      }
+      .volunteer-image {
+        position: absolute;
+        bottom: 0;
+        right: -48px;
+        @include replace-text-with-svg('volunteer-img');
+      }
+    }
+  }
+}

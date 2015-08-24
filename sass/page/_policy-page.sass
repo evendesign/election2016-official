@@ -1,0 +1,422 @@
+// container setting
+$content-width: 680px
+$figure-width: 960px
+@mixin policy-container($max-width)
+  max-width: $max-width
+  margin-left: auto
+  margin-right: auto
+  padding-left: 12px
+  padding-right: 12px
+
+  +at-breakpoint($pad)
+    padding-left: 24px
+    padding-right: 24px
+
+  +at-breakpoint($desktop)
+    padding-left: 48px
+    padding-right: 48px
+
+// text mark tool
+.bold-text
+  font-weight: bold
+
+.italic-text
+  font-style: italic
+
+.highlight-text
+  background-color: lighten(#FAC339, 10%)
+
+.text-center
+  text-align: center
+
+// policy-layout
+.policy-page
+
+  p
+    +trailer(.5)
+    +adjust-font-size-to(13px)
+    text-align: left
+
+  ul, ol
+    padding-left: 0
+
+  .section
+    +leader(3)
+    +trailer(3)
+
+    +at-breakpoint($pad)
+      +leader(6)
+      +trailer(6)
+
+    +at-breakpoint($desktop)
+      +leader(9)
+      +trailer(9)
+
+  .policy-header
+    position: relative
+    padding-bottom: 1px
+    text-align: center
+    color: white
+    background-repeat: no-repeat
+    background-position: center center
+    +background-size(cover)
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: rgba(0,0,0,.5)
+
+    .header-title
+      position: relative
+      padding: rhythm(5) 24px
+
+      .main-title, .main-sub-title
+        font-weight: bold
+
+  .main-title
+    +trailer(.25)
+    +adjust-font-size-to(28px)
+
+  .main-sub-title
+    +trailer(0)
+    +adjust-font-size-to(16px)
+
+  .section-title
+    +trailer(.5)
+    +adjust-font-size-to(24px, 1.35)
+    font-weight: bold
+
+  .sub-section-title
+    +trailer(.25)
+    +adjust-font-size-to(18px, 1.25)
+    font-weight: bold
+
+  .blockquote
+    +policy-container($content-width)
+    +adjust-font-size-to(16px)
+    text-align: center
+    color: #3CA59A
+
+
+  .center-content
+    text-align: left
+
+    .text-content
+      +policy-container($content-width)
+
+    .figure
+      +policy-container($figure-width)
+      +leader()
+      +trailer()
+
+  .group-content
+    +pie-clearfix
+    position: relative
+    background-color: #F0F0F0
+
+    .text-content
+      padding: 48px 12px 0px
+
+    .figure
+      padding-top: 66.666%
+      background-repeat: no-repeat
+      background-position: center center
+      +background-size(cover)
+
+  .multi-col-content
+    +policy-container($figure-width)
+    text-align: left
+
+  .multi-col-content-inner
+    +pie-clearfix
+
+  .col-2-content
+    padding: 0px
+    text-align: left
+
+  .col-3-content
+    padding: 0px
+    text-align: left
+
+  .section-title + .multi-col-content-inner
+    +leader(2)
+
+  .section-has-background
+    color: white
+    background-repeat: no-repeat
+    background-position: center center
+    +background-size(cover)
+
+  .figure-grid
+    +pie-clearfix
+
+    .figure-item-wrap
+      +pie-clearfix
+      float: left
+      width: 100 / 2 * 1%
+
+    &.edit
+      .figure-item
+        outline: 1px solid red
+
+    .figure-item
+      float: left
+      width: 100%
+      padding-top: 100%
+      background-repeat: no-repeat
+      background-position: center center
+      +background-size(cover)
+      background-color: $color-gray-light
+
+      &.small
+        width: 50%
+        padding-top: 50%
+
+      &.empty
+        display: none
+        background-color: transparent
+
+  .order-list
+    position: relative
+    padding: 24px 24px 0
+    list-style: none
+
+    .section-title, .sub-section-title
+      line-height: 48px
+      +trailer(0)
+
+    &:before
+      position: absolute
+      top: 24px
+      left: -18px
+      width: 36px
+      text-align: right
+      font-size: 28px
+      font-weight: bold
+      line-height: 48px
+      letter-spacing: -3px
+      color: rgba(0,0,0,.2)
+
+  @for $i from 1 through 30
+    .order-list:nth-child(#{$i})
+      &:before
+        content: '#{$i}'
+
+  // animation
+  .animation
+    position: relative
+
+  // animation method
+  .fade-in
+    opacity: 0
+    +transition(opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+
+  .slide-up
+    opacity: 0
+    +translateY(10%)
+    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+      +translateY(0%)
+
+  .slide-left
+    opacity: 0
+    +translateX(10%)
+    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+      +translateX(0%)
+
+  .slide-right
+    opacity: 0
+    +translateX(-10%)
+    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+      +translateX(0%)
+
+  // animation delay
+  .delay-100ms
+    +transition-delay(.1s)
+
+  .delay-200ms
+    +transition-delay(.2s)
+
+  .delay-300ms
+    +transition-delay(.3s)
+
+  .delay-400ms
+    +transition-delay(.4s)
+
+  .delay-500ms
+    +transition-delay(.5s)
+
+  .delay-600ms
+    +transition-delay(.6s)
+
+  .delay-700ms
+    +transition-delay(.7s)
+
+  .delay-800ms
+    +transition-delay(.8s)
+
+  .delay-900ms
+    +transition-delay(.9s)
+
+
+  +at-breakpoint($pad)
+    p
+      +adjust-font-size-to(15px)
+
+    .policy-header
+
+      .header-title
+        padding: rhythm(8) 36px
+
+    .main-title
+      +trailer(.5)
+      +adjust-font-size-to(36px)
+
+    .main-sub-title
+      +adjust-font-size-to(18px)
+
+    .section-title
+      +trailer()
+      +adjust-font-size-to(26px, 1.5)
+
+    .sub-section-title
+      +trailer(.5)
+      +adjust-font-size-to(21px, 1.25)
+
+    .center-content
+      text-align: center
+
+      .figure
+        +leader(2)
+        +trailer(2)
+
+    .group-content
+
+      .text-content
+        +box-sizing(border-box)
+        width: 50%
+        min-height: 460px
+        padding: 36px
+
+        &.left
+          float: left
+
+        &.right
+          float: right
+
+      .figure
+        position: absolute
+        width: 50%
+        top: 0
+        bottom: 0
+        padding-top: 0
+
+      .text-content.left + .figure
+        right: 0
+
+      .text-content.right + .figure
+        left: 0
+
+    .multi-col-content
+      +policy-container($figure-width)
+      text-align: center
+
+    .multi-col-content-inner
+      +pie-clearfix
+
+    .col-2-content
+      +box-sizing(border-box)
+      float: left
+      width: 50%
+      padding: 24px 24px 0
+      text-align: left
+
+      &:nth-child(2n+1)
+        clear: left
+
+    .col-3-content
+      +box-sizing(border-box)
+      float: left
+      width: 33.333%
+      padding: 24px 24px 0
+      text-align: left
+
+      &:nth-child(3n+1)
+        clear: left
+
+    .section-title + .multi-col-content-inner
+      +leader(2)
+
+    .order-list:before
+      left: -21px
+      font-size: 32px
+
+    .figure-grid
+      .figure-item-row
+        +pie-clearfix
+
+      .figure-item-wrap
+        width: 100 / 4 * 1%
+
+      .figure-item.empty
+        display: block
+
+  +at-breakpoint($desktop)
+    p
+      +trailer()
+
+    .main-title
+      +trailer()
+      +adjust-font-size-to(42px)
+
+    .main-sub-title
+      +adjust-font-size-to(18px)
+
+    .section-title
+      +trailer()
+      +adjust-font-size-to(28px, 1.75)
+
+    .sub-section-title
+      +adjust-font-size-to(21px, 1.25)
+
+    .policy-header
+      background-attachment: fixed
+
+      .header-title
+        height: 80vh
+        max-height: 920px
+        padding: 0 24px
+
+        .header-title-inner
+          position: absolute
+          top: 50%
+          width: 100%
+          +translateY(-50%)
+
+      .blockquote
+        +padding-leader(9)
+        +padding-trailer(9)
+
+    .group-content
+
+      .text-content
+        padding: 72px
+
+    .order-list:before
+      left: -24px
+      font-size: 36px

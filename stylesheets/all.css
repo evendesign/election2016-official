@@ -262,7 +262,7 @@ body { background-color: #183840; position: relative; }
 .btn_outline-primary:hover { border-color: #50b584; background-color: #50b584; color: white; }
 .btn_outline-primary:disabled, .btn_outline-primary.is-disabled { color: #aaaaaa; border-color: #e7e7e7; background-color: transparent; }
 
-form { margin-bottom: 48px; }
+.form { margin-bottom: 48px; }
 
 .form-row { font-size: 15px; line-height: 24px; }
 

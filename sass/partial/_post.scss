@@ -8,7 +8,7 @@
 
   .post-cover {
     display: block;
-    @include trailer(0.5);
+    margin: 0 -24px rhythm(0.5);
     img {
       margin: 0 auto;
       display: block;
@@ -150,7 +150,6 @@
     }
     .post-cover {
       margin: 0 auto rhythm(1);
-      padding: 0 48px;
     }
     .post-category {
       a {

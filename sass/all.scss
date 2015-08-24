@@ -44,3 +44,9 @@
 @import "page/volunteers-page";
 
 // ==== inbox ====
+.hide-phone {
+  display: none;
+  @include at-breakpoint($pad) {
+    display: block;
+  }
+}

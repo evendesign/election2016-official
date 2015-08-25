@@ -5,16 +5,6 @@ $figure-width: 960px
   max-width: $max-width
   margin-left: auto
   margin-right: auto
-  padding-left: 12px
-  padding-right: 12px
-
-  +at-breakpoint($pad)
-    padding-left: 24px
-    padding-right: 24px
-
-  +at-breakpoint($desktop)
-    padding-left: 48px
-    padding-right: 48px
 
 // text mark tool
 em, strong
@@ -40,17 +30,28 @@ mark
   ul, ol
     padding-left: 0
 
+  .post
+    +leader()
+    +trailer()
+
+  .image
+    display: block
+    margin: 0 auto 24px
+    max-width: 100%
+    height: auto
+
   .section
-    +leader(3)
-    +trailer(3)
+    +leader(2)
+    +trailer(2)
+    padding: 0 24px
 
     +at-breakpoint($pad)
-      +leader(6)
-      +trailer(6)
+      +leader(4)
+      +trailer(4)
 
     +at-breakpoint($desktop)
-      +leader(9)
-      +trailer(9)
+      +leader(6)
+      +trailer(6)
 
   .policy-header
     position: relative
@@ -70,16 +71,30 @@ mark
       bottom: 0
       background-color: rgba(0,0,0,.5)
 
+    &:after
+      content: ''
+      position: absolute
+      left: 50%
+      bottom: 24px
+      width: 54px
+      height: 28px
+      margin-left: -27px
+      background-image: url(/images/policy-header-arrow.png)
+      background-image: none, url(/images/policy-header-arrow.svg)
+      background-position: center
+      background-repeat: no-repeat
+
+
     .header-title
       position: relative
-      padding: rhythm(5) 24px
+      padding: rhythm(6) 24px
 
       .main-title, .main-sub-title
         font-weight: bold
 
   .main-title
     +trailer(.25)
-    +adjust-font-size-to(28px)
+    +adjust-font-size-to(28px, 1.5)
 
   .main-sub-title
     +trailer(0)
@@ -97,6 +112,7 @@ mark
 
   blockquote
     +policy-container($content-width)
+    position: relative
     padding: 0 30px
     +adjust-font-size-to(16px)
     text-align: center
@@ -142,7 +158,7 @@ mark
     background-color: #F0F0F0
 
     .text-content
-      padding: 48px 12px 0px
+      padding-top: 48px 12px 0px
 
     .figure
       padding-top: 66.666%
@@ -165,17 +181,26 @@ mark
     padding: 0px
     text-align: left
 
-  .section-title + .multi-col-content-inner
-    +leader(2)
-
   .section-has-background
     position: relative
     +padding-leader(3)
     +padding-trailer(3)
+    padding-left: 24px
+    padding-right: 24px
     color: white
     background-repeat: no-repeat
     background-position: center center
     +background-size(cover)
+
+    .section-title
+      +trailer(.25)
+      +adjust-font-size-to(21px, 1.25)
+
+    .sub-section-title
+      +adjust-font-size-to(13px)
+
+    .center-content
+      text-align: center
 
     &:before
       content: ''
@@ -220,7 +245,8 @@ mark
 
   .order-list
     position: relative
-    padding: 24px 24px 0
+    padding-top: 24px
+    padding-left: 36px
     list-style: none
     text-align: left
 
@@ -231,7 +257,7 @@ mark
     &:before
       position: absolute
       top: 24px
-      left: -18px
+      left: -9px
       width: 36px
       text-align: right
       font-size: 28px
@@ -250,73 +276,20 @@ mark
       &:before
         content: '#{$i}'
 
-  // animation
-  .animation
-    position: relative
-
-  // animation method
-  .fade-in
-    opacity: 0
-    +transition(opacity .75s ease-in-out)
-
-    &.is-active
-      opacity: 1
-
-  .slide-up
-    opacity: 0
-    +translateY(10%)
-    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
-
-    &.is-active
-      opacity: 1
-      +translateY(0%)
-
-  .slide-left
-    opacity: 0
-    +translateX(10%)
-    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
-
-    &.is-active
-      opacity: 1
-      +translateX(0%)
-
-  .slide-right
-    opacity: 0
-    +translateX(-10%)
-    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
-
-    &.is-active
-      opacity: 1
-      +translateX(0%)
-
-  // animation delay
-  .delay-200ms
-    +transition-delay(.2s)
-
-  .delay-400ms
-    +transition-delay(.4s)
-
-  .delay-600ms
-    +transition-delay(.6s)
-
-  .delay-800ms
-    +transition-delay(.8s)
-
-  .delay-1000ms
-    +transition-delay(1s)
-
-
   +at-breakpoint($pad)
     p
       +adjust-font-size-to(15px)
 
+    .post
+      +leader(2)
+      +trailer(2)
+
     .policy-header
 
       .header-title
-        padding: rhythm(8) 36px
+        padding: rhythm(10) 36px
 
     .main-title
-      +trailer(.5)
       +adjust-font-size-to(36px)
 
     .main-sub-title
@@ -331,8 +304,8 @@ mark
       +adjust-font-size-to(21px, 1.25)
 
     blockquote
-      +adjust-font-size-to(18px, 1.25)
       padding: 0 48px
+      +adjust-font-size-to(18px, 1.25)
 
       &:before
         content: '“'
@@ -349,6 +322,13 @@ mark
     .section-has-background
       +padding-leader(5)
       +padding-trailer(5)
+
+      .section-title
+        +adjust-font-size-to(28px, 1.5)
+
+      .sub-section-title
+        +adjust-font-size-to(16px)
+
 
     .center-content
       text-align: center
@@ -395,27 +375,29 @@ mark
       +box-sizing(border-box)
       float: left
       width: 50%
-      padding: 24px 24px 0
+      padding: 0 24px 24px
       text-align: left
 
       &:nth-child(2n+1)
         clear: left
 
+      &.order-list
+        padding: 24px 12px 0 36px
+
     .col-3-content
       +box-sizing(border-box)
       float: left
       width: 33.333%
-      padding: 24px 24px 0
-      text-align: left
+      padding: 0 24px 24px
+      text-align: center
 
       &:nth-child(3n+1)
         clear: left
 
     .section-title + .multi-col-content-inner
-      +leader(2)
+      +leader()
 
     .order-list:before
-      left: -21px
       font-size: 32px
 
     .figure-grid
@@ -433,7 +415,7 @@ mark
       +trailer()
 
     .main-title
-      +trailer()
+      +trailer(.5)
       +adjust-font-size-to(42px)
 
     .main-sub-title
@@ -471,5 +453,4 @@ mark
         padding: 72px
 
     .order-list:before
-      left: -24px
       font-size: 36px

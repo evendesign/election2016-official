@@ -160,7 +160,7 @@ $( document ).ready(function() {
           handler: function(direction) {
             $(this.element).toggleClass('is-active')
           },
-          offset: '90%'
+          offset: '70%'
         })
       }
     }

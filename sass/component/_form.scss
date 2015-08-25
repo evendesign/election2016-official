@@ -33,6 +33,9 @@
     line-height: 1;
     color: #cc0000;
   }
+  .error & .form-label-tip {
+    color: #cc0000;
+  }
 }
 
 .span-label {
@@ -151,7 +154,7 @@
   .form-control {
     max-width: 240px;
     &.large {
-      max-width: 360px;
+      max-width: none;
     }
   }
   ul, ol {

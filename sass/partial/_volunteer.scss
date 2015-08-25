@@ -52,6 +52,12 @@
       @include trailer(0.75);
     }
   }
+  .volunteer-tip {
+    @include leader(0.75);
+    @include trailer(1);
+    @include adjust-font-size-to(15px);
+    color: #999;
+  }
   .volunteer-action {
     @include leader(1);
     text-align: center;
@@ -60,6 +66,7 @@
       @include adjust-font-size-to(16px);
     }
   }
+
   &.volunteer_thanks {
     .volunteer-header {
       text-align: center;
@@ -78,6 +85,15 @@
       margin: 0;
       padding: 48px;
     }
+    .volunteer-tip {
+      @include adjust-font-size-to(16px);
+    }
+    .volunteer-action {
+      @include leader(1.75);
+    }
+
+  }
+  @include at-breakpoint(700px) {
     .volunteer-form-content {
       @include pie-clearfix;
       margin: 0 -12px;
@@ -89,10 +105,6 @@
         width: 50%;
       }
     }
-    .volunteer-action {
-      @include leader(1.75);
-    }
-
   }
   @include at-breakpoint($desktop) {
     .volunteer-header {

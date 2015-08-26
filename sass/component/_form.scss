@@ -73,6 +73,7 @@
 .form-select {
   position: relative;
   @include box-sizing(border-box);
+  width: 100%;
   vertical-align: top;
   height: 36px;
   margin: 0 6px 6px 0;
@@ -81,17 +82,21 @@
   border: 2px solid #dddddd;
   border-radius: 5px;
   background-color: white;
-  background-image: url("/images/down.png");
-  background-image: none, url("/images/down.svg");
+  background-image: image-url("down.png");
+  background-image: none, image-url("down.svg");
   background-repeat: no-repeat;
   background-position: right 11px;
   @include transition(border-color 0.25s);
   @include appearance(none);
-  @include filter(saturate(0%));
   &:focus {
     outline: none;
     border-color: #50b584;
-    @include filter(saturate(100%));
+  }
+  &.tiny {
+    max-width: 60px;
+  }
+  &.small {
+    max-width: 160px;
   }
   .error & {
     border-color: #e65e50;
@@ -151,7 +156,7 @@
 }
 
 @include at-breakpoint($pad) {
-  .form-control {
+  .form-control, .form-select {
     max-width: 240px;
     &.large {
       max-width: none;

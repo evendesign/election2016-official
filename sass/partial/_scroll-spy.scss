@@ -12,24 +12,26 @@
     @include translate(-100%, -50%);
   }
   .scroll-spy-menu-item {
-    position: relative;
-    padding-right: 20px;
     text-align: right;
     a {
+      display: block;
+      position: relative;
+      padding-right: 20px;
       font-size: 13px;
+      line-height: 24px;
       color: transparent;
       @include nowrap;
       @include transition(color .25s);
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 6px;
-      margin-top: -3px;
-      border: 3px solid $color-gray;
-      @include border-radius(50%);
-      @include transition(border-color .25s, transform .25s);
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        margin-top: -3px;
+        border: 3px solid $color-gray;
+        @include border-radius(50%);
+        @include transition(border-color .25s, transform .25s);
+      }
     }
     &:hover {
       a {
@@ -38,7 +40,7 @@
       }
     }
     &:hover, &.is-active {
-      &:after {
+      a:after {
         border-color: #50B584;
         @include scale(1.5);
       }

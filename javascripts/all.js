@@ -158,9 +158,9 @@ $( document ).ready(function() {
         new Waypoint({
           element: animationElements[i],
           handler: function(direction) {
-            $(this.element).toggleClass('is-active')
+            $(this.element).addClass('is-active')
           },
-          offset: '70%'
+          offset: '75%'
         })
       }
     }
@@ -199,7 +199,7 @@ $( document ).ready(function() {
     $target = $(target);
 
     $('html, body').stop().animate({
-        'scrollTop': $target.offset().top - 150
+        'scrollTop': $target.offset().top - 110
     }, 1000, 'swing', function () {
         window.location.hash = target;
     });

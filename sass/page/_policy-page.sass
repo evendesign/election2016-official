@@ -32,7 +32,6 @@ mark
 
   .post
     +leader()
-    +trailer()
 
   .image
     display: block
@@ -41,17 +40,24 @@ mark
     height: auto
 
   .section
-    +leader(2)
-    +trailer(2)
-    padding: 0 24px
+    +padding-leader(2)
+    +padding-trailer(2)
+    padding-left: 24px
+    padding-right: 24px
 
     +at-breakpoint($pad)
-      +leader(4)
-      +trailer(4)
+      +padding-leader(3)
+      +padding-trailer(3)
 
     +at-breakpoint($desktop)
-      +leader(6)
-      +trailer(6)
+      +padding-leader(4)
+      +padding-trailer(4)
+
+    &.white-block
+      background-color: white
+
+    &.gray-block
+      background-color: #EFEFEF
 
   .policy-header
     position: relative
@@ -84,6 +90,22 @@ mark
       background-position: center
       background-repeat: no-repeat
 
+    .policy-category
+      +reset-list-style
+
+      li
+        display: inline-block
+        margin: 0 3px
+
+      a
+        display: block
+        +trailer(.5)
+        +adjust-font-size-to(15px, 3/4)
+        font-weight: bold
+        color: #FEFF86
+
+        &:hover
+          text-decoration: none
 
     .header-title
       position: relative
@@ -192,6 +214,19 @@ mark
     background-position: center center
     +background-size(cover)
 
+    .content-class
+      position: relative
+      +trailer()
+      +adjust-font-size-to(18px)
+      font-weight: bold
+
+      &:after
+        content: ''
+        display: block
+        width: 24px
+        margin: 6px auto 0
+        border-bottom: 1px solid white
+
     .section-title
       +trailer(.25)
       +adjust-font-size-to(21px, 1.25)
@@ -243,38 +278,46 @@ mark
         display: none
         background-color: transparent
 
-  .order-list
-    position: relative
-    padding-top: 24px
-    padding-left: 36px
+  .order-list, .todo-list
     list-style: none
-    text-align: left
+    li
+      position: relative
+      padding-left: 36px
+      text-align: left
 
-    .section-title, .sub-section-title
-      line-height: 48px
-      +trailer(0)
+      .section-title, .sub-section-title
+        line-height: 48px
+        +trailer(0)
 
-    &:before
-      position: absolute
-      top: 24px
-      left: -9px
-      width: 36px
-      text-align: right
-      font-size: 28px
-      font-weight: bold
-      line-height: 48px
-      letter-spacing: -2px
-      color: rgba(0,0,0,.2)
+      &:before
+        position: absolute
+        left: -9px
+        width: 36px
+        text-align: right
+        font-size: 28px
+        font-weight: bold
+        line-height: 48px
+        letter-spacing: -2px
+        color: rgba(0,0,0,.2)
 
   @for $i from 1 through 9
-    .order-list:nth-child(#{$i})
+    .order-list li:nth-child(#{$i})
       &:before
         content: '0#{$i}'
 
   @for $i from 11 through 20
-    .order-list:nth-child(#{$i})
+    .order-list li:nth-child(#{$i})
       &:before
         content: '#{$i}'
+
+  .todo-list li:before
+    content: ''
+    width: 48px
+    height: 48px
+    background-image: url(/images/todo-item-style.png)
+    background-image: none, url(/images/todo-item-style.png)
+    background-position: center
+    background-repeat: no-repeat
 
   +at-breakpoint($pad)
     p
@@ -282,9 +325,11 @@ mark
 
     .post
       +leader(2)
-      +trailer(2)
 
     .policy-header
+
+      .policy-category a
+        +adjust-font-size-to(18px)
 
       .header-title
         padding: rhythm(10) 36px
@@ -375,7 +420,7 @@ mark
       +box-sizing(border-box)
       float: left
       width: 50%
-      padding: 0 24px 24px
+      padding: 0 24px
       text-align: left
 
       &:nth-child(2n+1)
@@ -388,7 +433,7 @@ mark
       +box-sizing(border-box)
       float: left
       width: 33.333%
-      padding: 0 24px 24px
+      padding: 0 24px
       text-align: center
 
       &:nth-child(3n+1)

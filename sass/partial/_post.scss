@@ -48,7 +48,6 @@
   .post-meta {
     @include pie-clearfix;
     @include leader(0.125);
-    @include trailer(0.75);
     @include adjust-font-size-to(13px);
     text-align: center;
   }
@@ -99,7 +98,7 @@
 
   .post-action {
     text-align: center;
-    @include trailer(1);
+    @include leader(0.75);
     .btn {
       padding: 3px 24px;
     }
@@ -167,7 +166,6 @@
     }
     .post-meta {
       @include leader(0.5);
-      @include trailer(1.75);
       @include adjust-font-size-to(16px);
     }
     .post-footer {
@@ -175,7 +173,7 @@
       @include padding-trailer(2);
     }
     .post-action {
-      @include trailer(2);
+      @include leader(1.75);
       .btn {
         @include adjust-font-size-to(16px, 1);
         padding: 6px 36px;

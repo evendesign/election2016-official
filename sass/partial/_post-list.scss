@@ -205,6 +205,10 @@
     @include trailer(1);
   }
 
+  .banner {
+    margin: 0 -24px;
+  }
+
   .post-content-wrap {
     @include box-sizing(border-box);
     position: relative;
@@ -241,6 +245,10 @@
 
     .post-item {
       @include leader(1);
+    }
+
+    .banner {
+      margin: 0 auto;
     }
 
     .post-content-wrap { padding: 24px; }

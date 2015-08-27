@@ -1,0 +1,22 @@
+.banner {
+  position: relative;
+  display: block;
+  padding-top: 62.5%;
+  overflow: hidden;
+  background-color: #e1e1e1;
+  @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @include at-breakpoint(480px) {
+    padding-top: 24%;
+  }
+}

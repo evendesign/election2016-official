@@ -1,0 +1,38 @@
+.figure-grid
+  +pie-clearfix
+
+  .figure-item-wrap
+    +pie-clearfix
+    float: left
+    width: 100 / 2 * 1%
+
+  &.edit
+    .figure-item
+      outline: 1px solid red
+
+  .figure-item
+    float: left
+    width: 100%
+    padding-top: 100%
+    background-repeat: no-repeat
+    background-position: center center
+    +background-size(cover)
+    background-color: $color-gray-light
+
+    &.small
+      width: 50%
+      padding-top: 50%
+
+    &.empty
+      display: none
+      background-color: transparent
+
+  +at-breakpoint($pad)
+    .figure-item-row
+      +pie-clearfix
+
+    .figure-item-wrap
+      width: 100 / 4 * 1%
+
+    .figure-item.empty
+      display: block

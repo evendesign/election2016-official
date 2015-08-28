@@ -1,0 +1,76 @@
+// container setting
+$content-width: 680px
+$figure-width: 960px
+@mixin policy-container($max-width)
+  max-width: $max-width
+  margin-left: auto
+  margin-right: auto
+
+// text mark tool
+em, strong
+  font-weight: bold
+  color: darken(#50B584, 10%)
+
+i
+  font-style: italic
+
+mark
+  background-color: lighten(#FAC339, 7%)
+
+.text-center
+  text-align: center
+
+p
+  +trailer(.5)
+  +adjust-font-size-to(13px)
+  text-align: left
+
+ul, ol
+  padding-left: 0
+
+.image
+  display: block
+  margin: 0 auto 12px
+  max-width: 100%
+  height: auto
+
+.section
+  +padding-leader(2)
+  +padding-trailer(2)
+  padding-left: 24px
+  padding-right: 24px
+
+  &.white-block
+    background-color: white
+
+  &.gray-block
+    background-color: #EFEFEF
+
++at-breakpoint($pad)
+  p
+    +adjust-font-size-to(15px)
+
+    &.important
+      +adjust-font-size-to(18px)
+
+  .image
+    margin: 0 auto 18px
+
+  .section
+    +padding-leader(3.5)
+    +padding-trailer(3.5)
+
+
++at-breakpoint($desktop)
+  p
+    +trailer()
+
+  .dt-hide
+    display: none
+
+  .image
+    margin: 0 auto 24px
+
+  .section
+    +padding-leader(4)
+    +padding-trailer(4)

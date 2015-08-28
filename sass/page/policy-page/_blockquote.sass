@@ -1,0 +1,56 @@
+blockquote
+  +policy-container($content-width)
+  position: relative
+  padding: 0 30px
+  @extend %tk-shs-regular
+  +adjust-font-size-to(16px)
+  text-align: center
+  color: $color-secondary
+  border: none
+
+  &:before, &:after
+    position: absolute
+    display: block
+    color: #ccc
+    @include opacity(0.125)
+
+  &:before
+    content: '“'
+    top: 0
+    left: 0
+    +replace-text-with-svg('quote')
+    width: 18px
+    height: 24px
+
+  &:after
+    content: '”'
+    bottom: 0
+    right: 0
+    +replace-text-with-svg('quote2')
+    width: 18px
+    height: 24px
+
+  &.bigtext
+    @extend %tk-shs-bold
+    +adjust-font-size-to(21px, 1.5)
+    text-align: left
+
+  +at-breakpoint($pad)
+    padding: 0 48px
+    +adjust-font-size-to(18px, 1.25)
+
+    &:before
+      content: '“'
+      width: 24px
+      height: 30px
+
+    &:after
+      content: '”'
+      bottom: 0
+      right: 0
+      width: 24px
+      height: 30px
+
+    &.bigtext, &.bigtext p
+      +policy-container($figure-width)
+      +adjust-font-size-to(34px, 1.85)

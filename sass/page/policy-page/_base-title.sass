@@ -1,0 +1,66 @@
+.main-title
+  +trailer(.25)
+  +adjust-font-size-to(28px, 1.5)
+  @extend %tk-shs-light
+
+  br
+    display: none
+
+.main-sub-title
+  +trailer(0)
+  +adjust-font-size-to(16px)
+  @extend %tk-shs-light
+
+.section-title
+  +trailer()
+  +adjust-font-size-to(30px, 1.5)
+  text-align: center
+  @extend %tk-shs-light
+
+  br
+    display: none
+
+.sub-section-title
+  +trailer(.5)
+  +adjust-font-size-to(24px, 1.25)
+  @extend %tk-shs-light
+
+  br
+    display: none
+
++at-breakpoint($pad)
+  .main-title
+    +adjust-font-size-to(36px)
+
+  .main-sub-title
+    +adjust-font-size-to(18px)
+
+  .section-title
+    +adjust-font-size-to(34px, 1.75)
+
+  .sub-section-title
+    +trailer(.75)
+
++at-breakpoint($desktop)
+  .main-title
+    +trailer(.5)
+    +adjust-font-size-to(42px)
+
+    br
+      display: block
+
+  .main-sub-title
+    +adjust-font-size-to(18px)
+
+  .section-title
+    +adjust-font-size-to(46px, 2.5)
+
+    br
+      display: block
+
+  .sub-section-title
+    +trailer(1.5)
+    +adjust-font-size-to(28px, 1.5)
+
+    br
+      display: block

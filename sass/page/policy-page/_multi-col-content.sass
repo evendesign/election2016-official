@@ -1,0 +1,50 @@
+.multi-col-content
+  +policy-container($figure-width)
+  text-align: left
+
+  .multi-col-content-inner
+    +pie-clearfix
+
+    .section-title, .sub-section-title
+      +trailer(.5)
+
+  .col-2-content
+    padding: 0px
+    text-align: left
+
+  .col-3-content
+    padding: 0px
+    text-align: left
+
+  +at-breakpoint($pad)
+    +policy-container($figure-width)
+    text-align: center
+
+    .multi-col-content-inner
+      +pie-clearfix
+
+    .col-2-content
+      +box-sizing(border-box)
+      float: left
+      width: 50%
+      padding: 0 24px
+      text-align: left
+
+      &:nth-child(2n+1)
+        clear: left
+
+      &.order-list
+        padding: 24px 12px 0 36px
+
+    .col-3-content
+      +box-sizing(border-box)
+      float: left
+      width: 33.333%
+      padding: 0 24px
+      text-align: center
+
+      &:nth-child(3n+1)
+        clear: left
+
+    .section-title + .multi-col-content-inner
+      +leader()

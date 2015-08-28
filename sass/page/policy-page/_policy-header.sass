@@ -1,0 +1,77 @@
+.policy-header
+  position: relative
+  padding-bottom: 1px
+  text-align: center
+  color: white
+  background-repeat: no-repeat
+  background-position: center center
+  +background-size(cover)
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(0,0,0,.5)
+
+  // &:after
+  //   content: ''
+  //   position: absolute
+  //   left: 50%
+  //   bottom: 24px
+  //   width: 54px
+  //   height: 28px
+  //   margin-left: -27px
+  //   background-image: url(/images/policy-header-arrow.png)
+  //   background-image: none, url(/images/policy-header-arrow.svg)
+  //   background-position: center
+  //   background-repeat: no-repeat
+
+  .policy-category
+    +reset-list-style
+
+    li
+      display: inline-block
+      margin: 0 3px
+
+    a
+      display: block
+      +trailer(.5)
+      +adjust-font-size-to(15px, 3/4)
+      font-weight: bold
+      color: #FEFF86
+
+      &:hover
+        text-decoration: none
+
+  .header-title
+    position: relative
+    padding: rhythm(6) 24px
+
+    .main-title, .main-sub-title
+      font-weight: 400
+
+  +at-breakpoint($pad)
+    .policy-category a
+      +adjust-font-size-to(18px)
+
+    .header-title
+      padding: rhythm(10) 36px
+
+  +at-breakpoint($desktop)
+    background-attachment: fixed
+
+    .header-title
+      height: 50vh
+      min-height: 480px
+      max-height: 920px
+      padding: 0 24px
+
+      .header-title-inner
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        +translateY(-50%)

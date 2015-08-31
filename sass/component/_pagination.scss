@@ -14,18 +14,30 @@ $pagination-disable-bg-color: transparent !default;
   @include pie-clearfix;
   @include reset-box-model;
   list-style: none;
-  li {
-    display: inline-block;
-    margin: 0 3px;
-  }
   .pagination-item {
+    display: inline-block;
+    width: 36px;
+    text-align: center;
+    @include adjust-font-size-to(15px);
+    &.current, &.gap {
+      padding: rhythm(0.25) 0;
+    }
+    &.current {
+      @include border-radius(5px);
+      color: $pagination-color;
+      background-color: $pagination-bg-color;
+      @include transition(color 0.25s, background-color 0.25s);
+      color: $pagination-current-color;
+      background-color: $pagination-current-bg-color;
+    }
+  }
+  .pagination-item > a {
     display: block;
     @include border-radius(5px);
-    padding: rhythm(0.25) rhythm(0.55);
+    padding: rhythm(0.25) 0;
     color: $pagination-color;
     background-color: $pagination-bg-color;
     text-align: center;
-    @include adjust-font-size-to(15px);
     @include transition(color 0.25s, background-color 0.25s);
 
     &:hover {
@@ -35,20 +47,52 @@ $pagination-disable-bg-color: transparent !default;
     }
   }
 
-  .is-active .pagination-item {
-    color: $pagination-current-color;
-    background-color: $pagination-current-bg-color;
-    cursor: default;
-  }
-  .is-disabled .pagination-item {
-    color: $pagination-disable-color;
-    background-color: $pagination-disable-bg-color;
-    cursor: default;
-  }
-
   @include at-breakpoint($pad) {
     .pagination-item {
       @include adjust-font-size-to(16px);
     }
   }
 }
+
+// .pagination {
+//   @include pie-clearfix;
+//   @include reset-box-model;
+//   list-style: none;
+//   li {
+//     display: inline-block;
+//     margin: 0 3px;
+//   }
+//   .pagination-item {
+//     display: block;
+//     @include border-radius(5px);
+//     padding: rhythm(0.25) rhythm(0.55);
+//     color: $pagination-color;
+//     background-color: $pagination-bg-color;
+//     text-align: center;
+//     @include adjust-font-size-to(15px);
+//     @include transition(color 0.25s, background-color 0.25s);
+
+//     &:hover {
+//       text-decoration: none;
+//       color: $pagination-hover-color;
+//       background-color: $pagination-hover-bg-color;
+//     }
+//   }
+
+//   .is-active .pagination-item {
+//     color: $pagination-current-color;
+//     background-color: $pagination-current-bg-color;
+//     cursor: default;
+//   }
+//   .is-disabled .pagination-item {
+//     color: $pagination-disable-color;
+//     background-color: $pagination-disable-bg-color;
+//     cursor: default;
+//   }
+
+//   @include at-breakpoint($pad) {
+//     .pagination-item {
+//       @include adjust-font-size-to(16px);
+//     }
+//   }
+// }

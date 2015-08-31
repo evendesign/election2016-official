@@ -3,10 +3,21 @@
 / - .is-disabled 為無法沒有上下頁與 ... 時使用
 / - .is-active 為目前所在分頁使用
 
-ul.pagination
-  li.is-disabled: span.pagination-item &laquo;
-  li.is-active: a.pagination-item href="#" 1
-  - (rand(3)+2).times do |i|
-    li: a.pagination-item href="#"= ( i+2 )
-  li.is-disabled: span.pagination-item …
-  li: a.pagination-item href="#" &raquo;
+/ ul.pagination
+/   li.is-disabled: span.pagination-item &laquo;
+/   li.is-active: a.pagination-item href="#" 1
+/   - (rand(3)+2).times do |i|
+/     li: a.pagination-item href="#"= ( i+2 )
+/   li.is-disabled: span.pagination-item …
+/   li: a.pagination-item href="#" &raquo;
+
+
+.pagination
+  span.pagination-item.first: a href="#" &laquo;
+  span.pagination-item.previous: a href="#" &lsaquo;
+  span.pagination-item: a href="#" 1
+  span.pagination-item.current 2
+  span.pagination-item: a href="#" 3
+  span.pagination-item.gap …
+  span.pagination-item.next: a href="#" &rsaquo;
+  span.pagination-item.last: a href="#" &raquo;

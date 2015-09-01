@@ -11,12 +11,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     margin: 0 auto;
   }
 
-  @include at-breakpoint(480px) {
+  @include at-breakpoint($pad) {
     padding-top: 24%;
   }
 }

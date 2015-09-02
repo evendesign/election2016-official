@@ -85,9 +85,25 @@
     }
   }
 
-  .post-content {
-    *:last-child {
-      @include trailer(0);
+  .post-attachment {
+    text-align: center;
+    background-color: white;
+    padding: 24px;
+  }
+  .post-attachment-title {
+    color: $color-secondary;
+    @include adjust-font-size-to(16px);
+    font-weight: bold;
+    @include trailer(0.5);
+  }
+  .post-attachment-item {
+    margin: 0 6px 12px;
+    padding: 3px 12px;
+    @include adjust-font-size-to(13px);
+    &:before {
+      font-size: 16px;
+      float: left;
+      margin-right: 6px;
     }
   }
 
@@ -167,6 +183,19 @@
     .post-meta {
       @include leader(0.5);
       @include adjust-font-size-to(16px);
+    }
+    .post-attachment {
+      padding: 36px;
+      @include leader(2);
+    }
+    .post-attachment-title {
+      @include adjust-font-size-to(18px);
+      @include trailer(1);
+    }
+    .post-attachment-item {
+      margin: 0 6px 3px;
+      padding: 6px 18px;
+      @include adjust-font-size-to(15px);
     }
     .post-footer {
       @include leader(2);

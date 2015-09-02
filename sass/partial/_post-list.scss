@@ -228,6 +228,11 @@
     letter-spacing: 2px;
   }
 
+  .post-action {
+    text-align: center;
+    @include leader(0.5);
+  }
+
   @include at-breakpoint($pad) {
 
     .post-list-title {
@@ -279,15 +284,21 @@
       }
 
     }
-    .post-item.post-item_banner {
+    .post-item.post-item_event {
       .post-image {
+        float: none;
         width: 100%;
-        margin: 0;
         padding-top: 50%;
       }
       .post-content-wrap {
-        width: 85%;
-        margin: -10% auto 0;
+        width: auto;
+        float: none;
+        margin: -17.5% 24px 0;
+        padding: 24px 36px;
+        text-align: center;
+      }
+      .post-action {
+        @include leader(0.75);
       }
     }
   }
@@ -312,6 +323,18 @@
         margin: -22.5% 0 0;
       }
     }
+    .post-item.post-item_event {
+      .post-image {
+        float: none;
+        width: 100%;
+        padding-top: 50%;
+      }
+      .post-content-wrap {
+        float: none;
+        margin: -15% 72px 0;
+        padding: 36px 72px;
+      }
+    }
    }
 
   @include at-breakpoint(940px) {
@@ -334,6 +357,12 @@
     }
     .post-summary {
       @include adjust-font-size-to(16px, 1.15);
+    }
+    .post-item.post-item_event {
+      .post-content-wrap {
+        margin: -15% 72px 0;
+        padding: 48px 72px;
+      }
     }
   }
 

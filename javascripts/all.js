@@ -130,10 +130,4 @@ $( document ).ready(function() {
     }
   });
 
-  // fixed ajax load content plugin
-  $(document).ajaxComplete(function() {
-    picturefill()
-  });
-
-
 });

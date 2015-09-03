@@ -14,6 +14,7 @@
     height: 100%;
     display: block;
     margin: 0 auto;
+    @extend .lazyload;
   }
 
   @include at-breakpoint($pad) {

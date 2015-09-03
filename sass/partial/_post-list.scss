@@ -8,6 +8,7 @@
   }
 
   .post-image {
+    position: relative;
     display: block;
     @include box-sizing(border-box);
     background-position: center center;
@@ -17,6 +18,18 @@
     width: auto;
     padding-top: 67%;
     background-color: #e1e1e1;
+    @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
+  }
+  .post-image-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+    @extend .lazyload;
   }
 
   .post-item {

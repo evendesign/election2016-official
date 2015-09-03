@@ -5,9 +5,10 @@
     .container
       h2.post-list-title 媒體專區
       .post-list-content
-        - 6.times do |i|
+        - 10.times do |i|
           .post-item
-            a.post-image href="/posts/single-post-page.html" style="background-image: url('http://placehold.it/300x200')"
+            a.post-image href="/posts/single-post-page.html"
+              .post-image-inner.lazyload data-bg="http://placehold.it/300x200"
             .post-meta
               .date 2015.7.22
               ul.post-category

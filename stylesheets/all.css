@@ -646,6 +646,8 @@ body { background-color: #183840; position: relative; }
 .post-list_block-style .post-content-wrap { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative; margin: -48px -12px 0; padding: 18px; font-size: 15px; line-height: 24px; color: #444444; background: white; background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, rgba(255, 255, 255, 0.9)), color-stop(60%, #ffffff)); background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, #ffffff 60%); background: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, #ffffff 60%); background: -o-linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, #ffffff 60%); background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, #ffffff 60%); }
 .post-list_block-style .post-readmore { display: block; margin-top: 12px; text-align: right; font-weight: bold; color: #50b584; letter-spacing: 2px; }
 .post-list_block-style .post-action { text-align: center; margin-top: 12px; }
+.post-list_block-style .post-item.post-item_event .post-content-wrap { text-align: center; }
+.post-list_block-style .post-item.post-item_event .post-readmore { text-align: center; }
 @media (min-width: 640px) { .post-list_block-style .post-list-title { margin: 24px 0; text-align: left; }
   .post-list_block-style .post-list-title:after { content: ''; display: block; margin: 6px auto; width: 100%; height: 2px; background-image: linear-gradient(25deg, #50b5ab 0%, #e7e879 100%); }
   .post-list_block-style .post-item { margin-top: 24px; }
@@ -656,7 +658,7 @@ body { background-color: #183840; position: relative; }
   .post-list_block-style .post-item:nth-child(even) .post-image { float: right; width: 60%; margin: 0; padding-top: 40%; }
   .post-list_block-style .post-item:nth-child(even) .post-content-wrap { float: left; width: 50%; margin: -35% 0 0; }
   .post-list_block-style .post-item.post-item_event .post-image { float: none; width: 100%; padding-top: 50%; }
-  .post-list_block-style .post-item.post-item_event .post-content-wrap { width: auto; float: none; margin: -17.5% 24px 0; padding: 24px 36px; text-align: center; }
+  .post-list_block-style .post-item.post-item_event .post-content-wrap { width: auto; float: none; margin: -17.5% 24px 0; padding: 24px 36px; }
   .post-list_block-style .post-item.post-item_event .post-action { margin-top: 18px; } }
 @media (min-width: 820px) { .post-list_block-style .post-item:nth-child(odd) .post-image { width: 60%; padding-top: 30%; }
   .post-list_block-style .post-item:nth-child(odd) .post-content-wrap { margin: -22.5% 0 0; }

@@ -246,6 +246,15 @@
     @include leader(0.5);
   }
 
+  .post-item.post-item_event {
+    .post-content-wrap {
+      text-align: center;
+    }
+    .post-readmore {
+      text-align: center;
+    }
+  }
+
   @include at-breakpoint($pad) {
 
     .post-list-title {
@@ -308,7 +317,6 @@
         float: none;
         margin: -17.5% 24px 0;
         padding: 24px 36px;
-        text-align: center;
       }
       .post-action {
         @include leader(0.75);

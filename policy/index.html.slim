@@ -1,0 +1,132 @@
+= render '/partial/header'
+= render '/partial/sub-menu'
+.content.has-sub-menu
+  .policy-page
+    .policy-header style="background-image: url('/images/page-header-cover.jpg')"
+      .header-title
+        .header-title-inner
+          h1.main-title 長照十年計畫 2.0 版
+          h2.main-sub-title 有一天我們都會變老，誰會照顧我們？
+    .scroll-spy-menu
+      ul.scroll-spy-menu-inner
+        li.scroll-spy-menu-item: a href="#section-1" 原因
+        li.scroll-spy-menu-item: a href="#section-2" 解決方案
+        li.scroll-spy-menu-item: a href="#section-3" 成果
+    .section.scroll-spy-section#section-1 data-spy-count="1"
+      blockquote.animation.fade-in 有過照顧經驗人都知道，如果沒有很大的耐心和愛心，即使是最親近的家人，也會感到辛苦。在照顧過程中，不管是照顧者還是被照顧者，常常會處於一種精神上很緊張的狀態......有一段時間我沒有工作，在家裡照顧媽媽，特別感受到這個問題的嚴重性，這是台灣許多家庭正在經歷的事情。作為一個政治人物，我的責任就是提出問題的解決方案。
+
+    .section
+      .center-content
+        .text-content
+          h3.section-title = zh_lorem_sentence
+          p = zh_lorem_paragraphs 5
+        .figure.animation.slide-up
+          img src="http://placehold.it/960x480/"
+
+    .section
+      .group-content
+        .text-content.right
+          h3.section-title = zh_lorem_sentence
+          p = zh_lorem_paragraphs 5
+        .figure.animation.slide-up style="background-image: url('http://placehold.it/480x480/')"
+
+      .group-content
+        .text-content.left
+          h3.section-title = zh_lorem_sentence
+          p = zh_lorem_paragraphs 5
+        .figure.animation.slide-up style="background-image: url('http://placehold.it/480x480/')"
+
+      .group-content
+        .text-content.right
+          h3.section-title = zh_lorem_sentence
+          p = zh_lorem_paragraphs 5
+        .figure.animation.slide-up style="background-image: url('http://placehold.it/480x480/')"
+
+    .section.scroll-spy-section#section-2 data-spy-count="2"
+      .multi-col-content
+        h3.section-title = zh_lorem_sentence
+        .multi-col-content-inner
+          - 4.times do |i|
+            .col-2-content
+              h4.sub-section-title = zh_lorem_sentence
+              p = zh_lorem_paragraphs 3
+
+      .multi-col-content
+        .multi-col-content-inner
+          - 3.times do |i|
+            .col-3-content
+              h3.section-title = zh_lorem_words 2 + rand(3)
+              p = zh_lorem_paragraph
+
+    .section
+      .multi-col-content
+        ol.multi-col-content-inner
+          - 12.times do |i|
+            li.col-2-content.order-list
+              h3.section-title = zh_lorem_words 2 + rand(3)
+              p = zh_lorem_paragraph
+
+    .section
+      .center-content
+        ol.text-content
+          - 6.times do |i|
+            li.order-list
+              / h3.section-title = zh_lorem_words 2 + rand(3)
+              p = zh_lorem_paragraph
+
+    .section.scroll-spy-section#section-3 data-spy-count="3"
+      .figure-grid
+        .figure-item-row.animation.slide-up
+          .figure-item-wrap
+            .figure-item.small
+            .figure-item.small.empty
+            .figure-item.small.empty
+            .figure-item.small
+          .figure-item-wrap
+            .figure-item
+          .figure-item-wrap
+            .figure-item
+          .figure-item-wrap
+            .figure-item.small.empty
+            .figure-item.small
+            .figure-item.small
+            .figure-item.small.empty
+        .figure-item-row.animation.slide-up
+          .figure-item-wrap
+            .figure-item.small.empty
+            .figure-item.small.empty
+          .figure-item-wrap
+            .figure-item.small
+            .figure-item.small.empty
+          .figure-item-wrap
+            .figure-item.small.empty
+            .figure-item.small
+          .figure-item-wrap
+            .figure-item.small
+            .figure-item.small.empty
+        .figure-item-row.animation.slide-up
+          .figure-item-wrap
+            .figure-item.small
+            .figure-item.small.empty
+            .figure-item.small.empty
+            .figure-item.small.empty
+          .figure-item-wrap
+            .figure-item.small.empty
+            .figure-item.small
+            .figure-item.small
+            .figure-item.small.empty
+          .figure-item-wrap
+            .figure-item
+          .figure-item-wrap
+            .figure-item.small.empty
+            .figure-item.small
+            .figure-item.small.empty
+            .figure-item.small.empty
+        .figure-item-row.animation.slide-up
+          .figure-item-wrap
+            .figure-item.small.empty
+            .figure-item.small.empty
+            .figure-item.small.empty
+            .figure-item.small.empty
+          .figure-item-wrap
+            .figure-item

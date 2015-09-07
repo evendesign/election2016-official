@@ -1,0 +1,82 @@
+.list
+  padding-left: 24px
+
+.order-list, .todo-list
+  list-style: none
+
+  li
+    position: relative
+    +leader()
+    padding-left: 36px
+    text-align: left
+
+    .section-title, .section-sub-title
+      +trailer(.5)
+
+    &:before
+      position: absolute
+      left: -2px
+      padding-right: 3px
+      width: 32px
+      font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light","Microsoft JhengHei", sans-serif
+      text-align: right
+      font-size: 34px
+      font-weight: bold
+      line-height: 42px
+      letter-spacing: -3px
+      color: #50B584
+      background: linear-gradient(120deg, #E7E879, #50B584)
+      background-clip: text
+      -webkit-background-clip: text
+      text-fill-color: transparent
+      -webkit-text-fill-color: transparent
+
+    & li
+      +leader(0)
+      padding-left: 0
+
+      &:before
+        display: none
+
+
+  .section-title
+    text-align: left
+
+  .section-sub-title + p
+    +leader(0)
+
+@for $i from 1 through 9
+  .order-list li:nth-child(#{$i})
+    &:before
+      content: '0#{$i}'
+
+@for $i from 11 through 20
+  .order-list li:nth-child(#{$i})
+    &:before
+      content: '#{$i}'
+
+.todo-list li:before
+  content: ''
+  top: auto
+  width: 36px
+  height: 36px
+  background-image: url(/images/todo-item-style.png)
+  background-image: none, url(/images/todo-item-style.svg)
+  background-position: center
+  background-repeat: no-repeat
+  background-clip: initial
+  -webkit-background-clip: initial
+
++at-breakpoint($pad)
+  .order-list:before
+    font-size: 32px
+
++at-breakpoint($desktop)
+  .order-list li
+    +leader(2)
+
+    &:before
+      left: -24px
+      width: 48px
+      font-size: 48px
+      line-height: 56px

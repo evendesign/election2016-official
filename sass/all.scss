@@ -40,9 +40,12 @@
 @import "partial/message-block";
 @import "partial/volunteer";
 @import "partial/banner-block";
+@import "partial/animation";
+@import "partial/scroll-spy";
 
 // ==== page ====
 @import "page/homepage";
+@import "page/policies-page";
 @import "page/article-page";
 
 // ==== inbox ====

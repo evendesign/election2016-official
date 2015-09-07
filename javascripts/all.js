@@ -130,4 +130,58 @@ $( document ).ready(function() {
     }
   });
 
+  // policy animation js
+  if ( $('.animation').length != 0 ) {
+    function section_animation() {
+      var animationElements = $('.animation')
+      for (var i = 0; i < animationElements.length; i++) {
+        new Waypoint({
+          element: animationElements[i],
+          handler: function(direction) {
+            $(this.element).addClass('is-active')
+          },
+          offset: '75%'
+        })
+      }
+    }
+    section_animation();
+  }
+  // scroll-spy js
+  if( $('.scroll-spy-section').length != 0 ) {
+    function scroll_spy() {
+      var spyItemElements = $('.scroll-spy-section');
+      for ( var i = 0; i < spyItemElements.length; i++) {
+        new Waypoint({
+          element: spyItemElements[i],
+          handler: function(direction) {
+            var spyMenuElements = $('.scroll-spy-menu-item');
+            var target = spyMenuElements[this.element.getAttribute("data-spy-index") - 1];
+            var previousTarget = spyMenuElements[this.element.getAttribute("data-spy-index") - 2];
+            if ( direction === 'down' ) {
+              spyMenuElements.removeClass('is-active');
+              $(target).addClass('is-active');
+            }
+            if ( direction === 'up' ) {
+              spyMenuElements.removeClass('is-active');
+              $(previousTarget).addClass('is-active');
+            }
+          },
+          offset: '50%'
+        })
+      }
+    }
+    scroll_spy();
+  }
+  $('.scroll-spy-menu-item a').on('click',function (e) {
+    e.preventDefault();
+
+    var target = this.hash,
+    $target = $(target);
+
+    $('html, body').stop().animate({
+        'scrollTop': $target.offset().top - 110
+    }, 1000, 'swing', function () {
+        window.location.hash = target;
+    });
+  });
 });

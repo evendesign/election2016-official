@@ -1,0 +1,54 @@
+.scroll-spy-menu {
+  float: right;
+  display: none;
+
+  .scroll-spy-menu-inner {
+    position: fixed;
+    top: 50%;
+    z-index: 100;
+    margin: 0;
+    padding-right: 15px;
+    list-style: none;
+    @include translate(-100%, -50%);
+  }
+  .scroll-spy-menu-item {
+    text-align: right;
+    @include border-radius(12px);
+    a {
+      display: block;
+      position: relative;
+      padding: 0 22px 0 10px;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 24px;
+      color: transparent;
+      @include nowrap;
+      @include transition(color .25s);
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin-top: -3px;
+        border: 3px solid $color-gray;
+        @include border-radius(50%);
+        @include transition(border-color .25s, transform .25s);
+      }
+    }
+    &:hover, &.is-active {
+      a {
+        color: #50B584;
+        text-decoration: none;
+      }
+      a:after {
+        border-color: #50B584;
+        @include scale(1.5);
+      }
+    }
+    &:hover { background-color: rgba(255,255,255,.5); }
+    &.is-active { background-color: rgba(255,255,255,.8); }
+  }
+  @include at-breakpoint($desktop) {
+    display: block;
+  }
+}

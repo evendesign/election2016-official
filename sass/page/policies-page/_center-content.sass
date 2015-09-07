@@ -10,6 +10,21 @@
 
   .figure
     +policy-container($figure-width)
+    +trailer()
+
+    img
+      display: block
+      margin: 0 auto
+
+    &.pos-abs
+      position: relative
+
+      img
+        position: absolute
+        top: 0
+
+        &:first-child
+          position: relative
 
   +at-breakpoint($pad)
     text-align: center

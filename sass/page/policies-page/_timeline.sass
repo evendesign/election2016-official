@@ -1,0 +1,83 @@
+.timeline
+  overflow: hidden
+  +padding-trailer()
+  list-style: none
+  text-align: left
+
+  li
+    +pie-clearfix
+    overflow: hidden
+
+  span
+    display: block
+    float: left
+    margin-right: 12px
+
+  .dot
+    position: relative
+    padding-bottom: 1000px
+    margin-bottom: -1000px
+    img
+      +trailer(0)
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 50%
+      bottom: 0
+      width: 1px
+      background-color: white
+
+  li:first-child
+    padding-top: 36px
+    .dot:before
+      top: -35px
+    .dot:after
+      content: ''
+      position: absolute
+      top: -35px
+      left: 50%
+      width: 11px
+      height: 11px
+      margin-left: -5px
+      background-color: white
+      +border-radius(50%)
+
+  li:last-child
+    overflow: visible
+    .dot
+      padding-bottom: 30px
+      margin-bottom: -30px
+    .dot:before
+      bottom: 0
+    .dot:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 50%
+      width: 11px
+      height: 11px
+      margin-left: -5px
+      background: white
+      +border-radius(50%)
+
+
+  .timeline-content
+    display: table
+    overflow: hidden
+    min-height: 48px
+    +trailer()
+
+    p
+      display: table-cell
+      vertical-align: middle
+
+
+  .time
+    +adjust-font-size-to(18px, 2.25)
+    font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light","Microsoft JhengHei", sans-serif
+
+  +at-breakpoint($pad)
+    .time
+      +adjust-font-size-to(24px, 2.25)

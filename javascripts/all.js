@@ -54,35 +54,6 @@ $( document ).ready(function() {
         $("html, body").scrollTop(doc.height());
       }
     });
-    // parallex scroll effect
-    // if ( $('.pasc').length != 0 ) {
-    //   function parallex_scroll() {
-    //     var pascElements = $('.pasc')
-    //     for (var i = 0; i < pascElements.length; i++) {
-    //       new Waypoint({
-    //         element: pascElements[i],
-    //         handler: function(direction) {
-    //           var target = this.element;
-    //           $(window).on('scroll', function(){
-    //             var windowScroll = $(window).scrollTop();
-    //             var distance = (( windowScroll - window.innerHeight ) / window.innerHeight) * 100;
-    //             if( distance > -100 && distance < 100) {
-    //               $(target).css({
-    //                 "-webkit-transform": "translateY(" + distance + "%)",
-    //                 "-moz-transform": "translateY(" + distance + "%)",
-    //                 "-ms-transform": "translateY(" + distance + "%)",
-    //                 "-o-transform": "translateY(" + distance + "%)",
-    //                 "transform": "translateY(" + distance + "%)"
-    //               });
-    //             }
-    //           })
-    //         },
-    //         offset: '100%'
-    //       })
-    //     }
-    //   }
-    //   parallex_scroll();
-    // }
   }
 
   $("a[href='#top']").click(function() {

@@ -1,3 +1,6 @@
+.list
+  padding-left: 24px
+
 .order-list, .todo-list
   list-style: none
 
@@ -7,19 +10,20 @@
     padding-left: 36px
     text-align: left
 
-    .section-title, .sub-section-title
+    .section-title, .section-sub-title
       +trailer(.5)
 
     &:before
       position: absolute
-      left: -9px
-      width: 36px
+      left: -2px
+      padding-right: 3px
+      width: 32px
       font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light","Microsoft JhengHei", sans-serif
       text-align: right
       font-size: 34px
       font-weight: bold
       line-height: 42px
-      letter-spacing: -2px
+      letter-spacing: -3px
       color: #50B584
       background: linear-gradient(120deg, #E7E879, #50B584)
       background-clip: text
@@ -27,11 +31,18 @@
       text-fill-color: transparent
       -webkit-text-fill-color: transparent
 
+    & li
+      +leader(0)
+      padding-left: 0
+
+      &:before
+        display: none
+
 
   .section-title
     text-align: left
 
-  .sub-section-title + p
+  .section-sub-title + p
     +leader(0)
 
 @for $i from 1 through 9
@@ -66,6 +77,6 @@
 
     &:before
       left: -24px
-      width: 46px
+      width: 48px
       font-size: 48px
       line-height: 56px

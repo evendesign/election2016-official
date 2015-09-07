@@ -14,13 +14,12 @@
 .section-title
   +trailer()
   +adjust-font-size-to(30px, 1.5)
-  text-align: center
   @extend %tk-shs-light
 
   br
     display: none
 
-.sub-section-title
+.section-sub-title
   +trailer(.5)
   +adjust-font-size-to(24px, 1.25)
   @extend %tk-shs-light
@@ -37,8 +36,9 @@
 
   .section-title
     +adjust-font-size-to(34px, 1.75)
+    text-align: center
 
-  .sub-section-title
+  .section-sub-title
     +trailer(.75)
 
 +at-breakpoint($desktop)
@@ -58,7 +58,7 @@
     br
       display: block
 
-  .sub-section-title
+  .section-sub-title
     +trailer(1.5)
     +adjust-font-size-to(28px, 1.5)
 

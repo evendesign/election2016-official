@@ -30,7 +30,10 @@ blockquote
     width: 18px
     height: 24px
 
-  &.bigtext
+  & p
+    +adjust-font-size-to(16px)
+
+  &.bigtext, &.bigtext p
     @extend %tk-shs-bold
     +adjust-font-size-to(21px, 1.5)
     text-align: left
@@ -51,6 +54,30 @@ blockquote
       width: 24px
       height: 30px
 
+    & p
+      +adjust-font-size-to(18px, 1.25)
+
+
+    &.bigtext, &.bigtext p
+      +policy-container($figure-width)
+      +adjust-font-size-to(28px, 1.65)
+
+  +at-breakpoint($desktop)
     &.bigtext, &.bigtext p
       +policy-container($figure-width)
       +adjust-font-size-to(34px, 1.85)
+
+.blockquote-name
+  padding: 18px 30px 0
+  @extend %tk-shs-light
+  text-align: center
+  color: $color-gray-dark
+  +adjust-font-size-to(18px)
+
+  &:before
+    content: "－"
+
+  +at-breakpoint($pad)
+    +policy-container($figure-width)
+    padding: 36px 48px 0
+    +adjust-font-size-to(24px, 1.85)

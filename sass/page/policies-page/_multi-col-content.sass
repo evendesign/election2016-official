@@ -2,11 +2,15 @@
   +policy-container($figure-width)
   text-align: left
 
+  &.thin
+    +policy-container($content-width)
+
   .multi-col-content-inner
     +pie-clearfix
 
-    .section-title, .sub-section-title
+    .section-title, .section-sub-title
       +trailer(.5)
+      text-align: left
 
   .col-2-content
     padding: 0px
@@ -17,7 +21,6 @@
     text-align: left
 
   +at-breakpoint($pad)
-    +policy-container($figure-width)
     text-align: center
 
     .multi-col-content-inner
@@ -40,7 +43,7 @@
       +box-sizing(border-box)
       float: left
       width: 33.333%
-      padding: 0 24px
+      padding: 0 18px
       text-align: center
 
       &:nth-child(3n+1)

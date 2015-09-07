@@ -278,33 +278,31 @@
       margin: 0 auto;
     }
 
-    .post-content-wrap { padding: 24px; }
+    .post-image {
+      width: 60%;
+      margin: 0;
+      padding-top: 40%
+    }
+    .post-content-wrap {
+      padding: 24px;
+      width: 50%;
+      margin: -30% 0 0;
+    }
     .post-item:nth-child(odd) {
       .post-image {
         float: left;
-        width: 60%;
-        margin: 0;
-        padding-top: 40%
       }
       .post-content-wrap {
         float: right;
-        width: 50%;
-        margin: -35% 0 0;
       }
     }
     .post-item:nth-child(even) {
       .post-image {
         float: right;
-        width: 60%;
-        margin: 0;
-        padding-top: 40%
       }
       .post-content-wrap {
         float: left;
-        width: 50%;
-        margin: -35% 0 0;
       }
-
     }
     .post-item.post-item_event {
       .post-image {
@@ -322,27 +320,41 @@
         @include leader(0.75);
       }
     }
-  }
-
-
-  @include at-breakpoint(820px) {
-    .post-item:nth-child(odd) {
+    .post-item.post-item_wordcard {
+      position: relative;
       .post-image {
-        width: 60%;
-        padding-top: 30%
+        width: 50%;
+        padding-top: 50%
       }
       .post-content-wrap {
-        margin: -22.5% 0 0;
+        position: absolute;
+        top: 50%;
+        @include translateY(-50%);
+        width: 55%;
+        margin: 0;
+      }
+      &:nth-child(odd) {
+        .post-content-wrap {
+          right: 0;
+        }
+      }
+      &:nth-child(even) {
+        .post-content-wrap {
+          left: 0;
+        }
       }
     }
-    .post-item:nth-child(even) {
-      .post-image {
-        width: 60%;
-        padding-top: 30%
-      }
-      .post-content-wrap {
-        margin: -22.5% 0 0;
-      }
+  }
+
+  @include at-breakpoint(820px) {
+    .post-image {
+      width: 62.5%;
+      padding-top: 31.25%
+    }
+    .post-content-wrap {
+      width: 50%;
+      margin: -25% 0 0;
+      padding: 36px;
     }
     .post-item.post-item_event {
       .post-image {
@@ -356,9 +368,14 @@
         padding: 36px 72px;
       }
     }
-   }
+    .post-item.post-item_wordcard {
+      .post-content-wrap {
+        padding: 60px 36px;
+      }
+    }
+  }
 
-  @include at-breakpoint(940px) {
+  @include at-breakpoint(960px) {
     .post-list-title {
       @include leader(2);
       @include adjust-font-size-to(28px, 1.5);
@@ -368,8 +385,15 @@
       @include leader(2);
       @include trailer(2);
     }
-
-    .post-content-wrap { padding: 36px; }
+    .post-image {
+      width: 65%;
+      padding-top: 32.5%;
+    }
+    .post-content-wrap {
+      width: 47.5%;
+      padding: 48px;
+      margin: -25% 0 0;
+    }
     .post-meta {
       @include adjust-font-size-to(16px);
     }
@@ -383,6 +407,16 @@
       .post-content-wrap {
         margin: -15% 72px 0;
         padding: 48px 72px;
+      }
+    }
+    .post-item.post-item_wordcard {
+      .post-image {
+        width: 47.5%;
+        padding-top: 47.5%;
+      }
+      .post-content-wrap {
+        width: 57.5%;
+        padding: 60px 60px;
       }
     }
   }

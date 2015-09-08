@@ -1,0 +1,248 @@
+- @page_name = "policies-page"
+
+= render '/partial/header'
+= render '/partial/sub-menu'
+
+.content.has-sub-menu
+  .scroll-spy-menu
+    ul.scroll-spy-menu-inner
+      li.scroll-spy-menu-item: a href="#section-1" 主張
+      li.scroll-spy-menu-item: a href="#section-2" 原因
+      li.scroll-spy-menu-item: a href="#section-3" 政策
+      li.scroll-spy-menu-item: a href="#section-4" 總結
+  .policy-header style="background-image: url('/images/policies_image/food_safely/page_header_bg.jpg')"
+    .header-title
+      .header-title-inner
+        ul.policy-category: li: a href="http://iing.tw/categories/政策" 政策
+        h1.main-title 食安五環改革方案
+        h2.main-sub-title 我們的食品安全嗎？
+  .post
+    .post-share
+      span.post-share-title 分享：
+      a.post-share-btn.icon-facebook href="#"
+      a.post-share-btn.icon-twitter href="#"
+      a.post-share-btn.icon-plurk href="#"
+      a.post-share-btn.icon-line href="#"
+    .post-meta
+      span.post-date 2015.9.4
+      a.post-tag href="http://iing.tw/tags/食品安全" 食品安全
+
+  .section
+    blockquote.animation.slide-up
+      p 食安管理的重點在於「安全」這兩個字，現代政府的責任，已經不只是要讓民眾「有得吃」而已，而是要建立從農場到餐桌的安全體系，讓民眾「吃得安心又安全」。
+
+  .section-class.gray-block.scroll-spy-section#section-1 data-spy-index="1"
+    span.animation.fade-in 主張
+
+  .section
+    blockquote.bigtext.animation.slide-up
+      p 很多食安專家告訴我，食安問題之所以層出不窮，是因為過去的政府所做的，是「食品管理」。但是，「食品管理」絕對不等於「食安管理」。
+    .blockquote-name.animation.slide-up 蔡英文
+
+  .section.gray-block
+    .center-content
+      .text-content
+        h3.section-title 從「食品衛生管理」到<br>「食品安全」
+    .center-content.animation
+      ol.text-content.order-list
+        li.fade-in
+          h4.section-sub-title 危害防堵：「從海關到馬桶」全面防堵
+          p 傳統的「食品衛生管理」思維僅針對食品生產過程當中，特定生產階段完成後的監督；「食品安全」則是「從農場到馬桶」，從原料的海關品質就開始管控，到食用後的健康影響，都要包括進去，徹底完成生產過程中可能產生的危害予以防堵。
+        li.fade-in.delay-200ms
+          h4.section-sub-title 風險管理： 「從衛生署到環保署」跨機關管理
+          p 從近年造成食安危機的原因來看，主要都發生在「食品衛生管理」管不到的地方。由此可知食品衛生管理的措施，尚無法遏止食安危機再次發生。而「食品安全」則是跨機關合作，兼具質量、具全面性、通盤性。
+        li.fade-in.delay-400ms
+          h4.section-sub-title 全面性瞭解：「從法律到醫療」綜合風險管理
+          p 「食品衛生管理」重視規範與執行後的明確成效；「食品安全」則是從根本性、系統性、更廣泛的角度，去瞭解食品生產流程可能牽涉到的風險。具體而言，則包括從法制、貿易、毒理學、公共政策、廠商內外部管理、溝通、風險評估到醫療等諸多面向。
+
+  .section-class.gray-block.scroll-spy-section#section-2 data-spy-index="2"
+    span.animation.fade-in 原因
+
+  .section.image-theme style="background-image: url('/images/policies_image/food_safely/reason_bg.jpg')"
+    .center-content
+      .text-content
+        h3.section-title 我們的食品安全嗎？
+        h4.section-sub-title 全國有 84.5％ 的媽媽，對政府目前的食安政策感到憂慮。食安問題已是全國媽媽們第一擔心的問題。我們的食安，到底怎麼了？
+      ul.text-content.timeline.animation
+        li.fade-in
+          span.time 2008
+          span.dot: img src="/images/policies_image/food_safely/fs1_1.png"
+          .timeline-content: p 中國三聚氰胺毒奶流入台灣
+        li.fade-in.delay-200ms
+          span.time 2010
+          span.dot: img src="/images/policies_image/food_safely/fs1_2.png"
+          .timeline-content: p 知名豆乾引發肉毒桿菌中毒事件、紅茶冰含致癌原料
+        li.fade-in.delay-400ms
+          span.time 2011
+          span.dot: img src="/images/policies_image/food_safely/fs1_3.png"
+          .timeline-content: p 塑化劑飲料
+        li.fade-in.delay-600ms
+          span.time 2012
+          span.dot: img src="/images/policies_image/food_safely/fs1_4.png"
+          .timeline-content: p 瘦肉精牛肉
+        li.fade-in.delay-800ms
+          span.time 2013
+          span.dot: img src="/images/policies_image/food_safely/fs1_5.png"
+          .timeline-content: p 毒澱粉肆虐、胖達人香精麵包、山水劣質米混充台灣米、大統油混充銅葉綠素、毒醬油、豆乾使用油漆染料「皂黃」
+        li.fade-in.delay-1000ms
+          span.time 2014
+          span.dot: img src="/images/policies_image/food_safely/fs1_6.png"
+          .timeline-content: p 強冠餿水油、正義黑心油、頂新黑心油、吊白塊潤餅皮、工業用碳酸鎂胃藥、農藥超標手搖飲料、重金屬鼎王火鍋、雞蛋殘留抗生素、洗腎藥桶裝仙草
+        li.fade-in.delay-1200ms
+          span.time 2015
+          span.dot: img src="/images/policies_image/food_safely/fs1_7.png"
+          .timeline-content: p 一心防腐劑豆乾、吊白塊潤餅皮、黑心海帶、農藥超標手搖茶、碳酸鎂胡椒粉、孔雀綠蒲燒鰻、藥用石膏米血糕
+
+      .text-content
+        p 資料來源：2015.05.09. 民進黨民意調查中心 母親節調查
+      .text-content
+        h3.section-title 食安問題根源
+      ol.text-content.order-list.animation
+        li.fade-in
+          h4.section-sub-title 標章很多
+          p 現行複雜的多種農產品及食品認驗證及標章制度、作業規範（如GMP、CAS、GAP、TGAP、TAP、OTAP、UTAP等），共有十八種國家認證標章，連專家、學者、業者都不易釐清，急需進行制度的簡化作業。
+        li.fade-in.delay-200ms
+          h4.section-sub-title 主管很多
+          p 台灣的食安管理依照不同的主管項目，分別由衛生署、農委會、甚至經濟部、教育部、國防部與環保署等多個機關負責。容易產生業務重疊等現象。遇到食安問題，難以判斷問題源頭、負責機關，容易產生灰色地帶、相互推卸責任的現象。
+        li.fade-in.delay-400ms
+          h4.section-sub-title 管控不足
+          p 根據環保署的資料指出，臺灣僅列管302種毒物，而國際上認定毒性較明確的化學物質6000種，每年多增加100多種新化學物質。急需投入高度資源和大量專業人力，才可以補足這個漏洞。
+
+  .section-class.gray-block.scroll-spy-section#section-3 data-spy-index="3"
+    span.animation.fade-in 政策
+
+  .section.white-block
+    .center-content
+      .text-content
+        h3.section-title 蔡英文的食安五環
+        h4.section-sub-title 我們提出食安五環，<br>五大方案，環環相扣，要徹底解決食安問題。
+      .figure.pos-abs.animation
+        img.fade-in src="/images/policies_image/food_safely/fs2_1.png"
+        img.rotate.delay-400ms src="/images/policies_image/food_safely/fs2_2.png"
+        img.fade-in.delay-1000ms src="/images/policies_image/food_safely/fs2_3.png"
+
+  .section
+    .multi-col-content
+      h4.section-sub-title 第一環：源頭控管，設立毒物管理署
+      .multi-col-content-inner.animation
+        .col-2-content
+          img.image.fade-in src="/images/policies_image/food_safely/fs3_1.png"
+          h4.section-sub-title.fade-in 整合專管
+          p.fade-in.delay-200ms 提昇管理機構層級，將目前單位整合轉型為專門管理「毒物」、「有害化學物質」、「毒品」的機關，將其職掌專業化、專門化。我們的目標，將是在現有機關組織上，設立一個具有足夠權限、足夠資源的統合性管理機構。
+        .col-2-content
+          img.image.fade-in.delay-200ms src="/images/policies_image/food_safely/fs3_2.png"
+          h4.section-sub-title.fade-in.delay-400ms 源頭預防
+          p.fade-in.delay-400ms 要避免下游產品受害受污染，上游的源頭管理便更趨重要。要讓消費者安心食用，也讓好的生產製造者「安心煮吃」，就要從源頭預防管控食物風險、追蹤有害物質。不讓有害農藥、化學肥料、有害化學品、有害添加物進入食物體系。
+
+  .section.gray-block
+    .multi-col-content
+      h4.section-sub-title 第二環：重建生產管理
+      .multi-col-content-inner.animation
+        .col-3-content
+          img.image.fade-in src="/images/policies_image/food_safely/fs4_1.png"
+          h4.section-sub-title.fade-in.delay-200ms  國家認證標章
+          p.fade-in.delay-200ms 傳統「食品衛生管理」制度，只求末端產品要乾淨、安全、農藥無殘留，但這其實只是基本款(GHP, The Regulations on Good Hygiene Practice for Food)。食品與農產品要進一步從生產開始把關，要求從源頭、看流程的國際標準來執行，採納如HACCP（Hazard Analysis and Critical Control Points食品安全管理系統）TGAP(Taiwan Good Agricultural Product)、ISO22000等更為嚴格的生產規範。
+        .col-3-content
+          img.image.fade-in.delay-200ms src="/images/policies_image/food_safely/fs4_2.png"
+          h4.section-sub-title.fade-in.delay-400ms 建立可追溯生產資料庫
+          p.fade-in.delay-400ms 全面強制建立食品（包含農畜漁產品、農畜漁產加工品、飼料、原料、添加物等）之可追溯制度及產地標示制度。食品供應鏈中的每一個產、製、銷環節都要詳實記錄其原料與產品的來龍去脈。包括原料及添加物來源、生產歷程以及產品配送通路與銷售對象，需建立詳實資料庫，並完整保留檔案五年。
+        .col-3-content
+          img.image.fade-in.delay-400ms src="/images/policies_image/food_safely/fs4_3.png"
+          h4.section-sub-title.fade-in.delay-600ms 進口自產全面把關
+          p.fade-in.delay-600ms <strong>進口部分：</strong><br>我國食品來源有70％仰賴國外進口，國外進口（完成品）食品、農品做好邊境查驗，管控以海關查驗為主。未來將修改相關辦法，（大部分由業者自主管理，部份重要產品則需安全標示+海關查驗）貿易商檢付農產品之安全標示。
+          p.fade-in.delay-600ms <strong>自產部分：</strong><br>我國食物來源另有30％為國內生產，將全面檢視農地品質，嚴密監控水源品質，並管理農民使用化學農藥及肥料的耕作型態。並以灌排分離作法減少重金屬汙染、防止其他毒物物質傷害農地，淨化水土資源、掌握用藥品質。此外，推廣植物醫生以及友善環境耕作方法，以保護可供永續生產的水源、土壤。
+
+  .section
+    .center-content
+      .text-content
+        h4.section-sub-title 第三環：十倍查驗、十倍安全、百倍幸福
+        p.text-center 為甚麼需要增加檢驗量？因為不合格率仍然很高！
+      .figure.animation.fade-in
+        img src="/images/policies_image/food_safely/chart_pesticide_check_result.svg"
+      .text-content
+        ol.todo-list.animation
+          li.fade-in.delay-200ms
+            h4.section-sub-title 提高進口農產品查驗件數
+            p 提高進口農產品查驗件數，由目前的平均1萬件至10萬件，經費由1.6億增加為16億元。
+          li.fade-in.delay-400ms
+            h4.section-sub-title 提高國內農產品檢驗件數
+            p 上市前的農產品農藥殘留檢驗，由目前每年平均1萬件增加至10萬件(約3億元)；上市後的農產品農藥殘留檢驗由目前的2000件增加至2萬件；重金屬污染查驗件數增加為每年1萬件以上(約7000萬元)。
+          li.fade-in.delay-600ms
+            h4.section-sub-title 抽驗執行
+            p 目前除了中央附屬的衛生單位以外，民間有57間（加上食藥署有北中南10間，共67間）認證實驗室，其檢驗的品質與結果，將會經過國際實驗室標準定期、嚴格的把關。先前的食安危機當中，就已經扮演相當重要的角色，單日檢驗件數可以達到2000件之多；未來在增加抽驗件數之後，這些民間實驗室的檢驗能量將更有效發揮。小英政府將更為重視這些實驗室的檢驗能量與檢驗品質，使這些實驗室不僅是食安危機的補破網，更要對未來檢驗的人力與人才培養，承擔起積極的責任。
+          li.fade-in.delay-800ms
+            h4.section-sub-title 跨縣市稽查
+            p 2014年底（11月12日）啟動跨縣市食品安全聯合平台，展開食安跨縣市聯合稽查，達到「聯合稽查，成效加倍，無所遁形」的效果。
+
+  .section.white-block
+    .center-content
+      .text-content
+        h4.section-sub-title 第四環：加重廠商責任
+        p.text-center 評估修改食安法，對生產者課以更重的法律及賠償責任，以督促生產者的自主管理：民進黨籍立委已經多次修改食安法，對生產者課以更重的法律及賠償責任。
+      .figure
+        img src="/images/policies_image/food_safely/fs5_1.png"
+    .multi-col-content
+      .multi-col-content-inner.animation
+        .col-2-content
+          h4.section-sub-title.fade-in 民進黨 2013 年修法成果
+          ul.list.fade-in.delay-200ms
+            li 監督食安基金法源
+            li 基改食品透明標示
+            li 食品添加物查驗登記
+            li 強制登錄食品雲
+            li 加重罰則刑責
+            li 危險者罰金罰鍰提高
+            li 消費者賠償上限提高
+        .col-2-content
+          h4.section-sub-title.fade-in.delay-200ms 民進黨 2014 年修法成果
+          ul.list.fade-in.delay-400ms
+            li 食品大廠強制設立實驗室
+            li 舉證責任反轉、違法廠商抓得到、罰得到
+            li 阻擋法人除罪化法案
+            li 「第三人沒收」條款，防止非法廠商脫產
+            li 分廠分照：化工廠、飼料廠、食品廠，不可設在同一個廠房，拿同一張執照
+            li 罰金罰鍰提高
+            li 危害人體健康者，處七年以下徒刑，併科一億元以下罰金
+            li 電子發票內容不實者，處三百萬元以下罰鍰，嚴重者令其停業、廢止執照登記證
+            li 警察協助食安事務建立法源
+
+  .section
+    .center-content
+      .text-content
+        h4.section-sub-title 第五環：全民監督食安
+        p.text-center 提供、提高消費者檢舉獎金和業者窩裡反獎金，杜絕所有不法之食品生產，遏止違法違規廠商。另外，立院民進黨黨團還推動了多項保護舉發者和消費者的規範，多次嚴格把關，立法完成！
+      .figure
+        img src="/images/policies_image/food_safely/fs6_1.png"
+      .text-content
+        ol.todo-list.animation
+          li.fade-in.delay-200ms
+            h4.section-sub-title 執政縣市保障食安先行
+            p 地方執政縣市保障食安先行，超越衛福部牛步審核補助的進度，執政縣市已著手協助受害者訴訟、求償，十人以上受害提告，即可獲得訴訟協助（桃園市衛生局開先例）。
+          li.fade-in.delay-400ms
+            h4.section-sub-title 立法作為
+            ul.list
+              li 推動「揭弊者保護、資訊保密」立法完成。
+              li 推動「集體訴訟法律協助」（協助20位受害者以上啟動共同申訴時提供法律性協助的法源基礎，由消基會負責）」立法完成，由食安基金支應。
+              li 「保護良心員工窩裡反，安心檢舉，不怕被公司告、丟工作！」立法完成（對吹哨子勞工補助律師及訴訟費、受消保團體委任之律師得請求律師費」），由食安基金支應，促成消保團體協助訴訟。
+
+
+
+  .section-class.gray-block.scroll-spy-section#section-4 data-spy-index="4"
+    span.animation.fade-in 總結
+
+  .section
+    .center-content
+      .text-content
+        h3.section-title 全方位的共同改革，<br>讓台灣轉型成食品安全管理，<br>根本解決我們的食安問題。
+        p 食品安全，不只是廠商的良心問題，更是政策、管理、制度以及法律的問題。我們將以全方位的共同改革，徹底讓台灣的食品衛生管理轉型成食品安全管理，根本解決我們的食安問題！
+      .figure.animation.fade-in
+        img src="/images/policies_image/food_safely/fs7_1.png"
+
+  .post
+    .post-share
+      span.post-share-title 分享：
+      a.post-share-btn.icon-facebook href="#"
+      a.post-share-btn.icon-twitter href="#"
+      a.post-share-btn.icon-plurk href="#"
+      a.post-share-btn.icon-line href="#"
+

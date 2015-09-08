@@ -177,11 +177,14 @@ $( document ).ready(function() {
 
     var target = this.hash,
     $target = $(target);
+    var headerHeight = 110;
+    var targetScrollTop = $target.offset().top - headerHeight;
 
     $('html, body').stop().animate({
-        'scrollTop': $target.offset().top - 110
+        'scrollTop': targetScrollTop
     }, 1000, 'swing', function () {
-        window.location.hash = target;
+        // window.location.hash = target;
+        window.history.pushState(target, target, target);
     });
   });
 });

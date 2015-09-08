@@ -146,6 +146,9 @@ $( document ).ready(function() {
     }
     section_animation();
   }
+
+  $('.onload-fadein').addClass('is-active');
+
   // scroll-spy js
   if( $('.scroll-spy-section').length != 0 ) {
     function scroll_spy() {

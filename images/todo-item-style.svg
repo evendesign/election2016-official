@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>todo-item-style</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="todo-item-style" sketch:type="MSLayerGroup" transform="translate(2.000000, -1.000000)" fill="#50B584">
+            <g id="Page-1" sketch:type="MSShapeGroup">
+                <path d="M22.5606602,28.5606602 C22.2892136,28.8321068 21.9142136,29 21.5,29 L9.5,29 C8.6715729,29 8,28.3284271 8,27.5 C8,26.6715729 8.6715729,26 9.5,26 L20,26 L20,3.5 C20,2.67157288 20.6715729,2 21.5,2 C22.3284271,2 23,2.67157288 23,3.5 L23,27.5 C23,27.9142136 22.8321068,28.2892136 22.5606602,28.5606602 L22.5606602,28.5606602 Z" id="Shape" transform="translate(15.500000, 15.500000) rotate(45.000000) translate(-15.500000, -15.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -73,10 +73,12 @@ $( document ).ready(function() {
     back_to_top_active();
   }
 
-  if ( $('.auto-break-text').length != 0 ) {
+  if ( $('.auto-break-text, .auto-break-text-short').length != 0 ) {
     $('.auto-break-text').macho({ 'length':5 });
+    $('.auto-break-text-short').macho({ 'length':3 });
     $(document).ajaxComplete(function() {
       $('.auto-break-text').macho({ 'length':5 });
+      $('.auto-break-text-short').macho({ 'length':3 });
     });
   }
 
@@ -146,8 +148,6 @@ $( document ).ready(function() {
     }
     section_animation();
   }
-
-  $('.onload-fadein').addClass('is-active');
 
   // scroll-spy js
   if( $('.scroll-spy-section').length != 0 ) {

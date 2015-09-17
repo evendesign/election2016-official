@@ -1,6 +1,16 @@
+/ 判斷目前所在語系，假設現在所處情形為 en（英文）
+- @language = "jp"
+
 .header
   .header-inner
-    .logo: a href="/" 點亮台灣 Light UP TAIWAN
+    - if @language == "en"
+      .logo.logo_en: a href="/" 點亮台灣 Light UP TAIWAN
+    - elsif @language == "es"
+      .logo.logo_es: a href="/" 點亮台灣 Light UP TAIWAN
+    - elsif @language == "jp"
+      .logo.logo_jp: a href="/" 點亮台灣 Light UP TAIWAN
+    - else
+      .logo: a href="/" 點亮台灣 Light UP TAIWAN
     button.menu-btn
       .menu-btn-line
     .menu
@@ -9,9 +19,9 @@
 
         .menu-bottom
           / a.press-release href="/press/" 媒體專區
-          form.search
-            label.search-icon.icon-search
-            input.search-input placeholder="Search"
+          / form.search
+          /   label.search-icon.icon-search
+          /   input.search-input placeholder="Search"
           ul.social-nav
             li: a.facebook.icon-facebook href="#" target="_blank"
             li: a.instagra.icon-instagram href="#" target="_blank"

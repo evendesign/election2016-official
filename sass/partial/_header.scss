@@ -16,12 +16,16 @@
 
   .logo {
     float: left;
-    padding: 6px 0 6px 16px;
+    padding: 6px 0 6px 6px;
     a {
       display: block;
-      @include replace-text-with-svg(logo);
+      @include replace-text-with-svg(logo-zh);
     }
   }
+  .logo_en a { @include replace-text-with-svg(logo-en); }
+  .logo_es a { @include replace-text-with-svg(logo-es); }
+  .logo_jp a { @include replace-text-with-svg(logo-jp); }
+
   .menu-btn {
     position: relative;
     float: right;
@@ -35,7 +39,7 @@
     width: 24px;
     height: 60px;
     padding: 28px 0px;
-    margin: 0 16px 0 0;
+    margin: 0 12px 0 0;
     @include box-sizing(border-box);
     float: right;
     &:focus {
@@ -46,8 +50,7 @@
     position: relative;
     width: 100%;
     height: 3px;
-    // background-color: $color-primary;
-    background-color: $color-primary;
+    background-color: #ccc;
     // @include transition(background-color 0.25s);
     &:before, &:after {
       content: '';
@@ -55,8 +58,7 @@
       left: 0;
       width: 100%;
       height: 3px;
-      // background-color: $color-primary;
-      background-color: $color-primary;
+      background-color: #ccc;
       // @include transition(background-color 0.5s, transform .5s);
     }
     &:before{
@@ -205,13 +207,15 @@
   .global-language {
     float: right;
     display: block;
-    margin-right: 18px;
+    margin-right: 12px;
   }
   .global-language-btn {
-    color: $color-primary;
+    color: #ccc;
     display: block;
     @include adjust-font-size-to(26px, 1);
     padding: 18px 0px;
+    position: relative;
+    top: 1px;
     .lang {
       display: none;
     }
@@ -337,7 +341,7 @@
       border-top: none;
       position: absolute;
       top: 18px;
-      right: 24px;
+      right: 56px;
       @include pie-clearfix;
     }
     .press-release {
@@ -396,13 +400,16 @@
         @include transition(opacity 0.5s, width 0.5s);
       }
     }
+    .press-release + .social-nav, .search + .social-nav {
+      border-left: 1px solid #eaeaea;
+    }
     .social-nav {
-      border: 1px solid #eaeaea;
+      // border: 1px solid #eaeaea;
       border-top: none;
-      border-bottom: none;
+      border-right: 1px solid #eaeaea;
+      // border-bottom: none;
       float: left;
       font-size: 16px;
-      margin-right: 60px;
       padding: 0 4px 0 6px;
       li {
         float: left;
@@ -431,12 +438,11 @@
       }
     }
     .global-language-btn {
-      position: relative;
+      top: 0;
       color: #999;
       display: block;
       margin: 18px 0;
-      padding: 0 30px 0 0;
-      // @include adjust-font-size-to(15px);
+      padding: 0 24px 0 0;
       font-size: 15px;
       .lang {
         display: inline;
@@ -444,7 +450,6 @@
       &:before{
         float: left;
         content: "\e60a";
-        // font-size: 16px;
         @include adjust-font-size-to(16px);
         margin-right: 3px;
       }
@@ -453,7 +458,7 @@
         display: block;
         position: absolute;
         top: 10px;
-        right: 15px;
+        right: 13px;
         width: 0;
         height: 0;
         border-style: solid;

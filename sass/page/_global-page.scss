@@ -16,6 +16,12 @@
     }
   }
 
+  @include at-breakpoint(848px 8) {
+    .post-list {
+      @include padding-leader(1);
+    }
+  }
+
   @include at-breakpoint($desktop) {
     .header {
       .logo {

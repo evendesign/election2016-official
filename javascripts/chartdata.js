@@ -71,7 +71,7 @@ $( document ).ready(function() {
   }
 
   if ( $('.people-pp-chart').length != 0 ) {
-    d3.tsv("./gc_linechart_data.tsv", function(err, data){
+    d3.tsv("gc_linechart_data.tsv", function(err, data){
       var ratio, population, average, thousand, drawRatio, drawAverage, drawPopulation;
       ratio = _.map(function(it){
         return {

@@ -56,7 +56,7 @@ margin = {
 
 $( document ).ready(function() {
   if ( $('.old-people-chart').length != 0 ) {
-    function chart_animation() {
+    function gc_barchart_animation() {
       var waypoint = new Waypoint({
         element: $('.old-people-chart'),
         handler: function(direction) {
@@ -67,7 +67,67 @@ $( document ).ready(function() {
         offset: '90%'
       })
     }
-    chart_animation();
+    gc_barchart_animation();
   }
 
+  if ( $('.people-pp-chart').length != 0 ) {
+    d3.tsv("gc_linechart_data.tsv", function(err, data){
+      var ratio, population, average, thousand, drawRatio, drawAverage, drawPopulation;
+      ratio = _.map(function(it){
+        return {
+          "key": +it.year,
+          "value": +it.ratio
+        };
+      })(
+      data);
+      population = _.map(function(it){
+        return {
+          "key": +it.year,
+          "value": +it.population
+        };
+      })(
+      data);
+      average = _.map(function(it){
+        return {
+          "key": +it.year,
+          "value": +it.average
+        };
+      })(
+      data);
+      thousand = d3.format("0,000");
+      drawRatio = lineChart().data([ratio]).container('.people-ratio-data').numberFormat(function(it){
+        return function(it){
+          return it + "%";
+        }(
+        function(it){
+          return it.toFixed(0);
+        }(
+        it * 100));
+      });
+      drawAverage = lineChart().data([average]).container('.people-average-data').numberFormat(function(it){
+        return it.toFixed(0) + "歲";
+      });
+      drawPopulation = lineChart().data([population]).container('.people-population-data').numberFormat(function(it){
+        return function(it){
+          return it + "萬人";
+        }(
+        thousand(
+        Math.round(
+        it / 10)));
+      });
+      function gc_linechart_animation() {
+        var waypoint = new Waypoint({
+          element: $('.people-pp-chart'),
+          handler: function(direction) {
+            drawRatio();
+            drawAverage();
+            drawPopulation();
+            this.destroy();
+          },
+          offset: '90%'
+        })
+      }
+      gc_linechart_animation();
+    });
+  }
 });

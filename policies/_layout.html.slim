@@ -3,10 +3,12 @@ html lang="zh-TW"
   head
     = render "/layout_head"
     / 政策系列頁面專用
+    <script>document.documentElement.className += ' wf-loading';</script>
     = javascript_include_tag \
       "/vendor/d3.min.js", \
       "/vendor/prelude-browser-min.js", \
       "barchart", \
+      "linechart", \
       "chartdata"
     = render "/layout_siteinfo"
     = render "/layout_og"

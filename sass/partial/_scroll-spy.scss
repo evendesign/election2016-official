@@ -13,6 +13,7 @@
   }
   .scroll-spy-menu-item {
     text-align: right;
+    margin-bottom: 3px;
     @include border-radius(12px);
     a {
       display: block;
@@ -30,7 +31,7 @@
         top: 50%;
         right: 10px;
         margin-top: -3px;
-        border: 3px solid $color-gray;
+        border: 3px solid rgba(128,128,128, .6);
         @include border-radius(50%);
         @include transition(border-color .25s, transform .25s);
       }
@@ -45,8 +46,8 @@
         @include scale(1.5);
       }
     }
-    &:hover { background-color: rgba(255,255,255,.5); }
-    &.is-active { background-color: rgba(255,255,255,.8); }
+    &:hover { background-color: white; }
+    &.is-active { background-color: white; }
   }
   @include at-breakpoint($desktop) {
     display: block;

@@ -1162,7 +1162,6 @@ body { background-color: #183840; position: relative; }
 .policies-page .timeline .time { font-size: 18px; line-height: 54px; font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; }
 @media (min-width: 640px) { .policies-page .timeline .time { font-size: 24px; line-height: 54px; } }
 .policies-page .world-old-people-data text, .policies-page .taiwan-old-people-data text { fill: white; }
-.policies-page .people-pp-chart .line { float: left; }
 .policies-page .people-pp-chart .axis path, .policies-page .people-pp-chart .axis line { fill: none; stroke: white; stroke-width: 1px; shape-rendering: crispEdges; }
 .policies-page .people-pp-chart .axis text { font-size: 18px; fill: white; shape-rendering: crispEdges; }
 .policies-page .people-pp-chart .number { font-size: 18px; fill: white; }

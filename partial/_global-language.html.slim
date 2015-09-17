@@ -1,0 +1,12 @@
+/ 提示目前頁面語系，有 CH、EN、ES、JP
+- @language = "TW"
+
+.global-language.dropdown.right
+  button.global-language-btn.dropdown-btn.dropdown-title.icon-global-light type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    / 提示目前頁面語系
+    span.lang= @language
+  ul.dropdown-menu aria-labelledby="dLabel"
+    li.dropdown-item: a href="/" 繁體中文
+    li.dropdown-item: a href="/global/" English
+    li.dropdown-item: a href="/global/" Español
+    li.dropdown-item: a href="/global/" 日本語

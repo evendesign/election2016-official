@@ -158,6 +158,10 @@
     @include leader(0.5);
   }
 
+  .pager {
+    @include leader(1);
+  }
+
   @include at-breakpoint($pad) {
     .post-header {
       @include padding-leader(2);

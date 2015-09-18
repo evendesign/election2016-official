@@ -105,14 +105,17 @@
 }
 
 .post-list_list-style {
+
+  .post-list-title {
+    @include padding-trailer(1.5);
+    border-bottom: 1px solid #eaeaea;
+    @include trailer(0);
+  }
+
   .post-item {
     display: block;
     border-bottom: 1px solid #eaeaea;
     padding: rhythm(0.5) 0;
-  }
-
-  .post-item:first-child {
-    border-top: 1px solid #eaeaea;
   }
 
   .post-image {
@@ -125,10 +128,9 @@
     overflow: hidden;
   }
   .post-title {
-    @include trailer(0.5);
+    @include trailer(0);
     @include adjust-font-size-to(16px);
     @include transition(color .25s);
-
   }
   .post-summary {
     display: none;
@@ -147,7 +149,9 @@
     }
 
     .post-list-title {
-      margin: rhythm(1) 0;
+      margin: rhythm(1) 0 0;
+      @include padding-trailer(0);
+      border-bottom: none;
       text-align: left;
       &:after {
         content: '';
@@ -162,11 +166,6 @@
 
     .post-item {
       padding: rhythm(1) 0;
-    }
-
-    .post-item:first-child {
-      border-top: none;
-      @include padding-leader(0);
     }
 
     .post-image {

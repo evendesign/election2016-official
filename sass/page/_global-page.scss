@@ -1,0 +1,44 @@
+.global-page {
+
+  .copy {
+    text-align: center;
+    @include adjust-font-size-to(13px);
+    @include padding-trailer(2);
+  }
+
+  .post-list {
+    @include padding-leader(0.5);
+  }
+
+  @include at-breakpoint(480px) {
+    .post-list {
+      @include padding-leader(0);
+    }
+  }
+
+  @include at-breakpoint(848px 8) {
+    .post-list {
+      @include padding-leader(1);
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+    .header {
+      .logo {
+        padding: 6px 0;
+        left: 50%;
+        @include translateX(-50%);
+      }
+    }
+
+    .page-bottom-illustrator {
+      padding-top: 0;
+      padding-bottom: 20%;
+      margin-bottom: 24px;
+      &:before, &:after {
+        margin-bottom: 0%;
+      }
+    }
+  }
+
+}

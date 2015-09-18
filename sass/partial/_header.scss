@@ -9,21 +9,26 @@
     max-width: 1512px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 24px;
+    // padding: 0 24px;
     background-color: white;
     border-bottom: 1px solid #ddd;
   }
 
   .logo {
     float: left;
-    padding: 6px 0 6px;
+    padding: 6px 0 6px 6px;
     a {
       display: block;
-      @include replace-text-with-svg(logo);
+      @include replace-text-with-svg(logo-zh);
     }
   }
+  .logo_en a { @include replace-text-with-svg(logo-en); }
+  .logo_es a { @include replace-text-with-svg(logo-es); }
+  .logo_jp a { @include replace-text-with-svg(logo-jp); }
+
   .menu-btn {
-    position: absolute;
+    position: relative;
+    float: right;
     top: 0;
     right: 0;
     cursor: pointer;
@@ -31,9 +36,10 @@
     background-color: transparent;
     z-index: 250;
     color: $color-primary;
-    width: 72px;
+    width: 24px;
     height: 60px;
-    padding: 28px 24px;
+    padding: 28px 0px;
+    margin: 0 12px 0 0;
     @include box-sizing(border-box);
     float: right;
     &:focus {
@@ -44,16 +50,16 @@
     position: relative;
     width: 100%;
     height: 3px;
-    background-color: $color-primary;
-    @include transition(background-color 0.25s);
+    background-color: #ccc;
+    // @include transition(background-color 0.25s);
     &:before, &:after {
       content: '';
       position: absolute;
       left: 0;
       width: 100%;
       height: 3px;
-      background-color: $color-primary;
-      @include transition(background-color 0.5s, transform .5s);
+      background-color: #ccc;
+      // @include transition(background-color 0.5s, transform .5s);
     }
     &:before{
       top: -8px;
@@ -198,6 +204,23 @@
     }
   }
 
+  .global-language {
+    float: right;
+    display: block;
+    margin-right: 12px;
+  }
+  .global-language-btn {
+    color: #ccc;
+    display: block;
+    @include adjust-font-size-to(26px, 1);
+    padding: 18px 0px;
+    position: relative;
+    top: 1px;
+    .lang {
+      display: none;
+    }
+  }
+
   @include at-breakpoint($pad) {
     .menu {
       @include adjust-font-size-to(18px);
@@ -255,7 +278,7 @@
     left: 0;
     top: 0;
     right: 0;
-    z-index: 300;
+    z-index: 350;
     margin: 0 auto;
 
     .header-inner {
@@ -305,7 +328,7 @@
       a {
         @include adjust-font-size-to(15px);
         color: black;
-        margin: 0 12px;
+        margin: 0 9px;
         &:hover {
           color: $color-primary;
         }
@@ -318,12 +341,12 @@
       border-top: none;
       position: absolute;
       top: 18px;
-      right: 24px;
+      right: 56px;
       @include pie-clearfix;
     }
     .press-release {
       @include adjust-font-size-to(15px);
-      margin: 0 18px 0 0;
+      margin: 0 12px 0 0;
       float: left;
       color: #999;
       &:hover {
@@ -332,7 +355,7 @@
     }
     .search {
       float: left;
-      margin: 0 18px 0 0;
+      margin: 0 12px 0 0;
       display: block;
     }
     .search-icon {
@@ -351,10 +374,10 @@
     .search-input {
       position: absolute;
       top: -3px;
-      right: -14px;
+      right: -8px;
       z-index: 100;
       background-color: #eee;
-      padding: 3px 24px;
+      padding: 3px 12px;
       text-align: left;
       width: 0px;
       color: #444;
@@ -377,11 +400,17 @@
         @include transition(opacity 0.5s, width 0.5s);
       }
     }
+    .press-release + .social-nav, .search + .social-nav {
+      border-left: 1px solid #eaeaea;
+    }
     .social-nav {
+      // border: 1px solid #eaeaea;
       border-top: none;
+      border-right: 1px solid #eaeaea;
+      // border-bottom: none;
       float: left;
       font-size: 16px;
-      padding: 0;
+      padding: 0 4px 0 6px;
       li {
         float: left;
       }
@@ -394,6 +423,52 @@
         }
         &.icon-line {
           margin-left: 3px;
+        }
+      }
+    }
+    .global-language {
+      margin-right: 0;
+      position: relative;
+      z-index: 350;
+      &.open .global-language-btn {
+        color: #444;
+        &:after {
+          border-color: #444 transparent transparent transparent;
+        }
+      }
+    }
+    .global-language-btn {
+      top: 0;
+      color: #999;
+      display: block;
+      margin: 18px 0;
+      padding: 0 24px 0 0;
+      font-size: 15px;
+      .lang {
+        display: inline;
+      }
+      &:before{
+        float: left;
+        content: "\e60a";
+        @include adjust-font-size-to(16px);
+        margin-right: 3px;
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 13px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 5px 0 5px;
+        border-color: #999 transparent transparent transparent;
+      }
+      &:hover {
+        color: #444;
+        &:after {
+          border-color: #444 transparent transparent transparent;
         }
       }
     }

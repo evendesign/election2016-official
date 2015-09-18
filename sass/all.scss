@@ -20,6 +20,7 @@
 @import "component/back-to-top";
 @import "component/banner";
 @import "component/lazyload";
+@import "component/dropdown";
 
 // ==== partial ====
 // @import "partial/guideline-header"; // guideline 專用
@@ -47,6 +48,7 @@
 @import "page/homepage";
 @import "page/policies-page";
 @import "page/article-page";
+@import "page/global-page";
 
 // ==== inbox ====
 .hide-phone {

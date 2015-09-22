@@ -1,6 +1,13 @@
 .header
   .header-inner
-    .logo: a href="/" 點亮台灣 Light UP TAIWAN
+    - if !@language
+      .logo: a href="/" 點亮台灣 Light UP TAIWAN
+    - elsif @language == "en"
+      .logo.logo_en: a href="/" 點亮台灣 Light UP TAIWAN
+    - elsif @language == "es"
+      .logo.logo_es: a href="/" 點亮台灣 Light UP TAIWAN
+    - else
+      .logo.logo_jp: a href="/" 點亮台灣 Light UP TAIWAN
     button.menu-btn
       .menu-btn-line
     .menu
@@ -15,7 +22,8 @@
           = nav_link_to "捐款", "#"
 
         .menu-bottom
-          a.press-release href="/press/" 媒體專區
+          - if !@language
+            a.press-release href="/press/" 媒體專區
           / form.search
           /   label.search-icon.icon-search
           /   input.search-input placeholder="搜尋"

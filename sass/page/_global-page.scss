@@ -1,5 +1,14 @@
 .global-page {
 
+  .header {
+    .primary-nav {
+      display: none;
+    }
+    .press-release {
+      display: none;
+    }
+  }
+
   .copy {
     text-align: center;
     @include adjust-font-size-to(13px);

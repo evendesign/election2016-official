@@ -50,6 +50,7 @@
         color: $color-primary;
         &:hover {
           text-decoration: none;
+          color: #aaa;
         }
       }
       span {
@@ -83,6 +84,10 @@
     font-weight: bold;
     @include trailer(0.5);
     @include adjust-font-size-to(18px, 1);
+    @include transition(color .25s);
+    &:hover {
+      color: $color-primary;
+    }
   }
   .post-summary {
     @include adjust-font-size-to(15px);
@@ -130,16 +135,9 @@
   .post-title {
     @include trailer(0);
     @include adjust-font-size-to(16px);
-    @include transition(color .25s);
   }
   .post-summary {
     display: none;
-  }
-
-  .post-item:hover {
-    .post-title {
-      color: $color-primary;
-    }
   }
 
   @include at-breakpoint(480px) {

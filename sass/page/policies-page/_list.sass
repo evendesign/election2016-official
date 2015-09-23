@@ -15,15 +15,15 @@
 
     &:before
       position: absolute
-      left: -2px
+      left: -4px
       padding-right: 3px
-      width: 32px
+      width: 31px
       font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light","Microsoft JhengHei", sans-serif
       text-align: right
-      font-size: 34px
+      font-size: 31px
       font-weight: bold
-      line-height: 42px
-      letter-spacing: -3px
+      line-height: 38px
+      letter-spacing: -2px
       color: #50B584
       background: -webkit-linear-gradient(120deg, #E7E879, #50B584)
       -webkit-background-clip: text
@@ -66,15 +66,12 @@
   -webkit-background-clip: initial
 
 +at-breakpoint($pad)
-  .order-list:before
-    font-size: 32px
-
-+at-breakpoint($desktop)
   .order-list li
     +leader(2)
+    padding-left: 56px
 
     &:before
-      left: -24px
+      left: -4px
       width: 48px
       font-size: 48px
       line-height: 56px

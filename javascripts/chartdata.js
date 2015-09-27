@@ -1,4 +1,4 @@
-var worldOldPeopleData, taiwanOldPeopleData, margin;
+var worldOldPeopleData, taiwanOldPeopleData, worldOldPeopleChart, taiwanOldPeopleChart, margin, defaultColor;
 worldOldPeopleData = [
   {
     "key": "日本",
@@ -53,15 +53,26 @@ margin = {
   right: 36,
   bottom: 24
 };
+defaultColor = function(it){
+  return it.style({
+    "fill": 'url(#themeGradient)'
+  });
+};
+worldOldPeopleChart = barChart().data(worldOldPeopleData).container('.world-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
+taiwanOldPeopleChart = barChart().data(taiwanOldPeopleData).container('.taiwan-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
+
+
 
 $( document ).ready(function() {
   if ( $('.old-people-chart').length != 0 ) {
+    worldOldPeopleChart();
+    taiwanOldPeopleChart();
     function gc_barchart_animation() {
       var waypoint = new Waypoint({
         element: $('.old-people-chart'),
         handler: function(direction) {
-          barChart().data(worldOldPeopleData).container('.world-old-people-data').margin(margin).barHeight(36)();
-          barChart().data(taiwanOldPeopleData).container('.taiwan-old-people-data').margin(margin).barHeight(36)();
+          worldOldPeopleChart.draw();
+          taiwanOldPeopleChart.draw();
           this.destroy();
         },
         offset: '90%'

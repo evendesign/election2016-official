@@ -61,8 +61,6 @@ defaultColor = function(it){
 worldOldPeopleChart = barChart().data(worldOldPeopleData).container('.world-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
 taiwanOldPeopleChart = barChart().data(taiwanOldPeopleData).container('.taiwan-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
 
-
-
 $( document ).ready(function() {
   if ( $('.old-people-chart').length != 0 ) {
     worldOldPeopleChart();
@@ -82,7 +80,7 @@ $( document ).ready(function() {
   }
 
   if ( $('.people-pp-chart').length != 0 ) {
-    d3.tsv("gc_linechart_data.tsv", function(err, data){
+    d3.tsv("./gc_linechart_data.tsv", function(err, data){
       var ratio, population, average, thousand, drawRatio, drawAverage, drawPopulation;
       ratio = _.map(function(it){
         return {
@@ -126,13 +124,16 @@ $( document ).ready(function() {
         Math.round(
         it / 10)));
       });
+      drawRatio();
+      drawAverage();
+      drawPopulation();
       function gc_linechart_animation() {
         var waypoint = new Waypoint({
           element: $('.people-pp-chart'),
           handler: function(direction) {
-            drawRatio();
-            drawAverage();
-            drawPopulation();
+            drawRatio.draw();
+            drawAverage.draw();
+            drawPopulation.draw();
             this.destroy();
           },
           offset: '90%'

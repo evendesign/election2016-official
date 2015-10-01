@@ -1,7 +1,7 @@
 var _, lineChart;
 _ = require("prelude-ls");
 lineChart = function(){
-  var chrt, build, i$;
+  var chrt, svg, build, i$;
   chrt = {};
   chrt.container = null;
   chrt.data = null;
@@ -13,16 +13,17 @@ lineChart = function(){
   };
   chrt.w = 400 - chrt.margin.left - chrt.margin.right;
   chrt.h = 400 - chrt.margin.top - chrt.margin.bottom;
-  chrt.duration = 2000;
+  chrt.duration = 500;
+  chrt.delay = 2000;
   chrt.numberFormat = null;
   chrt.color = '#41afa5';
   chrt.strokeWidth = "3px";
+  svg = null;
   build = function(){
-    var svg, extent, max, scaleX, scaleY, path, line, track, circle, translateAlong, addNumber, xAxis;
     if (chrt.data === null || chrt.container === null) {
       return;
     }
-    svg = d3.select(chrt.container).insert("svg", "span").attr({
+    return svg = d3.select(chrt.container).insert("svg", "span").attr({
       "viewBox": "0 0 " + (chrt.w + chrt.margin.left + chrt.margin.right) + " " + (chrt.h + chrt.margin.top + chrt.margin.bottom),
       "width": "100%",
       "height": "100%",
@@ -30,6 +31,9 @@ lineChart = function(){
     }).append("g").attr({
       "transform": "translate(" + chrt.margin.left + "," + chrt.margin.top + ")"
     });
+  };
+  build.draw = function(){
+    var extent, max, scaleX, scaleY, path, line, track, circle, translateAlong, xAxis;
     extent = function(it){
       return d3.extent(it);
     }(
@@ -52,6 +56,48 @@ lineChart = function(){
     chrt.data)));
     scaleX = d3.scale.linear().domain(extent).range([0, chrt.w]);
     scaleY = d3.scale.linear().domain([0, max]).range([chrt.h, 0]);
+    svg.selectAll(".gridX").data((function(){
+      var i$, step$, to$, results$ = [];
+      for (i$ = 0, to$ = chrt.w, step$ = chrt.w / 5; step$ < 0 ? i$ >= to$ : i$ <= to$; i$ += step$) {
+        results$.push(i$);
+      }
+      return results$;
+    }())).enter().append("line").attr({
+      "x1": function(it){
+        return it;
+      },
+      "x2": function(it){
+        return it;
+      },
+      "y1": 0,
+      "y2": chrt.h,
+      "class": "gridX"
+    }).style({
+      "stroke": '#575757',
+      "stroke-width": "1px",
+      "shape-rendering": "crispEdges"
+    });
+    svg.selectAll(".gridY").data((function(){
+      var i$, step$, to$, results$ = [];
+      for (i$ = 0, to$ = chrt.h, step$ = chrt.h / 5; step$ < 0 ? i$ >= to$ : i$ <= to$; i$ += step$) {
+        results$.push(i$);
+      }
+      return results$;
+    }())).enter().append("line").attr({
+      "x1": 0,
+      "x2": chrt.w,
+      "y1": function(it){
+        return it;
+      },
+      "y2": function(it){
+        return it;
+      },
+      "class": "gridY"
+    }).style({
+      "stroke": '#575757',
+      "stroke-width": "1px",
+      "shape-rendering": "crispEdges"
+    });
     path = d3.svg.line().x(function(it){
       return scaleX(
       it.key);
@@ -77,7 +123,7 @@ lineChart = function(){
       "stroke-dashoffset": function(){
         return d3.select(this).node().getTotalLength();
       }
-    }).transition().duration(chrt.duration).style({
+    }).transition().duration(chrt.duration).delay(chrt.delay).ease('linear').style({
       "stroke-dashoffset": 0
     });
     track = line.attr({
@@ -85,7 +131,7 @@ lineChart = function(){
     }).style({
       "fill": "none"
     });
-    svg.selectAll(".blank").data(_.map(function(it){
+    svg.selectAll(".head").data(_.map(function(it){
       return _.head(
       it);
     })(
@@ -98,24 +144,27 @@ lineChart = function(){
         return scaleY(
         it.value);
       },
-      "r": 5
+      "r": 3,
+      "class": "head"
     }).style({
-      "fill": "white",
+      "fill": chrt.color,
       "stroke": chrt.color,
       "stroke-width": chrt.strokeWidth
     });
-    circle = svg.selectAll(".head").data(_.map(function(it){
+    circle = svg.selectAll(".tail").data(_.map(function(it){
       return _.head(
       it);
     })(
     chrt.data)).enter().append("circle").attr({
       "cx": 0,
       "cy": 0,
-      "r": 5
+      "r": 3,
+      "class": "tail"
     }).style({
-      "fill": "white",
+      "fill": chrt.color,
       "stroke": chrt.color,
-      "stroke-width": chrt.strokeWidth
+      "stroke-width": chrt.strokeWidth,
+      "opacity": 0
     });
     translateAlong = function(path){
       var l;
@@ -128,39 +177,39 @@ lineChart = function(){
         };
       };
     };
-    circle.transition().duration(chrt.duration).attrTween("transform", translateAlong(
-    track.node())).each("end", function(){
-      return addNumber();
+    circle.transition().duration(chrt.duration).delay(chrt.delay).ease('linear').style({
+      "opacity": 1
+    }).attrTween("transform", translateAlong(
+    track.node()));
+    svg.selectAll(".number").data(_.flatten(
+    _.map(function(it){
+      return [_.head(it), _.last(it)];
+    })(
+    chrt.data))).enter().append("text").text(function(it){
+      if (chrt.numberFormat === null) {
+        return it.value;
+      } else {
+        return chrt.numberFormat(
+        it.value);
+      }
+    }).attr({
+      "class": "number",
+      "x": function(it){
+        return scaleX(
+        it.key);
+      },
+      "y": function(it){
+        return scaleY(
+        it.value) - 20;
+      }
+    }).style({
+      "text-anchor": "middle",
+      "opacity": 0
+    }).transition().duration(0).delay(function(it, i){
+      return i * (chrt.delay + chrt.duration);
+    }).ease('linear').style({
+      "opacity": 1
     });
-    addNumber = function(){
-      return svg.selectAll(".number").data(_.flatten(
-      _.map(function(it){
-        return [_.head(it), _.last(it)];
-      })(
-      chrt.data))).enter().append("text").text(function(it){
-        if (chrt.numberFormat === null) {
-          return it.value;
-        } else {
-          return chrt.numberFormat(
-          it.value);
-        }
-      }).attr({
-        "class": "number",
-        "x": function(it){
-          return scaleX(
-          it.key);
-        },
-        "y": function(it){
-          return scaleY(
-          it.value) - 20;
-        }
-      }).style({
-        "text-anchor": "middle",
-        "opacity": 0
-      }).transition().style({
-        "opacity": 1
-      });
-    };
     xAxis = d3.svg.axis().scale(scaleX).tickValues(extent).tickFormat(d3.format("d")).orient("bottom");
     return svg.append("g").call(xAxis).attr({
       "transform": "translate(0," + chrt.h + ")",

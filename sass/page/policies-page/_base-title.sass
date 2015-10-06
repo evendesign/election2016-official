@@ -27,6 +27,10 @@
   br
     display: none
 
+.small-title
+  +adjust-font-size-to(21px, .9)
+  @extend %tk-shs-regular
+
 +at-breakpoint($pad)
   .main-title
     +adjust-font-size-to(36px)
@@ -53,7 +57,7 @@
     +adjust-font-size-to(18px)
 
   .section-title
-    +adjust-font-size-to(46px, 2.5)
+    +adjust-font-size-to(46px, 2.25)
 
     br
       display: block

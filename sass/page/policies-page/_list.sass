@@ -31,7 +31,9 @@
 
     & li
       +leader(0)
+      +trailer(.5)
       padding-left: 0
+      list-style: disc
 
       &:before
         display: none
@@ -42,6 +44,9 @@
 
   .section-sub-title + p
     +leader(0)
+
+.text-content.order-list
+  +trailer(3)
 
 @for $i from 1 through 9
   .order-list li:nth-child(#{$i})
@@ -75,3 +80,10 @@
       width: 48px
       font-size: 48px
       line-height: 56px
+
+  .todo-list li
+    +leader(2)
+    padding-left: 56px
+
+    &:before
+      left: 4px

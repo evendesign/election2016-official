@@ -1008,9 +1008,9 @@ body { background-color: #183840; position: relative; }
 .policies-page .main-title, .policies-page .main-sub-title, .policies-page .section-title, .policies-page .section-sub-title, .policies-page .section-class, .policies-page .blockquote-name span { font-family: "source-han-sans-traditional", "Helvetica Neue", "Helvetica", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; font-style: normal; font-weight: 200; -webkit-transition: opacity 0.5s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.5s 0.5s; -o-transition: opacity 0.5s 0.5s; transition: opacity 0.5s 0.5s; }
 .wf-loading .policies-page .main-title, .wf-loading .policies-page .main-sub-title, .wf-loading .policies-page .section-title, .wf-loading .policies-page .section-sub-title, .wf-loading .policies-page .section-class, .wf-loading .policies-page .blockquote-name span { opacity: 0; }
 .wf-active .policies-page .main-title, .wf-active .policies-page .main-sub-title, .wf-active .policies-page .section-title, .wf-active .policies-page .section-sub-title, .wf-active .policies-page .section-class, .wf-active .policies-page .blockquote-name span { opacity: 1; }
-.policies-page blockquote p { font-family: "source-han-sans-traditional", "Helvetica Neue", "Helvetica", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; font-style: normal; font-weight: 400; -webkit-transition: opacity 0.5s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.5s 0.5s; -o-transition: opacity 0.5s 0.5s; transition: opacity 0.5s 0.5s; }
-.wf-loading .policies-page blockquote p { opacity: 0; }
-.wf-active .policies-page blockquote p { opacity: 1; }
+.policies-page .small-title, .policies-page blockquote p { font-family: "source-han-sans-traditional", "Helvetica Neue", "Helvetica", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; font-style: normal; font-weight: 400; -webkit-transition: opacity 0.5s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.5s 0.5s; -o-transition: opacity 0.5s 0.5s; transition: opacity 0.5s 0.5s; }
+.wf-loading .policies-page .small-title, .wf-loading .policies-page blockquote p { opacity: 0; }
+.wf-active .policies-page .small-title, .wf-active .policies-page blockquote p { opacity: 1; }
 .policies-page blockquote.bigtext p { font-family: "source-han-sans-traditional", "Helvetica Neue", "Helvetica", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; font-style: normal; font-weight: 600; -webkit-transition: opacity 0.5s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.5s 0.5s; -o-transition: opacity 0.5s 0.5s; transition: opacity 0.5s 0.5s; }
 .wf-loading .policies-page blockquote.bigtext p { opacity: 0; }
 .wf-active .policies-page blockquote.bigtext p { opacity: 1; }
@@ -1046,6 +1046,7 @@ body { background-color: #183840; position: relative; }
 .policies-page .section-title br { display: none; }
 .policies-page .section-sub-title { margin-bottom: 12px; font-size: 24px; line-height: 30px; }
 .policies-page .section-sub-title br { display: none; }
+.policies-page .small-title { font-size: 21px; line-height: 21px; }
 @media (min-width: 640px) { .policies-page .main-title { font-size: 36px; line-height: 48px; }
   .policies-page .main-sub-title { font-size: 18px; line-height: 24px; }
   .policies-page .section-title { font-size: 34px; line-height: 42px; text-align: center; }
@@ -1053,7 +1054,7 @@ body { background-color: #183840; position: relative; }
 @media (min-width: 1025px) { .policies-page .main-title { margin-bottom: 12px; font-size: 42px; line-height: 48px; }
   .policies-page .main-title br { display: block; }
   .policies-page .main-sub-title { font-size: 18px; line-height: 24px; }
-  .policies-page .section-title { font-size: 46px; line-height: 60px; }
+  .policies-page .section-title { font-size: 46px; line-height: 54px; }
   .policies-page .section-title br { display: block; }
   .policies-page .section-sub-title { margin-bottom: 36px; font-size: 28px; line-height: 36px; }
   .policies-page .section-sub-title br { display: block; } }
@@ -1096,6 +1097,7 @@ body { background-color: #183840; position: relative; }
 .policies-page .center-content { text-align: left; }
 .policies-page .center-content .text-content { max-width: 680px; margin-left: auto; margin-right: auto; margin-bottom: 24px; }
 .policies-page .center-content .text-content + .text-content { margin-top: 48px; }
+.policies-page .center-content .text-content .note { max-width: 480px; margin-left: auto; margin-right: auto; margin: 24px auto; padding: 24px; font-size: 13px; line-height: 21px; font-weight: bold; background-color: rgba(128, 128, 128, 0.25); -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
 .policies-page .center-content .figure { max-width: 960px; margin-left: auto; margin-right: auto; margin-bottom: 24px; }
 .policies-page .center-content .figure img { display: block; margin: 0 auto; }
 .policies-page .center-content .figure.pos-abs { position: relative; }
@@ -1144,10 +1146,11 @@ body { background-color: #183840; position: relative; }
 .policies-page .order-list li, .policies-page .todo-list li { position: relative; margin-top: 24px; padding-left: 36px; text-align: left; }
 .policies-page .order-list li .section-title, .policies-page .order-list li .section-sub-title, .policies-page .todo-list li .section-title, .policies-page .todo-list li .section-sub-title { margin-bottom: 12px; }
 .policies-page .order-list li:before, .policies-page .todo-list li:before { position: absolute; left: -4px; padding-right: 3px; width: 31px; font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; text-align: right; font-size: 31px; font-weight: bold; line-height: 38px; letter-spacing: -2px; color: #50b584; background: -webkit-linear-gradient(120deg, #e7e879, #50b584); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.policies-page .order-list li li, .policies-page .todo-list li li { margin-top: 0px; padding-left: 0; }
+.policies-page .order-list li li, .policies-page .todo-list li li { margin-top: 0px; margin-bottom: 12px; padding-left: 0; list-style: disc; }
 .policies-page .order-list li li:before, .policies-page .todo-list li li:before { display: none; }
 .policies-page .order-list .section-title, .policies-page .todo-list .section-title { text-align: left; }
 .policies-page .order-list .section-sub-title + p, .policies-page .todo-list .section-sub-title + p { margin-top: 0px; }
+.policies-page .text-content.order-list { margin-bottom: 72px; }
 .policies-page .order-list li:nth-child(1):before { content: "01"; }
 .policies-page .order-list li:nth-child(2):before { content: "02"; }
 .policies-page .order-list li:nth-child(3):before { content: "03"; }
@@ -1169,7 +1172,9 @@ body { background-color: #183840; position: relative; }
 .policies-page .order-list li:nth-child(20):before { content: "20"; }
 .policies-page .todo-list li:before { content: ""; top: auto; width: 36px; height: 36px; background-image: url('/images/todo-item-style.png?1440754780'); background-image: none, url('/images/todo-item-style.svg?1440754780'); background-position: center; background-repeat: no-repeat; background-clip: initial; -webkit-background-clip: initial; }
 @media (min-width: 640px) { .policies-page .order-list li { margin-top: 48px; padding-left: 56px; }
-  .policies-page .order-list li:before { left: -4px; width: 48px; font-size: 48px; line-height: 56px; } }
+  .policies-page .order-list li:before { left: -4px; width: 48px; font-size: 48px; line-height: 56px; }
+  .policies-page .todo-list li { margin-top: 48px; padding-left: 56px; }
+  .policies-page .todo-list li:before { left: 4px; } }
 .policies-page .timeline { overflow: hidden; padding-bottom: 24px; list-style: none; text-align: left; }
 .policies-page .timeline li { overflow: hidden; }
 .policies-page .timeline li:after { content: ""; display: table; clear: both; }

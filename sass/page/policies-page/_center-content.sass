@@ -8,6 +8,15 @@
     & + .text-content
       +leader(2)
 
+    .note
+      +policy-container($note-width)
+      margin: 24px auto
+      padding: 24px
+      +adjust-font-size-to(13px, .9)
+      font-weight: bold
+      background-color: rgba(128,128,128,.25)
+      +border-radius(5px)
+
   .figure
     +policy-container($figure-width)
     +trailer()

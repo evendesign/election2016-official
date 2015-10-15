@@ -1,0 +1,128 @@
+.video-hero {
+  position: relative;
+  display: block;
+  background-color: #444;
+  color: white;
+  width: 100%;
+  padding-top: 56.25%;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include background-image(linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.25)));
+  }
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  .video-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px 12px 24px 42px;
+  }
+
+  .video-title {
+    @include adjust-font-size-to(16px);
+    font-weight: bold;
+    @include trailer(0);
+    &:before {
+      // icon font 設定
+      font-family: 'icomoon';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e800";
+
+      // @include adjust-font-size-to(16px);
+      position: relative;
+      left: -30px;
+      top: 22px;
+      display: block;
+      font-size: 20px;
+    }
+  }
+
+  .video-date {
+    display: none;
+  }
+
+  .video-summary {
+    display: none;
+  }
+
+
+  @include at-breakpoint($pad) {
+    padding-top: 50%;
+    &:before {
+      top: 0;
+      width: 400px;
+      @include background-image(linear-gradient(to right, rgba(black, 0.25), rgba(black, 0)));
+    }
+
+    .video-content {
+      padding: 36px 36px 36px 72px;
+      width: 320px;
+    }
+    .video-title {
+      @include adjust-font-size-to(24px, 1.25);
+      @include trailer(0.5);
+      &:before {
+        left: -42px;
+        top: 30px;
+        font-size: 30px;
+      }
+    }
+    .video-date {
+      display: block;
+      @include adjust-font-size-to(15px);
+      color: #ccc;
+    }
+    .video-summary {
+      @include adjust-font-size-to(15px);
+      display: block;
+      @include trailer(0);
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+    padding-top: 40%;
+
+    .video-content {
+      padding: 60px 60px 60px 120px;
+      width: 450px;
+    }
+    .video-title {
+      @include adjust-font-size-to(36px, 1.5);
+      @include trailer(1);
+      &:before {
+        left: -50px;
+        top: 36px;
+        font-size: 36px;
+      }
+    }
+    .video-date {
+      @include adjust-font-size-to(16px);
+      color: #ddd;
+    }
+    .video-summary {
+      @include adjust-font-size-to(16px);
+      @include trailer(0);
+    }
+
+  }
+
+
+
+
+}

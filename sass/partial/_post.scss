@@ -123,13 +123,16 @@
   .post-share {
     @include leader(1);
     text-align: center;
-    a.icon-facebook { color: #4863B3; }
-    a.icon-twitter { color: #4099FF; }
-    a.icon-plurk { color: #E14701; }
-    a.icon-line { color: #02B002; }
-    a:hover {
-      @include opacity(0.75);
+    .post-share-btn {
+      @include transition(opacity 0.25s);
+      &:hover {
+        @include opacity(0.75);
+      }
     }
+    .icon-facebook { color: #4863B3; }
+    .icon-twitter { color: #4099FF; }
+    .icon-plurk { color: #E14701; }
+    .icon-line { color: #02B002; }
   }
 
   .post-share-title {
@@ -178,7 +181,7 @@
     }
     .post-title {
       margin: rhythm(0.25) 0 0;
-      @include adjust-font-size-to(32px, 1.5);
+      @include adjust-font-size-to(32px, 1.75);
     }
     .post-subtitle {
       @include leader(0.5);
@@ -292,3 +295,121 @@
   }
 
 }
+
+.post_video {
+  .post-cover {
+    margin: 0 0 rhythm(0.5);
+    position: relative;
+    background-color: transparent;
+    @include background-image(none);
+  }
+  .post-cover-image {
+    position: relative;
+    padding-top: 56.25%;
+    height: 0;
+    &:before {
+      top: 48px;
+      @include background-image(linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.5)));
+    }
+  }
+  .post-cover-inner {
+    padding: 24px 24px 0;
+  }
+  .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -30px;
+    margin-top: -30px;
+    display: block;
+    width: 60px;
+    color: white;
+    @include adjust-font-size-to(60px, 2.5);
+    @include transition(opacity 0.25s);
+    &:hover {
+      @include opacity(0.8);
+      text-decoration: none;
+    }
+  }
+  .post-share {
+    .post-share-btn {
+      color: rgba(white, 0.75);
+    }
+  }
+  .post-summary {
+    max-width: 560px;
+    margin: 0 auto;
+    color: white;
+  }
+  .pager-item {
+    color: #183840;
+  }
+  .prev:before {
+    border-color: transparent rgba(#ddd, 0.5) transparent transparent;
+  }
+  .pager-item_return {
+    color: #ccc;
+    border-bottom: 2px solid rgba(#ddd, 0.5);
+    &:hover {
+      color: white;
+    }
+  }
+  .next:before {
+    border-color: transparent transparent transparent rgba(#ddd, 0.5);
+  }
+  .pager-title {
+    background-color: rgba(#ddd, 0.5);
+  }
+
+  @include at-breakpoint($pad) {
+    .post-cover {
+      background-color: #444;
+      padding-top: 50%;
+    }
+    .post-cover-image {
+      position: absolute;
+      padding-top: 0;
+      height: auto;
+    }
+    .post-cover-inner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+      padding: 24px 24px 5%;
+      max-width: 480px;
+    }
+  }
+  @include at-breakpoint(768px) {
+    .post-cover {
+      padding-top: 45%;
+    }
+  }
+  @include at-breakpoint($desktop) {
+    .post-cover {
+      padding-top: 40%;
+    }
+    .post-cover-inner {
+      padding: 48px;
+      max-width: 560px;
+    }
+    .play-btn {
+      @include adjust-font-size-to(84px, 4);
+      width: 96px;
+      height: 96px;
+      margin-top: -48px;
+      margin-left: -48px;
+    }
+    .post-title {
+      @include adjust-font-size-to(36px, 2);
+    }
+  }
+  @include at-breakpoint(1320px) {
+    .post-cover {
+      padding-top: 35%;
+    }
+  }
+
+}
+

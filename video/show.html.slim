@@ -1,1 +1,29 @@
+- @page_name = "video-page"
+
 = render '/partial/header'
+
+.content
+  .post.post_bg-image-style.post_video
+    .post-header
+      .post-cover
+        .post-cover-image.lazyload data-bg="/images/post-header-image.jpg"
+          a.play-btn.icon-play href="#"
+        .post-cover-inner
+          h2.post-title.auto-break-text 開創一個真正屬於人民的時代。開創一個真正屬於
+      .post-share
+        span.post-share-title 分享：
+        a.post-share-btn.icon-facebook href="#" target="_blank"
+        a.post-share-btn.icon-twitter href="#" target="_blank"
+        a.post-share-btn.icon-plurk href="#" target="_blank"
+        a.post-share-btn.icon-line href="#" target="_blank"
+      .post-meta
+        span.post-date 2015.7.23
+    .post-content.article
+      .container.container_single-article
+        p.post-summary= zh_lorem_paragraphs(2)
+    .post-footer
+      .pager
+        a.pager-item.prev href="#": .pager-title 上一篇
+        a.pager-item.pager-item_return href="#" 返回文章列表
+        a.pager-item.next href="#": .pager-title 下一篇
+

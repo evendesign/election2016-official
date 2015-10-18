@@ -412,6 +412,13 @@
       height: 100%;
       padding-top: 0;
     }
+    .play-btn {
+      @include adjust-font-size-to(72px, 4);
+      width: 96px;
+      height: 96px;
+      margin-top: -48px;
+      margin-left: -48px;
+    }
     .post-cover-inner {
       position: absolute;
       left: 0;
@@ -422,7 +429,7 @@
       max-width: 560px;
     }
     .post-title {
-      @include adjust-font-size-to(28px, 1.5);
+      // @include adjust-font-size-to(28px, 1.5);
     }
   }
 
@@ -441,10 +448,6 @@
     }
     .play-btn {
       @include adjust-font-size-to(84px, 4);
-      width: 96px;
-      height: 96px;
-      margin-top: -48px;
-      margin-left: -48px;
     }
     .post-title {
       @include adjust-font-size-to(36px, 2);

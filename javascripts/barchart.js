@@ -1,7 +1,7 @@
 var _, barChart;
 _ = require("prelude-ls");
 barChart = function(){
-  var chrt, gradientData, build, i$;
+  var chrt, gradientData, svg, build, i$;
   chrt = {};
   chrt.container = null;
   chrt.data = null;
@@ -20,19 +20,20 @@ barChart = function(){
   gradientData = [
     {
       "offset": "0%",
-      "color": "rgb(80, 180, 115)"
+      "color": "rgb(80, 180, 114)"
     }, {
       "offset": "100%",
       "color": "rgb(80, 180, 115)"
     }
   ];
+  chrt.barStyle = null;
+  svg = null;
   build = function(){
-    var svg, scaleX, scaleY, bars;
     if (chrt.data === null || chrt.container === null) {
       return;
     }
     chrt.h = chrt.data.length * chrt.barHeight + (chrt.data.length - 1) * chrt.barMargin;
-    svg = d3.select(chrt.container).insert("svg", "span").attr({
+    return svg = d3.select(chrt.container).insert("svg", "span").attr({
       "viewBox": "0 0 " + (chrt.w + chrt.margin.left + chrt.margin.right) + " " + (chrt.h + chrt.margin.top + chrt.margin.bottom),
       "width": "100%",
       "height": "100%",
@@ -40,6 +41,9 @@ barChart = function(){
     }).append("g").attr({
       "transform": "translate(" + chrt.margin.left + "," + chrt.margin.top + ")"
     });
+  };
+  build.draw = function(){
+    var scaleX, scaleY, bars;
     scaleX = d3.scale.linear().domain([
       0, d3.max(chrt.data, function(it){
         return it.value;
@@ -82,9 +86,10 @@ barChart = function(){
       "y": function(it, i){
         return scaleY(i);
       }
-    }).style({
-      "fill": 'url(#themeGradient)'
     });
+    if (chrt.barStyle !== null) {
+      bars.call(chrt.barStyle);
+    }
     svg.selectAll(".name").data(chrt.data).enter().append("text").attr({
       "x": -30,
       "y": function(it, i){
@@ -97,19 +102,33 @@ barChart = function(){
       return it.key;
     });
     return svg.selectAll(".number").data(chrt.data).enter().append("text").attr({
-      "x": function(it){
-        return scaleX(
-        it.value) - 5;
-      },
+      "x": 5,
       "y": function(it, i){
         return scaleY(i) + chrt.barHeight / 2 + 7;
       },
       "class": "number"
     }).style({
-      "text-anchor": "end",
-      "fill": "white"
-    }).text(function(it){
-      return it.value;
+      "text-anchor": "start"
+    }).transition().duration(chrt.duration).delay(function(it, i){
+      return i * chrt.delay;
+    }).attr({
+      "x": function(it){
+        return scaleX(
+        it.value) + 5;
+      }
+    }).tween("text", function(it){
+      var i;
+      i = d3.interpolate(this.textContent, it.value);
+      return function(n){
+        return this.textContent = function(it){
+          if (it === 0) {
+            return "";
+          } else {
+            return it;
+          }
+        }(
+        Math.round(i(n)));
+      };
     });
   };
   for (i$ in chrt) {

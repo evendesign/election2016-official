@@ -6,10 +6,13 @@
   .post.post_bg-image-style.post_video
     .post-header
       .post-cover
-        .post-cover-image.lazyload data-bg="/images/post-header-image.jpg"
-          a.play-btn.icon-play href="#"
+        .post-player
+          .post-player-inner
+            <iframe id="video" class="post-player-iframe" src="https://www.youtube.com/embed/F52Rg-_ktk4?enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>
+        .post-cover-image style="background-image: url('/images/post-header-image.jpg')"
+          a#play-btn.play-btn.icon-play
         .post-cover-inner
-          h2.post-title.auto-break-text 開創一個真正屬於人民的時代。開創一個真正屬於
+          h2.post-title.auto-break-text= zh_lorem_sentences(2)
       .post-share
         span.post-share-title 分享：
         a.post-share-btn.icon-facebook href="#" target="_blank"

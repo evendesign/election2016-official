@@ -5,14 +5,19 @@
   color: white;
   width: 100%;
   padding-top: 56.25%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  @include background-size(cover);
+  @extend %subpixel;
+
   &:before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: 0;
     right: 0;
     bottom: 0;
-    @include background-image(linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.25)));
+    @include background-image(linear-gradient(to bottom, rgba(black, 0) 50%, rgba(black, 0.5)));
   }
   &:hover {
     text-decoration: none;
@@ -24,12 +29,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 24px 12px 24px 42px;
+    padding: 12px 12px 12px 42px;
   }
 
   .video-title {
     @include adjust-font-size-to(16px);
-    font-weight: bold;
     @include trailer(0);
     &:before {
       // icon font 設定
@@ -66,8 +70,9 @@
     padding-top: 50%;
     &:before {
       top: 0;
-      width: 400px;
-      @include background-image(linear-gradient(to right, rgba(black, 0.25), rgba(black, 0)));
+      width: 100%;
+      max-width: 500px;
+      @include background-image(linear-gradient(to right, rgba(black, 0.3) 320px, rgba(black, 0)));
     }
 
     .video-content {
@@ -95,15 +100,23 @@
     }
   }
 
+  @include at-breakpoint(768px) {
+    padding-top: 45%;
+  }
+
   @include at-breakpoint($desktop) {
     padding-top: 40%;
+    &:before {
+      max-width: 620px;
+      @include background-image(linear-gradient(to right, rgba(black, 0.25) 500px, rgba(black, 0)));
+    }
 
     .video-content {
-      padding: 60px 60px 60px 120px;
-      width: 450px;
+      padding: 4.75% 4.75% 4.75% 9.5%;
+      width: 440px;
     }
     .video-title {
-      @include adjust-font-size-to(36px, 1.5);
+      @include adjust-font-size-to(36px, 1.75);
       @include trailer(1);
       &:before {
         left: -50px;
@@ -122,7 +135,11 @@
 
   }
 
-
+  // @include at-breakpoint(1320px) {
+  //   .video-content {
+  //     padding: 60px 60px 60px 120px;
+  //   }
+  // }
 
 
 }

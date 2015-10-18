@@ -4,4 +4,13 @@
     background-color: #183840;
   }
 
+  .post {
+    @include trailer(1);
+    @include at-breakpoint($pad) {
+      @include trailer(2);
+    }
+  }
+
+
+
 }

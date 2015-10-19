@@ -909,6 +909,8 @@ body { background-color: #183840; position: relative; }
 .article figure figcaption { font-size: 13px; line-height: 18px; color: #999; }
 .article ul, .article ol { margin-top: 0px; }
 .article ul ul, .article ul ol, .article ol ul, .article ol ol { margin-bottom: 0px; }
+.article.article_black-bg { color: #ddd; }
+.article.article_black-bg h1, .article.article_black-bg h2, .article.article_black-bg h3, .article.article_black-bg h4, .article.article_black-bg h5, .article.article_black-bg h6 { color: white; }
 @media (min-width: 640px) { .article { font-size: 18px; line-height: 30px; }
   .article h3, .article h4, .article p, .article img, .article iframe, .article ul, .article ol { margin-bottom: 30px; }
   .article h3 { font-size: 24px; line-height: 28px; }
@@ -1289,7 +1291,7 @@ body { background-color: #183840; position: relative; }
   .global-page .page-bottom-illustrator { padding-top: 0; padding-bottom: 20%; margin-bottom: 24px; }
   .global-page .page-bottom-illustrator:before, .global-page .page-bottom-illustrator:after { margin-bottom: 0%; } }
 
-.video-page .page-inner { background-color: #183840; }
+.video-page .page-inner { background-color: #11272C; }
 .video-page .post { margin-bottom: 24px; }
 @media (min-width: 640px) { .video-page .post { margin-bottom: 48px; } }
 

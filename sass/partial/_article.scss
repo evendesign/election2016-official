@@ -75,9 +75,24 @@
   }
 
   &.article_black-bg {
+
     color: #ddd;
     #{headings()} {
       color: white;
+    }
+    a {
+      color: #71C1A1;
+      &:hover {
+        color: #95D0B8;
+      }
+    }
+    blockquote {
+      color: #E0D185;
+    }
+    figure {
+      figcaption {
+        color: #ddd;
+      }
     }
   }
 

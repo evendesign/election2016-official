@@ -74,6 +74,12 @@
     }
   }
 
+  &.article_black-bg {
+    color: #ddd;
+    #{headings()} {
+      color: white;
+    }
+  }
 
   @include at-breakpoint($pad) {
 

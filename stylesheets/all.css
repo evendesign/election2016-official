@@ -890,6 +890,7 @@ body { background-color: #183840; position: relative; }
   .post_video .post-cover-inner { position: absolute; left: 0; right: 0; bottom: 0; margin: 0 auto; padding: 48px; max-width: 560px; }
   .post_video .post-title { font-size: 36px; line-height: 48px; } }
 
+.article { overflow-x: hidden; }
 .article .lead { margin-top: 0px; }
 .article h3 { margin-bottom: 24px; font-size: 21px; line-height: 24px; color: black; font-weight: bold; }
 .article h4 { margin-bottom: 24px; font-size: 16px; line-height: 24px; color: black; font-weight: bold; }

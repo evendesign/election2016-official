@@ -1,5 +1,7 @@
 .article {
 
+  overflow-x: hidden;
+
   .lead {
     @include leader(0);
   }

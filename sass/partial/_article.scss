@@ -88,6 +88,19 @@
     }
     blockquote {
       color: #E0D185;
+      &:before, &:after {
+        @include opacity(0.25);
+      }
+      &:before {
+        @include replace-text-with-svg(quote-white);
+        width: 18px;
+        height: 24px;
+      }
+      &:after {
+        @include replace-text-with-svg(quote2-white);
+        width: 18px;
+        height: 24px;
+      }
     }
     figure {
       figcaption {

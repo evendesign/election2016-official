@@ -870,7 +870,6 @@ body { background-color: #183840; position: relative; }
 .post_video .post-cover-image { display: none; }
 .post_video .post-cover-inner { padding: 24px 24px 0; }
 .post_video .post-share .post-share-btn { color: rgba(255, 255, 255, 0.75); }
-.post_video .post-summary { max-width: 560px; margin: 0 auto; color: white; }
 .post_video .pager-item { color: #11272C; }
 .post_video .prev:before { border-color: transparent rgba(221, 221, 221, 0.5) transparent transparent; }
 .post_video .pager-item_return { color: #ccc; border-bottom: 2px solid rgba(221, 221, 221, 0.5); }
@@ -1298,6 +1297,7 @@ body { background-color: #183840; position: relative; }
 .video-page .page-inner { background-color: #11272C; }
 .video-page .post { margin-bottom: 24px; }
 @media (min-width: 640px) { .video-page .post { margin-bottom: 48px; } }
+.video-page .post .container.container_single-article { max-width: 560px; text-align: center; }
 
 .hide-phone { display: none; }
 @media (min-width: 640px) { .hide-phone { display: block; } }

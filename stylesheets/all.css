@@ -466,7 +466,7 @@ body { background-color: #183840; position: relative; }
 .header .header-inner { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; max-width: 1512px; width: 100%; margin: 0 auto; background-color: white; border-bottom: 1px solid #ddd; }
 .header .header-inner:after { content: ""; display: table; clear: both; }
 .header .logo { float: left; padding: 6px 0 6px 6px; }
-.header .logo a { display: block; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-zh.png?1445165238'); background-repeat: no-repeat; background-position: 50% 50%; width: 240px; height: 48px; background-image: none, url('/images/logo-zh.svg?1445165238'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.header .logo a { display: block; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-zh.png?1445572846'); background-repeat: no-repeat; background-position: 50% 50%; width: 240px; height: 48px; background-image: none, url('/images/logo-zh.svg?1445572846'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .header .logo_en a { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-en.png?1445165237'); background-repeat: no-repeat; background-position: 50% 50%; width: 240px; height: 48px; background-image: none, url('/images/logo-en.svg?1445165237'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .header .logo_es a { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-es.png?1445165238'); background-repeat: no-repeat; background-position: 50% 50%; width: 240px; height: 48px; background-image: none, url('/images/logo-es.svg?1445165238'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .header .logo_jp a { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-jp.png?1445165238'); background-repeat: no-repeat; background-position: 50% 50%; width: 240px; height: 48px; background-image: none, url('/images/logo-jp.svg?1445165238'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
@@ -602,6 +602,7 @@ body { background-color: #183840; position: relative; }
 .hero .hero-block-title:after { content: ""; position: absolute; z-index: 2; bottom: -200px; left: 50px; width: 370px; height: 370px; background: url("/images/blur-ball-medium.png") no-repeat; opacity: .9; }
 .hero .hero-block-title .title { position: relative; font-size: 24px; line-height: 32px; font-weight: bold; }
 .hero .hero-block-title .description { position: relative; display: none; }
+.hero .video-bg { display: none; }
 @media (min-width: 700px) { .hero { height: 560px; }
   .hero .hero-block-wrap { height: 100%; padding-bottom: 0; }
   .hero .hero-wrap-left { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 40%; height: 100%; }
@@ -631,7 +632,8 @@ body { background-color: #183840; position: relative; }
   .hero .hero-block:hover .hero-block-title:before { opacity: .95; -webkit-transform: scale(1.6, 1.6); -moz-transform: scale(1.6, 1.6); -ms-transform: scale(1.6, 1.6); -o-transform: scale(1.6, 1.6); transform: scale(1.6, 1.6); }
   .hero .hero-block:hover .hero-block-title:after { opacity: .95; -webkit-transform: scale(1.8, 1.8); -moz-transform: scale(1.8, 1.8); -ms-transform: scale(1.8, 1.8); -o-transform: scale(1.8, 1.8); transform: scale(1.8, 1.8); }
   .hero .hero-block:hover .hero-block-title .title { bottom: 0; }
-  .hero .hero-block:hover .hero-block-title .description { bottom: 0; opacity: 1; } }
+  .hero .hero-block:hover .hero-block-title .description { bottom: 0; opacity: 1; }
+  .hero .video-bg { display: block; position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); } }
 
 .post-list .post-list-title { margin: 36px 0; font-size: 24px; line-height: 30px; color: black; text-align: center; }
 .post-list .post-image { position: relative; display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background-position: center center; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; margin: 0 -24px 12px; width: auto; padding-top: 67%; background-color: #e1e1e1; background-image: -webkit-linear-gradient(140deg, #e7e879 0%, #50b584 87%); background-image: -moz-linear-gradient(140deg, #e7e879 0%, #50b584 87%); background-image: -o-linear-gradient(140deg, #e7e879 0%, #50b584 87%); background-image: linear-gradient(140deg, #e7e879 0%, #50b584 87%); }

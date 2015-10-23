@@ -101,6 +101,9 @@
       display: none;
     }
   }
+  .video-bg {
+    display: none;
+  }
 
   @include at-breakpoint(700px 8) {
     height: 560px;
@@ -241,6 +244,18 @@
           opacity: 1;
         }
       }
+    }
+    .video-bg {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
     }
   }
 }

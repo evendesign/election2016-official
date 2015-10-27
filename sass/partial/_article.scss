@@ -1,5 +1,7 @@
 .article {
 
+  overflow-x: hidden;
+
   .lead {
     @include leader(0);
   }
@@ -74,6 +76,40 @@
     }
   }
 
+  &.article_black-bg {
+
+    color: #ddd;
+    #{headings()} {
+      color: white;
+    }
+    a {
+      color: #71C1A1;
+      &:hover {
+        color: #95D0B8;
+      }
+    }
+    blockquote {
+      color: #E0D185;
+      &:before, &:after {
+        @include opacity(0.25);
+      }
+      &:before {
+        @include replace-text-with-svg(quote-white);
+        width: 18px;
+        height: 24px;
+      }
+      &:after {
+        @include replace-text-with-svg(quote2-white);
+        width: 18px;
+        height: 24px;
+      }
+    }
+    figure {
+      figcaption {
+        color: #ddd;
+      }
+    }
+  }
 
   @include at-breakpoint($pad) {
 

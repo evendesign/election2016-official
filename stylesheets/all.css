@@ -1141,12 +1141,19 @@ body { background-color: #183840; position: relative; }
 @media (min-width: 640px) { .policies-page .figure-grid .figure-item-row:after { content: ""; display: table; clear: both; }
   .policies-page .figure-grid .figure-item-wrap { width: 25%; }
   .policies-page .figure-grid .figure-item.empty { display: block; } }
-.policies-page .list { padding-left: 24px; }
+.policies-page .list { margin-bottom: 24px; padding-left: 24px; list-style: disc; }
+.policies-page .faq-list { list-style: none; }
+.policies-page .faq-list .question, .policies-page .faq-list .answer { position: relative; padding-left: 24px; }
+.policies-page .faq-list .question:before, .policies-page .faq-list .answer:before { position: absolute; top: 2px; left: 0; font-size: 28px; font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; }
+.policies-page .faq-list .question { margin-bottom: 12px; }
+.policies-page .faq-list .question:before { content: "Q"; color: #525252; }
+.policies-page .faq-list .answer { margin-bottom: 24px; }
+.policies-page .faq-list .answer:before { content: "A"; color: #50b584; }
 .policies-page .order-list, .policies-page .todo-list { list-style: none; }
 .policies-page .order-list li, .policies-page .todo-list li { position: relative; margin-top: 24px; padding-left: 36px; text-align: left; }
 .policies-page .order-list li .section-title, .policies-page .order-list li .section-sub-title, .policies-page .todo-list li .section-title, .policies-page .todo-list li .section-sub-title { margin-bottom: 12px; }
 .policies-page .order-list li:before, .policies-page .todo-list li:before { position: absolute; left: -4px; padding-right: 3px; width: 31px; font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; text-align: right; font-size: 31px; font-weight: bold; line-height: 38px; letter-spacing: -2px; color: #50b584; background: -webkit-linear-gradient(120deg, #e7e879, #50b584); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.policies-page .order-list li li, .policies-page .todo-list li li { margin-top: 0px; margin-bottom: 12px; padding-left: 0; list-style: disc; }
+.policies-page .order-list li li, .policies-page .todo-list li li { margin-top: 0px; margin-bottom: 12px; padding-left: 0; }
 .policies-page .order-list li li:before, .policies-page .todo-list li li:before { display: none; }
 .policies-page .order-list .section-title, .policies-page .todo-list .section-title { text-align: left; }
 .policies-page .order-list .section-sub-title + p, .policies-page .todo-list .section-sub-title + p { margin-top: 0px; }
@@ -1203,6 +1210,11 @@ body { background-color: #183840; position: relative; }
 .policies-page .people-pp-chart .axis path, .policies-page .people-pp-chart .axis line { fill: none; stroke: white; stroke-width: 1px; shape-rendering: crispEdges; }
 .policies-page .people-pp-chart .axis text { font-size: 18px; fill: white; shape-rendering: crispEdges; }
 .policies-page .people-pp-chart .number { font-size: 18px; fill: white; }
+.policies-page .houseprice-to-income-chart text { font-size: 18px; fill: white; }
+.policies-page .houseprice-to-income-chart .axis path, .policies-page .houseprice-to-income-chart .axis line { fill: none; stroke: white; stroke-width: 1px; shape-rendering: crispEdges; }
+.policies-page .houseprice-to-income-chart .axis text { font-size: 18px; fill: white; shape-rendering: crispEdges; }
+.policies-page .house-pp-chart text { font-size: 18px; fill: white; }
+.policies-page .house-pp-chart text.numbers { font-size: 60px; }
 
 .article-page .page-header { margin-bottom: 24px; }
 @media (min-width: 640px) { .article-page .page-header { margin-bottom: 48px; } }

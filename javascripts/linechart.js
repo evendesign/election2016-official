@@ -6,18 +6,20 @@ lineChart = function(){
   chrt.container = null;
   chrt.data = null;
   chrt.margin = {
-    top: 40,
-    left: 40,
-    right: 40,
-    bottom: 40
+    top: 80,
+    left: 80,
+    right: 80,
+    bottom: 80
   };
-  chrt.w = 400 - chrt.margin.left - chrt.margin.right;
-  chrt.h = 400 - chrt.margin.top - chrt.margin.bottom;
+  chrt.w = 480 - chrt.margin.left - chrt.margin.right;
+  chrt.h = 480 - chrt.margin.top - chrt.margin.bottom;
   chrt.duration = 500;
-  chrt.delay = 2000;
+  chrt.delay = 500;
   chrt.numberFormat = null;
   chrt.color = '#41afa5';
   chrt.strokeWidth = "3px";
+  chrt.xGridNumber = 5;
+  chrt.tickValues = null;
   svg = null;
   build = function(){
     if (chrt.data === null || chrt.container === null) {
@@ -54,11 +56,11 @@ lineChart = function(){
       });
     })(
     chrt.data)));
-    scaleX = d3.scale.linear().domain(extent).range([0, chrt.w]);
+    scaleX = d3.time.scale().domain(extent).range([0, chrt.w]);
     scaleY = d3.scale.linear().domain([0, max]).range([chrt.h, 0]);
     svg.selectAll(".gridX").data((function(){
       var i$, step$, to$, results$ = [];
-      for (i$ = 0, to$ = chrt.w, step$ = chrt.w / 5; step$ < 0 ? i$ >= to$ : i$ <= to$; i$ += step$) {
+      for (i$ = 0, to$ = chrt.w, step$ = chrt.w / chrt.xGridNumber; step$ < 0 ? i$ >= to$ : i$ <= to$; i$ += step$) {
         results$.push(i$);
       }
       return results$;
@@ -73,9 +75,8 @@ lineChart = function(){
       "y2": chrt.h,
       "class": "gridX"
     }).style({
-      "stroke": '#575757',
-      "stroke-width": "1px",
-      "shape-rendering": "crispEdges"
+      "stroke": '#D8D5D5',
+      "stroke-width": "1px"
     });
     svg.selectAll(".gridY").data((function(){
       var i$, step$, to$, results$ = [];
@@ -94,9 +95,8 @@ lineChart = function(){
       },
       "class": "gridY"
     }).style({
-      "stroke": '#575757',
-      "stroke-width": "1px",
-      "shape-rendering": "crispEdges"
+      "stroke": '#D8D5D5',
+      "stroke-width": "1px"
     });
     path = d3.svg.line().x(function(it){
       return scaleX(
@@ -104,7 +104,7 @@ lineChart = function(){
     }).y(function(it){
       return scaleY(
       it.value);
-    });
+    }).interpolate("monotone");
     line = svg.selectAll(".line").data(chrt.data);
     line.enter().append("path").attr({
       "class": "line"
@@ -179,18 +179,26 @@ lineChart = function(){
     };
     circle.transition().duration(chrt.duration).delay(chrt.delay).ease('linear').style({
       "opacity": 1
-    }).attrTween("transform", translateAlong(
-    track.node()));
-    svg.selectAll(".number").data(_.flatten(
-    _.map(function(it){
+    }).attrTween("transform", function(it, i){
+      var f;
+      f = translateAlong(
+      d3.select(track[0][i]).node());
+      return f(
+      it);
+    });
+    svg.selectAll(".numberGroup").data(_.map(function(it){
       return [_.head(it), _.last(it)];
     })(
-    chrt.data))).enter().append("text").text(function(it){
+    chrt.data)).enter().append("g").attr({
+      "class": "numberGroup"
+    }).selectAll("text").data(function(it){
+      return it;
+    }).enter().append("text").text(function(it){
       if (chrt.numberFormat === null) {
         return it.value;
       } else {
         return chrt.numberFormat(
-        it.value);
+        it);
       }
     }).attr({
       "class": "number",
@@ -206,11 +214,11 @@ lineChart = function(){
       "text-anchor": "middle",
       "opacity": 0
     }).transition().duration(0).delay(function(it, i){
-      return i * (chrt.delay + chrt.duration);
+      return i * (chrt.duration + chrt.delay);
     }).ease('linear').style({
       "opacity": 1
     });
-    xAxis = d3.svg.axis().scale(scaleX).tickValues(extent).tickFormat(d3.format("d")).orient("bottom");
+    xAxis = d3.svg.axis().scale(scaleX).tickValues(chrt.tickValues ? chrt.tickValues : extent).tickFormat(d3.time.format("%Y")).orient("bottom");
     return svg.append("g").call(xAxis).attr({
       "transform": "translate(0," + chrt.h + ")",
       "class": "axis"

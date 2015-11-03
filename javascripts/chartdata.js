@@ -84,21 +84,21 @@ $( document ).ready(function() {
       var ratio, population, average, thousand, drawRatio, drawAverage, drawPopulation;
       ratio = _.map(function(it){
         return {
-          "key": +it.year,
+          "key": new Date(+it.year, 0, 1),
           "value": +it.ratio
         };
       })(
       data);
       population = _.map(function(it){
         return {
-          "key": +it.year,
+          "key": new Date(+it.year, 0, 1),
           "value": +it.population
         };
       })(
       data);
       average = _.map(function(it){
         return {
-          "key": +it.year,
+          "key": new Date(+it.year, 0, 1),
           "value": +it.average
         };
       })(
@@ -111,10 +111,10 @@ $( document ).ready(function() {
         function(it){
           return it.toFixed(0);
         }(
-        it * 100));
+        it.value * 100));
       });
       drawAverage = lineChart().data([average]).container('.people-average-data').numberFormat(function(it){
-        return it.toFixed(0) + "歲";
+        return it.value.toFixed(0) + "歲";
       });
       drawPopulation = lineChart().data([population]).container('.people-population-data').numberFormat(function(it){
         return function(it){
@@ -122,7 +122,7 @@ $( document ).ready(function() {
         }(
         thousand(
         Math.round(
-        it / 10)));
+        it.value / 10)));
       });
       drawRatio();
       drawAverage();
@@ -141,5 +141,125 @@ $( document ).ready(function() {
       }
       gc_linechart_animation();
     });
+  }
+
+  if ( $('.houseprice-to-income-chart').length != 0 ) {
+    d3.tsv("./hp_linechart_data.tsv", function(err, data){
+      var columns, ratio, thousand, drawRatio;
+      columns = _.filter(function(it){
+        return it !== "年度季別";
+      })(
+      _.keys(
+      data[0]));
+      ratio = _.sortBy(function(it){
+        var pri;
+        pri = ["全國", "台北市", "新北市"];
+        return pri.indexOf(it[0]["label"]);
+      })(
+      _.map(function(c){
+        return _.sortBy(function(it){
+          return it.key;
+        })(
+        _.map(function(it){
+          var d, y, m;
+          d = it["年度季別"].split("Q");
+          y = (+d[0]) + 1911;
+          m = (+d[1]) * 3 - 1;
+          return {
+            "key": new Date(y, m, 1),
+            "value": +it[c],
+            "label": c
+          };
+        })(
+        data));
+      })(
+      columns));
+      thousand = d3.format("0,000");
+      drawRatio = lineChart().data(ratio).container('.houseprice-to-income-chart').color(function(it, i){
+        var label;
+        label = _.isType('Array', it)
+          ? it[0]["label"]
+          : it["label"];
+        if (label === "全國" || label === "台北市" || label === "新北市") {
+          return "rgba(80, 181, 132,1)";
+        } else {
+          return "rgba(241,240,117,0.5)";
+        }
+      }).numberFormat(function(it){
+        var label;
+        label = _.isType('Array', it)
+          ? it[0]["label"]
+          : it["label"];
+        if (it.key.getFullYear() === 2002) {
+          if (label === "全國") {
+            return label + " " + it.value.toFixed(0) + " 年 ";
+          } else if (label === "台北市") {
+            return "雙北 6 年";
+          } else {
+            return "";
+          }
+        } else {
+          if (label === "全國" || label === "台北市" || label === "新北市") {
+            return _.Str.take(2)(
+            label) + " " + it.value.toFixed(0) + " 年 ";
+          } else {
+            return "";
+          }
+        }
+      }).w(960).xGridNumber(13).strokeWidth(4).tickValues([new Date(2002, 2, 1), new Date(2008, 2, 1), new Date(2015, 2, 1)]);
+      drawRatio();
+      function hp_linechart_animation() {
+        var waypoint = new Waypoint({
+          element: $('.houseprice-to-income-chart'),
+          handler: function(direction) {
+            drawRatio.draw();
+            this.destroy();
+          },
+          offset: '90%'
+        })
+      }
+      hp_linechart_animation();
+    });
+  }
+
+  if ( $('.house-pp-chart').length != 0 ) {
+    var emptyHouses, emptyHouseDount, lowUilization, electricHouseDount, selfOwned, selfHouseDount;
+    emptyHouses = {
+      "value": 0.2,
+      "total": 1
+    };
+    emptyHouseDount = donutChart().data(emptyHouses).container('.empty-house-data').textFunc(function(it){
+      return (it * 100).toFixed(0) + "%";
+    });
+    emptyHouseDount();
+    lowUilization = {
+      "value": 0.105,
+      "total": 1
+    };
+    electricHouseDount = donutChart().data(lowUilization).container('.electric-house-data').textFunc(function(it){
+      return (it * 100).toFixed(0) + "%";
+    });
+    electricHouseDount();
+    selfOwned = {
+      "value": 0.88,
+      "total": 1
+    };
+    selfHouseDount = donutChart().data(selfOwned).container('.self-house-data').textFunc(function(it){
+      return (it * 100).toFixed(0) + "%";
+    });
+    selfHouseDount();
+    function hp_dountchart_animation() {
+      var waypoint = new Waypoint({
+        element: $('.house-pp-chart'),
+        handler: function(direction) {
+          emptyHouseDount.draw();
+          electricHouseDount.draw();
+          selfHouseDount.draw();
+          this.destroy();
+        },
+        offset: '90%'
+      })
+    }
+    hp_dountchart_animation();
   }
 });

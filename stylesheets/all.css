@@ -1142,6 +1142,7 @@ body { background-color: #183840; position: relative; }
   .policies-page .figure-grid .figure-item-wrap { width: 25%; }
   .policies-page .figure-grid .figure-item.empty { display: block; } }
 .policies-page .list { margin-bottom: 24px; padding-left: 24px; list-style: disc; }
+.policies-page .list li { margin-bottom: 12px; }
 .policies-page .faq-list { list-style: none; }
 .policies-page .faq-list .question, .policies-page .faq-list .answer { position: relative; padding-left: 24px; }
 .policies-page .faq-list .question:before, .policies-page .faq-list .answer:before { position: absolute; top: 2px; left: 0; font-size: 28px; font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; }

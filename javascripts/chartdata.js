@@ -1,4 +1,4 @@
-var worldOldPeopleData, taiwanOldPeopleData, worldOldPeopleChart, taiwanOldPeopleChart, margin, defaultColor;
+var worldOldPeopleData, taiwanOldPeopleData, foodCheckData, worldOldPeopleChart, taiwanOldPeopleChart, margin, defaultColor, peopleHighlightColor;
 worldOldPeopleData = [
   {
     "key": "日本",
@@ -58,8 +58,19 @@ defaultColor = function(it){
     "fill": 'url(#themeGradient)'
   });
 };
+peopleHighlightColor = function(it){
+  return it.style({
+    "fill": function(it){
+      if (it.key === "台灣平均") {
+        return "orange";
+      } else {
+        return 'url(#themeGradient)';
+      }
+    }
+  });
+};
 worldOldPeopleChart = barChart().data(worldOldPeopleData).container('.world-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
-taiwanOldPeopleChart = barChart().data(taiwanOldPeopleData).container('.taiwan-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
+taiwanOldPeopleChart = barChart().data(taiwanOldPeopleData).container('.taiwan-old-people-data').margin(margin).barHeight(36).barStyle(peopleHighlightColor);
 
 $( document ).ready(function() {
   if ( $('.old-people-chart').length != 0 ) {

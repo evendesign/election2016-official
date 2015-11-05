@@ -25,9 +25,19 @@
         .menu-bottom
           - if !@language
             a.press-release href="/press/" 媒體專區
-          / form.search
-          /   label.search-icon.icon-search
-          /   input.search-input placeholder="搜尋"
+            .search.header-google-search
+              javascript:
+                (function() {
+                  var cx = '003675965074085344714:zibj2zgp57i';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                      '//cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+                })();
+              <gcse:searchbox-only resultsUrl="http://www.example.com" newWindow="true" queryParameterName="search">
           ul.social-nav
             li: a.facebook.icon-facebook href="#" target="_blank"
             li: a.instagra.icon-instagram href="#" target="_blank"

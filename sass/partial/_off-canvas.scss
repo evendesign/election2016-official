@@ -1,0 +1,26 @@
+.page-inner {
+  @include transition(transform 0.5s);
+}
+
+.is-open-menu {
+  height: 100%;
+  body, .page-outer {
+    height: 100%;
+  }
+  .page-outer {
+    overflow: hidden;
+  }
+  .page-inner {
+    @include translateX(-260px);
+  }
+
+  @include at-breakpoint($desktop) {
+    height: auto;
+    body, .page-outer {
+      height: auto;
+    }
+    .page-outer {
+      overflow: visible;
+    }
+  }
+}

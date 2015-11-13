@@ -1080,6 +1080,29 @@ body { background-color: #183840; position: relative; }
   .video-list .video-items li { width: 33.3333333333%; }
   .video-list .video-items li:nth-child(3n) { float: right; } }
 
+.header-google-search .gsc-search-box { padding: 0; margin: 0; position: relative; }
+.header-google-search td { margin: 0 !important; padding: 0 !important; }
+.header-google-search input.gsc-input { border: none; background: rgba(255, 255, 255, 0.25) !important; -webkit-border-radius: 20px; -moz-border-radius: 20px; -ms-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; padding: 3px 36px; text-align: left; color: white; font-size: 13px; line-height: 24px; width: 120px; }
+.header-google-search input.gsc-input::-webkit-input-placeholder { /* WebKit browsers */ color: white; -webkit-font-smoothing: antialiased; }
+.header-google-search input.gsc-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color: white; }
+.header-google-search input.gsc-input::-moz-placeholder { /* Mozilla Firefox 19+ */ color: white; }
+.header-google-search input.gsc-input:-ms-input-placeholder { /* Internet Explorer 10+ */ color: white; }
+.header-google-search input.gsc-input:focus { outline: none; }
+.header-google-search td.gsc-search-button { position: absolute; left: 8px; top: 6px; }
+.header-google-search td.gsc-search-button:before { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: "\e600"; position: absolute; display: block; color: rgba(255, 255, 255, 0.75); width: 24px; height: 24px; font-size: 18px; }
+.header-google-search input.gsc-search-button { position: absolute; border-color: transparent; background: transparent; color: transparent; min-width: initial; width: 100%; height: 100%; padding: 0; border: none; display: block; }
+.header-google-search input.gsc-search-button:focus { outline: none; }
+.header-google-search td.gsc-clear-button { position: absolute; display: none; }
+@media (min-width: 640px) { .header-google-search input.gsc-input { width: 160px; } }
+@media (min-width: 1025px) { .header-google-search { width: 24px; height: 24px; }
+  .header-google-search td.gsc-input { position: absolute; right: -7px; top: -2px; }
+  .header-google-search input.gsc-input { background-color: #ddd !important; width: 0px; padding: 3px 18px 3px 18px; color: #777; opacity: 0; -webkit-transition: opacity 0.5s, width 0.5s, visibility 0s; -webkit-transition-delay: 0s, 0s, 0.5s; -moz-transition: opacity 0.5s, width 0.5s, visibility 0s 0.5s; -o-transition: opacity 0.5s, width 0.5s, visibility 0s 0.5s; transition: opacity 0.5s, width 0.5s, visibility 0s 0.5s; visibility: hidden; }
+  .header-google-search input.gsc-input:focus { width: 120px; opacity: 1; visibility: visible; padding: 3px 30px 3px 18px; -webkit-transition: opacity 0.5s, width 0.5s, padding 0.5s; -moz-transition: opacity 0.5s, width 0.5s, padding 0.5s; -o-transition: opacity 0.5s, width 0.5s, padding 0.5s; transition: opacity 0.5s, width 0.5s, padding 0.5s; }
+  .header-google-search td.gsc-search-button { position: relative; width: 24px; height: 24px; top: 0; left: 0; }
+  .header-google-search td.gsc-search-button:before { color: #999; top: 0; left: 0; font-size: 16px; line-height: 24px; }
+  .header-google-search input.gsc-search-button { top: 0; left: 0; }
+  .header-google-search:hover input.gsc-input { width: 120px; opacity: 1; padding: 3px 30px 3px 18px; visibility: visible; -webkit-transition: opacity 0.5s, width 0.5s, padding 0.5s; -moz-transition: opacity 0.5s, width 0.5s, padding 0.5s; -o-transition: opacity 0.5s, width 0.5s, padding 0.5s; transition: opacity 0.5s, width 0.5s, padding 0.5s; } }
+
 .homepage .header-sticky-wrapper { position: absolute; top: 0; left: 0; right: 0; }
 .homepage .header, .homepage .sub-menu { width: 100%; }
 .homepage .header-inner, .homepage .sub-menu-inner { width: 100%; }

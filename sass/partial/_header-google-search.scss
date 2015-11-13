@@ -1,0 +1,135 @@
+.header-google-search {
+
+  .gsc-search-box {
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  td {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  input.gsc-input {
+    border: none;
+    background: rgba(white, 0.25) !important;
+    @include border-radius(20px);
+    padding: 3px 36px;
+    text-align: left;
+    color: white;
+    @include adjust-font-size-to(13px);
+    @include input-placeholder-color(white);
+    width: 120px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  td.gsc-search-button {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    &:before {
+      font-family: 'icomoon';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e600";
+
+      position: absolute;
+      display: block;
+      color: rgba(white, 0.75);
+      width: 24px;
+      height: 24px;
+      font-size: 18px;
+    }
+  }
+
+  input.gsc-search-button {
+    position: absolute;
+    border-color: transparent;
+    background: transparent;
+    color: transparent;
+    min-width: initial;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    display: block;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  td.gsc-clear-button {
+    position: absolute;
+    display: none;
+  }
+
+  @include at-breakpoint($pad) {
+    input.gsc-input {
+      width: 160px;
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+    width: 24px;
+    height: 24px;
+    td.gsc-input {
+      position: absolute;
+      right: -7px;
+      top: -2px;
+    }
+    input.gsc-input {
+      background-color: #ddd !important;
+      width: 0px;
+      padding: 3px 18px 3px 18px;
+      color: #777;
+      opacity:0;
+      @include transition(opacity 0.5s, width 0.5s, visibility 0s 0.5s);
+      visibility: hidden;
+      &:focus {
+        width: 120px;
+        opacity:1;
+        visibility: visible;
+        padding: 3px 30px 3px 18px;
+        @include transition(opacity 0.5s, width 0.5s, padding 0.5s);
+      }
+    }
+    td.gsc-search-button {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      top: 0;
+      left: 0;
+      &:before {
+        color: #999;
+        top: 0;
+        left: 0;
+        @include adjust-font-size-to(16px);
+      }
+    }
+    input.gsc-search-button {
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      input.gsc-input {
+        width: 120px;
+        opacity:1;
+        padding: 3px 30px 3px 18px;
+        visibility: visible;
+        @include transition(opacity 0.5s, width 0.5s, padding 0.5s);
+      }
+    }
+  }
+
+
+}

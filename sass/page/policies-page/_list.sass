@@ -42,6 +42,9 @@
     padding-left: 36px
     text-align: left
 
+    &.col-2-content, &.col-3-content
+      padding: 0 24px 0 36px
+
     .section-title, .section-sub-title
       +trailer(.5)
 
@@ -113,9 +116,16 @@
       font-size: 48px
       line-height: 56px
 
+    &.col-2-content, &.col-3-content
+      padding: 0 24px 0 54px
+
   .todo-list li
     +leader(2)
     padding-left: 56px
 
     &:before
       left: 4px
+
+    &.col-2-content, &.col-3-content
+      padding: 0 24px 0 54px
+

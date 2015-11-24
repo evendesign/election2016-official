@@ -2,6 +2,14 @@
   @include transition(transform 0.5s);
 }
 
+.off-canvas-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+}
+
 .is-open-menu {
   height: 100%;
   body, .page-outer {
@@ -13,6 +21,9 @@
   .page-inner {
     @include translateX(-260px);
   }
+  .off-canvas-mask {
+    bottom: 0;
+  }
 
   @include at-breakpoint($desktop) {
     height: auto;
@@ -21,6 +32,12 @@
     }
     .page-outer {
       overflow: visible;
+    }
+    .page-inner {
+      @include transform(none);
+    }
+    .off-canvas-mask {
+      bottom: auto;
     }
   }
 }

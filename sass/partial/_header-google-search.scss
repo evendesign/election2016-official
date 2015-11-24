@@ -1,4 +1,6 @@
 .header-google-search {
+  width: 100%;
+  background: #455f65 !important;
 
   .gsc-search-box {
     padding: 0;
@@ -11,25 +13,46 @@
     padding: 0 !important;
   }
 
+  td.gsc-input:after {
+    position: absolute;
+    top: 18px;
+    left: 52px;
+    content: '搜尋 iing.tw';
+    color: #ccc;
+    @include adjust-font-size-to(15px, 1);
+    z-index: 45;
+  }
+
   input.gsc-input {
+    position: relative;
+    z-index: 50;
+    display: block;
     border: none;
-    background: rgba(white, 0.25) !important;
-    @include border-radius(20px);
-    padding: 3px 36px;
+    background: transparent !important;
+    width: 100%;
+    // @include border-radius(20px);
+    @include box-sizing(border-box);
+    padding: 18px 24px 18px 48px;
     text-align: left;
-    color: white;
-    @include adjust-font-size-to(13px);
+    color: transparent;
+    @include adjust-font-size-to(15px);
     @include input-placeholder-color(white);
-    width: 120px;
     &:focus {
       outline: none;
     }
   }
+  input.gsc-input-focus {
+    color: #ccc;
+    background: #455f65 !important;
+  }
 
   td.gsc-search-button {
     position: absolute;
-    left: 8px;
-    top: 6px;
+    left: 24px;
+    top: 22px;
+    width: 24px;
+    height: 24px;
+    z-index: 55;
     &:before {
       font-family: 'icomoon';
       speak: none;
@@ -45,8 +68,6 @@
       position: absolute;
       display: block;
       color: rgba(white, 0.75);
-      width: 24px;
-      height: 24px;
       font-size: 18px;
     }
   }
@@ -59,6 +80,7 @@
     min-width: initial;
     width: 100%;
     height: 100%;
+    margin: 0;
     padding: 0;
     border: none;
     display: block;
@@ -72,22 +94,21 @@
     display: none;
   }
 
-  @include at-breakpoint($pad) {
-    input.gsc-input {
-      width: 160px;
-    }
-  }
-
   @include at-breakpoint($desktop) {
     width: 24px;
     height: 24px;
+    background: transparent !important;
+
     td.gsc-input {
       position: absolute;
       right: -7px;
       top: -2px;
+      &:after {
+        display: none;
+      }
     }
     input.gsc-input {
-      background-color: #ddd !important;
+      background-color: #eee !important;
       width: 0px;
       padding: 3px 18px 3px 18px;
       color: #777;
@@ -95,7 +116,7 @@
       @include transition(opacity 0.5s, width 0.5s, visibility 0s 0.5s);
       visibility: hidden;
       &:focus {
-        width: 120px;
+        width: 172px;
         opacity:1;
         visibility: visible;
         padding: 3px 30px 3px 18px;
@@ -122,7 +143,7 @@
 
     &:hover {
       input.gsc-input {
-        width: 120px;
+        width: 172px;
         opacity:1;
         padding: 3px 30px 3px 18px;
         visibility: visible;

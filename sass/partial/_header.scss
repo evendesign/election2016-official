@@ -105,17 +105,6 @@
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
-  .menu-logo {
-    display: block;
-    width: 72px;
-    height: 72px;
-    background-image: url('/images/menu-logo.png');
-    background-image: none, url('/images/menu-logo.svg');
-    background-position: center center;
-    @include background-size(contain);
-    @include opacity(0.5);
-    margin: 0 auto rhythm(1);
-  }
 
   .primary-nav {
     @include reset-list-style;

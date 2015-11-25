@@ -498,7 +498,6 @@ body { background-color: #183840; position: relative; }
 .header .menu { position: fixed; top: 0; right: 0; bottom: 0; width: 260px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; z-index: 200; -webkit-transform: translateX(260px); -moz-transform: translateX(260px); -ms-transform: translateX(260px); -o-transform: translateX(260px); transform: translateX(260px); background-color: #183840; font-size: 15px; line-height: 24px; }
 .header .menu.is-mobile { display: none; }
 .header .menu-inner { position: relative; padding-top: 61px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 100%; overflow: auto; -webkit-overflow-scrolling: touch; }
-.header .menu-logo { display: block; width: 72px; height: 72px; background-image: url("/images/menu-logo.png"); background-image: none, url("/images/menu-logo.svg"); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; opacity: 0.5; margin: 0 auto 24px; }
 .header .primary-nav { margin: 0; padding: 0; border: 0; list-style: none; padding: 12px 24px; }
 .header .primary-nav li { position: relative; }
 .header .primary-nav a { padding: 12px 0; display: block; color: white; }
@@ -1308,6 +1307,7 @@ body { background-color: #183840; position: relative; }
 
 .global-page .header .primary-nav { display: none; }
 .global-page .header .press-release { display: none; }
+.global-page .header .menu-btn { display: none; }
 .global-page .copy { text-align: center; font-size: 13px; line-height: 24px; padding-bottom: 48px; }
 .global-page .post-list { padding-top: 12px; }
 @media (min-width: 480px) { .global-page .post-list { padding-top: 0px; } }

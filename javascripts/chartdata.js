@@ -53,6 +53,12 @@ margin = {
   right: 36,
   bottom: 24
 };
+margin_adj = {
+  top: 48,
+  left: 100,
+  right: 100,
+  bottom: 36
+};
 defaultColor = function(it){
   return it.style({
     "fill": 'url(#themeGradient)'
@@ -186,7 +192,7 @@ $( document ).ready(function() {
       })(
       columns));
       thousand = d3.format("0,000");
-      drawRatio = lineChart().data(ratio).container('.houseprice-to-income-chart').color(function(it, i){
+      drawRatio = lineChart().data(ratio).container('.houseprice-to-income-chart').margin(margin_adj).color(function(it, i){
         var label;
         label = _.isType('Array', it)
           ? it[0]["label"]
@@ -273,4 +279,80 @@ $( document ).ready(function() {
     }
     hp_dountchart_animation();
   }
+
+  if ( $('.health-care-spending-chart').length != 0 ) {
+    d3.tsv("./healthcare_spending.tsv", function(err, data){
+      var spending, thousand, scaleX, drawRatio;
+      spending = _.map(function(it){
+        return {
+          "key": +it["year"],
+          "value": +it["avg_spending"]
+        };
+      })(
+      data);
+      thousand = d3.format("0,000");
+      scaleX = d3.scale.linear().domain([1991, 2013]).range([0, 960]);
+      drawRatio = lineChart().data([spending]).container('.health-care-spending-chart').margin(margin_adj).numberFormat(function(it){
+        return function(it){
+          return it + " 萬元";
+        }(
+        function(it){
+          return it.toFixed(1);
+        }(
+        it.value / 10000));
+      }).w(960).xGridNumber(12).scaleX(scaleX).tickFormat(function(it){
+        return it + "";
+      });
+      null;
+      drawRatio();
+      function health_spending_linechart_animation() {
+        var waypoint = new Waypoint({
+          element: $('.health-care-spending-chart'),
+          handler: function(direction) {
+            drawRatio.draw();
+            this.destroy();
+          },
+          offset: '90%'
+        })
+      }
+      health_spending_linechart_animation();
+    });
+  }
+
+  if ( $('.sport-15aDay-mortality-chart').length != 0 ) {
+    d3.tsv("./reduction.tsv", function(err, data){
+      var curve, thousand, scaleX, drawRatio;
+      curve = _.map(function(it){
+        return {
+          "key": +it["minimum"],
+          "value": +it["reduction"]
+        };
+      })(
+      data);
+      thousand = d3.format("0,000");
+      scaleX = d3.scale.linear().domain([15, 90]).range([0, 960]);
+      drawRatio = lineChart().data([curve]).container('.sport-15aDay-mortality-chart').margin(margin_adj).numberFormat(function(it){
+        return function(it){
+          return "死亡率降 " + it + "%";
+        }(
+        function(it){
+          return it.toFixed(0);
+        }(
+        it.value));
+      }).tickValues([15, 30, 45, 60, 75, 90]).w(960).xGridNumber(10).scaleX(scaleX).tickFormat(null);
+      drawRatio();
+      function sport_mortality_linechart_animation() {
+        var waypoint = new Waypoint({
+          element: $('.sport-15aDay-mortality-chart'),
+          handler: function(direction) {
+            drawRatio.draw();
+            this.destroy();
+          },
+          offset: '90%'
+        })
+      }
+      sport_mortality_linechart_animation();
+    });
+  }
+
 });

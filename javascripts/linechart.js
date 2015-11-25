@@ -14,12 +14,14 @@ lineChart = function(){
   chrt.w = 480 - chrt.margin.left - chrt.margin.right;
   chrt.h = 480 - chrt.margin.top - chrt.margin.bottom;
   chrt.duration = 500;
-  chrt.delay = 500;
+  chrt.delay = 2000;
   chrt.numberFormat = null;
   chrt.color = '#41afa5';
   chrt.strokeWidth = "3px";
   chrt.xGridNumber = 5;
   chrt.tickValues = null;
+  chrt.scaleX = null;
+  chrt.tickFormat = d3.time.format("%Y");
   svg = null;
   build = function(){
     if (chrt.data === null || chrt.container === null) {
@@ -56,7 +58,11 @@ lineChart = function(){
       });
     })(
     chrt.data)));
-    scaleX = d3.time.scale().domain(extent).range([0, chrt.w]);
+    if (chrt.scaleX === null) {
+      scaleX = d3.time.scale().domain(extent).range([0, chrt.w]);
+    } else {
+      scaleX = chrt.scaleX;
+    }
     scaleY = d3.scale.linear().domain([0, max]).range([chrt.h, 0]);
     svg.selectAll(".gridX").data((function(){
       var i$, step$, to$, results$ = [];
@@ -218,7 +224,7 @@ lineChart = function(){
     }).ease('linear').style({
       "opacity": 1
     });
-    xAxis = d3.svg.axis().scale(scaleX).tickValues(chrt.tickValues ? chrt.tickValues : extent).tickFormat(d3.time.format("%Y")).orient("bottom");
+    xAxis = d3.svg.axis().scale(scaleX).tickValues(chrt.tickValues ? chrt.tickValues : extent).tickFormat(chrt.tickFormat).orient("bottom");
     return svg.append("g").call(xAxis).attr({
       "transform": "translate(0," + chrt.h + ")",
       "class": "axis"

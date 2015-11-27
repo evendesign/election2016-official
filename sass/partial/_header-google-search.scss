@@ -1,6 +1,7 @@
 .header-google-search {
   width: 100%;
-  background: #455f65 !important;
+  background: #455f65;
+  border-bottom: 1px solid #455f65;
 
   .gsc-search-box {
     padding: 0;
@@ -97,7 +98,8 @@
   @include at-breakpoint($desktop) {
     width: 24px;
     height: 24px;
-    background: transparent !important;
+    background: transparent;
+    border-bottom: none;
 
     td.gsc-input {
       position: absolute;
@@ -125,12 +127,12 @@
     }
     td.gsc-search-button {
       position: relative;
-      width: 24px;
+      width: 20px;
       height: 24px;
       top: 0;
       left: 0;
       &:before {
-        color: #999;
+        color: #aaa;
         top: 0;
         left: 0;
         @include adjust-font-size-to(16px);

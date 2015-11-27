@@ -1,7 +1,4 @@
 .header {
-  // @include pie-clearfix;
-  // background-color: white;
-  // border-bottom: 1px solid #ddd;
 
   .header-inner {
     @include box-sizing(border-box);
@@ -9,7 +6,6 @@
     max-width: 1512px;
     width: 100%;
     margin: 0 auto;
-    // padding: 0 24px;
     background-color: white;
     border-bottom: 1px solid #ddd;
   }
@@ -27,21 +23,19 @@
   .logo_jp a { @include replace-text-with-svg(logo-jp); }
 
   .menu-btn {
-    position: relative;
-    float: right;
-    top: 0;
-    right: 0;
+    position: absolute;
+    top: 14px;
+    right: 10px;
     cursor: pointer;
     border: none;
     background-color: transparent;
     z-index: 250;
     color: $color-primary;
-    width: 24px;
-    height: 60px;
-    padding: 28px 0px;
-    margin: 0 12px 0 0;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    margin: 0;
     @include box-sizing(border-box);
-    float: right;
     &:focus {
       outline: none;
     }
@@ -51,7 +45,7 @@
     width: 100%;
     height: 3px;
     background-color: #ccc;
-    // @include transition(background-color 0.25s);
+    @include transition(transform .3s);
     &:before, &:after {
       content: '';
       position: absolute;
@@ -59,7 +53,6 @@
       width: 100%;
       height: 3px;
       background-color: #ccc;
-      // @include transition(background-color 0.5s, transform .5s);
     }
     &:before{
       top: -8px;
@@ -74,7 +67,6 @@
       top: 50%;
       left: 50%;
       margin: -1.5px 0 0 -50%;
-      background-color: white;
     }
     &:before {
       @include transform( rotate(45deg) );
@@ -87,55 +79,28 @@
   .menu {
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
-    bottom: 0;
+    width: 260px;
     @include box-sizing(border-box);
     z-index: 200;
-    visibility:hidden;
-    opacity:0;
-    @include transition(visibility 0s 0.5s, opacity 0.5s);
-    text-align: center;
-    background-color: #225253;
+    @include translateX(260px);
+    background-color: #183840;
     @include adjust-font-size-to(15px);
-    &.is-mobile {
-      display: none;
-    }
   }
   .menu-inner {
+    position: relative;
+    padding-top: 61px;
     @include box-sizing(border-box);
-    padding: 24px 24px 0;
-    height: 100%;
-    overflow: auto;
-  }
-  .menu-logo {
-    display: block;
-    width: 72px;
-    height: 72px;
-    background-image: url('/images/menu-logo.png');
-    background-image: none, url('/images/menu-logo.svg');
-    background-position: center center;
-    @include background-size(contain);
-    @include opacity(0.5);
-    margin: 0 auto rhythm(1);
   }
 
   .primary-nav {
     @include reset-list-style;
-    @include trailer(2);
+    padding: 12px 0;
     li {
-      @include leader(1);
       position: relative;
-      // &:before {
-      //   content: '';
-      //   display: block;
-      //   width: 24px;
-      //   height: 1px;
-      //   background-color: rgba(white, 0.25);
-      //   margin: 12px auto;
-      // }
     }
     a {
+      padding: 12px 24px;
       display: block;
       color: white;
       &:hover {
@@ -147,20 +112,22 @@
   .menu-bottom {
     max-width: 400px;
     margin: 0 auto;
+    padding: 12px 0;
+    border-top: 1px solid rgba(white, 0.2);
   }
 
   .press-release {
     display: block;
-    margin: rhythm(0) 0 rhythm(1);
+    padding: 12px 24px;
     color: #ccc;
     &:hover {
       text-decoration: none;
     }
   }
   .search {
-    @include trailer(1.3);
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   .search-icon {
     display: block;
@@ -186,90 +153,42 @@
 
   .social-nav {
     @include reset-list-style;
-    padding: 24px 0;
-    border-top: 1px solid rgba(white, 0.2);
+    padding: 12px 24px;
+    @include pie-clearfix;
     li {
-      display: inline-block;
+      float: left;
+      margin-right: 24px;
     }
     a {
-      margin: 0 12px;
+      margin: 0;
       display: block;
       color: #ccc;
+      @include adjust-font-size-to(18px, 1);
       &:hover {
         text-decoration: none;
-      }
-      &.icon-line {
-        margin-left: 6px;
       }
     }
   }
 
   .global-language {
-    float: right;
+    position: absolute;
+    top: 0px;
+    height: 60px;
+    right: 48px;
     display: block;
-    margin-right: 12px;
   }
   .global-language-btn {
     color: #ccc;
     display: block;
-    @include adjust-font-size-to(26px, 1);
-    padding: 18px 0px;
+    @include adjust-font-size-to(24px, 1);
     position: relative;
+    margin: 14px 0 0;
+    padding: 0;
     top: 1px;
+    width: 32px;
+    height: 32px;
     .lang {
       display: none;
-    }
-  }
-
-  @include at-breakpoint($pad) {
-    .menu {
-      @include adjust-font-size-to(18px);
-    }
-    .menu-inner {
-      @include padding-leader(3);
-    }
-    .menu-logo {
-      @include trailer(2);
-      width: 132px;
-      height: 132px;
-    }
-    .primary-nav {
-      @include trailer(3);
-      li {
-        @include leader(1.5);
-        position: relative;
-      }
-      a {
-        display: block;
-      }
-    }
-    .press-release {
-      display: block;
-      margin: rhythm(1.5) 0 rhythm(1.5);
-    }
-    .search {
-      @include trailer(2);
-    }
-    .search-icon {
-      @include adjust-font-size-to(20px);
-      top: 6px;
-    }
-    .search-input {
-      border: none;
-      @include border-radius(24px);
-      padding: 6px 12px;
-      @include adjust-font-size-to(15px);
-      width: 196px;
-    }
-    .social-nav {
-      padding: 24px 0;
-      a {
-        @include adjust-font-size-to(22px);
-        margin: 0 24px;
-        &.icon-line {
-          margin-left: 18px;
-        }
-      }
     }
   }
 
@@ -296,13 +215,16 @@
       position: absolute;
       left: 0px;
       right: 0px;
-      padding: 0 24px;
+      padding: 0;
       overflow: visible;
       bottom: auto;
       visibility: visible;
+      width: auto;
       @include opacity(1);
       background-color: transparent;
       @include transition(none);
+      @include transform(none);
+      text-align: center;
     }
     .menu-inner {
       height: auto;
@@ -317,7 +239,7 @@
       @include pie-clearfix;
       display: inline-block;
       @include trailer(0);
-      padding-top: 18px;
+      padding: 18px 0 0;
       li {
         margin-top: 0;
         float: left;
@@ -329,6 +251,7 @@
         @include adjust-font-size-to(15px);
         color: black;
         margin: 0 9px;
+        padding: 0;
         &:hover {
           color: $color-primary;
         }
@@ -340,86 +263,46 @@
     .menu-bottom {
       border-top: none;
       position: absolute;
-      top: 18px;
-      right: 56px;
+      padding: 18px 0;
+      top: 0px;
+      right: 52px;
       @include pie-clearfix;
     }
     .press-release {
       @include adjust-font-size-to(15px);
-      margin: 0 12px 0 0;
+      margin: 0 8px 0 0;
+      padding: 0;
       float: left;
       color: #999;
       &:hover {
-        color: #444;
+        color: #777;
       }
     }
     .search {
-      float: left;
-      margin: 0 12px 0 0;
-      display: block;
-    }
-    .search-icon {
       position: relative;
-      top: 0;
-      left: 0;
-      cursor: pointer;
+      float: left;
+      margin: 0 6px 0 0;
       display: block;
-      color: #999;
-      z-index: 110;
-      @include adjust-font-size-to(16px);
-      &:hover {
-        color: #444;
-      }
-    }
-    .search-input {
-      position: absolute;
-      top: -3px;
-      right: -8px;
-      z-index: 100;
-      background-color: #eee;
-      padding: 3px 12px;
-      text-align: left;
-      width: 0px;
-      color: #444;
-      @include input-placeholder-color(#444);
-      opacity:0;
-      @include transition(opacity 0.5s, width 0.5s, visibility 0s 0.5s);
-      visibility: hidden;
-      &:focus {
-        width: 144px;
-        opacity:1;
-        visibility: visible;
-        @include transition(opacity 0.5s, width 0.5s);
-      }
-    }
-    .search:hover {
-      .search-input {
-        width: 144px;
-        opacity:1;
-        visibility: visible;
-        @include transition(opacity 0.5s, width 0.5s);
-      }
     }
     .press-release + .social-nav, .search + .social-nav {
       border-left: 1px solid #eaeaea;
     }
     .social-nav {
-      // border: 1px solid #eaeaea;
       border-top: none;
       border-right: 1px solid #eaeaea;
-      // border-bottom: none;
       float: left;
       font-size: 16px;
       padding: 0 4px 0 6px;
       li {
         float: left;
+        margin-right: 0;
       }
       a {
         margin: 0 6px;
-        color: #999;
+        color: #aaa;
         @include adjust-font-size-to(16px);
         &:hover {
-          color: #444;
+          color: #777;
         }
         &.icon-line {
           margin-left: 3px;
@@ -427,8 +310,9 @@
       }
     }
     .global-language {
-      margin-right: 0;
-      position: relative;
+
+      position: absolute;
+      right: 0;
       z-index: 350;
       &.open .global-language-btn {
         color: #444;
@@ -439,9 +323,9 @@
     }
     .global-language-btn {
       top: 0;
-      color: #999;
+      color: #aaa;
       display: block;
-      margin: 18px 0;
+      margin: 14px 8px 0 0;
       padding: 0 24px 0 0;
       font-size: 15px;
       .lang {
@@ -457,18 +341,18 @@
         content: '';
         display: block;
         position: absolute;
-        top: 10px;
-        right: 13px;
+        top: 14px;
+        right: 3px;
         width: 0;
         height: 0;
         border-style: solid;
         border-width: 5px 5px 0 5px;
-        border-color: #999 transparent transparent transparent;
+        border-color: #aaa transparent transparent transparent;
       }
       &:hover {
-        color: #444;
+        color: #777;
         &:after {
-          border-color: #444 transparent transparent transparent;
+          border-color: #777 transparent transparent transparent;
         }
       }
     }
@@ -480,33 +364,4 @@
     }
   }
 
-}
-
-// open menu
-.is-open-menu {
-  height: 100%;
-  body, .page-outer {
-    height: 100%;
-  }
-  .page-outer {
-    overflow: hidden;
-  }
-  .header {
-    .menu {
-      visibility:visible;
-      opacity:1;
-      transition-delay:0s;
-      display: block !important;
-    }
-  }
-
-  @include at-breakpoint($desktop) {
-    height: auto;
-    body, .page-outer {
-      height: auto;
-    }
-    .page-outer {
-      overflow: visible;
-    }
-  }
 }

@@ -1,5 +1,37 @@
 .list
+  margin-bottom: 24px
   padding-left: 24px
+  list-style: disc
+
+  li
+    +trailer(.5)
+
+.faq-list
+  list-style: none
+
+  .question, .answer
+    position: relative
+    padding-left: 24px
+    &:before
+      position: absolute
+      top: 2px
+      left: 0
+      font-size: 28px
+      font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Light", "STHeitiTC-Light","Microsoft JhengHei", sans-serif
+
+  .question
+    margin-bottom: 12px
+    &:before
+      content: "Q"
+      color: #525252
+
+  .answer
+    margin-bottom: 24px
+    &:before
+      content: "A"
+      color: #50B584
+
+
 
 .order-list, .todo-list
   list-style: none
@@ -9,6 +41,9 @@
     +leader()
     padding-left: 36px
     text-align: left
+
+    &.col-2-content, &.col-3-content
+      padding: 0 24px 0 36px
 
     .section-title, .section-sub-title
       +trailer(.5)
@@ -31,7 +66,9 @@
 
     & li
       +leader(0)
+      +trailer(.5)
       padding-left: 0
+      // list-style: disc
 
       &:before
         display: none
@@ -42,6 +79,9 @@
 
   .section-sub-title + p
     +leader(0)
+
+.text-content.order-list
+  +trailer(3)
 
 @for $i from 1 through 9
   .order-list li:nth-child(#{$i})
@@ -75,3 +115,17 @@
       width: 48px
       font-size: 48px
       line-height: 56px
+
+    &.col-2-content, &.col-3-content
+      padding: 0 24px 0 54px
+
+  .todo-list li
+    +leader(2)
+    padding-left: 56px
+
+    &:before
+      left: 4px
+
+    &.col-2-content, &.col-3-content
+      padding: 0 24px 0 54px
+

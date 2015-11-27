@@ -481,7 +481,7 @@ body { background-color: #183840; position: relative; }
 .header .logo_jp a { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/logo-jp.png?1447050772'); background-repeat: no-repeat; background-position: 50% 50%; width: 240px; height: 48px; background-image: none, url('/images/logo-jp.svg?1447050772'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .header .menu-btn { position: absolute; top: 14px; right: 10px; cursor: pointer; border: none; background-color: transparent; z-index: 250; color: #50b584; width: 32px; height: 32px; padding: 4px; margin: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .header .menu-btn:focus { outline: none; }
-.header .menu-btn-line { position: relative; width: 100%; height: 3px; background-color: #ccc; -webkit-transition: -webkit-transform 0.3s; -moz-transition: -moz-transform 0.3s; -o-transition: -o-transform 0.3s; transition: transform 0.3s; }
+.header .menu-btn-line { position: relative; width: 100%; height: 3px; background-color: #ccc; }
 .header .menu-btn-line:before, .header .menu-btn-line:after { content: ''; position: absolute; left: 0; width: 100%; height: 3px; background-color: #ccc; }
 .header .menu-btn-line:before { top: -8px; }
 .header .menu-btn-line:after { bottom: -8px; }

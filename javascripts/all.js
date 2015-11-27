@@ -124,16 +124,6 @@ $( document ).ready(function() {
 
   }
 
-  // hack destop resize to mobile menu fade-in animation
-  $(window).resize(function() {
-    var viewport_width = $(window).width();
-    if (viewport_width < desktop_breakpoint ) {
-      $('.menu').addClass('is-mobile').delay(300).queue(function(){
-        $('.menu').removeClass('is-mobile').dequeue();
-      });
-    }
-  });
-
   // policy animation js
   if ( $('.animation').length != 0 ) {
     function section_animation() {
@@ -192,33 +182,6 @@ $( document ).ready(function() {
         window.history.pushState(target, target, target);
     });
   });
-
-  var ScrollFix = function(elem) {
-    // Variables to track inputs
-    var startY, startTopScroll;
-
-    elem = elem || document.querySelector(elem);
-
-    // If there is no element, then do nothing
-    if(!elem)
-      return;
-
-    // Handle the start of interactions
-    elem.addEventListener('touchstart', function(event){
-      startY = event.touches[0].pageY;
-      startTopScroll = elem.scrollTop;
-
-      if(startTopScroll <= 0)
-        elem.scrollTop = 1;
-
-      if(startTopScroll + elem.offsetHeight >= elem.scrollHeight)
-        elem.scrollTop = elem.scrollHeight - elem.offsetHeight - 1;
-    }, false);
-
-  };
-
-  var scrollable = document.getElementById("scrollable");
-  new ScrollFix(scrollable);
 
 });
 

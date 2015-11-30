@@ -70,6 +70,18 @@
   }
 }
 
+br.word-break-on-phone {
+  @include at-breakpoint($pad) {
+    display: none;
+  }
+}
+
+br.word-break-on-mobile {
+  @include at-breakpoint(desktop) {
+    display: none;
+  }
+}
+
 .word-no-break {
   display: inline-block;
 }

@@ -10,6 +10,9 @@
     .menu-btn {
       display: none;
     }
+    .global-language {
+      right: 6px;
+    }
   }
 
   .copy {
@@ -40,6 +43,9 @@
         padding: 6px 0;
         left: 50%;
         @include translateX(-50%);
+      }
+      .global-language {
+        right: 0px;
       }
     }
 

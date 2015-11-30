@@ -577,8 +577,8 @@ body { background-color: #183840; position: relative; }
 .hero .hero-block-title .hero-block-title-inner { position: relative; z-index: 100; }
 .hero .hero-block-title:before { content: ""; position: absolute; z-index: 1; bottom: -330px; left: -200px; width: 520px; height: 520px; background: url("/images/blur-ball-large.png") no-repeat; opacity: .9; }
 .hero .hero-block-title:after { content: ""; position: absolute; z-index: 2; bottom: -200px; left: 50px; width: 370px; height: 370px; background: url("/images/blur-ball-medium.png") no-repeat; opacity: .9; }
-.hero .hero-block-title .title { position: relative; font-size: 24px; line-height: 32px; font-weight: bold; }
-.hero .hero-block-title .description { position: relative; display: none; }
+.hero .hero-block-title .title { position: relative; margin-bottom: 0px; font-size: 24px; line-height: 32px; font-weight: bold; }
+.hero .hero-block-title .description { display: none; position: relative; margin-bottom: 0px; }
 .hero .video-bg { display: none; }
 @media (min-width: 700px) { .hero { height: 560px; }
   .hero .hero-block-wrap { height: 100%; padding-bottom: 0; }

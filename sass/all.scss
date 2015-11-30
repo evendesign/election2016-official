@@ -62,3 +62,14 @@
     display: block;
   }
 }
+
+.hide-mobile {
+  display: none;
+  @include at-breakpoint($desktop) {
+    display: block;
+  }
+}
+
+.word-no-break {
+  display: inline-block;
+}

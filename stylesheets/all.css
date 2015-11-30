@@ -1336,4 +1336,6 @@ body { background-color: #183840; position: relative; }
 .hide-mobile { display: none; }
 @media (min-width: 1025px) { .hide-mobile { display: block; } }
 
+@media (min-width: 640px) { br.word-break-on-phone { display: none; } }
+
 .word-no-break { display: inline-block; }

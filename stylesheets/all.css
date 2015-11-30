@@ -1058,7 +1058,7 @@ body { background-color: #183840; position: relative; }
 .header-google-search { width: 100%; background: #455f65; border-bottom: 1px solid #455f65; }
 .header-google-search .gsc-search-box { padding: 0; margin: 0; position: relative; }
 .header-google-search td { margin: 0 !important; padding: 0 !important; }
-.header-google-search td.gsc-input:after { position: absolute; top: 18px; left: 52px; content: '搜尋 iing.tw'; color: #ccc; font-size: 15px; line-height: 24px; z-index: 45; }
+.header-google-search td.gsc-input:after { position: absolute; display: inline-block; top: 18px; left: 52px; content: '搜尋 iing.tw'; color: #ccc; font-size: 15px; line-height: 24px; z-index: 45; }
 .header-google-search input.gsc-input { position: relative; z-index: 50; display: block; border: none; background: transparent !important; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 18px 24px 18px 48px; text-align: left; color: transparent; font-size: 15px; line-height: 24px; }
 .header-google-search input.gsc-input::-webkit-input-placeholder { /* WebKit browsers */ color: white; -webkit-font-smoothing: antialiased; }
 .header-google-search input.gsc-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color: white; }

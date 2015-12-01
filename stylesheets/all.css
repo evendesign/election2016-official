@@ -1024,17 +1024,17 @@ body { background-color: #183840; position: relative; }
 @media (min-width: 640px) { .video-hero { padding-top: 50%; }
   .video-hero:before { top: 0; width: 100%; max-width: 500px; background-image: -webkit-gradient(linear, to right, to left, color-stop(320px, rgba(0, 0, 0, 0.3)), color-stop(100%, rgba(0, 0, 0, 0))); background-image: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0.3) 320px, rgba(0, 0, 0, 0)); background-image: -moz-linear-gradient(to right, rgba(0, 0, 0, 0.3) 320px, rgba(0, 0, 0, 0)); background-image: -o-linear-gradient(to right, rgba(0, 0, 0, 0.3) 320px, rgba(0, 0, 0, 0)); background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3) 320px, rgba(0, 0, 0, 0)); }
   .video-hero .video-content { padding: 36px 36px 36px 72px; width: 320px; }
-  .video-hero .video-title { font-size: 24px; line-height: 30px; margin-bottom: 12px; }
-  .video-hero .video-title:before { left: -42px; top: 30px; font-size: 30px; }
-  .video-hero .video-date { display: block; font-size: 15px; line-height: 24px; color: #ccc; }
+  .video-hero .video-title { font-size: 24px; line-height: 30px; }
+  .video-hero .video-title:before { left: -36px; top: 30px; font-size: 30px; }
+  .video-hero .video-date { display: block; font-size: 15px; line-height: 24px; color: #ccc; margin-bottom: 6px; }
   .video-hero .video-summary { font-size: 15px; line-height: 24px; display: block; margin-bottom: 0px; } }
 @media (min-width: 768px) { .video-hero { padding-top: 45%; } }
 @media (min-width: 1025px) { .video-hero { padding-top: 40%; }
   .video-hero:before { max-width: 620px; background-image: -webkit-gradient(linear, to right, to left, color-stop(500px, rgba(0, 0, 0, 0.25)), color-stop(100%, rgba(0, 0, 0, 0))); background-image: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0.25) 500px, rgba(0, 0, 0, 0)); background-image: -moz-linear-gradient(to right, rgba(0, 0, 0, 0.25) 500px, rgba(0, 0, 0, 0)); background-image: -o-linear-gradient(to right, rgba(0, 0, 0, 0.25) 500px, rgba(0, 0, 0, 0)); background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 500px, rgba(0, 0, 0, 0)); }
   .video-hero .video-content { padding: 4.75% 4.75% 4.75% 9.5%; width: 440px; }
-  .video-hero .video-title { font-size: 36px; line-height: 42px; margin-bottom: 24px; }
-  .video-hero .video-title:before { left: -50px; top: 36px; font-size: 36px; }
-  .video-hero .video-date { font-size: 16px; line-height: 24px; color: #ddd; }
+  .video-hero .video-title { font-size: 30px; line-height: 36px; }
+  .video-hero .video-title:before { left: -44px; top: 36px; font-size: 36px; }
+  .video-hero .video-date { font-size: 16px; line-height: 24px; color: #ddd; margin-bottom: 12px; }
   .video-hero .video-summary { font-size: 16px; line-height: 24px; margin-bottom: 0px; } }
 
 .video-list .video-items { list-style: none; margin: 0 0 48px; padding: 0px; }

@@ -81,9 +81,8 @@
     }
     .video-title {
       @include adjust-font-size-to(24px, 1.25);
-      @include trailer(0.5);
       &:before {
-        left: -42px;
+        left: -36px;
         top: 30px;
         font-size: 30px;
       }
@@ -92,6 +91,7 @@
       display: block;
       @include adjust-font-size-to(15px);
       color: #ccc;
+      @include trailer(0.25);
     }
     .video-summary {
       @include adjust-font-size-to(15px);
@@ -116,10 +116,9 @@
       width: 440px;
     }
     .video-title {
-      @include adjust-font-size-to(36px, 1.75);
-      @include trailer(1);
+      @include adjust-font-size-to(30px, 1.5);
       &:before {
-        left: -50px;
+        left: -44px;
         top: 36px;
         font-size: 36px;
       }
@@ -127,6 +126,7 @@
     .video-date {
       @include adjust-font-size-to(16px);
       color: #ddd;
+      @include trailer(0.5);
     }
     .video-summary {
       @include adjust-font-size-to(16px);
@@ -134,12 +134,5 @@
     }
 
   }
-
-  // @include at-breakpoint(1320px) {
-  //   .video-content {
-  //     padding: 60px 60px 60px 120px;
-  //   }
-  // }
-
 
 }

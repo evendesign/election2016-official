@@ -24,6 +24,7 @@
 
 // ==== partial ====
 // @import "partial/guideline-header"; // guideline 專用
+@import "partial/off-canvas";
 @import "partial/header";
 @import "partial/sub-menu";
 @import "partial/hero";
@@ -60,4 +61,27 @@
   @include at-breakpoint($pad) {
     display: block;
   }
+}
+
+.hide-mobile {
+  display: none;
+  @include at-breakpoint($desktop) {
+    display: block;
+  }
+}
+
+br.word-break-on-phone {
+  @include at-breakpoint($pad) {
+    display: none;
+  }
+}
+
+br.word-break-on-mobile {
+  @include at-breakpoint(desktop) {
+    display: none;
+  }
+}
+
+.word-no-break {
+  display: inline-block;
 }

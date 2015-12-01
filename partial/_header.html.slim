@@ -11,13 +11,11 @@
     button.menu-btn
       .menu-btn-line
     .menu
-      .menu-inner
-        a.menu-logo
+      .menu-inner#scrollable
         ul.primary-nav
           = nav_link_to "最新消息", "/posts/"
           = nav_link_to "英派", "#"
-          = nav_link_to "", "#"
-          / = nav_link_to "願景", "#"
+          = nav_link_to "願景", "#"
           = nav_link_to "加入志工", "/volunteers/new/"
           = nav_link_to "捐款", "#"
           = nav_link_to "影片專區", "/video/"
@@ -36,6 +34,7 @@
                       '//cse.google.com/cse.js?cx=' + cx;
                   var s = document.getElementsByTagName('script')[0];
                   s.parentNode.insertBefore(gcse, s);
+
                 })();
               <gcse:searchbox-only resultsUrl="http://www.example.com" newWindow="true" queryParameterName="search">
           ul.social-nav

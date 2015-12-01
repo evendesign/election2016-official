@@ -89,7 +89,7 @@ $( document ).ready(function() {
   }
 
   // open menu
-  $('.menu-btn').on('click', function () {
+  $('.menu-btn, .off-canvas-mask').on('click', function () {
     $('html').toggleClass('is-open-menu');
     $('.menu-btn').toggleClass('is-open-menu');
   });
@@ -121,17 +121,8 @@ $( document ).ready(function() {
         }
       }
     });
-  }
 
-  // hack destop resize to mobile menu fade-in animation
-  $(window).resize(function() {
-    var viewport_width = $(window).width();
-    if (viewport_width < desktop_breakpoint ) {
-      $('.menu').addClass('is-mobile').delay(300).queue(function(){
-        $('.menu').removeClass('is-mobile').dequeue();
-      });
-    }
-  });
+  }
 
   // policy animation js
   if ( $('.animation').length != 0 ) {
@@ -191,9 +182,8 @@ $( document ).ready(function() {
         window.history.pushState(target, target, target);
     });
   });
+
 });
-
-
 
 // youtube custom cover
 if (!Modernizr.touchevents) {

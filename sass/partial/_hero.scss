@@ -93,12 +93,14 @@
     }
     .title {
       position: relative;
+      @include trailer(0);
       @include adjust-font-size-to(24px, 1.35);
       font-weight: bold;
     }
     .description {
-      position: relative;
       display: none;
+      position: relative;
+      @include trailer(0);
     }
   }
   .video-bg {

@@ -371,21 +371,6 @@
       width: 100%;
       margin: 0 auto;
     }
-    .post-cover-image {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 0;
-      padding-top: 56.25%;
-      background-color: black;
-      @include opacity(1);
-      &:before {
-        top: 48px;
-        @include background-image(linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.5)));
-      }
-    }
     .play-btn {
       display: block;
       position: absolute;
@@ -408,11 +393,25 @@
       width: 100%;
       padding-top: 56.25%;
     }
-    .post-cover-image {
+    .post-cover-inner {
+      background-color: #11272C;
+    }
+    .no-touchevents & .post-cover-image {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
       padding-top: 0;
+      background-color: black;
+      @include opacity(1);
+      &:before {
+        top: 48px;
+        @include background-image(linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.5)));
+      }
     }
-    .post-cover-inner {
+    .no-touchevents & .post-cover-inner {
       position: absolute;
       left: 0;
       right: 0;
@@ -420,6 +419,7 @@
       margin: 0 auto;
       padding: 48px;
       max-width: 560px;
+      background-color: transparent;
     }
     .post-title {
       @include adjust-font-size-to(36px, 2);

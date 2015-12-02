@@ -1,4 +1,3 @@
-
 $( document ).ready(function() {
 
   var desktop_breakpoint = 1025;

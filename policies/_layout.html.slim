@@ -2,17 +2,12 @@ doctype 5
 html lang="zh-TW"
   head
     = render "/layout_head"
-    / 政策系列頁面專用
-    <script>document.documentElement.className += ' wf-loading';</script>
-    = javascript_include_tag \
-      "/vendor/d3.min.js", \
-      "/vendor/prelude-browser-min.js", \
-      "barchart", \
-      "linechart", \
-      "dountchart", \
-      "chartdata"
     = render "/layout_siteinfo"
     = render "/layout_og"
+    / typekit
+    <script>document.documentElement.className += ' wf-loading';</script>
+    <script src="https://use.typekit.net/mqf5nzx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   body class="#{@page_name}"
     .page-outer
       .page
@@ -23,8 +18,23 @@ html lang="zh-TW"
         = render "/partial/site-info"
       = render "/partial/footer"
 
-    = render "/layout_foot"
-    <script src="https://use.typekit.net/mqf5nzx.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    = javascript_include_tag \
+      "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", \
+      "/vendor/lazysizes.js", \
+      "/vendor/macho.js", \
+      "/vendor/jquery.waypoints.min.js", \
+      "/vendor/jquery.waypoints.sticky.min.js", \
+      "/vendor/dropdown", \
+      "all"
+
+    / 政策系列頁面專用
+    = javascript_include_tag \
+      "/vendor/d3.min.js", \
+      "/vendor/prelude-browser-min.js", \
+      "barchart", \
+      "linechart", \
+      "dountchart", \
+      "chartdata"
+
     = render "/layout_livereload"
 

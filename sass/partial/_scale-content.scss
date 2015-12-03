@@ -26,7 +26,7 @@
 
     .header, .sub-menu {
       @include opacity(1);
-      @include transition(opacity 0.75s 0.5s);
+      @include transition(opacity 0.75s 0.75s, width 0.75s); // 新增 width 變化是為了 hack safari bug
     }
 
     .footer {
@@ -97,6 +97,7 @@
       .header, .sub-menu {
         @include opacity(0);
         @include transition(opacity 0s);
+        width: 99.99%; // 新增 width 變化是為了 hack safari bug
       }
 
       .back-to-top {

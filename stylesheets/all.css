@@ -1087,10 +1087,8 @@ body { background-color: #183840; position: relative; }
 @media (min-width: 1025px) { .homepage .header-sticky-wrapper { position: static; }
   .homepage .header { position: static; }
   .homepage .sub-menu { position: static; }
-  .homepage .sticky { position: fixed; top: 0; left: 0; right: 0; max-width: 1512px; width: 100%; margin: 0 auto; -webkit-transition: opacity 0.75s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.75s 0.5s; -o-transition: opacity 0.75s 0.5s; transition: opacity 0.75s 0.5s; }
-  .homepage .sub-menu.sticky { margin-top: 61px; } }
-@media (min-width: 1512px) { .homepage .header-inner, .homepage .sub-menu-inner { width: 100%; }
-  .homepage .sticky { width: 90%; -webkit-transition: opacity 0.75s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.75s 0.5s; -o-transition: opacity 0.75s 0.5s; transition: opacity 0.75s 0.5s; } }
+  .homepage .sticky { position: fixed; } }
+@media (min-width: 1512px) { .homepage .sticky .header-inner, .homepage .sticky .sub-menu-inner { width: 90%; } }
 
 .policies-page .main-title, .policies-page .main-sub-title, .policies-page .section-title, .policies-page .section-sub-title, .policies-page .section-class, .policies-page .blockquote-name span { font-family: "source-han-sans-traditional", "Helvetica Neue", "Helvetica", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; font-style: normal; font-weight: 200; -webkit-transition: opacity 0.5s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.5s 0.5s; -o-transition: opacity 0.5s 0.5s; transition: opacity 0.5s 0.5s; }
 .wf-loading .policies-page .main-title, .wf-loading .policies-page .main-sub-title, .wf-loading .policies-page .section-title, .wf-loading .policies-page .section-sub-title, .wf-loading .policies-page .section-class, .wf-loading .policies-page .blockquote-name span { opacity: 0; }

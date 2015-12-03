@@ -25,29 +25,15 @@
     .sub-menu {
       position: static;
     }
-
     .sticky {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      max-width: 1512px;
-      width: 100%;
-      margin: 0 auto;
-      @include transition(opacity 0.75s 0.5s);
-    }
-    .sub-menu.sticky {
-      margin-top: 61px;
     }
   }
-
   @include at-breakpoint($wide-desktop) {
-    .header-inner, .sub-menu-inner {
-      width: 100%;
-    }
     .sticky {
-      width: 90%;
-      @include transition(opacity 0.75s 0.5s);
+      .header-inner, .sub-menu-inner {
+        width: 90%;
+      }
     }
   }
 }

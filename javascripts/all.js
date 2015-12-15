@@ -133,7 +133,7 @@ $( document ).ready(function() {
           handler: function(direction) {
             $(this.element).addClass('is-active')
           },
-          offset: '75%'
+          offset: '95%'
         })
       }
     }

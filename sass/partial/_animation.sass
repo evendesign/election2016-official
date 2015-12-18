@@ -6,7 +6,7 @@
   // animation method
   .fade-in
     opacity: 0
-    +transition(opacity .75s ease-in-out)
+    +transition(opacity 1s ease-in-out)
 
     &.is-active
       opacity: 1
@@ -14,7 +14,7 @@
   .slide-up
     opacity: 0
     +translateY(10%)
-    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+    +transition(transform 1s ease-in-out, opacity 1s ease-in-out)
 
     &.is-active
       opacity: 1
@@ -24,7 +24,7 @@
   .slide-left
     opacity: 0
     +translateX(10%)
-    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+    +transition(transform 1s ease-in-out, opacity 1s ease-in-out)
 
     &.is-active
       opacity: 1
@@ -33,7 +33,7 @@
   .slide-right
     opacity: 0
     +translateX(-10%)
-    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+    +transition(transform 1s ease-in-out, opacity 1s ease-in-out)
 
     &.is-active
       opacity: 1
@@ -42,7 +42,7 @@
   .rotate
     opacity: 0
     +rotate(-5deg)
-    +transition(transform .5s ease-in-out, opacity .75s ease-in-out)
+    +transition(transform .75s ease-in-out, opacity 1s ease-in-out)
 
     &.is-active
       opacity: 1

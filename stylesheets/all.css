@@ -1117,13 +1117,13 @@ body { background-color: #183840; position: relative; }
   .policies-page .image { margin: 0 auto 18px; }
   .policies-page .section { padding-top: 84px; padding-bottom: 84px; }
   .policies-page .section.image-theme { padding-top: 336px; }
-  .policies-page .section.image-theme:after { background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, rgba(10, 10, 10, 0)), color-stop(100%, #0a0a0a)); background: -webkit-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 500px); background: -moz-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 500px); background: -o-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 500px); background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 500px); } }
+  .policies-page .section.image-theme:after { background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, rgba(10, 10, 10, 0)), color-stop(100%, #0a0a0a)); background: -webkit-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 330px); background: -moz-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 330px); background: -o-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 330px); background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 330px); } }
 @media (min-width: 1025px) { .policies-page p { margin-bottom: 24px; }
   .policies-page .dt-hide { display: none; }
   .policies-page .image { margin: 0 auto 24px; }
   .policies-page .section { padding-top: 96px; padding-bottom: 96px; }
   .policies-page .section.image-theme { padding-top: 480px; }
-  .policies-page .section.image-theme:after { background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, rgba(10, 10, 10, 0)), color-stop(100%, #0a0a0a)); background: -webkit-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 550px); background: -moz-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 550px); background: -o-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 550px); background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 550px); } }
+  .policies-page .section.image-theme:after { background: -webkit-gradient(linear, to bottom, to top, color-stop(0%, rgba(10, 10, 10, 0)), color-stop(100%, #0a0a0a)); background: -webkit-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 525px); background: -moz-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 525px); background: -o-linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 525px); background: linear-gradient(to bottom, rgba(10, 10, 10, 0) 0px, #0a0a0a 525px); } }
 .policies-page .main-title { margin-bottom: 6px; font-size: 28px; line-height: 36px; }
 .policies-page .main-title br { display: none; }
 .policies-page .main-sub-title { margin-bottom: 0px; font-size: 16px; line-height: 24px; }

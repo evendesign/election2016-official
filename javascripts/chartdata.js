@@ -355,4 +355,74 @@ $( document ).ready(function() {
     });
   }
 
+  if ( $('.hakka-speak-chart').length != 0 ) {
+    childrenPercent = _.map(function(it){
+      return {
+        "languageText": "客家人的下一代",
+        "identity": it <= 57
+          ? "子女認為自己是客家人 57%"
+          : it <= 57 + 8 ? "不知道 8%" : "子女認為自己不是客家人 35%",
+        "language": it <= 50 ? "子女不會講客家語 50%" : "子女會講客家語 50%",
+        "value": 1,
+        "color": colorbrewer["BuGn"][9][~~(Math.random() * 7 + 2)]
+      };
+    })(
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]);
+    forceChildren = forceChart().container('.hakka-speak-chart').data(childrenPercent).labelYOffset(150);
+    forceChildren();
+
+    function hakka_speak_chart_animation() {
+      var waypoint = new Waypoint({
+        element: $('.hakka-speak-chart'),
+        handler: function(direction) {
+          forceChildren.draw("languageText");
+          setTimeout(function(){
+            return forceChildren.draw("identity");
+          }, 2500);
+          setTimeout(function(){
+            return forceChildren.draw("language");
+          }, 5000);
+          this.destroy();
+        },
+        offset: '90%'
+      })
+    }
+    hakka_speak_chart_animation();
+
+    childrenPercent = _.map(function(it){
+      return {
+        "languageText": "客家人客語使用狀況",
+        "language": it <= 47
+          ? "會說流利的客語 47%"
+          : it <= 47 + 13 ? "普通 13%" : "客語不流利/不會說 40%",
+        "willingness": it <= 76
+          ? "有意願讓子女學習客語 76%"
+          : it <= 76 + 16 ? "沒有意願讓子女學習客語 16%" : "未回答 8%",
+        "value": 1,
+        "color": colorbrewer["YlGn"][9][~~(Math.random() * 7 + 2)]
+      };
+    })(
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]);
+    forceLanguage = forceChart().container('.hakka-learn-chart').data(childrenPercent).labelYOffset(150);
+    forceLanguage();
+
+    function hakka_learn_chart_animation() {
+      var waypoint = new Waypoint({
+        element: $('.hakka-learn-chart'),
+        handler: function(direction) {
+          forceLanguage.draw("languageText");
+          setTimeout(function(){
+            return forceLanguage.draw("language");
+          }, 2500);
+          setTimeout(function(){
+            return forceLanguage.draw("willingness");
+          }, 5000);
+          this.destroy();
+        },
+        offset: '90%'
+      })
+    }
+    hakka_learn_chart_animation();
+  }
+
 });

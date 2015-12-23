@@ -1306,6 +1306,7 @@ body { background-color: #183840; position: relative; }
 .policies-page .house-pp-chart text.numbers { font-size: 60px; }
 .policies-page .health-care-spending-chart text, .policies-page .sport-15aDay-mortality-chart text { font-size: 18px; fill: white; }
 .policies-page .health-care-spending-chart .axis path, .policies-page .health-care-spending-chart .axis line, .policies-page .sport-15aDay-mortality-chart .axis path, .policies-page .sport-15aDay-mortality-chart .axis line { fill: none; stroke: white; stroke-width: 1px; shape-rendering: crispEdges; }
+.policies-page .hakka-speak-chart text, .policies-page .hakka-learn-chart text { font-size: 18px; }
 
 .article-page .page-header { margin-bottom: 24px; }
 @media (min-width: 640px) { .article-page .page-header { margin-bottom: 48px; } }

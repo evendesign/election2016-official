@@ -6,7 +6,18 @@
 = render '/partial/header'
 
 .content
+  / .post.post_bg-image-style
+  /   .post-header
+  /     .post-cover
+  /       .post-cover-image.lazyload data-bg="/images/post-header-image.jpg"
+  /       .post-cover-inner
+  /         h2.post-title.auto-break-text 小英的人生旅途
+  /         h3.post-subtitle.auto-break-text 一段關於小英人生旅途的副標題
   .post-list.post-list_list-style
+    .container
+      a.banner.banner_has-text href="#"
+        .banner-img.lazyload style=" background-image: url('/images/tsaiandchan.jpg') "
+        h2.banner-title Tsai Ing-Wen and Chen Chien-Ren
     .container
       .post-list-content
         - 10.times do |i|

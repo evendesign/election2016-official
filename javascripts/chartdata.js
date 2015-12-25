@@ -376,12 +376,12 @@ $( document ).ready(function() {
         element: $('.hakka-speak-chart'),
         handler: function(direction) {
           forceChildren.draw("languageText");
-          setTimeout(function(){
+          setInterval(function(){
             return forceChildren.draw("identity");
-          }, 2500);
-          setTimeout(function(){
+          }, 4000);
+          setInterval(function(){
             return forceChildren.draw("language");
-          }, 5000);
+          }, 8000);
           this.destroy();
         },
         offset: '90%'
@@ -411,15 +411,15 @@ $( document ).ready(function() {
         element: $('.hakka-learn-chart'),
         handler: function(direction) {
           forceLanguage.draw("languageText");
-          setTimeout(function(){
+          setInterval(function(){
             return forceLanguage.draw("language");
-          }, 2500);
-          setTimeout(function(){
+          }, 4000);
+          setInterval(function(){
             return forceLanguage.draw("willingness");
-          }, 5000);
+          }, 8000);
           this.destroy();
         },
-        offset: '90%'
+        offset: '100%'
       })
     }
     hakka_learn_chart_animation();

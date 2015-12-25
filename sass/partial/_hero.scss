@@ -8,17 +8,9 @@
       @include box-sizing(border-box);
       width: 100%;
     }
-    &>.hero-block-wrap { padding-bottom: 0; }
   }
   .hero-wrap-inner {
     @include pie-clearfix;
-    .hero-block-wrap {
-      @include box-sizing(border-box);
-      float: left;
-      width: 50%;
-      padding-bottom: 2px;
-    }
-    .hero-block-wrap + .hero-block-wrap { padding-left: 2px; }
   }
   .hero-block {
     overflow: hidden;
@@ -94,7 +86,7 @@
     .title {
       position: relative;
       @include trailer(0);
-      @include adjust-font-size-to(24px, 1.35);
+      @include adjust-font-size-to(22px, 1.2);
       font-weight: bold;
     }
     .description {
@@ -106,6 +98,20 @@
   .video-bg {
     display: none;
   }
+
+  @include at-breakpoint(640px 8) {
+    .hero-wrap-inner {
+      height: 50%;
+      .hero-block-wrap {
+        @include box-sizing(border-box);
+        float: left;
+        width: 50%;
+        padding-bottom: 2px;
+      }
+      .hero-block-wrap + .hero-block-wrap { padding-left: 2px; }
+    }
+  }
+
 
   @include at-breakpoint(700px 8) {
     height: 560px;
@@ -125,8 +131,18 @@
       width: 60%;
       height: 100%;
       .hero-block-wrap, .hero-block-wrap + .hero-block-wrap { padding-left: 2px; }
+      &>.hero-block-wrap { padding-bottom: 0; }
     }
-    .hero-wrap-inner { height: 50%; }
+    // .hero-wrap-inner {
+    //   height: 50%;
+    //   .hero-block-wrap {
+    //     @include box-sizing(border-box);
+    //     float: left;
+    //     width: 50%;
+    //     padding-bottom: 2px;
+    //   }
+    //   .hero-block-wrap + .hero-block-wrap { padding-left: 2px; }
+    // }
     .hero-block {
       &:before {
         bottom: 0px;
@@ -169,8 +185,8 @@
       }
       .title {
         z-index: 10;
-        @include trailer(.25);
-        @include adjust-font-size-to(24px, 1.35);
+        // @include trailer(.25);
+        // @include adjust-font-size-to(21px, 1.15);
       }
       .description {
         z-index: 10;
@@ -206,7 +222,8 @@
       .title {
         position: relative;
         bottom: -72px;
-        @include adjust-font-size-to(28px, 1.5);
+        @include adjust-font-size-to(24px, 1.25);
+        @include trailer(.25);
         @include transition(bottom .5s);
       }
       .description {
@@ -247,6 +264,17 @@
         }
       }
     }
+    .hero-block.no-description:hover {
+      .hero-block-title {
+        .title {
+          bottom: -72px;
+        }
+        .description {
+          bottom: -72px;
+          opacity: 1;
+        }
+      }
+    }
     .video-bg {
       display: block;
       position: absolute;
@@ -261,4 +289,14 @@
       transform: translateX(-50%) translateY(-50%);
     }
   }
+
+  @include at-breakpoint(1440px) {
+    .hero-block-title {
+      .title {
+        @include adjust-font-size-to(28px, 1.5);
+      }
+    }
+  }
+
+
 }

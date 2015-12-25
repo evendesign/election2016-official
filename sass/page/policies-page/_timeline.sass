@@ -29,6 +29,11 @@
       width: 1px
       background-color: white
 
+    &:empty
+      width: 48px
+      height: 48px
+      margin-left: -5px
+
   li:first-child
     padding-top: 36px
     .dot:before
@@ -62,6 +67,15 @@
       background: white
       +border-radius(50%)
 
+  .dot-dark
+    @extend .dot
+
+    &:before
+      background-color: #3e946a
+
+  li:first-child, li:last-child
+    .dot-dark:after
+      background-color: #3e946a
 
   .timeline-content
     display: table

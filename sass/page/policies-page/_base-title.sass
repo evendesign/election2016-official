@@ -19,6 +19,9 @@
   br
     display: none
 
+  & + .section-sub-title
+    +trailer(.5)
+
 .section-sub-title
   +trailer(.5)
   +adjust-font-size-to(24px, 1.25)
@@ -42,8 +45,11 @@
     +adjust-font-size-to(34px, 1.75)
     text-align: center
 
+    & + .section-sub-title
+      +trailer(.75)
+
   .section-sub-title
-    +trailer(.75)
+    +trailer(1)
 
 +at-breakpoint($desktop)
   .main-title
@@ -62,8 +68,11 @@
     br
       display: block
 
+    & + .section-sub-title
+      +trailer(1.5)
+
   .section-sub-title
-    +trailer(1.5)
+    +trailer(1)
     +adjust-font-size-to(28px, 1.5)
 
     br

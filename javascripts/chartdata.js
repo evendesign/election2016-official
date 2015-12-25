@@ -375,20 +375,14 @@ $( document ).ready(function() {
       var waypoint = new Waypoint({
         element: $('.hakka-speak-chart'),
         handler: function(direction) {
-          // forceChildren.draw("languageText");
-          // // setInterval(function(){
-          // setInterval(function(){
-          //   console.log('cut2');
-          //   return forceChildren.draw("identity");
-          // }, 4000);
-          // setInterval(function(){
-          //   console.log('cut3');
-          //   return forceChildren.draw("language");
-          // }, 8000);
-          // }, 5000);
-          function cut1() { forceChildren.draw("languageText"); };
-          function cut2() { forceChildren.draw("identity"); }
-          function cut3() { forceChildren.draw("language"); }
+          forceChildren.draw("languageText");
+          setInterval(function(){
+            forceChildren.draw("identity");
+            force1Cut3time = setTimeout(function(){
+              forceChildren.draw("language");
+              return clearTimeout(force1Cut3time);
+            }, 4000);
+          }, 4000);
           this.destroy();
         },
         offset: '90%'
@@ -419,16 +413,12 @@ $( document ).ready(function() {
         handler: function(direction) {
           forceLanguage.draw("languageText");
           setInterval(function(){
-            // console.log('loop');
-            setTimeout(function(){
-              // console.log('cut2');
-              return forceLanguage.draw("language");
+            forceLanguage.draw("language");
+            force2Cut3time = setTimeout(function(){
+              forceLanguage.draw("willingness");
+              return clearTimeout(force2Cut3time);
             }, 4000);
-            setTimeout(function(){
-              // console.log('cut3');
-              return forceLanguage.draw("willingness");
-            }, 8000);
-          }, 8000);
+          }, 4000);
           this.destroy();
         },
         offset: '100%'

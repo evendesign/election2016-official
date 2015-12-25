@@ -14,7 +14,7 @@
     left: 0
     right: 0
     bottom: 0
-    background-color: rgba(0,0,0,.5)
+    +background(linear-gradient(to bottom, rgba(10,10,10,0) 0px, rgba(10,10,10,0.6) 400px))
 
   // &:after
   //   content: ''
@@ -54,6 +54,9 @@
       font-weight: 400
 
   +at-breakpoint($pad)
+    &:before
+      +background(linear-gradient(to bottom, rgba(10,10,10,0) 0px, rgba(10,10,10,0.6) 530px))
+
     .policy-category a
       +adjust-font-size-to(18px)
 
@@ -62,6 +65,9 @@
 
   +at-breakpoint($desktop)
     background-attachment: fixed
+
+    &:before
+      +background(linear-gradient(to bottom, rgba(10,10,10,0) 0px, rgba(10,10,10,0.6) 830px))
 
     .header-title
       height: 50vh

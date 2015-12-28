@@ -1,0 +1,103 @@
+.policies
+  h3, img
+    margin-bottom: 0px
+
+  ul
+    margin: 0px
+    +adjust-font-size-to(16px)
+
+  .section-top
+    display: none
+
+  .section-inner
+    width: 90%
+    margin: 0 auto
+    padding-bottom: 48px
+
+  .section-header
+    border-bottom: solid 1px #ddd
+
+  .headline
+    +adjust-font-size-to(24px)
+
+  .section-content
+    margin-top: 24px
+
+  .section-content-col3
+    margin-top: 12px
+
+  .title
+    margin: 12px 0px
+
+  +at-breakpoint($pad)
+
+    figure
+      .title
+        display: none
+
+    .text-center
+      text-align: center
+
+    .no-margin
+      margin: 0px
+
+    .section-top
+      display: block
+
+      .section-inner
+        border-top: none
+
+      .section-content
+        margin-top: 0px
+        padding-left: 25%
+
+      .title
+        +adjust-font-size-to(24px)
+
+    .section-inner
+      border-top: solid 1px #ddd
+      +pie-clearfix
+      padding: 24px 0px
+
+    .section-header
+      float: left
+      width: 25%
+      border-bottom: none
+
+    .section-content
+      float: left
+      width: 75%
+      margin: 12px 0px 0px 0px
+
+    .section-content-col1
+      +pie-clearfix
+      .col
+        padding: 0 24px
+
+    .section-content-col2
+      +pie-clearfix
+      .col
+        +box-sizing(border-box)
+        float: left
+        width: 50%
+        padding: 0 24px
+
+      .topic
+        width: 30%
+
+      .copy
+        width: 70%
+
+    .section-content-col3
+      +pie-clearfix
+      .col
+        padding: 0 24px
+
+  +at-breakpoint($desktop)
+
+    .section-content-col3
+      .col
+        +box-sizing(border-box)
+        float: left
+        width: 33.333%
+

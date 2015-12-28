@@ -3,18 +3,28 @@
   padding-bottom: 1px
   text-align: center
   color: white
-  background-repeat: no-repeat
-  background-position: center center
-  +background-size(cover)
+  background-color: #50B584
+  +background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%))
 
-  &:before
-    content: ''
+
+  .policy-header-cover
     position: absolute
     top: 0
-    left: 0
     right: 0
     bottom: 0
-    +background(linear-gradient(to bottom, rgba(10,10,10,0) 0px, rgba(10,10,10,0.6) 400px))
+    left: 0
+    background-position: center center
+    +background-size(cover)
+    @extend .lazyload
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      +background(linear-gradient(to bottom, rgba(10,10,10,0.2) 0px, rgba(10,10,10,0.6) 400px))
 
   // &:after
   //   content: ''
@@ -54,8 +64,10 @@
       font-weight: 400
 
   +at-breakpoint($pad)
-    &:before
-      +background(linear-gradient(to bottom, rgba(10,10,10,0) 0px, rgba(10,10,10,0.6) 530px))
+
+    .policy-header-cover
+      &:before
+        +background(linear-gradient(to bottom, rgba(10,10,10,0.2) 0px, rgba(10,10,10,0.6) 530px))
 
     .policy-category a
       +adjust-font-size-to(18px)
@@ -66,8 +78,9 @@
   +at-breakpoint($desktop)
     background-attachment: fixed
 
-    &:before
-      +background(linear-gradient(to bottom, rgba(10,10,10,0) 0px, rgba(10,10,10,0.6) 830px))
+    .policy-header-cover
+      &:before
+        +background(linear-gradient(to bottom, rgba(10,10,10,0.2) 0px, rgba(10,10,10,1) 830px))
 
     .header-title
       height: 50vh

@@ -1113,23 +1113,25 @@ body { background-color: #183840; position: relative; }
 .policies-page .main-title, .policies-page .main-sub-title, .policies-page .section-title, .policies-page .section-sub-title, .policies-page .section-class, .policies-page .blockquote-name span { font-family: "source-han-sans-traditional", "Helvetica Neue", "Helvetica", sans-serif; font-style: normal; font-weight: 200; -webkit-transition: opacity 0.5s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.5s 0.5s; -o-transition: opacity 0.5s 0.5s; transition: opacity 0.5s 0.5s; }
 =======
 .policies h3, .policies img { margin-bottom: 0px; }
+.policies figure { margin-bottom: 36px; }
 .policies ul { margin: 0px; font-size: 16px; line-height: 24px; }
-.policies .section-top { display: none; }
-.policies .section-inner { width: 90%; margin: 0 auto; padding-bottom: 48px; }
+.policies .section-list { max-width: 980px; margin: 0 auto; padding: 0 24px 24px 24px; }
+.policies .top { display: none; }
+.policies .section-item { padding-top: 24px; padding-bottom: 24px; }
+.policies .section-item:after { content: ""; display: table; clear: both; }
 .policies .section-header { border-bottom: solid 1px #dddddd; }
 .policies .headline { font-size: 24px; line-height: 48px; }
 .policies .section-content { margin-top: 24px; }
 .policies .section-content-col3 { margin-top: 12px; }
-.policies .title { margin: 12px 0px; }
-@media (min-width: 640px) { .policies figure .title { display: none; }
-  .policies .text-center { text-align: center; }
+.policies .title { margin: 0px; }
+@media (min-width: 640px) { .policies .section-item { position: relative; padding-top: 36px; padding-bottom: 36px; }
+  .policies .section-item:before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 1px; background-color: #dddddd; }
+  .policies .top { display: block; padding-top: 48px; padding-bottom: 48px; }
+  .policies .top:before { display: none; }
+  .policies .top .section-content { margin-top: 0px; padding-left: 25%; }
+  .policies .top .title { font-size: 24px; line-height: 48px; }
+  .policies figure .title { display: none; }
   .policies .no-margin { margin: 0px; }
-  .policies .section-top { display: block; }
-  .policies .section-top .section-inner { border-top: none; }
-  .policies .section-top .section-content { margin-top: 0px; padding-left: 25%; }
-  .policies .section-top .title { font-size: 24px; line-height: 48px; }
-  .policies .section-inner { border-top: solid 1px #dddddd; padding: 24px 0px; }
-  .policies .section-inner:after { content: ""; display: table; clear: both; }
   .policies .section-header { float: left; width: 25%; border-bottom: none; }
   .policies .section-content { float: left; width: 75%; margin: 12px 0px 0px 0px; }
   .policies .section-content-col1:after { content: ""; display: table; clear: both; }

@@ -2,17 +2,26 @@
   h3, img
     margin-bottom: 0px
 
+  figure
+    +margin-trailer(1.5)
+
   ul
     margin: 0px
     +adjust-font-size-to(16px)
 
-  .section-top
+  .section-list
+    max-width: 980px
+    margin: 0 auto
+    padding: 0 24px 24px 24px
+
+  .top
     display: none
 
-  .section-inner
-    width: 90%
-    margin: 0 auto
-    padding-bottom: 48px
+  .section-item
+    +pie-clearfix
+    +padding-leader(1)
+    +padding-trailer(1)
+
 
   .section-header
     border-bottom: solid 1px #ddd
@@ -27,25 +36,33 @@
     margin-top: 12px
 
   .title
-    margin: 12px 0px
+    margin: 0px
 
   +at-breakpoint($pad)
 
-    figure
-      .title
-        display: none
+    .section-item
+      position: relative
+      +padding-leader(1.5)
+      +padding-trailer(1.5)
 
-    .text-center
-      text-align: center
+      &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 1px
+        background-color: #ddd
 
-    .no-margin
-      margin: 0px
-
-    .section-top
+    .top
       display: block
+      +padding-leader(2)
+      +padding-trailer(2)
 
-      .section-inner
-        border-top: none
+      &:before
+        display: none
 
       .section-content
         margin-top: 0px
@@ -54,10 +71,12 @@
       .title
         +adjust-font-size-to(24px)
 
-    .section-inner
-      border-top: solid 1px #ddd
-      +pie-clearfix
-      padding: 24px 0px
+    figure
+      .title
+        display: none
+
+    .no-margin
+      margin: 0px
 
     .section-header
       float: left
@@ -76,6 +95,7 @@
 
     .section-content-col2
       +pie-clearfix
+
       .col
         +box-sizing(border-box)
         float: left
@@ -100,4 +120,3 @@
         +box-sizing(border-box)
         float: left
         width: 33.333%
-

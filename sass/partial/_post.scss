@@ -2,6 +2,7 @@
   @include pie-clearfix;
 
   .post-header {
+    display: block;
     text-align: center;
     @include trailer(1);
   }

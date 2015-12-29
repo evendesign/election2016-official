@@ -21,19 +21,32 @@
     @include padding-trailer(2);
   }
 
-  .post-list {
-    @include padding-leader(0.5);
+  .banner {
+    margin: 24px auto 12px;
   }
+
+  // .post-list {
+  //   @include padding-leader(0.5);
+  // }
 
   @include at-breakpoint(480px) {
-    .post-list {
-      @include padding-leader(0);
+   .banner {
+      margin: 24px auto 0;
     }
+    // .post-list {
+    //   @include padding-leader(0);
+    // }
   }
 
-  @include at-breakpoint(848px 8) {
-    .post-list {
-      @include padding-leader(1);
+  // @include at-breakpoint(848px 8) {
+  //   .post-list {
+  //     @include padding-leader(1);
+  //   }
+  // }
+
+  @include at-breakpoint($pad) {
+   .banner {
+      margin: 24px auto 0;
     }
   }
 
@@ -47,6 +60,10 @@
       .global-language {
         right: 0px;
       }
+    }
+
+   .banner {
+      margin: 48px auto 24px;
     }
 
     .page-bottom-illustrator {

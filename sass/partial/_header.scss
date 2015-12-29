@@ -15,12 +15,12 @@
     padding: 6px 0 6px 6px;
     a {
       display: block;
-      @include replace-text-with-svg(logo-zh);
     }
   }
-  .logo_en a { @include replace-text-with-svg(logo-en); }
-  .logo_es a { @include replace-text-with-svg(logo-es); }
-  .logo_jp a { @include replace-text-with-svg(logo-jp); }
+  .logo_zh a { @include replace-text-with-svg(logo-zh-mobile); }
+  .logo_en a { @include replace-text-with-svg(logo-en-mobile); }
+  .logo_es a { @include replace-text-with-svg(logo-es-mobile); }
+  .logo_jp a { @include replace-text-with-svg(logo-jp-mobile); }
 
   .menu-btn {
     position: absolute;
@@ -189,6 +189,13 @@
     .lang {
       display: none;
     }
+  }
+
+  @include at-breakpoint($pad) {
+    .logo_zh a { @include replace-text-with-svg(logo-zh); }
+    .logo_en a { @include replace-text-with-svg(logo-en); }
+    .logo_es a { @include replace-text-with-svg(logo-es); }
+    .logo_jp a { @include replace-text-with-svg(logo-jp); }
   }
 
   @include at-breakpoint($desktop) {

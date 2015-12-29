@@ -1,85 +1,164 @@
-var worldOldPeopleData, taiwanOldPeopleData, foodCheckData, worldOldPeopleChart, taiwanOldPeopleChart, margin, defaultColor, peopleHighlightColor;
-worldOldPeopleData = [
-  {
-    "key": "日本",
-    "value": 26
-  }, {
-    "key": "義大利",
-    "value": 21
-  }, {
-    "key": "香港",
-    "value": 14
-  }, {
-    "key": "台灣",
-    "value": 12
-  }, {
-    "key": "星加坡",
-    "value": 11
-  }, {
-    "key": "中國",
-    "value": 9
-  }, {
-    "key": "越南",
-    "value": 7
-  }
-];
-taiwanOldPeopleData = [
-  {
-    "key": '彰化碧峰里',
-    "value": 43
-  }, {
-    "key": '花蓮森榮里',
-    "value": 41
-  }, {
-    "key": '南投光明里',
-    "value": 41
-  }, {
-    "key": '台灣平均',
-    "value": 12
-  }, {
-    "key": '新竹東平里',
-    "value": 2
-  }, {
-    "key": '新竹關新里',
-    "value": 2
-  }, {
-    "key": '新竹大鵬里',
-    "value": 2
-  }
-];
-margin = {
-  top: 12,
-  left: 120,
-  right: 36,
-  bottom: 24
-};
-margin_adj = {
-  top: 48,
-  left: 100,
-  right: 100,
-  bottom: 36
-};
-defaultColor = function(it){
-  return it.style({
-    "fill": 'url(#themeGradient)'
-  });
-};
-peopleHighlightColor = function(it){
-  return it.style({
-    "fill": function(it){
-      if (it.key === "台灣平均") {
-        return "orange";
-      } else {
-        return 'url(#themeGradient)';
-      }
-    }
-  });
-};
-worldOldPeopleChart = barChart().data(worldOldPeopleData).container('.world-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
-taiwanOldPeopleChart = barChart().data(taiwanOldPeopleData).container('.taiwan-old-people-data').margin(margin).barHeight(36).barStyle(peopleHighlightColor);
+// var worldOldPeopleData, taiwanOldPeopleData, foodCheckData, worldOldPeopleChart, taiwanOldPeopleChart, margin, defaultColor, peopleHighlightColor;
+// worldOldPeopleData = [
+//   {
+//     "key": "日本",
+//     "value": 26
+//   }, {
+//     "key": "義大利",
+//     "value": 21
+//   }, {
+//     "key": "香港",
+//     "value": 14
+//   }, {
+//     "key": "台灣",
+//     "value": 12
+//   }, {
+//     "key": "星加坡",
+//     "value": 11
+//   }, {
+//     "key": "中國",
+//     "value": 9
+//   }, {
+//     "key": "越南",
+//     "value": 7
+//   }
+// ];
+// taiwanOldPeopleData = [
+//   {
+//     "key": '彰化碧峰里',
+//     "value": 43
+//   }, {
+//     "key": '花蓮森榮里',
+//     "value": 41
+//   }, {
+//     "key": '南投光明里',
+//     "value": 41
+//   }, {
+//     "key": '台灣平均',
+//     "value": 12
+//   }, {
+//     "key": '新竹東平里',
+//     "value": 2
+//   }, {
+//     "key": '新竹關新里',
+//     "value": 2
+//   }, {
+//     "key": '新竹大鵬里',
+//     "value": 2
+//   }
+// ];
+// margin = {
+//   top: 12,
+//   left: 120,
+//   right: 36,
+//   bottom: 24
+// };
+// margin_adj = {
+//   top: 48,
+//   left: 100,
+//   right: 100,
+//   bottom: 36
+// };
+// defaultColor = function(it){
+//   return it.style({
+//     "fill": 'url(#themeGradient)'
+//   });
+// };
+// peopleHighlightColor = function(it){
+//   return it.style({
+//     "fill": function(it){
+//       if (it.key === "台灣平均") {
+//         return "orange";
+//       } else {
+//         return 'url(#themeGradient)';
+//       }
+//     }
+//   });
+// };
+// worldOldPeopleChart = barChart().data(worldOldPeopleData).container('.world-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
+// taiwanOldPeopleChart = barChart().data(taiwanOldPeopleData).container('.taiwan-old-people-data').margin(margin).barHeight(36).barStyle(peopleHighlightColor);
 
 $( document ).ready(function() {
   if ( $('.old-people-chart').length != 0 ) {
+    var worldOldPeopleData, taiwanOldPeopleData, foodCheckData, worldOldPeopleChart, taiwanOldPeopleChart, margin, defaultColor, peopleHighlightColor;
+    worldOldPeopleData = [
+      {
+        "key": "日本",
+        "value": 26
+      }, {
+        "key": "義大利",
+        "value": 21
+      }, {
+        "key": "香港",
+        "value": 14
+      }, {
+        "key": "台灣",
+        "value": 12
+      }, {
+        "key": "星加坡",
+        "value": 11
+      }, {
+        "key": "中國",
+        "value": 9
+      }, {
+        "key": "越南",
+        "value": 7
+      }
+    ];
+    taiwanOldPeopleData = [
+      {
+        "key": '彰化碧峰里',
+        "value": 43
+      }, {
+        "key": '花蓮森榮里',
+        "value": 41
+      }, {
+        "key": '南投光明里',
+        "value": 41
+      }, {
+        "key": '台灣平均',
+        "value": 12
+      }, {
+        "key": '新竹東平里',
+        "value": 2
+      }, {
+        "key": '新竹關新里',
+        "value": 2
+      }, {
+        "key": '新竹大鵬里',
+        "value": 2
+      }
+    ];
+    margin = {
+      top: 12,
+      left: 120,
+      right: 36,
+      bottom: 24
+    };
+    margin_adj = {
+      top: 48,
+      left: 100,
+      right: 100,
+      bottom: 36
+    };
+    defaultColor = function(it){
+      return it.style({
+        "fill": 'url(#themeGradient)'
+      });
+    };
+    peopleHighlightColor = function(it){
+      return it.style({
+        "fill": function(it){
+          if (it.key === "台灣平均") {
+            return "orange";
+          } else {
+            return 'url(#themeGradient)';
+          }
+        }
+      });
+    };
+    worldOldPeopleChart = barChart().data(worldOldPeopleData).container('.world-old-people-data').margin(margin).barHeight(36).barStyle(defaultColor);
+    taiwanOldPeopleChart = barChart().data(taiwanOldPeopleData).container('.taiwan-old-people-data').margin(margin).barHeight(36).barStyle(peopleHighlightColor);
     worldOldPeopleChart();
     taiwanOldPeopleChart();
     function gc_barchart_animation() {
@@ -427,4 +506,64 @@ $( document ).ready(function() {
     hakka_learn_chart_animation();
   }
 
+  if ( $('.world-best-food-culinary-journeys-chart').length != 0 ) {
+    var interData, margin, colorFunc, firstBar2;
+    interData = [
+      {
+        "key": "台灣",
+        "value": 8242
+      }, {
+        "key": "菲律賓",
+        "value": 1528
+      }, {
+        "key": "義大利",
+        "value": 810
+      }, {
+        "key": "泰國",
+        "value": 470
+      }, {
+        "key": "日本",
+        "value": 443
+      }, {
+        "key": "馬來西亞",
+        "value": 265
+      }, {
+        "key": "香港",
+        "value": 236
+      }, {
+        "key": "印度",
+        "value": 205
+      }, {
+        "key": "希臘",
+        "value": 167
+      }, {
+        "key": "越南",
+        "value": 162
+      }
+    ];
+    margin = {
+      top: 10,
+      left: 120,
+      right: 50,
+      bottom: 20
+    };
+    colorFunc = function(it){
+      return it.style({
+        "fill": 'url(#themeGradient)'
+      });
+    };
+    firstBar = barChart().data(interData).container('.world-best-food-culinary-journeys-chart').margin(margin).barHeight(25).barStyle(colorFunc);
+    firstBar();
+    function food_culinary_journeys_chart_chart_animation() {
+      var waypoint = new Waypoint({
+        element: $('.world-best-food-culinary-journeys-chart'),
+        handler: function(direction) {
+          firstBar.draw();
+          this.destroy();
+        },
+        offset: '90%'
+      })
+    }
+    food_culinary_journeys_chart_chart_animation();
+  }
 });

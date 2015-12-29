@@ -102,6 +102,7 @@
     color: white;
     font-weight: bold;
     @include trailer(0.125);
+    @include nowrap;
   }
 
   .site-subtitle {

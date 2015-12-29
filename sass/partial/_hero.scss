@@ -38,13 +38,13 @@
   .hero-block.small {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 160px;
     background-color: $color-gray-light;
   }
   .hero-block.medium {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 160px;
     background-color: $color-gray-light;
   }
 
@@ -133,16 +133,6 @@
       .hero-block-wrap, .hero-block-wrap + .hero-block-wrap { padding-left: 2px; }
       &>.hero-block-wrap { padding-bottom: 0; }
     }
-    // .hero-wrap-inner {
-    //   height: 50%;
-    //   .hero-block-wrap {
-    //     @include box-sizing(border-box);
-    //     float: left;
-    //     width: 50%;
-    //     padding-bottom: 2px;
-    //   }
-    //   .hero-block-wrap + .hero-block-wrap { padding-left: 2px; }
-    // }
     .hero-block {
       &:before {
         bottom: 0px;
@@ -205,7 +195,7 @@
     .hero-block-title {
       padding: 0;
       .hero-block-title-inner {
-        padding: 24px;
+        padding: 18px 24px;
         position: relative;
         z-index: 100;
       }
@@ -290,7 +280,7 @@
     }
   }
 
-  @include at-breakpoint(1440px) {
+  @include at-breakpoint(1280px) {
     .hero-block-title {
       .title {
         @include adjust-font-size-to(28px, 1.5);

@@ -84,4 +84,5 @@ br.word-break-on-mobile {
 
 .word-no-break {
   display: inline-block;
+  @include nowrap;
 }

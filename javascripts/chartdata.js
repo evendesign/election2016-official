@@ -367,28 +367,17 @@ $( document ).ready(function() {
       };
     })(
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]);
-    forceChildren = forceChart().container('.hakka-speak-chart').data(childrenPercent).labelYOffset(150);
+    forceChildren = forceChart().container('.hakka-speak-chart').data(childrenPercent).labelYOffset(150).isCollide(false);
     forceChildren();
-
-    function hakka_speak_chart_animation() {
-      var waypoint = new Waypoint({
-        element: $('.hakka-speak-chart'),
-        handler: function(direction) {
-          forceChildren.draw("languageText");
-          setInterval(function(){
-            forceChildren.draw("identity");
-            force1Cut3time = setTimeout(function(){
-              forceChildren.draw("language");
-              return clearTimeout(force1Cut3time);
-            }, 4000);
-          }, 4000);
-          this.destroy();
-        },
-        offset: '90%'
-      })
-    }
-    hakka_speak_chart_animation();
-
+    // setTimeout(function(){
+    //   return forceChildren.draw("languageText");
+    // }, 1000);
+    // setTimeout(function(){
+    //   return forceChildren.draw("identity");
+    // }, 5000);
+    // setTimeout(function(){
+    //   return forceChildren.draw("language");
+    // }, 9000);
     childrenPercent = _.map(function(it){
       return {
         "languageText": "客家人客語使用狀況",
@@ -403,27 +392,27 @@ $( document ).ready(function() {
       };
     })(
     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]);
-    forceLanguage = forceChart().container('.hakka-learn-chart').data(childrenPercent).labelYOffset(150);
+    forceLanguage = forceChart().container('.hakka-learn-chart').data(childrenPercent).labelYOffset(150).isCollide(false);
     forceLanguage();
 
-    function hakka_learn_chart_animation() {
+    function hakka_chart_animation() {
       var waypoint = new Waypoint({
-        element: $('.hakka-learn-chart'),
+        element: $('.hakka-speak-chart'),
         handler: function(direction) {
-          forceLanguage.draw("languageText");
+          forceLanguage.draw("languageText"), forceChildren.draw("languageText");
           setInterval(function(){
-            forceLanguage.draw("language");
-            force2Cut3time = setTimeout(function(){
-              forceLanguage.draw("willingness");
-              return clearTimeout(force2Cut3time);
+            forceLanguage.draw("language"),forceChildren.draw("identity");
+            force1Cut3time = setTimeout(function(){
+              forceLanguage.draw("willingness"),forceChildren.draw("language");
+              return clearTimeout(force1Cut3time);
             }, 4000);
           }, 4000);
           this.destroy();
         },
-        offset: '100%'
+        offset: '90%'
       })
     }
-    hakka_learn_chart_animation();
+    hakka_chart_animation();
   }
 
   if ( $('.world-best-food-culinary-journeys-chart').length != 0 ) {

@@ -9,6 +9,13 @@
     margin: 0px
     +adjust-font-size-to(16px)
 
+  .un-list
+    padding: 0px
+    list-style: none
+
+    li
+      margin-bottom: 6px
+
   .section-list
     max-width: 980px
     margin: 0 auto
@@ -20,7 +27,7 @@
   .section-item
     +pie-clearfix
     +padding-leader(1)
-    +padding-trailer(1)
+    +padding-trailer(.5)
 
 
   .section-header
@@ -29,21 +36,28 @@
   .headline
     +adjust-font-size-to(24px)
 
+  .title
+    margin: 12px 0px
+
   .section-content
     margin-top: 24px
 
-  .section-content-col3
-    margin-top: 12px
+  .section-content-col1, .section-content-col2, .section-content-col2
+    +padding-trailer(.5)
 
-  .title
-    margin: 0px
+  .static
+    .col
+      +box-sizing(border-box)
+      float: left
+      width: 50%
+      padding: 0 24px 0 0
 
   +at-breakpoint($pad)
 
     .section-item
       position: relative
       +padding-leader(1.5)
-      +padding-trailer(1.5)
+      +padding-trailer(1)
 
       &:before
         content: ''
@@ -76,6 +90,9 @@
         display: none
 
     .no-margin
+      margin: 0px
+
+    .title
       margin: 0px
 
     .section-header

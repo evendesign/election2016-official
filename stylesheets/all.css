@@ -1092,9 +1092,8 @@ body { background-color: #183840; position: relative; }
 
 .policies h3, .policies img { margin-bottom: 0px; }
 .policies figure { margin-bottom: 36px; }
-.policies ul { margin: 0px; font-size: 16px; line-height: 24px; }
-.policies .un-list { padding: 0px; list-style: none; }
-.policies .un-list li { margin-bottom: 6px; }
+.policies ul { margin: 0px; font-size: 16px; line-height: 24px; list-style: square; padding: 0 0 0 20px; color: #cccccc; }
+.policies ul li { margin-bottom: 6px; }
 .policies .section-list { max-width: 980px; margin: 0 auto; padding: 0 24px 24px 24px; }
 .policies .top { display: none; }
 .policies .section-item { padding-top: 24px; padding-bottom: 12px; }
@@ -1102,10 +1101,10 @@ body { background-color: #183840; position: relative; }
 .policies .section-header { border-bottom: solid 1px #dddddd; }
 .policies .headline { font-size: 24px; line-height: 48px; }
 .policies .title { margin: 12px 0px; }
+.policies .description { font-size: 13px; line-height: 24px; padding-right: 40px; padding-bottom: 12px; }
 .policies .section-content { margin-top: 24px; }
-.policies .section-content-col1, .policies .section-content-col2, .policies .section-content-col2 { padding-bottom: 12px; }
 .policies .static .col { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 50%; padding: 0 24px 0 0; }
-@media (min-width: 640px) { .policies .section-item { position: relative; padding-top: 36px; padding-bottom: 24px; }
+@media (min-width: 640px) { .policies .section-item { position: relative; padding-top: 24px; padding-bottom: 24px; }
   .policies .section-item:before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 1px; background-color: #dddddd; }
   .policies .top { display: block; padding-top: 48px; padding-bottom: 48px; }
   .policies .top:before { display: none; }
@@ -1113,18 +1112,20 @@ body { background-color: #183840; position: relative; }
   .policies .top .title { font-size: 24px; line-height: 48px; }
   .policies figure .title { display: none; }
   .policies .no-margin { margin: 0px; }
-  .policies .title { margin: 0px; }
   .policies .section-header { float: left; width: 25%; border-bottom: none; }
   .policies .section-content { float: left; width: 75%; margin: 12px 0px 0px 0px; }
   .policies .section-content-col1:after { content: ""; display: table; clear: both; }
   .policies .section-content-col1 .col { padding: 0 24px; }
   .policies .section-content-col2:after { content: ""; display: table; clear: both; }
   .policies .section-content-col2 .col { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 50%; padding: 0 24px; }
-  .policies .section-content-col2 .topic { width: 30%; }
-  .policies .section-content-col2 .copy { width: 70%; }
+  .policies .section-content-col2 .topic { width: 100%; padding: 0px 0px 0px 24px; }
+  .policies .section-content-col2 .copy { width: 100%; padding: 0px 0px 0px 24px; }
   .policies .section-content-col3:after { content: ""; display: table; clear: both; }
   .policies .section-content-col3 .col { padding: 0 24px; } }
-@media (min-width: 1025px) { .policies .section-content-col3 .col { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 33.333%; } }
+@media (min-width: 1025px) { .policies .title { margin: 0px; }
+  .policies .section-content-col2 .topic { width: 15%; padding: 0px 0px 0px 24px; }
+  .policies .section-content-col2 .copy { width: 85%; padding: 0px; }
+  .policies .section-content-col3 .col { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; width: 33.333%; } }
 
 .policies-page .main-title, .policies-page .main-sub-title, .policies-page .section-title, .policies-page .section-sub-title, .policies-page .section-class, .policies-page .blockquote-name span { font-family: "source-han-sans-traditional", "Helvetica Neue", "Helvetica", "STHeitiTC-Light", "Microsoft JhengHei", sans-serif; font-style: normal; font-weight: 200; -webkit-transition: opacity 0.5s; -webkit-transition-delay: 0.5s; -moz-transition: opacity 0.5s 0.5s; -o-transition: opacity 0.5s 0.5s; transition: opacity 0.5s 0.5s; }
 .wf-loading .policies-page .main-title, .wf-loading .policies-page .main-sub-title, .wf-loading .policies-page .section-title, .wf-loading .policies-page .section-sub-title, .wf-loading .policies-page .section-class, .wf-loading .policies-page .blockquote-name span { opacity: 0; }

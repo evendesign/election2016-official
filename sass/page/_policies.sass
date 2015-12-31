@@ -8,10 +8,9 @@
   ul
     margin: 0px
     +adjust-font-size-to(16px)
-
-  .un-list
-    padding: 0px
-    list-style: none
+    list-style: square
+    padding: 0 0 0 20px
+    color: #ccc
 
     li
       margin-bottom: 6px
@@ -39,11 +38,13 @@
   .title
     margin: 12px 0px
 
+  .description
+    +adjust-font-size-to(13px)
+    padding-right: 40px
+    +padding-trailer(.5)
+
   .section-content
     margin-top: 24px
-
-  .section-content-col1, .section-content-col2, .section-content-col2
-    +padding-trailer(.5)
 
   .static
     .col
@@ -56,7 +57,7 @@
 
     .section-item
       position: relative
-      +padding-leader(1.5)
+      +padding-leader(1)
       +padding-trailer(1)
 
       &:before
@@ -92,9 +93,6 @@
     .no-margin
       margin: 0px
 
-    .title
-      margin: 0px
-
     .section-header
       float: left
       width: 25%
@@ -120,10 +118,12 @@
         padding: 0 24px
 
       .topic
-        width: 30%
+        width: 100%
+        padding: 0px 0px 0px 24px
 
       .copy
-        width: 70%
+        width: 100%
+        padding: 0px 0px 0px 24px
 
     .section-content-col3
       +pie-clearfix
@@ -131,6 +131,17 @@
         padding: 0 24px
 
   +at-breakpoint($desktop)
+    .title
+      margin: 0px
+
+    .section-content-col2
+      .topic
+        width: 15%
+        padding: 0px 0px 0px 24px
+
+      .copy
+        width: 85%
+        padding: 0px
 
     .section-content-col3
       .col

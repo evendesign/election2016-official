@@ -218,7 +218,6 @@ forceChart = function(){
     };
     tick = function(it){
       var k, q, i, n;
-      k = 0.9 * it.alpha;
       k = 0.1 * it.alpha;
       augmentData.forEach(function(o, i){
         o.y += (o.target.y - o.y) * k;
@@ -241,7 +240,7 @@ forceChart = function(){
         }
       });
     };
-    forceLayout = d3.layout.force().nodes(augmentData).links([]).gravity(0).charge(-15).size([chrt.w, chrt.h]).on("tick", tick);
+    forceLayout = d3.layout.force().nodes(augmentData).links([]).gravity(0).charge(-15).friction(0.7).size([chrt.w, chrt.h]).on("tick", tick);
     node = chrt.svg.selectAll("." + chrt.selector).data(augmentData);
     node.enter().append("circle").attr({
       "class": function(it, i){

@@ -5,6 +5,8 @@ html.no-js lang="zh-TW"
     = render "/layout_siteinfo"
     = render "/layout_og"
   body class="#{@page_name}"
+    - if @page_name == "homepage"
+      = render '/partial/countdown'
     .page-outer
       .page
         .page-inner
@@ -16,4 +18,6 @@ html.no-js lang="zh-TW"
       = render "/partial/footer"
 
     = render "/layout_foot"
+    - if @page_name == "homepage"
+      = render "/layout_countdownjs"
     = render "/layout_livereload"

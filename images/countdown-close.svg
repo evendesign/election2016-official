@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>countdown-close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M10.3465368,10.3465368 L-1.78679656,10.3465368 L-1.78679656,14.0798701 L10.3465368,14.0798701 L10.3465368,26.2132034 L14.0798701,26.2132034 L14.0798701,14.0798701 L26.2132034,14.0798701 L26.2132034,10.3465368 L14.0798701,10.3465368 L14.0798701,-1.78679656 L10.3465368,-1.78679656 L10.3465368,10.3465368 Z" id="Rectangle-3" fill="#54B485" sketch:type="MSShapeGroup" transform="translate(12.213203, 12.213203) rotate(-315.000000) translate(-12.213203, -12.213203) "></path>
+    </g>
+</svg>

@@ -155,6 +155,14 @@ $( document ).ready(function() {
   }
 
   if ( $('.houseprice-to-income-chart').length != 0 ) {
+
+    margin_adj = {
+      top: 48,
+      left: 100,
+      right: 100,
+      bottom: 36
+    };
+
     d3.tsv("./hp_linechart_data.tsv", function(err, data){
       var columns, ratio, thousand, drawRatio;
       columns = _.filter(function(it){

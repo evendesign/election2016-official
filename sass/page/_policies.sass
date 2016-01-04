@@ -5,6 +5,9 @@
   figure
     +margin-trailer(1.5)
 
+  br
+    display: none
+
   ul
     margin: 0px
     +adjust-font-size-to(16px)
@@ -20,28 +23,32 @@
     margin: 0 auto
     padding: 0 24px 24px 24px
 
-  .top
-    display: none
+  .section-headline
+    +pie-clearfix
+    +padding-leader(2)
+    +padding-trailer(.5)
+    +adjust-font-size-to(32px)
 
   .section-item
     +pie-clearfix
     +padding-leader(1)
     +padding-trailer(.5)
 
-
   .section-header
     border-bottom: solid 1px #ddd
 
   .headline
     +adjust-font-size-to(24px)
-
-  .title
-    margin: 12px 0px
+    line-height: 32px
+    margin-top: 10px
+    +margin-trailer(.5)
 
   .description
     +adjust-font-size-to(13px)
-    padding-right: 40px
     +padding-trailer(.5)
+
+  .title
+    margin: 0px
 
   .section-content
     margin-top: 24px
@@ -54,6 +61,30 @@
       padding: 0 24px 0 0
 
   +at-breakpoint($pad)
+    br
+      display: block
+
+    %add-border
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 1px
+      background-color: #ddd
+
+    .section-headline
+      position: relative
+      +padding-leader(3)
+
+      &:before
+        @extend %add-border
+
+      &:first-child
+        &:before
+          display: none
 
     .section-item
       position: relative
@@ -61,34 +92,7 @@
       +padding-trailer(1)
 
       &:before
-        content: ''
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        width: 100%
-        height: 1px
-        background-color: #ddd
-
-    .top
-      display: block
-      +padding-leader(2)
-      +padding-trailer(2)
-
-      &:before
-        display: none
-
-      .section-content
-        margin-top: 0px
-        padding-left: 25%
-
-      .title
-        +adjust-font-size-to(24px)
-
-    figure
-      .title
-        display: none
+        @extend %add-border
 
     .no-margin
       margin: 0px
@@ -102,6 +106,12 @@
       float: left
       width: 75%
       margin: 12px 0px 0px 0px
+
+    .headline
+      padding-right: 28px
+
+    .description
+      padding-right: 40px
 
     .section-content-col1
       +pie-clearfix
@@ -125,15 +135,16 @@
         width: 100%
         padding: 0px 0px 0px 24px
 
+      &.static
+        .title
+          display: none
+
     .section-content-col3
       +pie-clearfix
       .col
         padding: 0 24px
 
   +at-breakpoint($desktop)
-    .title
-      margin: 0px
-
     .section-content-col2
       .topic
         width: 15%

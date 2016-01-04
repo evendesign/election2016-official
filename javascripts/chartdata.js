@@ -466,4 +466,103 @@ $( document ).ready(function() {
     }
     food_culinary_journeys_chart_chart_animation();
   }
+
+  if ( $('.medical-source-chart').length != 0 ) {
+    d3.tsv("./source.tsv", function(err, data){
+      var columns, ratio, drawRatio;
+      columns = _.filter(function(it){
+        return it !== "年度";
+      })(
+      _.keys(
+      data[0]));
+      ratio = _.sortBy(function(it){
+        var pri;
+        pri = ["家庭"];
+        return pri.indexOf(it[0]["label"]);
+      })(
+      _.map(function(c){
+        return _.sortBy(function(it){
+          return it.key;
+        })(
+        _.map(function(it){
+          return {
+            "key": new Date(it["年度"], 1, 1),
+            "value": +it[c],
+            "label": c
+          };
+        })(
+        data));
+      })(
+      columns));
+      drawRatio = lineChart().data(ratio).container('.medical-source-chart').w(960).xGridNumber(13).strokeWidth(4).numberFormat(function(it){
+        var label;
+        label = _.isType('Array', it)
+          ? it[0]["label"]
+          : it["label"];
+        return label + " " + it.value.toFixed(0) + "%";
+      }).tickValues([new Date(1996, 1, 1), new Date(2013, 1, 1)]);
+      drawRatio();
+      function medical_source_chart_animation() {
+        var waypoint = new Waypoint({
+          element: $('.medical-source-chart'),
+          handler: function(direction) {
+            drawRatio.draw();
+            this.destroy();
+          },
+          offset: '90%'
+        })
+      }
+      medical_source_chart_animation();
+    });
+  }
+
+
+  if ( $('.medical-dispute-chart').length != 0 ) {
+    d3.tsv("./dispute.tsv", function(err, data){
+      var columns, ratio, drawRatio;
+      columns = _.filter(function(it){
+        return it !== "year";
+      })(
+      _.keys(
+      data[0]));
+      ratio = _.sortBy(function(it){
+        var pri;
+        pri = ["件數"];
+        return pri.indexOf(it[0]["label"]);
+      })(
+      _.map(function(c){
+        return _.sortBy(function(it){
+          return it.key;
+        })(
+        _.map(function(it){
+          return {
+            "key": new Date(it["year"], 1, 1),
+            "value": +it[c],
+            "label": c
+          };
+        })(
+        data));
+      })(
+      columns));
+      drawRatio = lineChart().data(ratio).container('.medical-dispute-chart').w(960).xGridNumber(13).strokeWidth(4).numberFormat(function(it){
+        return "醫療鑑定" + it.value + " 件";
+      }).tickValues([new Date(1987, 1, 1), new Date(2011, 1, 1)]);
+      drawRatio();
+      return drawRatio.draw();
+      function medical_dispute_chart_animation() {
+        var waypoint = new Waypoint({
+          element: $('.medical-dispute-chart'),
+          handler: function(direction) {
+            drawRatio.draw();
+            this.destroy();
+          },
+          offset: '90%'
+        })
+      }
+      medical_dispute_chart_animation();
+    });
+  }
+
+
+
 });

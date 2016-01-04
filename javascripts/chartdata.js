@@ -548,7 +548,6 @@ $( document ).ready(function() {
         return "醫療鑑定" + it.value + " 件";
       }).tickValues([new Date(1987, 1, 1), new Date(2011, 1, 1)]);
       drawRatio();
-      return drawRatio.draw();
       function medical_dispute_chart_animation() {
         var waypoint = new Waypoint({
           element: $('.medical-dispute-chart'),
@@ -562,7 +561,5 @@ $( document ).ready(function() {
       medical_dispute_chart_animation();
     });
   }
-
-
 
 });

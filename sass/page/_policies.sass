@@ -5,6 +5,10 @@
   figure
     +margin-trailer(1.5)
 
+  a
+    &:hover
+      text-decoration: none
+
   br
     display: none
 
@@ -24,10 +28,40 @@
     padding: 0 24px 24px 24px
 
   .section-headline
+    position: relative
     +pie-clearfix
     +padding-leader(2)
     +padding-trailer(.5)
     +adjust-font-size-to(32px)
+
+  .policies-share
+    position: absolute
+    right: 0px
+    bottom: 18px
+    +adjust-font-size-to(16px)
+    color: #999
+
+    .policies-share-btn
+      display: inline-block
+      vertical-align: bottom
+      +adjust-font-size-to(18px)
+      +transition(opacity 0.25s)
+
+      &:hover
+        +opacity(0.75)
+        color: #444
+
+      & + .policies-share-btn
+        margin-left: 9px
+
+    .icon-facebook
+      color: #4863B3
+    .icon-twitter
+      color: #4099FF
+    .icon-plurk
+      color: #E14701
+    .icon-line
+      color: #02B002
 
   .section-item
     +pie-clearfix

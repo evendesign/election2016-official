@@ -509,7 +509,7 @@ $( document ).ready(function() {
             drawRatio.draw();
             this.destroy();
           },
-          offset: '120%'
+          offset: '100%'
         })
       }
       medical_source_chart_animation();
@@ -555,7 +555,7 @@ $( document ).ready(function() {
             drawRatio.draw();
             this.destroy();
           },
-          offset: '120%'
+          offset: '100%'
         })
       }
       medical_dispute_chart_animation();

@@ -17,32 +17,33 @@
     +box-sizing(border-box)
     position: absolute
     margin: auto
-    padding: 24px
+    padding: 12px
     max-width: 960px
     width: 100%
-    max-height: 620px
+    max-height: 480px
     height: 100vh
 
-    @media screen and (min-width: 960px)
+    @media screen and (min-width: 1008px)
       left: 50%
       +translateX(-50%)
 
-    @media screen and (min-height: 620px)
+    @media screen and (min-height: 568px)
       top: 50%
       +translateY(-50%)
 
-    @media screen and (min-width: 960px) and (min-height: 620px)
+    @media screen and (min-width: 1008px) and (min-height: 568px)
       left: 50%
       top: 50%
       +translate(-50%, -50%)
 
     .countdown-lightbox-inner
+      position: relative
       +box-sizing(border-box)
-      height: calc(100vh - 48px)
-      max-height: 620px
-      padding: 24px
+      height: calc(100vh - 24px)
+      max-height: 456px
+      padding: 12px
       background-color: white
-      +box-shadow(0 0 10px rgba(black, .5))
+      +box-shadow(0 0 20px rgba(black, .75))
 
   .close-bar
     +pie-clearfix
@@ -55,20 +56,26 @@
 
     .countinue-to-iing
       float: right
-      margin-right: 6px
       +adjust-font-size-to(15px)
       cursor: pointer
 
   .countdown-content
-    +leader(3)
+    position: absolute
+    top: 50%
+    left: 12px
+    right: 12px
+    +translateY(-50%)
 
     .word
       @extend %tk-shs-bold
-      +adjust-font-size-to(21px)
+      +adjust-font-size-to(16px)
+
+      span
+        display: inline-block
 
     .countdown
-      +leader(2)
-      +trailer()
+      +leader(.75)
+      +trailer(.5)
 
       .item, .colon
         display: inline-block
@@ -78,17 +85,47 @@
 
         .number
           font-family: 'DINWebPro', sans-serif
-          font-weight: 800
-          +adjust-font-size-to(80px)
+          font-weight: bold
+          +adjust-font-size-to(38px)
 
         .unit
           margin-bottom: 12px
           color: $color-primary
-          +adjust-font-size-to(20px)
+          +adjust-font-size-to(12px)
 
       .colon
-        margin-top: 36px
         @extend %tk-shs-bold
-        +adjust-font-size-to(60px)
+        +adjust-font-size-to(24px)
+
+    .btn
+      +leader()
 
 
+  +at-breakpoint(760px 8)
+    .countdown-lightbox
+      padding: 24px
+      max-height: 568px
+
+      .countdown-lightbox-inner
+        padding: 24px
+        max-height: 520px
+
+    .countdown-content
+
+      .word
+        +adjust-font-size-to(21px)
+
+      .countdown
+        +leader(1.25)
+        +trailer()
+
+        .item
+          .number
+            +adjust-font-size-to(80px)
+
+          .unit
+            margin-bottom: 12px
+            +adjust-font-size-to(18px)
+
+        .colon
+          +adjust-font-size-to(62px)

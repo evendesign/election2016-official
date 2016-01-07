@@ -1,6 +1,11 @@
 .policies
-  h3, img
+  img
     margin-bottom: 0px
+
+  h3
+    margin: 10px 0px
+    +adjust-font-size-to(24px)
+    line-height: 32px
 
   figure
     +margin-trailer(1.5)
@@ -33,11 +38,12 @@
     +padding-leader(2)
     +padding-trailer(.5)
     +adjust-font-size-to(32px)
+    line-height: 36px
 
   .policies-share
     position: absolute
     left: 0px
-    bottom: -12px
+    bottom: -18px
     +adjust-font-size-to(16px)
     color: #999
 
@@ -71,17 +77,12 @@
   .section-header
     border-bottom: solid 1px #ddd
 
-  .headline
-    +adjust-font-size-to(24px)
-    line-height: 32px
-    margin-top: 10px
-    margin-bottom: 10px
-
   .description
     +adjust-font-size-to(13px)
     line-height: 18px
-    margin-top: -8px
+    margin-top: 10px
     padding-bottom: 6px
+    color: rgba(0,0,0,.5)
 
   .title
     margin: 0px
@@ -115,7 +116,7 @@
       left: auto
       right: 0px
       top: auto
-      bottom: 18px
+      bottom: 12px
 
     .section-headline
       position: relative
@@ -132,6 +133,7 @@
       position: relative
       +padding-leader(1)
       +padding-trailer(1)
+      min-height: 120px
 
       &:before
         @extend %add-border
@@ -184,8 +186,6 @@
         padding: 0 24px
 
   +at-breakpoint($desktop)
-    // br
-    //   display: block
 
     .section-content-col2
       .topic

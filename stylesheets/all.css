@@ -1132,7 +1132,7 @@ body { background-color: #183840; position: relative; }
 .election-countdown .countdown-content .countdown .item .unit { position: absolute; right: -6px; bottom: 16px; font-weight: bold; color: #0f353e; opacity: 0.5; font-size: 16px; line-height: 24px; }
 .election-countdown .countdown-content .countdown .item:last-child .unit { right: 12px; }
 .election-countdown .election-content { position: relative; z-index: 100; margin-top: 24px; }
-.election-countdown .election-content .word { margin-bottom: 24px; letter-spacing: 0.05em; font-size: 13px; line-height: 24px; }
+.election-countdown .election-content .word { margin-bottom: 24px; text-align: center; letter-spacing: 0.05em; font-size: 13px; line-height: 24px; }
 .election-countdown .election-content .word span { display: inline-block; }
 .election-countdown .election-content .president, .election-countdown .election-content .party { margin-bottom: 12px; font-size: 16px; line-height: 24px; letter-spacing: 0.05em; }
 .election-countdown .election-content .president span:before, .election-countdown .election-content .party span:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: inline-block; width: 32px; height: 32px; margin: 0 6px; font-family: "DINWebPro", sans-serif; font-weight: bold; line-height: 36px; letter-spacing: 0; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; border-radius: 50%; }

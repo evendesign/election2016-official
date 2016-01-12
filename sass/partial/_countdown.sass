@@ -1,3 +1,6 @@
+body.ad-in
+  overflow: hidden
+
 .ad-in .election-countdown
   opacity: 1
 
@@ -7,14 +10,16 @@
 .election-countdown
   position: fixed
   top: 0
-  bottom: 0
   left: 0
   right: 0
-  z-index: 300
+  bottom: 0
+  z-index: 1000
   text-align: center
   color: #0F353E
+  overflow-y: auto
   opacity: 0
   +transition(opacity .5s)
+  background-color: rgba(black, .7)
 
   .mask
     position: absolute
@@ -22,7 +27,7 @@
     left: 0
     right: 0
     bottom: 0
-    background-color: rgba(black, .7)
+    background-color: transparent
 
   .countdown-lightbox
     +box-sizing(border-box)
@@ -217,10 +222,12 @@
     .countdown-lightbox
       padding: 24px
       max-width: 960px
+      min-height: 560px
       max-height: 588px
 
       .countdown-lightbox-inner
         padding: 24px
+        min-height: 516px
         max-height: 540px
 
     .election-content

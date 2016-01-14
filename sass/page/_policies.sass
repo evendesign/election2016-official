@@ -36,14 +36,14 @@
     position: relative
     +pie-clearfix
     +padding-leader(2)
-    +padding-trailer(.5)
+    +padding-trailer(2.5)
     +adjust-font-size-to(32px)
     line-height: 36px
 
   .policies-share
     position: absolute
     left: 0px
-    bottom: -18px
+    bottom: 30px
     +adjust-font-size-to(16px)
     color: #999
 
@@ -121,6 +121,7 @@
     .section-headline
       position: relative
       +padding-leader(3)
+      +padding-trailer(.5)
 
       &:before
         @extend %add-border

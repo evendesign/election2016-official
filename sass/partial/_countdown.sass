@@ -2,6 +2,7 @@ body.ad-in
   overflow: hidden
 
 .ad-in .election-countdown
+  visibility: visible
   opacity: 1
 
 .ad-out .election-countdown
@@ -18,7 +19,8 @@ body.ad-in
   color: #0F353E
   overflow-y: auto
   opacity: 0
-  +transition(opacity .5s)
+  visibility: hidden
+  +transition(visibility .5s .1s,opacity .5s)
   background-color: rgba(black, .7)
 
   .mask
@@ -314,14 +316,15 @@ body.ad-in
   @media screen and (min-width: 480px) and (max-width: 767px) and (orientation : landscape)
     .countdown-lightbox
       max-width: 480px
+      top: 50%
       left: 50%
-      +translateX(-50%)
+      +translate(-50%, -50%)
 
     .election-content
       +leader(.5)
 
     .countdown-content
-      bottom: 78px
+      bottom: -24px
 
       .countdown
         .item
@@ -331,7 +334,3 @@ body.ad-in
           .unit
             bottom: 12px
             +adjust-font-size-to(24px)
-
-      .word
-        display: none
-

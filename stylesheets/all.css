@@ -1109,11 +1109,11 @@ body { background-color: #183840; position: relative; }
 
 body.ad-in { overflow: hidden; }
 
-.ad-in .election-countdown { opacity: 1; }
+.ad-in .election-countdown { visibility: visible; opacity: 1; }
 
 .ad-out .election-countdown { opacity: 0; }
 
-.election-countdown { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1000; text-align: center; color: #0f353e; overflow-y: auto; opacity: 0; -webkit-transition: opacity 0.5s; -moz-transition: opacity 0.5s; -o-transition: opacity 0.5s; transition: opacity 0.5s; background-color: rgba(0, 0, 0, 0.7); }
+.election-countdown { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1000; text-align: center; color: #0f353e; overflow-y: auto; opacity: 0; visibility: hidden; -webkit-transition: visibility 0.5s, opacity 0.5s; -webkit-transition-delay: 0.1s, 0s; -moz-transition: visibility 0.5s 0.1s, opacity 0.5s; -o-transition: visibility 0.5s 0.1s, opacity 0.5s; transition: visibility 0.5s 0.1s, opacity 0.5s; background-color: rgba(0, 0, 0, 0.7); }
 .election-countdown .mask { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: transparent; }
 .election-countdown .countdown-lightbox { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: absolute; margin: auto; padding: 12px; max-width: 320px; width: 100%; max-height: 360px; height: 100%; height: 100vh; }
 @media screen and (min-width: 320px) { .election-countdown .countdown-lightbox { left: 50%; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -ms-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); } }
@@ -1166,12 +1166,11 @@ body.ad-in { overflow: hidden; }
   .election-countdown .countdown-content .word { font-size: 18px; line-height: 24px; }
   .election-countdown .countdown-content .countdown .item .number { font-size: 192px; line-height: 216px; }
   .election-countdown .countdown-content .countdown .item .unit { bottom: 40px; font-size: 48px; line-height: 72px; } }
-@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) { .election-countdown .countdown-lightbox { max-width: 480px; left: 50%; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -ms-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); }
+@media screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) { .election-countdown .countdown-lightbox { max-width: 480px; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
   .election-countdown .election-content { margin-top: 12px; }
-  .election-countdown .countdown-content { bottom: 78px; }
+  .election-countdown .countdown-content { bottom: -24px; }
   .election-countdown .countdown-content .countdown .item .number { font-size: 92px; line-height: 96px; }
-  .election-countdown .countdown-content .countdown .item .unit { bottom: 12px; font-size: 24px; line-height: 48px; }
-  .election-countdown .countdown-content .word { display: none; } }
+  .election-countdown .countdown-content .countdown .item .unit { bottom: 12px; font-size: 24px; line-height: 48px; } }
 
 .homepage .header-sticky-wrapper { position: absolute; top: 0; left: 0; right: 0; }
 .homepage .header, .homepage .sub-menu { width: 100%; }

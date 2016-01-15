@@ -46,11 +46,11 @@ body.ad-in
       left: 50%
       +translateX(-50%)
 
-    @media screen and (min-height: 520px)
+    @media screen and (min-height: 460px)
       top: 50%
       +translateY(-50%)
 
-    @media screen and (min-width: 320px) and (min-height: 520px)
+    @media screen and (min-width: 320px) and (min-height: 460px)
       left: 50%
       top: 50%
       +translate(-50%, -50%)
@@ -225,13 +225,15 @@ body.ad-in
     .countdown-lightbox
       padding: 24px
       max-width: 960px
-      height: 520px
-      max-height: none
+      min-height: 472px
+      max-height: 500px
+      height: 100%
 
       .countdown-lightbox-inner
         padding: 24px
-        height: 472px
-        max-height: none
+        height: 424px
+        max-height: 452px
+        height: 100%
 
     .election-content
       +leader(1.5)

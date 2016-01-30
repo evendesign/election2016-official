@@ -1,25 +1,45 @@
 .header
   .header-inner
-    .logo: a href="/" 點亮台灣 Light UP TAIWAN
+    - if !@language
+      .logo.logo_zh: a href="/" 點亮台灣 Light UP TAIWAN
+    - elsif @language == "en"
+      .logo.logo_en: a href="/" 點亮台灣 Light UP TAIWAN
+    - elsif @language == "es"
+      .logo.logo_es: a href="/" 點亮台灣 Light UP TAIWAN
+    - else
+      .logo.logo_jp: a href="/" 點亮台灣 Light UP TAIWAN
     button.menu-btn
       .menu-btn-line
     .menu
-      .menu-inner
-        a.menu-logo
+      .menu-inner#scrollable
         ul.primary-nav
           = nav_link_to "最新消息", "/posts/"
-          = nav_link_to "參選宣言", "#"
-          = nav_link_to "小英的人生旅途", "#"
-          / = nav_link_to "願景", "#"
-          = nav_link_to "加入志工", "#"
+          = nav_link_to "英派", "#"
+          = nav_link_to "願景", "#"
+          = nav_link_to "加入志工", "/volunteers/new/"
           = nav_link_to "捐款", "#"
+          = nav_link_to "影片專區", "/video/"
 
         .menu-bottom
-          a.press-release href="/press/" 媒體專區
-          form.search
-            label.search-icon.icon-search
-            input.search-input placeholder="搜尋"
+          - if !@language
+            a.press-release href="/press/" 媒體專區
+            .search.header-google-search
+              javascript:
+                (function() {
+                  var cx = '003675965074085344714:zibj2zgp57i';
+                  var gcse = document.createElement('script');
+                  gcse.type = 'text/javascript';
+                  gcse.async = true;
+                  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                      '//cse.google.com/cse.js?cx=' + cx;
+                  var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(gcse, s);
+
+                })();
+              <gcse:searchbox-only resultsUrl="http://www.example.com" newWindow="true" queryParameterName="search">
           ul.social-nav
-            li: a.facebook.icon-facebook href="#"
-            li: a.instagra.icon-instagram href="#"
-            li: a.line.icon-line href="#"
+            li: a.facebook.icon-facebook href="#" target="_blank"
+            li: a.instagra.icon-instagram href="#" target="_blank"
+            li: a.line.icon-line href="#" target="_blank"
+
+    = render "/partial/global-language"

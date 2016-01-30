@@ -1,0 +1,14 @@
+- @page_name = "video-page"
+
+= render '/partial/header'
+
+.content
+
+  a.video-hero style="background-image: url('/images/post-header-image.jpg')" href="/video/show.html"
+    .video-content
+      h3.video-title.auto-break-text= zh_lorem_sentence
+      span.video-date 2015.10.04
+      p.video-summary.auto-break-text= zh_lorem_paragraph
+
+  = render '/partial/video-list'
+

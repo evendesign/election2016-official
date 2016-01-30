@@ -1,0 +1,97 @@
++at-breakpoint($pad)
+  // animation
+  .animation
+    position: relative
+
+  // animation method
+  .fade-in
+    opacity: 0
+    +transition(opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+
+  .slide-up
+    opacity: 0
+    +translateY(10%)
+    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+      +translateY(0%)
+
+
+  .slide-left
+    opacity: 0
+    +translateX(10%)
+    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+      +translateX(0%)
+
+  .slide-right
+    opacity: 0
+    +translateX(-10%)
+    +transition(transform .75s ease-in-out, opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+      +translateX(0%)
+
+  .rotate
+    opacity: 0
+    +rotate(-5deg)
+    +transition(transform .5s ease-in-out, opacity .75s ease-in-out)
+
+    &.is-active
+      opacity: 1
+      +rotate(0deg)
+
+  // block method
+  .animation.is-active
+    .fade-in
+      opacity: 1
+
+    .slide-up
+      opacity: 1
+      +translateY(0%)
+
+    .slide-left, .slide-right
+      opacity: 1
+      +translateX(0%)
+
+    .rotate
+      opacity: 1
+      +rotate(0deg)
+
+  // animation delay
+  .delay-200ms
+    +transition-delay(.2s)
+
+  .delay-400ms
+    +transition-delay(.4s)
+
+  .delay-600ms
+    +transition-delay(.6s)
+
+  .delay-800ms
+    +transition-delay(.8s)
+
+  .delay-1000ms
+    +transition-delay(1s)
+
+  .delay-1200ms
+    +transition-delay(1.2s)
+
+  .delay-1400ms
+    +transition-delay(1.4s)
+
+  .delay-1600ms
+    +transition-delay(1.6s)
+
+  .delay-1800ms
+    +transition-delay(1.8s)
+
+  .delay-2000ms
+    +transition-delay(2.0s)

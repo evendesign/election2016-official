@@ -1,0 +1,26 @@
+doctype 5
+html.no-js lang="#{@language}"
+  head
+    = render "/layout_head"
+    = render "/layout_siteinfo"
+    = render "/layout_og"
+
+  body class="#{@page_name}"
+    .page-outer
+      .page
+        .page-inner
+          = yield
+          .page-bottom-illustrator
+          = render "/partial/back-to-top"
+          .copy &copy; 2016 蔡英文競選辦公室
+
+    = javascript_include_tag \
+      "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", \
+      "/vendor/lazysizes.js", \
+      "/vendor/macho.js", \
+      "/vendor/jquery.waypoints.min.js", \
+      "/vendor/jquery.waypoints.sticky.min.js", \
+      "/vendor/dropdown", \
+      "global-page"
+
+    = render "/layout_livereload"

@@ -1,0 +1,46 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  border: none;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdown-menu {
+  @include reset-list-style;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  background-color: white;
+  border-top: 3px solid $color-primary;
+  padding: 6px 0;
+
+  .dropdown.open & {
+    display: block;
+  }
+
+  .dropdown.right & {
+    left: auto;
+    right: 0;
+  }
+
+}
+
+.dropdown-item {
+  a {
+    color: #444;
+    padding: 6px 24px;
+    display: block;
+    white-space: nowrap;
+    &:hover {
+      text-decoration: none;
+      background-color: #fafafa;
+    }
+  }
+}

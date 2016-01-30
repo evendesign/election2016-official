@@ -1,0 +1,33 @@
+- @page_name = "video-page"
+
+= render '/partial/header'
+
+.content
+  .post.post_bg-image-style.post_video
+    .post-header
+      .post-cover
+        .post-player
+          .post-player-inner
+            <iframe id="video" class="post-player-iframe" src="https://www.youtube.com/embed/F52Rg-_ktk4?enablejsapi=1&html5=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+        .post-cover-image style="background-image: url('/images/post-header-image.jpg')"
+          a#play-btn.play-btn.icon-play
+        .post-cover-inner
+          h2.post-title.auto-break-text 經濟發展新模式──安倍經濟學的挑戰
+      .post-share
+        span.post-share-title 分享：
+        a.post-share-btn.icon-facebook href="#" target="_blank"
+        a.post-share-btn.icon-twitter href="#" target="_blank"
+        a.post-share-btn.icon-plurk href="#" target="_blank"
+        a.post-share-btn.icon-line href="#" target="_blank"
+      .post-meta
+        span.post-date 2015.7.23
+    .post-content.article.article_black-bg
+      .container.container_single-article
+        = render "/partial/demo-article"
+    .post-footer
+      .pager
+        a.pager-item.prev href="#": .pager-title 上一篇
+        a.pager-item.pager-item_return href="/video/" 返回影片列表
+        a.pager-item.next href="#": .pager-title 下一篇
+
+  = render '/partial/video-list'

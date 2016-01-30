@@ -1,0 +1,86 @@
+.world-old-people-data, .taiwan-old-people-data
+  position: relative
+  width: 100%
+  height: 0
+  margin-bottom: 24px
+  padding-top: 60.4%
+
+  svg
+    position: absolute !important
+    top: 0
+    left: 0
+
+  text
+    fill: white
+
+  +at-breakpoint($pad)
+    max-width: 432px
+
+.people-pp-chart
+  .people-ratio-data, .people-average-data, .people-population-data
+    position: relative
+    width: 100%
+    height: 0
+    margin-bottom: 24px
+    padding-top: 100%
+
+    svg
+      position: absolute !important
+      top: 0
+      left: 0
+
+    +at-breakpoint($pad)
+      max-width: 284px
+
+  .axis path, .axis line
+    fill: none
+    stroke: white
+    stroke-width: 1px
+    shape-rendering: crispEdges
+
+  .axis text
+    font-size: 18px
+    fill: white
+    shape-rendering: crispEdges
+
+  .number
+    font-size: 18px
+    fill: white
+
+.houseprice-to-income-chart
+
+  text
+    font-size: 18px
+    fill: white
+
+  .axis path, .axis line
+    fill: none
+    stroke: white
+    stroke-width: 1px
+    shape-rendering: crispEdges
+
+  .axis text
+    font-size: 18px
+    fill: white
+    shape-rendering: crispEdges
+
+.house-pp-chart
+
+  text
+    font-size: 18px
+    fill: white
+
+    &.numbers
+      font-size: 60px
+
+.health-care-spending-chart, .sport-15aDay-mortality-chart
+
+  text
+    font-size: 18px
+    fill: white
+
+  .axis path, .axis line
+    fill: none
+    stroke: white
+    stroke-width: 1px
+    shape-rendering: crispEdges

@@ -1,0 +1,16 @@
+doctype 5
+html lang="zh-TW"
+  head
+    = render "/layout_head"
+    meta http-equiv="refresh" content="0;url=http://iing.tw/"
+    = render "/layout_siteinfo"
+    meta content= "1/16一定要去投票，一起改變台灣！- 2016 蔡英文競選官網" property="og:title"
+    meta content= data["site-name"] property="og:site_name"
+    meta content= "http://iing.tw/redirect/" property="og:url"
+
+    meta content= "/images/og-image-election.jpg" property="og:image"
+    meta content= "珍惜這個歷史時刻，讓我們一起完成，民主光榮的任務。" property="og:description"
+
+    meta content= data["og-type"] property="og:type"
+    meta content= data["fb-admins"] property="fb:admins"
+  body

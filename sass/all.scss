@@ -17,9 +17,14 @@
 // @import "component/grid"; // guideline 專用
 @import "component/page-header";
 @import "component/block";
+@import "component/back-to-top";
+@import "component/banner";
+@import "component/lazyload";
+@import "component/dropdown";
 
 // ==== partial ====
 // @import "partial/guideline-header"; // guideline 專用
+@import "partial/off-canvas";
 @import "partial/header";
 @import "partial/sub-menu";
 @import "partial/hero";
@@ -35,11 +40,50 @@
 @import "partial/comments";
 @import "partial/aside-posts";
 @import "partial/message-block";
-@import "partial/back-to-top";
-
+@import "partial/volunteer";
+@import "partial/banner-block";
+@import "partial/animation";
+@import "partial/scroll-spy";
+@import "partial/video-hero";
+@import "partial/video-list";
+@import "partial/header-google-search";
+@import "partial/countdown";
 
 // ==== page ====
 @import "page/homepage";
+@import "page/policies-page";
 @import "page/article-page";
+@import "page/global-page";
+@import "page/video-page";
 
 // ==== inbox ====
+.hide-phone {
+  display: none;
+  @include at-breakpoint($pad) {
+    display: block;
+  }
+}
+
+.hide-mobile {
+  display: none;
+  @include at-breakpoint($desktop) {
+    display: block;
+  }
+}
+
+br.word-break-on-phone {
+  @include at-breakpoint($pad) {
+    display: none;
+  }
+}
+
+br.word-break-on-mobile {
+  @include at-breakpoint(desktop) {
+    display: none;
+  }
+}
+
+.word-no-break {
+  display: inline-block;
+  @include nowrap;
+}

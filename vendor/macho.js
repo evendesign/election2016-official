@@ -38,8 +38,14 @@
             return genReg(reg_escape(res[0])+"$", --len, html);
           }
         } else {
-            // Add one non ascii charater to accumulator
-          return genReg("\\W"+acc,--len, html)
+          // Add one non ascii charater to accumulator
+          var reg = new RegExp("[-,_\\|<.>/?;:'\"`~!@#$%&*()（）‧´・，。？！：；＠m＃＄％︿＆＊＝＋^、「」『』〖〗《》〈〉＜＞——⋯⋯・－]"+acc);
+          var res = reg.exec(html);
+          if (res != null) {
+            return genReg(acc,--len, html);
+          }
+          else
+            return genReg("\\W"+acc,--len, html);
         }
       }
     };

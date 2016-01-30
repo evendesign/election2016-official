@@ -61,11 +61,11 @@ $( document ).ready(function() {
     return false;
   });
 
-  if ( $('.back-to-top-wrap').length != 0 ) {
+  if ( $('.back-to-top').length != 0 ) {
     function back_to_top_active() {
       var waypoints = $('.page-inner').waypoint({
         handler: function(direction) {
-          $('.back-to-top-wrap').toggleClass('is-active');
+          $('.back-to-top').toggleClass('is-active');
         },
         offset: '-70%'
       })
@@ -73,8 +73,13 @@ $( document ).ready(function() {
     back_to_top_active();
   }
 
-  if ( $('.auto-break-text').length != 0 ) {
+  if ( $('.auto-break-text, .auto-break-text-short').length != 0 ) {
     $('.auto-break-text').macho({ 'length':5 });
+    $('.auto-break-text-short').macho({ 'length':3 });
+    $(document).ajaxComplete(function() {
+      $('.auto-break-text').macho({ 'length':5 });
+      $('.auto-break-text-short').macho({ 'length':3 });
+    });
   }
 
   if ( $('.article').length != 0 ) {
@@ -83,7 +88,7 @@ $( document ).ready(function() {
   }
 
   // open menu
-  $('.menu-btn').on('click', function () {
+  $('.menu-btn, .off-canvas-mask').on('click', function () {
     $('html').toggleClass('is-open-menu');
     $('.menu-btn').toggleClass('is-open-menu');
   });
@@ -115,21 +120,95 @@ $( document ).ready(function() {
         }
       }
     });
+
   }
 
-  // hack destop resize to mobile menu fade-in animation
-  $(window).resize(function() {
-    var viewport_width = $(window).width();
-    if (viewport_width < desktop_breakpoint ) {
-      $('.menu').addClass('is-mobile').delay(300).queue(function(){
-        $('.menu').removeClass('is-mobile').dequeue();
-      });
+  // policy animation js
+  if ( $('.animation').length != 0 ) {
+    function section_animation() {
+      var animationElements = $('.animation')
+      for (var i = 0; i < animationElements.length; i++) {
+        new Waypoint({
+          element: animationElements[i],
+          handler: function(direction) {
+            $(this.element).addClass('is-active')
+          },
+          offset: '75%'
+        })
+      }
     }
+    section_animation();
+  }
+
+  // scroll-spy js
+  if( $('.scroll-spy-section').length != 0 ) {
+    function scroll_spy() {
+      var spyItemElements = $('.scroll-spy-section');
+      for ( var i = 0; i < spyItemElements.length; i++) {
+        new Waypoint({
+          element: spyItemElements[i],
+          handler: function(direction) {
+            var spyMenuElements = $('.scroll-spy-menu-item');
+            var target = spyMenuElements[this.element.getAttribute("data-spy-index") - 1];
+            var previousTarget = spyMenuElements[this.element.getAttribute("data-spy-index") - 2];
+            if ( direction === 'down' ) {
+              spyMenuElements.removeClass('is-active');
+              $(target).addClass('is-active');
+            }
+            if ( direction === 'up' ) {
+              spyMenuElements.removeClass('is-active');
+              $(previousTarget).addClass('is-active');
+            }
+          },
+          offset: '50%'
+        })
+      }
+    }
+    scroll_spy();
+  }
+  $('.scroll-spy-menu-item a').on('click',function (e) {
+    e.preventDefault();
+
+    var target = this.hash,
+    $target = $(target);
+    var headerHeight = 110;
+    var targetScrollTop = $target.offset().top - headerHeight;
+
+    $('html, body').stop().animate({
+        'scrollTop': targetScrollTop
+    }, 1000, 'swing', function () {
+        // window.location.hash = target;
+        window.history.pushState(target, target, target);
+    });
   });
 
 });
 
-
-
-
-
+// youtube custom cover
+if (!Modernizr.touchevents) {
+  var tag = document.createElement('script');
+  tag.src = "//www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('video', {
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+  function onPlayerReady(event) {
+    var playButton = document.getElementById("play-btn");
+    playButton.addEventListener("click", function() {
+      player.playVideo();
+      $('.post-cover').addClass('is-playing');
+    });
+  }
+  function onPlayerStateChange(event) {
+    if (event.data == 1) {
+      $('.post-cover').addClass('is-playing');
+    }
+  }
+}

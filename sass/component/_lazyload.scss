@@ -1,0 +1,8 @@
+.lazyload {
+  @include opacity(0);
+  @include transition(opacity 2s);
+  &.lazyloaded {
+    @include opacity(1);
+  }
+}
+

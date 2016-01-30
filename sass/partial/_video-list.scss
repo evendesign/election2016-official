@@ -1,0 +1,111 @@
+.video-list {
+
+  .video-items {
+    list-style: none;
+    margin: 0 0 rhythm(2);
+    padding: 0px;
+    li {
+      display: block;
+      margin: 2px 0px 0px 0px;
+    }
+  }
+
+  .video-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0px;
+    padding-top: 56.25%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #444;
+    @include background-size(cover);
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @include background-image(linear-gradient(to bottom, rgba(black, 0) 25%, rgba(black, 0.5)));
+    }
+  }
+
+  .video-title {
+    position: absolute;
+    bottom: 0;
+    @include trailer(0);
+    padding: 12px 12px 12px 42px;
+    color: #fff;
+    @include adjust-font-size-to(16px);
+    @extend %subpixel;
+
+    &:before {
+      font-family: 'icomoon';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: '\e800'; // 記得換
+      position: relative;
+      left: -30px;
+      top: 22px;
+      display: block;
+      font-size: 20px;
+    }
+  }
+
+  .video-list-action {
+    text-align: center;
+    .btn {
+      padding: 6px 48px;
+    }
+  }
+
+  @include at-breakpoint($pad) {
+    overflow-x: hidden;
+
+    .video-items {
+      @include pie-clearfix;
+      margin: 0 -1px rhythm(2);
+      li {
+        @include box-sizing(border-box);
+        float: left;
+        padding: 0 1px;
+        width: 50%;
+      }
+    }
+
+  }
+
+  @include at-breakpoint(840px) {
+    .video-title {
+      // @include adjust-font-size-to(18px);
+      padding: 24px 24px 24px 56px;
+      @include adjust-font-size-to(22px, 1.15);
+      &:before {
+        font-size: 24px;
+        top: 25px;
+      }
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+    .video-items {
+      margin: 0 -1px rhythm(2.5);
+      li {
+        width: (100/3)*1%;
+      }
+      li:nth-child(3n) {
+        float: right;
+      }
+    }
+  }
+}

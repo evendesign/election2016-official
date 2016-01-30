@@ -6,21 +6,6 @@
     .container
       h2.post-list-title= "全部文章"
       .post-list-content
-        - 6.times do |i|
-          .post-item
-            a.post-image style="background-image: url('/images/post-2.jpg')" href="/posts/single-post-page.html"
-            .post-content-wrap
-              .post-meta
-                .date 2015.7.22
-                ul.post-category
-                  li.post-category-item: a href="/categories/show.html" 政策
-                  // 若出現兩者以上議題的架構
-                  / li.post-category-item: a href="/categories/show.html" 活動
-                  / li.post-category-item: a href="/categories/show.html" 故事
-              a.post-content href="/posts/single-post-page.html"
-                h3.post-title.auto-break-text= zh_lorem_sentence
-                p.post-summary.auto-break-text 民主進步黨主席暨總統參選人蔡英文今(25)日下午至桃園連跑兩場行程，除前往祥儀機器人夢工廠及桃園市婦女館參訪，傍晚則是出席在地希望生活節，與民...
-                span.post-readmore 閱讀更多
-
+        = render "/partial/post-item"
       .pageaction
         a.btn.btn_primary href="#" 載入更多文章

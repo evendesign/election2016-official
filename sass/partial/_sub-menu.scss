@@ -16,6 +16,7 @@
     text-align: center;
     @include nowrap;
     @include adjust-font-size-to(13px);
+    -webkit-overflow-scrolling: touch;
   }
 
 

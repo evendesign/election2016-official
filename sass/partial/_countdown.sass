@@ -1,0 +1,338 @@
+body.ad-in
+  overflow: hidden
+
+.ad-in .election-countdown
+  visibility: visible
+  opacity: 1
+
+.ad-out .election-countdown
+  opacity: 0
+
+.election-countdown
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 1000
+  text-align: center
+  color: #0F353E
+  overflow-y: auto
+  opacity: 0
+  visibility: hidden
+  +transition(visibility .5s .1s,opacity .5s)
+  background-color: rgba(black, .7)
+
+  .mask
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: transparent
+
+  .countdown-lightbox
+    +box-sizing(border-box)
+    position: absolute
+    margin: auto
+    padding: 12px
+    max-width: 320px
+    width: 100%
+    max-height: 360px
+    height: 100%
+    height: 100vh
+
+    @media screen and (min-width: 320px)
+      left: 50%
+      +translateX(-50%)
+
+    @media screen and (min-height: 460px)
+      top: 50%
+      +translateY(-50%)
+
+    @media screen and (min-width: 320px) and (min-height: 460px)
+      left: 50%
+      top: 50%
+      +translate(-50%, -50%)
+
+    .countdown-lightbox-inner
+      +box-sizing(border-box)
+      position: relative
+      z-index: 10
+      overflow: hidden
+      height: 100%
+      height: calc(100vh - 24px)
+      max-height: 336px
+      padding: 12px
+      +background(linear-gradient(135deg, #E7E879, #50B584))
+      +border-radius(5px)
+      +box-shadow(0 0 20px rgba(black, .75))
+
+  .close-bar
+    +pie-clearfix
+    color: #0F353E
+
+    .button
+      float: left
+      cursor: pointer
+      +replace-text-with-svg("countdown-close")
+      opacity: .4
+      +transition(opacity .25s)
+
+      &:hover
+        opacity: 1
+
+    .countinue-to-iing
+      float: right
+      +adjust-font-size-to(15px)
+      cursor: pointer
+      opacity: .4
+      +transition(opacity .25s)
+
+      &:hover
+        opacity: 1
+
+  .countdown-content
+    position: absolute
+    bottom: -24px
+    left: -100px
+    right: -100px
+
+    .word
+      position: absolute
+      z-index: 10
+      top: -33%
+      width: 100%
+      text-align: center
+      +adjust-font-size-to(12px)
+      letter-spacing: .4em
+
+      span
+        display: inline-block
+        @extend %tk-shs-bold
+
+    .countdown
+
+      .item
+        display: inline-block
+        position: relative
+        opacity: .25
+        padding: 0 6px
+        margin: 0 6px
+
+        .number
+          font-family: 'DINWebPro', sans-serif
+          font-weight: bold
+          color: white
+          +adjust-font-size-to(52px)
+
+        .unit
+          position: absolute
+          right: -6px
+          bottom: 16px
+          font-weight: bold
+          color: #0F353E
+          opacity: .5
+          +adjust-font-size-to(16px)
+
+        &:last-child .unit
+          right: 12px
+
+  .election-content
+    position: relative
+    z-index: 100
+    +leader()
+
+    .word
+      +trailer()
+      text-align: center
+      letter-spacing: .05em
+      +adjust-font-size-to(13px)
+
+      span
+        display: inline-block
+
+    .president, .party
+      +trailer(.5)
+      @extend %tk-shs-bold
+      +adjust-font-size-to(16px)
+      letter-spacing: .05em
+
+      span
+
+        &:before
+          +box-sizing(border-box)
+          display: inline-block
+          width: 32px
+          height: 32px
+          margin: 0 6px
+          font-family: 'DINWebPro', sans-serif
+          font-weight: bold
+          line-height: 36px
+          letter-spacing: 0
+          +border-radius(50%)
+
+    .president
+      span:before
+        content: "2"
+        color: $color-primary
+        background-color: white
+
+    .party
+      span:before
+        content: "1"
+        color: white
+        background-color: $color-primary
+
+  .share-content
+    +pie-clearfix
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    padding: 16px
+    text-align: center
+    background-color: white
+
+    &:before
+      content: ""
+      position: absolute
+      z-index: -1
+      top: -15px
+      left: 0
+      right: 0
+      width: 100%
+      height: 30px
+      opacity: .5
+      +background(radial-gradient( rgba(black ,.5), rgba(black ,.15), rgba(black ,0) , rgba(black ,0)))
+
+    .word
+      display: block
+      +trailer(.5)
+      +adjust-font-size-to(13px)
+      color: rgba(black, .6)
+
+      span
+        display: inline-block
+
+    .btn
+      display: block
+      margin: 0 auto
+      max-width: 320px
+
+
+  +at-breakpoint(760px 8)
+    .countdown-lightbox
+      padding: 24px
+      max-width: 960px
+      min-height: 472px
+      max-height: 500px
+      height: 100%
+
+      .countdown-lightbox-inner
+        padding: 24px
+        height: 424px
+        max-height: 452px
+        height: 100%
+
+    .election-content
+      +leader(1.5)
+
+      .word
+        +trailer(2)
+        +adjust-font-size-to(16px)
+
+      .president, .party
+        +trailer(.75)
+        font-size: 36px
+        line-height: 1.1
+        letter-spacing: .1em
+
+        span
+          display: inline-block
+
+          &:before
+            width: 48px
+            height: 48px
+            margin: 0 12px
+            line-height: 54px
+
+    .countdown-content
+      bottom: -42px
+
+      .word
+        top: 33%
+        +adjust-font-size-to(18px)
+        letter-spacing: .4em
+
+      .countdown
+
+        .item
+          padding: 0 12px
+          margin: 0 12px
+
+          .number
+            +adjust-font-size-to(140px)
+
+          .unit
+            right: -10px
+            bottom: 32px
+            +adjust-font-size-to(32px)
+
+          &:last-child .unit
+            right: 30px
+
+
+    .share-content
+      padding: 36px
+      text-align: left
+
+      .word
+        float: left
+        +trailer(0)
+        +adjust-font-size-to(16px)
+        line-height: 36px
+
+      .btn
+        float: right
+        padding: 4px 36px
+
+  +at-breakpoint(1024px 12)
+    .countdown-content
+      bottom: -58px
+
+      .word
+        +adjust-font-size-to(18px)
+
+      .countdown
+
+        .item
+          .number
+            +adjust-font-size-to(192px)
+
+          .unit
+            bottom: 40px
+            +adjust-font-size-to(48px)
+
+
+  @media screen and (min-width: 480px) and (max-width: 767px) and (orientation : landscape)
+    .countdown-lightbox
+      max-width: 480px
+      top: 50%
+      left: 50%
+      +translate(-50%, -50%)
+
+    .election-content
+      +leader(.5)
+
+    .countdown-content
+      bottom: -24px
+
+      .countdown
+        .item
+          .number
+            +adjust-font-size-to(92px)
+
+          .unit
+            bottom: 12px
+            +adjust-font-size-to(24px)

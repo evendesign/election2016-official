@@ -31,7 +31,6 @@ body {
   @include at-breakpoint($wide-desktop) {
     width: 90%;
   }
-
 }
 
 .page {
@@ -60,7 +59,7 @@ body {
     @include set-container-width;
   }
 
-  &.container_single-article { max-width: 768px; }
+  &.container_single-article { max-width: 800px; }
   @include at-breakpoint($pad) {
     &.container_single-article { padding: 0 48px; }
   }

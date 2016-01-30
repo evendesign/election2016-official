@@ -1,0 +1,30 @@
+/ 本頁為一般文章類型的 tempalte，用於撰寫 about、小英的故事⋯⋯之類的頁面
+
+= render '/partial/header'
+= render '/partial/sub-menu'
+
+.content.has-sub-menu
+  .post.post_bg-image-style
+    .post-header
+      .post-cover
+        .post-cover-image.lazyload data-bg="/images/post-header-image.jpg"
+        .post-cover-inner
+          h2.post-title.auto-break-text 小英的人生旅途
+          h3.post-subtitle.auto-break-text 一段關於小英人生旅途的副標題
+      .post-share
+        span.post-share-title 分享：
+        a.post-share-btn.icon-facebook href="#" target="_blank"
+        a.post-share-btn.icon-twitter href="#" target="_blank"
+        a.post-share-btn.icon-plurk href="#" target="_blank"
+        a.post-share-btn.icon-line href="#" target="_blank"
+    .post-content.article
+      .container.container_single-article
+        = render "/partial/demo-article"
+        = render "/posts/post-attachment"
+    .post-footer
+      .post-share
+        span.post-share-title 分享：
+        a.post-share-btn.icon-facebook href="#" target="_blank"
+        a.post-share-btn.icon-twitter href="#" target="_blank"
+        a.post-share-btn.icon-plurk href="#" target="_blank"
+        a.post-share-btn.icon-line href="#" target="_blank"

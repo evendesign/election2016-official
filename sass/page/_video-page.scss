@@ -1,0 +1,20 @@
+.video-page {
+
+  .page-inner {
+    background-color: #11272C;
+  }
+
+  .post {
+    @include trailer(1);
+    @include at-breakpoint($pad) {
+      @include trailer(2);
+    }
+
+    .container.container_single-article {
+      max-width: 560px;
+    }
+  }
+
+
+
+}

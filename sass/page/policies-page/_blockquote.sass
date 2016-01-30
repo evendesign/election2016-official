@@ -1,0 +1,89 @@
+blockquote
+  +policy-container($content-width)
+  position: relative
+  padding: 0 30px
+  +adjust-font-size-to(16px)
+  text-align: center
+  color: $color-secondary
+  border: none
+
+  &:before, &:after
+    position: absolute
+    display: block
+    color: #ccc
+    @include opacity(0.125)
+
+  &:before
+    content: '“'
+    top: 0
+    left: 0
+    +replace-text-with-svg('quote')
+    width: 18px
+    height: 24px
+
+  &:after
+    content: '”'
+    bottom: 0
+    right: 0
+    +replace-text-with-svg('quote2')
+    width: 18px
+    height: 24px
+
+  & p
+    @extend %tk-shs-regular
+    +adjust-font-size-to(16px)
+
+  &.bigtext p
+    @extend %tk-shs-bold
+    +adjust-font-size-to(21px, 1.5)
+    text-align: left
+
+  +at-breakpoint($pad)
+    padding: 0 48px
+    +adjust-font-size-to(18px, 1.25)
+
+    &:before
+      content: '“'
+      width: 24px
+      height: 30px
+
+    &:after
+      content: '”'
+      bottom: 0
+      right: 0
+      width: 24px
+      height: 30px
+
+    & p
+      +adjust-font-size-to(18px, 1.25)
+
+
+    &.bigtext
+      +policy-container($figure-width)
+
+      p
+        +adjust-font-size-to(28px, 1.65)
+
+  +at-breakpoint($desktop)
+    &.bigtext
+      +policy-container($figure-width)
+
+      p
+        +adjust-font-size-to(34px, 1.85)
+
+.blockquote-name
+  padding: 18px 30px 0
+  text-align: center
+  color: $color-gray-dark
+  +adjust-font-size-to(18px)
+
+  &:before
+    content: "－"
+
+  span
+    @extend %tk-shs-light
+
+  +at-breakpoint($pad)
+    +policy-container($figure-width)
+    padding: 36px 48px 0
+    +adjust-font-size-to(24px, 1.85)

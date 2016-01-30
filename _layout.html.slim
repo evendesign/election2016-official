@@ -1,18 +1,26 @@
 doctype 5
-html lang="zh-TW"
+html.no-js lang="zh-TW"
   head
     = render "/layout_head"
     = render "/layout_siteinfo"
     = render "/layout_og"
+    / typekit
+    <script>document.documentElement.className += ' wf-loading';</script>
+    <script src="https://use.typekit.net/mqf5nzx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   body class="#{@page_name}"
     .page-outer
       .page
         .page-inner
           = yield
           .page-bottom-illustrator
+          .off-canvas-mask
           = render "/partial/back-to-top"
         = render "/partial/site-info"
       = render "/partial/footer"
-
+    - if @page_name == "homepage"
+      = render '/partial/countdown'
     = render "/layout_foot"
+    - if @page_name == "homepage"
+      = render "/layout_countdownjs"
     = render "/layout_livereload"

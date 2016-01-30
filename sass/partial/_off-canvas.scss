@@ -1,0 +1,30 @@
+.page-inner {
+  @include transition(transform 0.5s);
+}
+
+.off-canvas-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.is-open-menu {
+  .page-inner {
+    @include translateX(-260px);
+  }
+  .off-canvas-mask {
+    bottom: 0;
+  }
+
+  @include at-breakpoint($desktop) {
+    .page-inner {
+      @include transform(none);
+    }
+    .off-canvas-mask {
+      bottom: auto;
+    }
+  }
+}

@@ -2,31 +2,18 @@
   @include pie-clearfix;
 
   .post-header {
-    position: relative;
-    @include trailer(1);
-    padding: 35% 24px 24px;
+    display: block;
     text-align: center;
-    background-color: #eaeaea;
-    background-position: center center;
-    @include background-size(cover);
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url("/images/blur-ball-post-header.png");
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      @include background-size(cover);
-      opacity: .8;
-    }
+    @include trailer(1);
   }
 
-  .post-header-inner {
-    position: relative;
-    z-index: 10;
+  .post-cover {
+    display: block;
+    margin: 0 -24px rhythm(0.5);
+    img {
+      margin: 0 auto;
+      display: block;
+    }
   }
 
   .post-category {
@@ -39,7 +26,6 @@
       display: block;
       @include adjust-font-size-to(15px, 3/4);
       font-weight: bold;
-      color: #FEFF86;
       &:hover {
         text-decoration: none;
       }
@@ -50,20 +36,19 @@
     @include adjust-font-size-to(24px, 1.25);
     @include trailer(0);
     font-weight: bold;
-    color: white;
+    color: black;
   }
 
   .post-subtitle {
-    color: white;
     @include leader(0.25);
     @include trailer(0);
     @include adjust-font-size-to(13px, 3/4);
+    color: #444;
   }
 
   .post-meta {
     @include pie-clearfix;
-    @include leader(0.25);
-    @include trailer(0.75);
+    @include leader(0.125);
     @include adjust-font-size-to(13px);
     text-align: center;
   }
@@ -101,22 +86,55 @@
     }
   }
 
+  .post-attachment {
+    text-align: center;
+    background-color: white;
+    padding: 24px;
+  }
+  .post-attachment-title {
+    color: $color-secondary;
+    @include adjust-font-size-to(16px);
+    font-weight: bold;
+    @include trailer(0.5);
+  }
+  .post-attachment-item {
+    margin: 0 6px 12px;
+    padding: 3px 12px;
+    @include adjust-font-size-to(13px);
+    &:before {
+      font-size: 16px;
+      float: left;
+      margin-right: 6px;
+    }
+  }
+
   .post-footer {
     @include leader(1.5);
     @include padding-trailer(1.5);
   }
 
-  .post-share {
+  .post-action {
     text-align: center;
-    a.icon-facebook { color: #4863B3; }
-    a.icon-twitter { color: #4099FF; }
-    a.icon-plurk { color: #E14701; }
-    a.icon-line { color: #02B002; }
-    a:hover {
-      @include opacity(0.75);
+    @include leader(0.75);
+    .btn {
+      padding: 3px 24px;
     }
   }
 
+  .post-share {
+    @include leader(1);
+    text-align: center;
+    .post-share-btn {
+      @include transition(opacity 0.25s);
+      &:hover {
+        @include opacity(0.75);
+      }
+    }
+    .icon-facebook { color: #4863B3; }
+    .icon-twitter { color: #4099FF; }
+    .icon-plurk { color: #E14701; }
+    .icon-line { color: #02B002; }
+  }
 
   .post-share-title {
     display: inline-block;
@@ -131,7 +149,6 @@
     margin-right: 9px;
     color: #999;
     &.icon-line {
-      // margin-left: 3px;
       margin-right: 0;
     }
     &:hover {
@@ -145,10 +162,17 @@
     @include leader(0.5);
   }
 
+  .pager {
+    @include leader(1);
+  }
+
   @include at-breakpoint($pad) {
     .post-header {
-      padding: 28% 10% 48px;
+      @include padding-leader(2);
       @include trailer(2);
+    }
+    .post-cover {
+      margin: 0 auto rhythm(1);
     }
     .post-category {
       a {
@@ -158,7 +182,7 @@
     }
     .post-title {
       margin: rhythm(0.25) 0 0;
-      @include adjust-font-size-to(32px, 1.5);
+      @include adjust-font-size-to(32px, 1.75);
     }
     .post-subtitle {
       @include leader(0.5);
@@ -166,22 +190,242 @@
     }
     .post-meta {
       @include leader(0.5);
-      @include trailer(1.75);
       @include adjust-font-size-to(16px);
+    }
+    .post-attachment {
+      padding: 36px;
+      @include leader(2);
+    }
+    .post-attachment-title {
+      @include adjust-font-size-to(18px);
+      @include trailer(1);
+    }
+    .post-attachment-item {
+      padding: 6px 18px;
+      @include adjust-font-size-to(15px);
     }
     .post-footer {
       @include leader(2);
       @include padding-trailer(2);
     }
+    .post-action {
+      @include leader(1.75);
+      .btn {
+        @include adjust-font-size-to(16px, 1);
+        padding: 6px 36px;
+      }
+    }
+    .post-share {
+      @include leader(2);
+    }
     .post-share-title {
       @include adjust-font-size-to(16px);
     }
   }
+}
 
-  @media (max-height: 640px) {
+
+.post_bg-image-style {
+  .post-cover {
+    margin: 0 0 rhythm(0.5);
+    position: relative;
+    background-color: #50B584;
+    @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
+  }
+  .post-cover-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center center;
+    @include background-size(cover);
+    @extend .lazyload;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('/images/blur-ball-post-header.png');
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      @include background-size(cover);
+    }
+  }
+  .post-cover-inner {
+    position: relative;
+    padding: 40% 24px 24px;
+    background-position: center center;
+    @include background-size(cover);
+  }
+  .post-category {
+    a {
+      color: #FEFF86;
+    }
+  }
+  .post-title {
+    color: white;
+  }
+
+  .post-subtitle {
+    color: white;
+  }
+
+  @include at-breakpoint($pad) {
     .post-header {
-      padding-top: 240px;
+      @include padding-leader(0);
+    }
+    .post-cover {
+      padding: 0;
+      margin: 0 auto rhythm(1);
+    }
+    .post-cover-inner {
+      padding: 28% 20% 48px;
+    }
+    .post-title {
+      margin: rhythm(0.25) 0 0;
+    }
+    @media (max-height: 640px) {
+      .post-cover-inner {
+        padding-top: 240px;
+      }
     }
   }
 
 }
+
+.post_video {
+  .post-cover {
+    margin: 0 0 rhythm(0.5);
+    position: relative;
+    background-color: transparent;
+    @include background-image(none);
+  }
+  .post-player {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+  }
+  .post-player-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .post-cover-image {
+    display: none;
+  }
+  .post-cover-inner {
+    padding: 24px 24px 0;
+  }
+  .post-share {
+    .post-share-btn {
+      color: rgba(white, 0.75);
+    }
+  }
+  .pager-item {
+    color: #11272C;
+  }
+  .prev:before {
+    border-color: transparent rgba(#ddd, 0.5) transparent transparent;
+  }
+  .pager-item_return {
+    color: #ccc;
+    border-bottom: 2px solid rgba(#ddd, 0.5);
+    &:hover {
+      color: white;
+    }
+  }
+  .next:before {
+    border-color: transparent transparent transparent rgba(#ddd, 0.5);
+  }
+  .pager-title {
+    background-color: rgba(#ddd, 0.5);
+    @include leader(0);
+  }
+
+  @include at-breakpoint($desktop) {
+    .post-cover {
+      background-color: black;
+      &.is-playing {
+        .post-cover-inner {
+          visibility:hidden;
+          opacity:0;
+          @include transition(visibility 0s 0.5s, opacity 0.5s);
+        }
+        .post-cover-image {
+          visibility:hidden;
+          opacity:0;
+          @include transition(visibility 0s 0.5s, opacity 0.5s);
+        }
+      }
+    }
+    .post-player {
+      height: auto;
+      padding-top: 0;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .play-btn {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -48px;
+      margin-left: -48px;
+      width: 96px;
+      @include adjust-font-size-to(84px, 4);
+      color: white;
+      @include transition(opacity 0.25s);
+      cursor: pointer;
+      &:hover {
+        @include opacity(0.8);
+        text-decoration: none;
+      }
+    }
+    .post-player-inner {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+    }
+    .post-cover-inner {
+      background-color: #11272C;
+    }
+    .no-touchevents & .post-cover-image {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 0;
+      background-color: black;
+      @include opacity(1);
+      &:before {
+        top: 48px;
+        @include background-image(linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.5)));
+      }
+    }
+    .no-touchevents & .post-cover-inner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+      padding: 48px;
+      max-width: 560px;
+      background-color: transparent;
+    }
+    .post-title {
+      @include adjust-font-size-to(36px, 2);
+    }
+  }
+
+}
+

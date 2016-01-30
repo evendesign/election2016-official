@@ -1,0 +1,79 @@
+.banner {
+  position: relative;
+  display: block;
+  padding-top: 62.5%;
+  overflow: hidden;
+  background-color: #e1e1e1;
+  @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
+
+  &.banner_has-text {
+    background-color: #50B584;
+    padding-top: 50%;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      background-image: image-url('blur-ball-post-header.png');
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      @include background-size(175% 110%);
+    }
+  }
+
+  .banner-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center center;
+    @include background-size(cover);
+    @extend .lazyload;
+  }
+
+  .banner-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    width: 80%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+    @include adjust-font-size-to(18px, 1);
+    font-weight: bold;
+    color: white;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    @extend .lazyload;
+  }
+
+  @include at-breakpoint($pad) {
+    padding-top: 24%;
+    &.banner_has-text {
+      padding-top: 35%;
+    }
+    .banner-title {
+      padding: 18px 24px;
+      @include adjust-font-size-to(24px, 1.25);
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+  }
+
+}
